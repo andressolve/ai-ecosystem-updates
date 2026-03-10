@@ -126,6 +126,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    flex-wrap: wrap;
   }
   .card p { margin: 0.5rem 0; font-size: 0.9rem; }
   .card ul { margin: 0.5rem 0 0.5rem 1.25rem; font-size: 0.9rem; }
@@ -235,7 +236,7 @@
   <h1>AI Ecosystem Update</h1>
   <div class="meta">
     <span>March 10, 2026</span>
-    <span>Daily Scan</span>
+    <span>Daily Scan (Enhanced)</span>
     <span>Full Tier 1 + Tier 2 + Tier 3 + Macro</span>
   </div>
 </header>
@@ -248,6 +249,7 @@
       <th>Company</th>
       <th>Ticker</th>
       <th>Price</th>
+      <th>Fwd PE</th>
       <th>Signal</th>
       <th>Notes</th>
     </tr>
@@ -257,64 +259,81 @@
       <td>NVIDIA</td>
       <td><span class="ticker">NVDA</span></td>
       <td class="price">$182.65</td>
+      <td class="price">~22x</td>
       <td><span class="tag tag-green">+2.68%</span></td>
-      <td class="note">GTC in 6 days</td>
+      <td class="note">GTC in 6 days; NemoClaw launch</td>
     </tr>
     <tr>
       <td>Broadcom</td>
       <td><span class="ticker">AVGO</span></td>
-      <td class="price">$352.33</td>
-      <td><span class="tag tag-green">+4.6%</span></td>
-      <td class="note">Range $342&ndash;353</td>
+      <td class="price">~$348</td>
+      <td class="price">~30x</td>
+      <td><span class="tag tag-green">post-Q1</span></td>
+      <td class="note">$10.7B Q2 AI guide stands</td>
     </tr>
     <tr>
       <td>TSMC</td>
       <td><span class="ticker">TSM</span></td>
-      <td class="price">~$345</td>
-      <td><span class="tag tag-yellow">flat</span></td>
-      <td class="note">Feb revenue released today</td>
+      <td class="price">~$350</td>
+      <td class="price">~22x</td>
+      <td><span class="tag tag-yellow">mixed</span></td>
+      <td class="note">Memory crunch sapping consumer</td>
     </tr>
     <tr>
       <td>Microsoft</td>
       <td><span class="ticker">MSFT</span></td>
-      <td class="price">$404.66</td>
-      <td><span class="tag tag-red">&minus;15% YTD</span></td>
-      <td class="note">Copilot Cowork / Anthropic integration</td>
+      <td class="price">~$407</td>
+      <td class="price">~28x</td>
+      <td><span class="tag tag-purple">E7 launch</span></td>
+      <td class="note">$99/user AI bundle announced</td>
     </tr>
     <tr>
       <td>Alphabet</td>
       <td><span class="ticker">GOOG</span></td>
-      <td class="price">$304.66</td>
-      <td><span class="tag tag-yellow">volatile</span></td>
-      <td class="note">Range $290&ndash;307</td>
+      <td class="price">~$300</td>
+      <td class="price">~20x</td>
+      <td><span class="tag tag-blue">GenAI.mil</span></td>
+      <td class="note">Pentagon deploying Gemini agents</td>
     </tr>
     <tr>
       <td>Meta</td>
       <td><span class="ticker">META</span></td>
       <td class="price">$647.39</td>
-      <td><span class="tag tag-green">+0.39%</span></td>
-      <td class="note">&nbsp;</td>
+      <td class="price">~21x</td>
+      <td><span class="tag tag-blue">Moltbook</span></td>
+      <td class="note">Acquired AI agent social network</td>
     </tr>
     <tr>
       <td>Amazon</td>
       <td><span class="ticker">AMZN</span></td>
-      <td class="price">$213.50</td>
+      <td class="price">~$215</td>
+      <td class="price">~28x</td>
       <td><span class="tag tag-red">&minus;7.6% YTD</span></td>
-      <td class="note">&nbsp;</td>
+      <td class="note">$200B capex digestion</td>
     </tr>
     <tr>
       <td>Micron</td>
       <td><span class="ticker">MU</span></td>
-      <td class="price">~$401&ndash;418</td>
+      <td class="price">~$400</td>
+      <td class="price">~12x</td>
       <td><span class="tag tag-green">+5.14%</span></td>
-      <td class="note">Earnings Mar 18</td>
+      <td class="note">Earnings Mar 18; Citi PT $430</td>
     </tr>
     <tr>
       <td>CoreWeave</td>
       <td><span class="ticker">CRWV</span></td>
-      <td class="price">$73.91</td>
-      <td><span class="tag tag-red">&minus;60% from high</span></td>
-      <td class="note">Down from $187</td>
+      <td class="price">~$73</td>
+      <td class="price">N/A</td>
+      <td><span class="tag tag-red">fraud suit</span></td>
+      <td class="note">$452M Q4 loss; deadline Mar 13</td>
+    </tr>
+    <tr>
+      <td>Palantir</td>
+      <td><span class="ticker">PLTR</span></td>
+      <td class="price">$156.43</td>
+      <td class="price">~50x</td>
+      <td><span class="tag tag-green">defense AI</span></td>
+      <td class="note">$7.2B 2026 guide (+61%)</td>
     </tr>
   </tbody>
 </table>
@@ -322,108 +341,170 @@
 <!-- ============ WHAT HAPPENED ============ -->
 <h2>What Happened</h2>
 
-<!-- 1. GTC -->
+<!-- 1. NemoClaw -->
 <div class="card">
-  <h3><span class="tag tag-purple">catalyst</span> NVIDIA GTC 2026 &mdash; March 16&ndash;19</h3>
-  <p>Jensen Huang keynote Monday March 16, 8&ndash;11 AM PT, SAP Center, San Jose. 700+ sessions. NVDA already rallying in anticipation.</p>
-  <p><strong>Expected announcements:</strong></p>
+  <h3><span class="tag tag-green">breaking</span> NVIDIA NemoClaw &mdash; Open-Source Enterprise AI Agent Platform</h3>
+  <p>NVIDIA launching <strong>NemoClaw</strong>, an open-source enterprise AI agent platform, to debut at GTC (Mar 16&ndash;19):</p>
   <ul>
-    <li>Vera Rubin &amp; Feynman architecture deep dives (core specs)</li>
-    <li>CPO (co-packaged optics) switches &mdash; Spectrum-X Photonics production details</li>
-    <li>New power architectures for AI factories</li>
-    <li>Physical AI &amp; robotics updates</li>
+    <li><strong>Open-source</strong> &mdash; publicly available and modifiable code</li>
+    <li><strong>Hardware-agnostic</strong> &mdash; works regardless of whether products run on NVIDIA chips</li>
+    <li><strong>Partners sought:</strong> Salesforce, Cisco, Google, Adobe, CrowdStrike</li>
+    <li><strong>Integrated</strong> with NVIDIA NeMo and NIM ecosystems</li>
   </ul>
-  <p>Feynman details (2028, 5&ndash;20x over Rubin) will be the first concrete data for CY2028 demand modeling. If ~25% of production moves to Intel 14A/EMIB, that&rsquo;s the first NVIDIA manufacturing diversification away from TSMC.</p>
-</div>
-
-<!-- 2. Export Controls -->
-<div class="card">
-  <h3><span class="tag tag-orange">geopolitical</span> US-China Export Controls Tightening</h3>
-  <p><strong>(a)</strong> US reportedly drafting rules requiring government approval to ship AI chips <em>anywhere</em> outside the US. (TechCrunch, Mar 5)</p>
-  <p><strong>(b)</strong> H200 exports to China capped at <strong>75,000 units per company</strong> &mdash; well below ~2M chip orders (~$54B gross) from Chinese firms.</p>
-  <p><strong>(c)</strong> China announces massive AI/semiconductor subsidy program (Mar 6) &mdash; doubling down on self-sufficiency.</p>
-  <p><strong>(d)</strong> Trump-Xi summit scheduled March 31&ndash;April 2 &mdash; export policy under review ahead of visit.</p>
+  <p><strong>Strategy:</strong> Android-style play &mdash; give away the agent platform to drive NIM ecosystem adoption, which runs best on NVIDIA GPUs. This is the most aggressive CUDA ecosystem extension into the software/platform layer.</p>
   <div class="bull-bear">
     <div class="bull">
       <strong>Bull</strong><br>
-      Domestic self-sufficiency programs historically fail on timeline. Huawei Ascend still generation(s) behind on perf/watt. Universal export control proposal is politically extreme.
+      Enterprise agentic AI is a massive new compute demand category. NVIDIA capturing both hardware AND software orchestration. NIM lock-in at the framework level.
     </div>
     <div class="bear">
       <strong>Bear</strong><br>
-      H200 cap is directly bearish for NVIDIA near-term China revenue. The ~$40B net China estimate may need significant downward revision. Regulatory uncertainty overhang persists.
+      Agent frameworks proliferating (AWS OpenClaw, LangChain, CrewAI, Anthropic MCP). NemoClaw&rsquo;s differentiation is NIM integration &mdash; unclear if that&rsquo;s enough for enterprise adoption.
     </div>
   </div>
 </div>
 
-<!-- 3. Ratepayer Pledge -->
+<!-- 2. Microsoft E7 -->
 <div class="card">
-  <h3><span class="tag tag-blue">policy</span> White House Ratepayer Protection Pledge</h3>
-  <p>Amazon, Google, Meta, Microsoft, OpenAI, Oracle, and xAI signed the pledge on March 4&ndash;5. Commitments:</p>
+  <h3><span class="tag tag-purple">monetization</span> Microsoft E7 &mdash; $99/User/Month &ldquo;First Frontier Suite&rdquo;</h3>
+  <p><strong>Launching May 1, 2026.</strong> Bundles M365 E5 + Copilot + <strong>Agent 365</strong> (new agent management platform).</p>
   <ul>
-    <li>Self-fund <strong>all</strong> new power generation for data centers</li>
-    <li>Pay for all power delivery infrastructure upgrades &mdash; whether they use the electricity or not</li>
-    <li>Negotiate separate rate structures with utilities and state governments</li>
-    <li>Invest in local communities: hiring, skills programs, grid reliability</li>
+    <li><strong>$99/user/month</strong> &mdash; 65% above E5 (~$60), but $18 below buying components separately ($117)</li>
+    <li><strong>Agent 365</strong> also standalone at $15/user/month</li>
+    <li><strong>Work IQ</strong> analytics for tracking AI usage across the org</li>
   </ul>
-  <p><strong>Thesis impact:</strong> This is the political green light for the AI infrastructure buildout. Revealed preference &mdash; 7 companies wouldn&rsquo;t commit to self-funding power if they expected demand to soften. Added to computational abundance supporting evidence.</p>
+  <p><strong>Revenue math:</strong> 450M+ commercial seats. At 5% adoption = $2.7B. At 10% = $5.4B. At 20% = $10.8B incremental annual revenue.</p>
+  <p><strong>Agent 365 is the real signal:</strong> Microsoft betting on enterprise AI agents (not just copilots) as the next adoption wave. Each E7 seat = continuous inference compute demand.</p>
   <div class="bull-bear">
     <div class="bull">
       <strong>Bull</strong><br>
-      Removes political friction. Accelerates permitting. Buildout proceeds at planned pace.
+      First major enterprise SW company pricing AI as core product. The bundling makes upgrade easy ($99 < $117). Enormous ARPU expansion potential. If adoption is strong, re-rates MSFT.
     </div>
     <div class="bear">
       <strong>Bear</strong><br>
-      &ldquo;Bring your own power&rdquo; adds material cost ($10B+ per company). 49 GW projected shortfall by 2028 remains the physical constraint regardless of who pays.
+      Adoption could be slow. Many enterprises still evaluating Copilot ROI. $99 in a cost-cutting environment faces budget resistance.
     </div>
   </div>
 </div>
 
-<!-- 4. TSMC -->
+<!-- 3. Google GenAI.mil -->
 <div class="card">
-  <h3><span class="tag tag-blue">data</span> TSMC February 2026 Revenue</h3>
-  <p>NT$317.66 billion reported:</p>
+  <h3><span class="tag tag-blue">enterprise AI</span> Google GenAI.mil &mdash; Gemini Agents for 3M Pentagon Personnel</h3>
+  <p>Google Cloud&rsquo;s <strong>GenAI.mil</strong> platform deployed to Pentagon desktops today. $200M CDAO contract.</p>
+  <ul>
+    <li>Gemini AI agents for unclassified work across <strong>3 million</strong> military/civilian/contractor users</li>
+    <li>Secretary of War Hegseth emailed all DoD introducing the platform</li>
+    <li>Classified network negotiations ongoing</li>
+    <li>Internal backlash: 100+ Google AI employees sent letter to Jeff Dean</li>
+  </ul>
+  <p><strong>Signal:</strong> The most conservative institution on Earth deploying AI agents at massive scale. Fills gap from Anthropic blacklisting. Continuous inference compute for 3M users.</p>
+</div>
+
+<!-- 4. DeepSeek V4 -->
+<div class="card">
+  <h3><span class="tag tag-orange">efficiency test</span> DeepSeek V4 Launched &mdash; 1T Parameters, Open-Source</h3>
+  <p>DeepSeek V4 has launched:</p>
+  <ul>
+    <li><strong>1T parameters</strong>, multimodal (text/image/video)</li>
+    <li><strong>MODEL1 architecture</strong> &mdash; 40% memory reduction</li>
+    <li><strong>Sparse FP8</strong> &mdash; 1.8x faster inference</li>
+    <li><strong>Open-source</strong> license, no fees</li>
+    <li><strong>Withheld from NVIDIA and AMD</strong> &mdash; first exclusion of US chip companies</li>
+    <li>Optimized for <strong>Huawei Ascend</strong></li>
+  </ul>
+  <div class="bull-bear">
+    <div class="bull">
+      <strong>Supporting (Jevons)</strong><br>
+      Frontier-scale model = massive training compute. Open-source = thousands of inference deployments. Total demand expands as after every prior efficiency gain.
+    </div>
+    <div class="bear">
+      <strong>Disconfirming (efficiency)</strong><br>
+      1.8x inference speedup stacks on R1 cheap training. US hardware exclusion + Ascend optimization = China AI stack decoupling. Hardest efficiency test for Jevons paradox yet.
+    </div>
+  </div>
+</div>
+
+<!-- 5. TSMC Memory Crunch -->
+<div class="card">
+  <h3><span class="tag tag-yellow">new risk</span> TSMC: Memory Crunch Sapping Consumer Demand</h3>
+  <p>Bloomberg Intelligence (Charles Shum): <em>&ldquo;The softness is unlikely to be cooling AI-chip demand, and probably reflects weaker smartphone and PC demand, with higher memory prices pressuring shipments.&rdquo;</em></p>
+  <p><strong>Mechanism:</strong> HBM production absorbs 25-30% of DRAM wafer starts &rarr; commodity DRAM expensive &rarr; OEMs cut device orders &rarr; TSMC non-AI revenue underperforms. AI demand so strong it&rsquo;s cannibalizing other semiconductor categories.</p>
   <table class="pred-table" style="max-width:500px;">
-    <tr><td>M/M</td><td class="price" style="color:var(--red);">&minus;20.8%</td><td class="note">Seasonal (Lunar New Year)</td></tr>
-    <tr><td>Y/Y</td><td class="price" style="color:var(--green);">+22.2%</td><td class="note">Below full-year target but expected</td></tr>
-    <tr><td>YTD (Jan+Feb)</td><td class="price" style="color:var(--green);">+29.9% Y/Y</td><td class="note">Tracking at ~30% full-year guidance</td></tr>
+    <tr><td>YTD (Jan+Feb)</td><td class="price" style="color:var(--green);">+29.9% Y/Y</td><td class="note">At guidance, but Q1 may hit low end</td></tr>
+    <tr><td>Feb Y/Y</td><td class="price" style="color:var(--green);">+22.2%</td><td class="note">Below target (seasonal + consumer weakness)</td></tr>
+    <tr><td>P010 status</td><td class="price">80%</td><td class="note">Full-year on track; new risk noted</td></tr>
   </table>
-  <p><strong>P010 status:</strong> On track at 80%. TSMC historically beats its own guidance.</p>
 </div>
 
-<!-- 5. Micron -->
+<!-- 6. Meta Moltbook -->
 <div class="card">
-  <h3><span class="tag tag-purple">catalyst</span> Micron FQ2 Earnings &mdash; March 18</h3>
-  <p>MU surging: +5.14% yesterday, indicated $401&ndash;418 today. 52-week range $61.54 to $455.50.</p>
-  <p><strong>Guidance:</strong> $18.7B revenue (+132% Y/Y), EPS $8.19 (+480% Y/Y)</p>
-  <p><strong>P016 bar:</strong> $18.5B at 80% confidence. Micron&rsquo;s own guide exceeds our bar. Resolution near-certain.</p>
-  <p class="note">HBM supply fully sold out through 2026. SK Hynix CEO: &ldquo;seller&rsquo;s market.&rdquo;</p>
+  <h3><span class="tag tag-blue">agentic AI</span> Meta Acquires Moltbook &mdash; &ldquo;Reddit for AI Agents&rdquo;</h3>
+  <p>Meta acquired <strong>Moltbook</strong>, a social network where AI agents interact with each other. Founders joining <strong>Meta Superintelligence Labs</strong> (Alexandr Wang&rsquo;s unit) on March 16.</p>
+  <p><strong>Why it matters:</strong> Agent-to-agent coordination infrastructure. If AI agents communicate on social platforms, inference demand scales non-linearly with agent count. Meta building this into 3.58B daily user social graph.</p>
 </div>
 
-<!-- 6. Nebius -->
+<!-- 7. GTC Preview -->
 <div class="card">
-  <h3><span class="tag tag-green">demand signal</span> Nebius &mdash; $7&ndash;9B Revenue for 2026</h3>
-  <p>Up from $1.25B in 2025 (~5&ndash;7x growth). Wedbush flagged as top AI infrastructure takeover target (MSFT, GOOG, AMZN potential acquirers).</p>
-  <p>GPU cloud demand confirmation: enterprise/cloud AI compute demand is real and accelerating beyond hyperscaler self-consumption. Non-US footprint adds sovereign AI data point.</p>
+  <h3><span class="tag tag-purple">catalyst</span> NVIDIA GTC 2026 &mdash; March 16&ndash;19 (6 days)</h3>
+  <p>Jensen keynote Monday March 16, 8&ndash;11 AM PT. 700+ sessions. Expected:</p>
+  <ul>
+    <li><strong>NemoClaw</strong> official launch (see above)</li>
+    <li>Vera Rubin &amp; <strong>Feynman</strong> architecture deep dives (2028, 5&ndash;20x over Rubin)</li>
+    <li>CPO switches &mdash; Spectrum-X Photonics production</li>
+    <li>&ldquo;Several new chips the world has never seen&rdquo;</li>
+    <li>SK Hynix &amp; Samsung HBM4 showcase</li>
+  </ul>
+  <p>If Feynman specs confirm ~25% production on Intel 14A/EMIB, that&rsquo;s the first NVIDIA manufacturing diversification away from TSMC.</p>
 </div>
 
-<!-- 7. Thinking Machines -->
+<!-- 8. Thinking Machines -->
 <div class="card">
-  <h3><span class="tag tag-green">demand signal</span> NVIDIA Invests in Thinking Machines Lab</h3>
-  <p>Per WSJ (March 10): NVIDIA investing in Mira Murati&rsquo;s startup (ex-OpenAI CTO). Multiyear partnership &mdash; startup deploys <strong>at least 1 GW</strong> of cutting-edge NVIDIA chips for frontier AI training and serving.</p>
-  <p>Another GW-scale commitment. Shows NVIDIA&rsquo;s invest-in-customers strategy (similar to CoreWeave model). 1 GW implies hundreds of thousands of GPUs.</p>
+  <h3><span class="tag tag-green">demand signal</span> NVIDIA Invests in Thinking Machines Lab (1 GW)</h3>
+  <p>NVIDIA investing in Mira Murati&rsquo;s startup (ex-OpenAI CTO). Multiyear partnership for <strong>&ge;1 GW Vera Rubin systems</strong> for frontier model training. Another GW-scale customer commitment additive to hyperscaler demand. Pattern: invest-in-customers flywheel (CoreWeave, Anthropic, OpenAI).</p>
 </div>
 
-<!-- 8. Anthropic -->
+<!-- 9. Export Controls -->
 <div class="card">
-  <h3><span class="tag tag-orange">legal</span> Anthropic Sues Defense Department</h3>
-  <p>Anthropic filed suit against Trump admin for designating it a security threat and canceling federal contracts. 37 AI researchers at OpenAI and Google filed a brief supporting Anthropic.</p>
-  <p>Meanwhile, Microsoft deepening Anthropic integration into M365 (&ldquo;Copilot Cowork&rdquo;). Barron&rsquo;s: potentially the inflection where AI helps rather than hurts software stocks.</p>
+  <h3><span class="tag tag-orange">geopolitical</span> US-China Export Controls &mdash; Multiple Developments</h3>
+  <p><strong>(a)</strong> H200 exports capped at 75K units/company &mdash; below ~2M chip orders.</p>
+  <p><strong>(b)</strong> US drafting universal export control rules (approval needed for <em>any</em> export).</p>
+  <p><strong>(c)</strong> China massive AI/semiconductor subsidy counter-program.</p>
+  <p><strong>(d)</strong> Trump-Xi summit March 31&ndash;April 2 &mdash; export policy under review.</p>
+  <div class="bull-bear">
+    <div class="bull">
+      <strong>Bull</strong><br>
+      Domestic self-sufficiency programs fail on timeline. Huawei Ascend generations behind. Universal control proposal politically extreme.
+    </div>
+    <div class="bear">
+      <strong>Bear</strong><br>
+      H200 cap directly bearish for NVIDIA China rev. ~$40B estimate needs downward revision. DeepSeek V4 on Ascend validates China stack.
+    </div>
+  </div>
 </div>
 
-<!-- 9. Iran -->
+<!-- 10. Memory/SK Hynix -->
 <div class="card">
-  <h3><span class="tag tag-yellow">macro</span> Iran Conflict De-escalation</h3>
-  <p>Trump said Iran war will end &ldquo;very soon&rdquo; &mdash; boosting markets broadly. European semis rebounding: ASML +3.5%, Infineon +6%. SK Hynix higher. This is the macro backdrop for today&rsquo;s positive action across the AI stack.</p>
+  <h3><span class="tag tag-green">milestone</span> SK Hynix Completes World-First HBM4 Development</h3>
+  <p>SK Hynix completed HBM4 development, readying mass production. 62% HBM market share. Fast-tracking M15X fab Phase 4 (March, pulled forward from April). Micron shipping HBM4 samples at 11 Gbps. The 16-Hi HBM4 race between SK Hynix, Samsung, and Micron intensifying ahead of GTC.</p>
+</div>
+
+<!-- 11. CoreWeave -->
+<div class="card">
+  <h3><span class="tag tag-red">risk</span> CoreWeave &mdash; Securities Fraud Deadline March 13</h3>
+  <p>$452M Q4 net loss. 12+ class action lawsuits. Lead plaintiff deadline in <strong>3 days</strong>. Blue Owl $4B financing still unresolved. The $8.5B Meta-backed loan (expected March) is the key test &mdash; if it fails after Blue Owl, AI infrastructure financing stress becomes systemic.</p>
+</div>
+
+<!-- 12. Broader -->
+<div class="card">
+  <h3><span class="tag tag-yellow">macro</span> Other Notable Developments</h3>
+  <ul>
+    <li><strong>Iran:</strong> Trump says war will end &ldquo;very soon&rdquo; &mdash; markets broadly higher; European semis rebounding (ASML +3.5%)</li>
+    <li><strong>Anthropic:</strong> Suing Pentagon over blacklisting; 37 AI researchers at OpenAI/Google filed supporting brief</li>
+    <li><strong>Ratepayer Pledge:</strong> 7 companies (Amazon, Google, Meta, MSFT, OpenAI, Oracle, xAI) committed to self-funding all AI data center power</li>
+    <li><strong>Citi raised Micron PT to $430</strong> (from $385) ahead of March 18 earnings</li>
+    <li><strong>WSTS:</strong> Global semiconductor market forecast $975B in 2026 (+25% YoY)</li>
+    <li><strong>Arista:</strong> Doubled AI networking revenue outlook to $3.25B (~30% of total revenue)</li>
+  </ul>
 </div>
 
 <!-- ============ THESIS STATUS ============ -->
@@ -436,7 +517,7 @@
     <tr>
       <td><strong>Computational Abundance</strong></td>
       <td><span class="tag tag-green">moderate-high</span></td>
-      <td class="note">Ratepayer Pledge added as supporting evidence. Export control uncertainty is a headwind for China demand, not the core thesis.</td>
+      <td class="note">3 new supporting signals: NemoClaw (agentic infra layer), E7 ($99 enterprise AI pricing), GenAI.mil (3M gov users). DeepSeek V4 efficiency adds to Jevons paradox test. Net: thesis strengthened on demand side; efficiency question intensifies.</td>
     </tr>
     <tr>
       <td><strong>Custom Silicon</strong> (sub-thesis)</td>
@@ -458,21 +539,28 @@
       <td>TSMC 2026 revenue &ge;30% USD growth</td>
       <td class="price">80%</td>
       <td><span class="tag tag-green">on track</span></td>
-      <td class="note">YTD +29.9% Y/Y. Feb seasonal dip expected.</td>
+      <td class="note">YTD +29.9%. Bloomberg: consumer weakness new risk factor, AI demand intact.</td>
     </tr>
     <tr>
       <td><strong>P016</strong></td>
       <td>Micron FQ2 revenue &ge;$18.5B</td>
       <td class="price">80%</td>
       <td><span class="tag tag-purple">resolves Mar 18</span></td>
-      <td class="note">Micron guided $18.7B &mdash; exceeds our bar.</td>
+      <td class="note">Micron guided $18.7B. Citi PT raised to $430.</td>
     </tr>
     <tr>
       <td><strong>P017</strong></td>
       <td>NVIDIA Q2 FY27 revenue &gt;$80B</td>
       <td class="price">75%</td>
       <td><span class="tag tag-blue">pending</span></td>
-      <td class="note">GTC may provide demand visibility.</td>
+      <td class="note">GTC may provide visibility.</td>
+    </tr>
+    <tr>
+      <td><strong>P018</strong></td>
+      <td>NVIDIA non-GAAP GM &gt;73% all FY27</td>
+      <td class="price">60%</td>
+      <td><span class="tag tag-green">on track</span></td>
+      <td class="note">Q1 guided 75% &plusmn;50bps.</td>
     </tr>
     <tr>
       <td><strong>P019</strong></td>
@@ -483,16 +571,23 @@
     </tr>
   </tbody>
 </table>
-<p class="note" style="margin-top:0.5rem;">No predictions resolved. No new predictions added.</p>
+<p class="note" style="margin-top:0.5rem;">No predictions resolved this session. GTC (Mar 16) will provide data for potential new predictions on Rubin ramp and Feynman specs.</p>
 
 <!-- ============ CATALYSTS ============ -->
 <h2>Upcoming Catalysts</h2>
 <div class="timeline">
   <div class="timeline-item">
+    <div class="timeline-date">Mar 13</div>
+    <div class="timeline-content">
+      <strong>CoreWeave Lead Plaintiff Deadline <span class="tag tag-yellow">MOD</span></strong>
+      <span class="note">Securities fraud class action. Financing risk signal.</span>
+    </div>
+  </div>
+  <div class="timeline-item">
     <div class="timeline-date">Mar 16&ndash;19</div>
     <div class="timeline-content">
       <strong>NVIDIA GTC 2026 <span class="tag tag-red">HIGH</span></strong>
-      <span class="note">Rubin/Feynman details, product roadmap, customer commitments. Affects P017, P009, P018.</span>
+      <span class="note">NemoClaw launch, Rubin/Feynman details, customer commitments. P017, P018.</span>
     </div>
   </div>
   <div class="timeline-item">
@@ -506,20 +601,34 @@
     <div class="timeline-date">Mar 31&ndash;Apr 2</div>
     <div class="timeline-content">
       <strong>Trump-Xi Summit <span class="tag tag-orange">HIGH</span></strong>
-      <span class="note">Export control decisions, NVIDIA China revenue implications.</span>
+      <span class="note">Export control decisions, NVIDIA China revenue.</span>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">Apr 15</div>
+    <div class="timeline-content">
+      <strong>ASML Q1 Earnings <span class="tag tag-yellow">MOD</span></strong>
+      <span class="note">Litho order trends, equipment leading indicator.</span>
     </div>
   </div>
   <div class="timeline-item">
     <div class="timeline-date">Apr 17</div>
     <div class="timeline-content">
       <strong>TSMC Q1 2026 Earnings <span class="tag tag-orange">HIGH</span></strong>
-      <span class="note">N2 ramp update, margin trajectory. P010, P011.</span>
+      <span class="note">N2 ramp, margin trajectory, memory crunch impact. P010, P011.</span>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">May 1</div>
+    <div class="timeline-content">
+      <strong>Microsoft E7 Launch <span class="tag tag-yellow">MOD</span></strong>
+      <span class="note">Initial uptake data will be critical for MSFT AI monetization thesis.</span>
     </div>
   </div>
   <div class="timeline-item">
     <div class="timeline-date">Late Apr</div>
     <div class="timeline-content">
-      <strong>Hyperscaler Q1 Earnings Season <span class="tag tag-orange">HIGH</span></strong>
+      <strong>Hyperscaler Q1 Earnings <span class="tag tag-orange">HIGH</span></strong>
       <span class="note">Capex execution tracking. P008, P014.</span>
     </div>
   </div>
@@ -536,28 +645,38 @@
 <h2>Open Questions</h2>
 
 <div class="question">
-  <strong>1. How does the H200 75K/company cap affect NVIDIA&rsquo;s FY27 revenue trajectory?</strong><br>
-  Earlier analysis assumed ~$40B net from China H200 orders. If capped at 75K per company across the largest Chinese AI firms, actual revenue could be substantially lower. Need to model scenarios.
+  <strong>1. What&rsquo;s the realistic E7 adoption curve?</strong><br>
+  450M+ commercial seats. Revenue sensitivity is $5.4B per 10% penetration. Post-May 1 adoption data will be the most important MSFT data point of 2026.
 </div>
 
 <div class="question">
-  <strong>2. Will GTC reveal Feynman manufacturing split with Intel?</strong><br>
-  If 25% of Feynman production goes to Intel 14A, it&rsquo;s the first crack in TSMC&rsquo;s AI chip manufacturing monopoly. Bullish for Intel, risk factor for TSMC thesis.
+  <strong>2. How does the H200 75K/company cap affect NVIDIA&rsquo;s FY27 revenue?</strong><br>
+  Earlier analysis assumed ~$40B net. If capped at 75K per company across largest Chinese firms, actual revenue could be substantially lower.
 </div>
 
 <div class="question">
-  <strong>3. Is Microsoft&rsquo;s 15% YTD decline a valuation opportunity or a signal?</strong><br>
-  Largest AI capex spender underperforming. Rotation away from high-capex names? Copilot monetization timeline concern? Worth investigating.
+  <strong>3. Will GTC reveal Feynman manufacturing split with Intel?</strong><br>
+  If 25% on Intel 14A, it&rsquo;s the first crack in TSMC&rsquo;s AI chip monopoly. Bullish for Intel, risk factor for TSMC.
 </div>
 
 <div class="question">
-  <strong>4. How real is the Nebius takeover speculation?</strong><br>
-  At $7&ndash;9B revenue growing 5&ndash;7x, Nebius would be expensive but strategically valuable for any hyperscaler wanting instant GPU cloud capacity.
+  <strong>4. Is the TSMC memory-crunch-sapping-consumer-demand dynamic durable?</strong><br>
+  HBM absorbing DRAM wafer starts &rarr; expensive commodity DRAM &rarr; consumer weakness. AI cannibalizing other semi demand through supply chain.
+</div>
+
+<div class="question">
+  <strong>5. How will NemoClaw compete in the crowded agent framework landscape?</strong><br>
+  AWS OpenClaw, LangChain, CrewAI, Anthropic MCP, Google Vertex. NVIDIA&rsquo;s edge is NIM integration. Will enterprises consolidate on one platform?
+</div>
+
+<div class="question">
+  <strong>6. Is DeepSeek V4&rsquo;s NVIDIA/AMD exclusion the start of a broader pattern?</strong><br>
+  If Chinese frontier models withhold from US chip validation, performance claims become unverifiable. Asymmetric information risk.
 </div>
 
 <!-- ============ FOOTER ============ -->
 <footer>
-  AI Ecosystem Analyst &mdash; Prices from web search &amp; IBKR wire services, March 10, 2026. Not investment advice.
+  AI Ecosystem Analyst &mdash; Prices from web search, March 10, 2026. Not investment advice.
 </footer>
 
 </body>
