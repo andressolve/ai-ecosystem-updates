@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Ecosystem Update — March 10, 2026</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2333;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --green: #3fb950;
+    --red: #f85149;
+    --yellow: #d29922;
+    --orange: #db6d28;
+    --purple: #bc8cff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  header h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  header .meta {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+  }
+  header .meta span {
+    margin-right: 1.5rem;
+  }
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--accent);
+  }
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.75rem;
+  }
+
+  /* Market Snapshot Table */
+  .market-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+  .market-table th {
+    text-align: left;
+    padding: 0.6rem 1rem;
+    background: var(--surface2);
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border);
+  }
+  .market-table td {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .market-table tr:hover {
+    background: var(--surface);
+  }
+  .ticker {
+    font-weight: 600;
+    color: var(--accent);
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.85rem;
+  }
+  .price {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-weight: 500;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .tag-green { background: rgba(63,185,80,0.15); color: var(--green); }
+  .tag-red { background: rgba(248,81,73,0.15); color: var(--red); }
+  .tag-yellow { background: rgba(210,153,34,0.15); color: var(--yellow); }
+  .tag-orange { background: rgba(219,109,40,0.15); color: var(--orange); }
+  .tag-purple { background: rgba(188,140,255,0.15); color: var(--purple); }
+  .tag-blue { background: rgba(88,166,255,0.15); color: var(--accent); }
+  .note { color: var(--text-muted); font-size: 0.85rem; }
+
+  /* Cards */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin: 1rem 0;
+  }
+  .card h3 {
+    margin: 0 0 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .card p { margin: 0.5rem 0; font-size: 0.9rem; }
+  .card ul { margin: 0.5rem 0 0.5rem 1.25rem; font-size: 0.9rem; }
+  .card li { margin: 0.25rem 0; }
+
+  .bull-bear {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 0.75rem;
+  }
+  .bull, .bear {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+  }
+  .bull { background: rgba(63,185,80,0.08); border-left: 3px solid var(--green); }
+  .bear { background: rgba(248,81,73,0.08); border-left: 3px solid var(--red); }
+  .bull strong, .bear strong { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; }
+
+  /* Catalyst timeline */
+  .timeline {
+    position: relative;
+    margin: 1rem 0;
+  }
+  .timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-date {
+    flex-shrink: 0;
+    width: 100px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 600;
+    padding-top: 0.1rem;
+  }
+  .timeline-content {
+    flex: 1;
+    font-size: 0.9rem;
+  }
+  .timeline-content strong { display: block; margin-bottom: 0.2rem; }
+  .timeline-content .note { font-size: 0.8rem; }
+
+  /* Predictions */
+  .pred-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.85rem;
+  }
+  .pred-table th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    background: var(--surface2);
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border);
+  }
+  .pred-table td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  /* Open questions */
+  .question {
+    background: var(--surface);
+    border-left: 3px solid var(--yellow);
+    padding: 0.75rem 1rem;
+    margin: 0.75rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.9rem;
+  }
+  .question strong { color: var(--yellow); }
+
+  /* Footer */
+  footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    body { padding: 1rem; }
+    .bull-bear { grid-template-columns: 1fr; }
+    .timeline-item { flex-direction: column; gap: 0.25rem; }
+    .timeline-date { width: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>AI Ecosystem Update</h1>
+  <div class="meta">
+    <span>March 10, 2026</span>
+    <span>Daily Scan</span>
+    <span>Full Tier 1 + Tier 2 + Tier 3 + Macro</span>
+  </div>
+</header>
+
+<!-- ============ MARKET SNAPSHOT ============ -->
+<h2>Market Snapshot</h2>
+<table class="market-table">
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Ticker</th>
+      <th>Price</th>
+      <th>Signal</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>NVIDIA</td>
+      <td><span class="ticker">NVDA</span></td>
+      <td class="price">$182.65</td>
+      <td><span class="tag tag-green">+2.68%</span></td>
+      <td class="note">GTC in 6 days</td>
+    </tr>
+    <tr>
+      <td>Broadcom</td>
+      <td><span class="ticker">AVGO</span></td>
+      <td class="price">$352.33</td>
+      <td><span class="tag tag-green">+4.6%</span></td>
+      <td class="note">Range $342&ndash;353</td>
+    </tr>
+    <tr>
+      <td>TSMC</td>
+      <td><span class="ticker">TSM</span></td>
+      <td class="price">~$345</td>
+      <td><span class="tag tag-yellow">flat</span></td>
+      <td class="note">Feb revenue released today</td>
+    </tr>
+    <tr>
+      <td>Microsoft</td>
+      <td><span class="ticker">MSFT</span></td>
+      <td class="price">$404.66</td>
+      <td><span class="tag tag-red">&minus;15% YTD</span></td>
+      <td class="note">Copilot Cowork / Anthropic integration</td>
+    </tr>
+    <tr>
+      <td>Alphabet</td>
+      <td><span class="ticker">GOOG</span></td>
+      <td class="price">$304.66</td>
+      <td><span class="tag tag-yellow">volatile</span></td>
+      <td class="note">Range $290&ndash;307</td>
+    </tr>
+    <tr>
+      <td>Meta</td>
+      <td><span class="ticker">META</span></td>
+      <td class="price">$647.39</td>
+      <td><span class="tag tag-green">+0.39%</span></td>
+      <td class="note">&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Amazon</td>
+      <td><span class="ticker">AMZN</span></td>
+      <td class="price">$213.50</td>
+      <td><span class="tag tag-red">&minus;7.6% YTD</span></td>
+      <td class="note">&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Micron</td>
+      <td><span class="ticker">MU</span></td>
+      <td class="price">~$401&ndash;418</td>
+      <td><span class="tag tag-green">+5.14%</span></td>
+      <td class="note">Earnings Mar 18</td>
+    </tr>
+    <tr>
+      <td>CoreWeave</td>
+      <td><span class="ticker">CRWV</span></td>
+      <td class="price">$73.91</td>
+      <td><span class="tag tag-red">&minus;60% from high</span></td>
+      <td class="note">Down from $187</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ============ WHAT HAPPENED ============ -->
+<h2>What Happened</h2>
+
+<!-- 1. GTC -->
+<div class="card">
+  <h3><span class="tag tag-purple">catalyst</span> NVIDIA GTC 2026 &mdash; March 16&ndash;19</h3>
+  <p>Jensen Huang keynote Monday March 16, 8&ndash;11 AM PT, SAP Center, San Jose. 700+ sessions. NVDA already rallying in anticipation.</p>
+  <p><strong>Expected announcements:</strong></p>
+  <ul>
+    <li>Vera Rubin &amp; Feynman architecture deep dives (core specs)</li>
+    <li>CPO (co-packaged optics) switches &mdash; Spectrum-X Photonics production details</li>
+    <li>New power architectures for AI factories</li>
+    <li>Physical AI &amp; robotics updates</li>
+  </ul>
+  <p>Feynman details (2028, 5&ndash;20x over Rubin) will be the first concrete data for CY2028 demand modeling. If ~25% of production moves to Intel 14A/EMIB, that&rsquo;s the first NVIDIA manufacturing diversification away from TSMC.</p>
+</div>
+
+<!-- 2. Export Controls -->
+<div class="card">
+  <h3><span class="tag tag-orange">geopolitical</span> US-China Export Controls Tightening</h3>
+  <p><strong>(a)</strong> US reportedly drafting rules requiring government approval to ship AI chips <em>anywhere</em> outside the US. (TechCrunch, Mar 5)</p>
+  <p><strong>(b)</strong> H200 exports to China capped at <strong>75,000 units per company</strong> &mdash; well below ~2M chip orders (~$54B gross) from Chinese firms.</p>
+  <p><strong>(c)</strong> China announces massive AI/semiconductor subsidy program (Mar 6) &mdash; doubling down on self-sufficiency.</p>
+  <p><strong>(d)</strong> Trump-Xi summit scheduled March 31&ndash;April 2 &mdash; export policy under review ahead of visit.</p>
+  <div class="bull-bear">
+    <div class="bull">
+      <strong>Bull</strong><br>
+      Domestic self-sufficiency programs historically fail on timeline. Huawei Ascend still generation(s) behind on perf/watt. Universal export control proposal is politically extreme.
+    </div>
+    <div class="bear">
+      <strong>Bear</strong><br>
+      H200 cap is directly bearish for NVIDIA near-term China revenue. The ~$40B net China estimate may need significant downward revision. Regulatory uncertainty overhang persists.
+    </div>
+  </div>
+</div>
+
+<!-- 3. Ratepayer Pledge -->
+<div class="card">
+  <h3><span class="tag tag-blue">policy</span> White House Ratepayer Protection Pledge</h3>
+  <p>Amazon, Google, Meta, Microsoft, OpenAI, Oracle, and xAI signed the pledge on March 4&ndash;5. Commitments:</p>
+  <ul>
+    <li>Self-fund <strong>all</strong> new power generation for data centers</li>
+    <li>Pay for all power delivery infrastructure upgrades &mdash; whether they use the electricity or not</li>
+    <li>Negotiate separate rate structures with utilities and state governments</li>
+    <li>Invest in local communities: hiring, skills programs, grid reliability</li>
+  </ul>
+  <p><strong>Thesis impact:</strong> This is the political green light for the AI infrastructure buildout. Revealed preference &mdash; 7 companies wouldn&rsquo;t commit to self-funding power if they expected demand to soften. Added to computational abundance supporting evidence.</p>
+  <div class="bull-bear">
+    <div class="bull">
+      <strong>Bull</strong><br>
+      Removes political friction. Accelerates permitting. Buildout proceeds at planned pace.
+    </div>
+    <div class="bear">
+      <strong>Bear</strong><br>
+      &ldquo;Bring your own power&rdquo; adds material cost ($10B+ per company). 49 GW projected shortfall by 2028 remains the physical constraint regardless of who pays.
+    </div>
+  </div>
+</div>
+
+<!-- 4. TSMC -->
+<div class="card">
+  <h3><span class="tag tag-blue">data</span> TSMC February 2026 Revenue</h3>
+  <p>NT$317.66 billion reported:</p>
+  <table class="pred-table" style="max-width:500px;">
+    <tr><td>M/M</td><td class="price" style="color:var(--red);">&minus;20.8%</td><td class="note">Seasonal (Lunar New Year)</td></tr>
+    <tr><td>Y/Y</td><td class="price" style="color:var(--green);">+22.2%</td><td class="note">Below full-year target but expected</td></tr>
+    <tr><td>YTD (Jan+Feb)</td><td class="price" style="color:var(--green);">+29.9% Y/Y</td><td class="note">Tracking at ~30% full-year guidance</td></tr>
+  </table>
+  <p><strong>P010 status:</strong> On track at 80%. TSMC historically beats its own guidance.</p>
+</div>
+
+<!-- 5. Micron -->
+<div class="card">
+  <h3><span class="tag tag-purple">catalyst</span> Micron FQ2 Earnings &mdash; March 18</h3>
+  <p>MU surging: +5.14% yesterday, indicated $401&ndash;418 today. 52-week range $61.54 to $455.50.</p>
+  <p><strong>Guidance:</strong> $18.7B revenue (+132% Y/Y), EPS $8.19 (+480% Y/Y)</p>
+  <p><strong>P016 bar:</strong> $18.5B at 80% confidence. Micron&rsquo;s own guide exceeds our bar. Resolution near-certain.</p>
+  <p class="note">HBM supply fully sold out through 2026. SK Hynix CEO: &ldquo;seller&rsquo;s market.&rdquo;</p>
+</div>
+
+<!-- 6. Nebius -->
+<div class="card">
+  <h3><span class="tag tag-green">demand signal</span> Nebius &mdash; $7&ndash;9B Revenue for 2026</h3>
+  <p>Up from $1.25B in 2025 (~5&ndash;7x growth). Wedbush flagged as top AI infrastructure takeover target (MSFT, GOOG, AMZN potential acquirers).</p>
+  <p>GPU cloud demand confirmation: enterprise/cloud AI compute demand is real and accelerating beyond hyperscaler self-consumption. Non-US footprint adds sovereign AI data point.</p>
+</div>
+
+<!-- 7. Thinking Machines -->
+<div class="card">
+  <h3><span class="tag tag-green">demand signal</span> NVIDIA Invests in Thinking Machines Lab</h3>
+  <p>Per WSJ (March 10): NVIDIA investing in Mira Murati&rsquo;s startup (ex-OpenAI CTO). Multiyear partnership &mdash; startup deploys <strong>at least 1 GW</strong> of cutting-edge NVIDIA chips for frontier AI training and serving.</p>
+  <p>Another GW-scale commitment. Shows NVIDIA&rsquo;s invest-in-customers strategy (similar to CoreWeave model). 1 GW implies hundreds of thousands of GPUs.</p>
+</div>
+
+<!-- 8. Anthropic -->
+<div class="card">
+  <h3><span class="tag tag-orange">legal</span> Anthropic Sues Defense Department</h3>
+  <p>Anthropic filed suit against Trump admin for designating it a security threat and canceling federal contracts. 37 AI researchers at OpenAI and Google filed a brief supporting Anthropic.</p>
+  <p>Meanwhile, Microsoft deepening Anthropic integration into M365 (&ldquo;Copilot Cowork&rdquo;). Barron&rsquo;s: potentially the inflection where AI helps rather than hurts software stocks.</p>
+</div>
+
+<!-- 9. Iran -->
+<div class="card">
+  <h3><span class="tag tag-yellow">macro</span> Iran Conflict De-escalation</h3>
+  <p>Trump said Iran war will end &ldquo;very soon&rdquo; &mdash; boosting markets broadly. European semis rebounding: ASML +3.5%, Infineon +6%. SK Hynix higher. This is the macro backdrop for today&rsquo;s positive action across the AI stack.</p>
+</div>
+
+<!-- ============ THESIS STATUS ============ -->
+<h2>Thesis Status</h2>
+<table class="pred-table">
+  <thead>
+    <tr><th>Thesis</th><th>Status</th><th>Change</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Computational Abundance</strong></td>
+      <td><span class="tag tag-green">moderate-high</span></td>
+      <td class="note">Ratepayer Pledge added as supporting evidence. Export control uncertainty is a headwind for China demand, not the core thesis.</td>
+    </tr>
+    <tr>
+      <td><strong>Custom Silicon</strong> (sub-thesis)</td>
+      <td><span class="tag tag-blue">active</span></td>
+      <td class="note">No change. Broadcom Q2 (June) is next data point.</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ============ PREDICTIONS ============ -->
+<h2>Predictions Update</h2>
+<table class="pred-table">
+  <thead>
+    <tr><th>ID</th><th>Prediction</th><th>Prob</th><th>Status</th><th>Notes</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>P010</strong></td>
+      <td>TSMC 2026 revenue &ge;30% USD growth</td>
+      <td class="price">80%</td>
+      <td><span class="tag tag-green">on track</span></td>
+      <td class="note">YTD +29.9% Y/Y. Feb seasonal dip expected.</td>
+    </tr>
+    <tr>
+      <td><strong>P016</strong></td>
+      <td>Micron FQ2 revenue &ge;$18.5B</td>
+      <td class="price">80%</td>
+      <td><span class="tag tag-purple">resolves Mar 18</span></td>
+      <td class="note">Micron guided $18.7B &mdash; exceeds our bar.</td>
+    </tr>
+    <tr>
+      <td><strong>P017</strong></td>
+      <td>NVIDIA Q2 FY27 revenue &gt;$80B</td>
+      <td class="price">75%</td>
+      <td><span class="tag tag-blue">pending</span></td>
+      <td class="note">GTC may provide demand visibility.</td>
+    </tr>
+    <tr>
+      <td><strong>P019</strong></td>
+      <td>Broadcom Q2 AI semis &ge;$10.0B</td>
+      <td class="price">80%</td>
+      <td><span class="tag tag-blue">pending</span></td>
+      <td class="note">June resolution.</td>
+    </tr>
+  </tbody>
+</table>
+<p class="note" style="margin-top:0.5rem;">No predictions resolved. No new predictions added.</p>
+
+<!-- ============ CATALYSTS ============ -->
+<h2>Upcoming Catalysts</h2>
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-date">Mar 16&ndash;19</div>
+    <div class="timeline-content">
+      <strong>NVIDIA GTC 2026 <span class="tag tag-red">HIGH</span></strong>
+      <span class="note">Rubin/Feynman details, product roadmap, customer commitments. Affects P017, P009, P018.</span>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">Mar 18</div>
+    <div class="timeline-content">
+      <strong>Micron FQ2 Earnings <span class="tag tag-red">HIGH</span></strong>
+      <span class="note">Memory cycle data, HBM demand, pricing. P016 resolves.</span>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">Mar 31&ndash;Apr 2</div>
+    <div class="timeline-content">
+      <strong>Trump-Xi Summit <span class="tag tag-orange">HIGH</span></strong>
+      <span class="note">Export control decisions, NVIDIA China revenue implications.</span>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">Apr 17</div>
+    <div class="timeline-content">
+      <strong>TSMC Q1 2026 Earnings <span class="tag tag-orange">HIGH</span></strong>
+      <span class="note">N2 ramp update, margin trajectory. P010, P011.</span>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">Late Apr</div>
+    <div class="timeline-content">
+      <strong>Hyperscaler Q1 Earnings Season <span class="tag tag-orange">HIGH</span></strong>
+      <span class="note">Capex execution tracking. P008, P014.</span>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">June</div>
+    <div class="timeline-content">
+      <strong>Broadcom Q2 FY2026 Earnings <span class="tag tag-yellow">HIGH</span></strong>
+      <span class="note">AI semiconductor trajectory. P019.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ OPEN QUESTIONS ============ -->
+<h2>Open Questions</h2>
+
+<div class="question">
+  <strong>1. How does the H200 75K/company cap affect NVIDIA&rsquo;s FY27 revenue trajectory?</strong><br>
+  Earlier analysis assumed ~$40B net from China H200 orders. If capped at 75K per company across the largest Chinese AI firms, actual revenue could be substantially lower. Need to model scenarios.
+</div>
+
+<div class="question">
+  <strong>2. Will GTC reveal Feynman manufacturing split with Intel?</strong><br>
+  If 25% of Feynman production goes to Intel 14A, it&rsquo;s the first crack in TSMC&rsquo;s AI chip manufacturing monopoly. Bullish for Intel, risk factor for TSMC thesis.
+</div>
+
+<div class="question">
+  <strong>3. Is Microsoft&rsquo;s 15% YTD decline a valuation opportunity or a signal?</strong><br>
+  Largest AI capex spender underperforming. Rotation away from high-capex names? Copilot monetization timeline concern? Worth investigating.
+</div>
+
+<div class="question">
+  <strong>4. How real is the Nebius takeover speculation?</strong><br>
+  At $7&ndash;9B revenue growing 5&ndash;7x, Nebius would be expensive but strategically valuable for any hyperscaler wanting instant GPU cloud capacity.
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  AI Ecosystem Analyst &mdash; Prices from web search &amp; IBKR wire services, March 10, 2026. Not investment advice.
+</footer>
+
+</body>
+</html>
