@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Ecosystem Update — April 8, 2026</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2333;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --green: #3fb950;
+    --red: #f85149;
+    --yellow: #d29922;
+    --orange: #db6d28;
+    --purple: #bc8cff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  header h1 { font-size: 1.75rem; font-weight: 600; letter-spacing: -0.02em; }
+  header .meta { color: var(--text-muted); font-size: 0.875rem; margin-top: 0.5rem; }
+  header .meta span { margin-right: 1.5rem; }
+  h2 { font-size: 1.25rem; font-weight: 600; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); color: var(--accent); }
+  h3 { font-size: 1rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+  .market-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+  .market-table th { text-align: left; padding: 0.6rem 1rem; background: var(--surface2); color: var(--text-muted); font-weight: 500; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+  .market-table td { padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); }
+  .market-table tr:hover { background: var(--surface); }
+  .ticker { font-weight: 600; color: var(--accent); font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.85rem; }
+  .price { font-family: 'SF Mono', 'Fira Code', monospace; font-weight: 500; }
+  .change-neg { color: var(--red); }
+  .change-pos { color: var(--green); }
+  .tag { display: inline-block; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.03em; }
+  .tag-green { background: rgba(63,185,80,0.15); color: var(--green); }
+  .tag-red { background: rgba(248,81,73,0.15); color: var(--red); }
+  .tag-yellow { background: rgba(210,153,34,0.15); color: var(--yellow); }
+  .tag-orange { background: rgba(219,109,40,0.15); color: var(--orange); }
+  .tag-purple { background: rgba(188,140,255,0.15); color: var(--purple); }
+  .tag-blue { background: rgba(88,166,255,0.15); color: var(--accent); }
+  .note { color: var(--text-muted); font-size: 0.85rem; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1rem 0; }
+  .card h3 { margin: 0 0 0.75rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+  .card p { margin: 0.5rem 0; font-size: 0.9rem; }
+  .card ul { margin: 0.5rem 0 0.5rem 1.25rem; font-size: 0.9rem; }
+  .card li { margin: 0.25rem 0; }
+  .bull-bear { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.75rem; }
+  .bull, .bear { padding: 0.75rem 1rem; border-radius: 6px; font-size: 0.85rem; }
+  .bull { background: rgba(63,185,80,0.08); border-left: 3px solid var(--green); }
+  .bear { background: rgba(248,81,73,0.08); border-left: 3px solid var(--red); }
+  .bull strong, .bear strong { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; display: block; margin-bottom: 0.3rem; }
+  .chip-table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; font-size: 0.85rem; }
+  .chip-table th { text-align: left; padding: 0.4rem 0.75rem; background: var(--surface2); color: var(--text-muted); font-weight: 500; font-size: 0.7rem; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+  .chip-table td { padding: 0.4rem 0.75rem; border-bottom: 1px solid var(--border); }
+  .timeline { position: relative; margin: 1rem 0; }
+  .timeline-item { display: flex; align-items: flex-start; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-date { flex-shrink: 0; width: 100px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.8rem; color: var(--accent); font-weight: 600; padding-top: 0.1rem; }
+  .timeline-content { flex: 1; font-size: 0.9rem; }
+  .timeline-content strong { display: block; margin-bottom: 0.2rem; }
+  .timeline-content .note { font-size: 0.8rem; }
+  .pred-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.85rem; }
+  .pred-table th { text-align: left; padding: 0.5rem 0.75rem; background: var(--surface2); color: var(--text-muted); font-weight: 500; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+  .pred-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .question { background: var(--surface); border-left: 3px solid var(--yellow); padding: 0.75rem 1rem; margin: 0.75rem 0; border-radius: 0 6px 6px 0; font-size: 0.9rem; }
+  .question strong { color: var(--yellow); }
+  .changes-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.85rem; }
+  .changes-table th { text-align: left; padding: 0.5rem 0.75rem; background: var(--surface2); color: var(--text-muted); font-weight: 500; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+  .changes-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .changes-table code { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.8rem; background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 4px; }
+  .alert-banner { background: rgba(248,81,73,0.1); border: 1px solid rgba(248,81,73,0.3); border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; }
+  .alert-banner h3 { color: var(--red); margin: 0 0 0.5rem; font-size: 0.95rem; }
+  .alert-banner p { font-size: 0.9rem; margin: 0.3rem 0; }
+  .highlight-box { background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.2); border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; }
+  .highlight-box h3 { color: var(--accent); margin: 0 0 0.5rem; font-size: 0.95rem; }
+  .highlight-box p { font-size: 0.9rem; margin: 0.3rem 0; }
+  .green-banner { background: rgba(63,185,80,0.1); border: 1px solid rgba(63,185,80,0.3); border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; }
+  .green-banner h3 { color: var(--green); margin: 0 0 0.5rem; font-size: 0.95rem; }
+  .green-banner p { font-size: 0.9rem; margin: 0.3rem 0; }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.75rem; text-align: center; }
+  footer a { color: var(--accent); text-decoration: none; }
+  @media (max-width: 700px) { body { padding: 1rem; } .bull-bear { grid-template-columns: 1fr; } .timeline-item { flex-direction: column; gap: 0.25rem; } .timeline-date { width: auto; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>AI Ecosystem Update</h1>
+  <div class="meta">
+    <span>April 8, 2026</span>
+    <span>Daily</span>
+    <span>Full Tier 1&ndash;3 scan</span>
+    <span>Ceasefire rally &mdash; oil crashed 16%, tech surging</span>
+  </div>
+</header>
+
+<div class="green-banner">
+  <h3>US-Iran Ceasefire &mdash; Oil Crashes 16%, Markets Surging</h3>
+  <p>Two-week ceasefire reached &lt;2 hours before Trump's 8PM ET deadline. Iran commits to reopening Strait of Hormuz. Oil crashed from $111/$115 to ~$95 &mdash; <strong>biggest one-day crash since 1991 Gulf War</strong> (ex-COVID). P008 upgraded 75% &rarr; 80%.</p>
+</div>
+
+<div class="highlight-box">
+  <h3>Anthropic Mythos &mdash; AI Discovers "Thousands of Zero-Day Vulnerabilities"</h3>
+  <p>Anthropic unveiled Project Glasswing &mdash; limited preview of Claude Mythos, its most powerful model. Deployed to 12 partners (AWS, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorgan, Microsoft, NVIDIA). Found <strong>thousands of zero-day vulnerabilities</strong>, many 1&ndash;2 decades old. Withheld from general release because too powerful at cybersecurity. <strong>Strongest application-layer proof of computational abundance thesis.</strong></p>
+</div>
+
+<h2>Market Snapshot</h2>
+
+<table class="market-table">
+<thead><tr>
+  <th>Company</th><th>Ticker</th><th>Price</th><th>Change (1d)</th><th>From ATH</th><th>Fwd PE</th><th>Notes</th>
+</tr></thead>
+<tbody>
+  <tr><td>NVIDIA</td><td class="ticker">NVDA</td><td class="price">~$178</td><td>flat</td><td class="change-neg">-16%</td><td>~18x</td><td>Marvell $2B NVLink Fusion deal</td></tr>
+  <tr><td>Broadcom</td><td class="ticker">AVGO</td><td class="price">~$349</td><td class="change-pos">+4.5%</td><td class="change-neg">-16%</td><td>~21x</td><td>Google/Anthropic deal driving continued rally</td></tr>
+  <tr><td>TSMC</td><td class="ticker">TSM</td><td class="price">~$360</td><td class="change-pos">+5.3%</td><td class="change-neg">-8%</td><td>~34x</td><td>March revenue Apr 10. Q1 earnings Apr 16</td></tr>
+  <tr><td>Microsoft</td><td class="ticker">MSFT</td><td class="price">~$381</td><td class="change-pos">+3.5%</td><td class="change-neg">-31%</td><td>~27x</td><td>MAI models launched. $10B Japan investment</td></tr>
+  <tr><td>Alphabet</td><td class="ticker">GOOG</td><td class="price">~$319</td><td class="change-pos"><strong>+6.3%</strong></td><td class="change-neg">-9%</td><td>~18x</td><td>Gemma 4 open model. Broadcom TPU deal confirmed</td></tr>
+  <tr><td>Meta</td><td class="ticker">META</td><td class="price">~$597</td><td class="change-pos">+3.6%</td><td class="change-neg">-24%</td><td>~17x</td><td>Muse Spark debut (closed model). 15K layoffs</td></tr>
+  <tr><td>Amazon</td><td class="ticker">AMZN</td><td class="price">~$222</td><td class="change-pos">+5.2%</td><td class="change-neg">-13%</td><td>~27x</td><td>G7e NVIDIA Blackwell instances GA</td></tr>
+  <tr><td>Micron</td><td class="ticker">MU</td><td class="price">~$400</td><td class="change-pos">+5.9%</td><td class="change-neg">-15%</td><td>~7x</td><td>Ceasefire rally. Memory super-cycle intact</td></tr>
+  <tr><td>CoreWeave</td><td class="ticker">CRWV</td><td class="price">~$91</td><td class="change-pos"><strong>+12.3%</strong></td><td class="change-neg">-52%</td><td>N/A</td><td>Strongest rally in weeks</td></tr>
+  <tr><td>Nebius</td><td class="ticker">NBIS</td><td class="price">~$124</td><td class="change-pos">+5.1%</td><td class="change-neg">-15%</td><td>N/A</td><td>Cramer top pick. $46B committed revenue</td></tr>
+  <tr><td>Palantir</td><td class="ticker">PLTR</td><td class="price">~$155</td><td class="change-pos">+5.4%</td><td class="change-neg">-25%</td><td>&gt;60x</td><td>Riding broad rally</td></tr>
+</tbody>
+</table>
+
+<p class="note" style="margin-top: 0.5rem;">Oil: <strong>WTI $94.55 (-16.3%), Brent $94.13 (-13.8%)</strong>. Biggest crash since 1991 Gulf War (ex-COVID). Ceasefire rally lifting everything &mdash; GOOG +6.3% and CRWV +12.3% leading. Broad risk-on across all names.</p>
+
+<h2>What Happened</h2>
+
+<!-- Card 1: US-Iran Ceasefire -->
+<div class="card">
+  <h3><span class="tag tag-red">Geopolitics</span> <span class="tag tag-green">P008 Upgraded</span> US-Iran Ceasefire &mdash; Oil Crashes 16%</h3>
+  <p>Two-week ceasefire reached less than 2 hours before Trump's 8PM ET deadline. Iran commits to reopening Strait of Hormuz. Oil crashed from $111/$115 to ~$95 &mdash; the biggest one-day crash since 1991 Gulf War (ex-COVID). Markets surging globally.</p>
+  <div class="bull-bear">
+    <div class="bull"><strong>Bull case</strong>Energy headwind resolving. P008 upgraded 75% &rarr; 80%. If permanent deal materializes &rarr; oil sub-$90 &rarr; P008 to 85%. Hyperscaler capex path clears entirely.</div>
+    <div class="bear"><strong>Bear case</strong>Two-week ceasefire only. If negotiations fail &rarr; oil re-spikes to $110+. "Significant hurdles remain." This is a pause, not a resolution.</div>
+  </div>
+</div>
+
+<!-- Card 2: Anthropic Mythos -->
+<div class="card">
+  <h3><span class="tag tag-purple">Frontier AI</span> <span class="tag tag-green">Thesis Evidence</span> Anthropic Mythos &mdash; AI Finds "Thousands of Zero-Day Vulnerabilities"</h3>
+  <p>Anthropic unveiled Project Glasswing &mdash; limited preview of Claude Mythos, its most powerful model. Deployed to 12 partners: AWS, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorgan, Microsoft, NVIDIA. Found <strong>thousands of zero-day vulnerabilities</strong>, many 1&ndash;2 decades old. Withheld from general release because too powerful at cybersecurity.</p>
+  <div class="bull-bear">
+    <div class="bull"><strong>Bull case</strong>Strongest application-layer proof of computational abundance &mdash; AI discovering what humans couldn't for decades. Massive new compute demand vector (continuous security scanning across every enterprise). Validates that more compute enables qualitatively new capabilities.</div>
+    <div class="bear"><strong>Bear case</strong>Capability overshoot raising governance questions. If restricted models can't be monetized broadly, the revenue path narrows. Regulatory backlash possible if zero-days are weaponized before patches.</div>
+  </div>
+</div>
+
+<!-- Card 3: Meta Muse Spark -->
+<div class="card">
+  <h3><span class="tag tag-blue">META</span> <span class="tag tag-orange">Strategy Shift</span> Meta &mdash; Muse Spark + Hybrid Open/Closed Strategy</h3>
+  <p>Meta debuted Muse Spark from Superintelligence Labs (Alexandr Wang). <strong>Closed model</strong> &mdash; a shift from Meta's fully open-source strategy. Plans to partially open-source "Avocado" and "Mango" but keep largest models proprietary. 15,000 layoffs (~20% workforce) executing. AI handling 70% of routine coding internally.</p>
+  <div class="bull-bear">
+    <div class="bull"><strong>Bull case</strong>Less open-source pressure on Anthropic/OpenAI pricing. Meta competing at the frontier = more total training compute demand across the ecosystem. Hybrid strategy is pragmatic.</div>
+    <div class="bear"><strong>Bear case</strong>Third Citrini Phase 1 event (15K jobs). AI displacement pattern accelerating across the industry. Model quality still lagging Anthropic/OpenAI despite unlimited GPU access.</div>
+  </div>
+</div>
+
+<!-- Card 4: NVIDIA-Marvell NVLink Fusion -->
+<div class="card">
+  <h3><span class="tag tag-blue">NVDA</span> <span class="tag tag-purple">Strategic</span> NVIDIA-Marvell $2B NVLink Fusion</h3>
+  <p>NVIDIA invested $2B in Marvell. NVLink Fusion integrates third-party custom silicon into NVIDIA's interconnect ecosystem. Co-developing silicon photonics. Extending into AI-RAN (5G/6G).</p>
+  <div class="bull-bear">
+    <div class="bull"><strong>Bull case</strong>NVIDIA co-opting the custom silicon threat &mdash; evolving from GPU monopolist to AI data center platform. Revenue diversifies to networking + CPU + DPU. If custom ASICs need NVLink, NVIDIA captures value regardless.</div>
+    <div class="bear"><strong>Bear case</strong>$2B is small. Custom silicon builders (Google, Amazon) may prefer proprietary interconnects over NVLink dependency. Marvell is a minor player in the custom silicon space.</div>
+  </div>
+</div>
+
+<!-- Card 5: Microsoft MAI Models -->
+<div class="card">
+  <h3><span class="tag tag-blue">MSFT</span> <span class="tag tag-purple">AI Models</span> Microsoft &mdash; MAI Models + State-of-the-Art by 2027</h3>
+  <p>Launched MAI-Transcribe-1, MAI-Voice-1, MAI-Image-2. Bloomberg reports Microsoft aims for state-of-the-art AI by 2027 under Suleyman. <strong>$10B Japan investment</strong>. E7 Frontier Suite ($99/user) transactable May 1.</p>
+  <div class="bull-bear">
+    <div class="bull"><strong>Bull case</strong>Building frontier models in-house = more training compute demand. E7 launch is the enterprise AI monetization test. $10B Japan investment shows long-term commitment to DC buildout.</div>
+    <div class="bear"><strong>Bear case</strong>Still the only pure-NVIDIA hyperscaler &mdash; structural cost disadvantage vs Google/TPU and Amazon/Trainium. "State-of-the-art by 2027" is aspirational with no custom silicon roadmap.</div>
+  </div>
+</div>
+
+<!-- Card 6: OpenAI IPO Dispute -->
+<div class="card">
+  <h3><span class="tag tag-orange">OpenAI</span> <span class="tag tag-red">Management Risk</span> OpenAI &mdash; IPO Timing Dispute</h3>
+  <p>CFO Sarah Friar flagged 2026 IPO timeline as aggressive. Altman pushing Q4 2026 despite $200B+ spend before cash generation. Friar excluded from investor meetings. $25B ARR. Anthropic also considering October IPO.</p>
+  <p class="note">Adds to existing OpenAI management risk tracking. Friar-Altman tension is a red flag &mdash; CFO excluded from investor meetings is not normal corporate governance.</p>
+</div>
+
+<!-- Card 7: US AI Labs vs Chinese Distillation -->
+<div class="card">
+  <h3><span class="tag tag-yellow">Policy</span> <span class="tag tag-orange">Competition</span> US AI Labs Unite vs Chinese Distillation</h3>
+  <p>OpenAI, Anthropic, and Google cooperating through Frontier Model Forum to combat Chinese model distillation. Sharing detection information. US officials estimate <strong>billions in lost profit per year</strong> from unauthorized distillation of frontier models.</p>
+</div>
+
+<h2>What Changed</h2>
+
+<table class="changes-table">
+<thead><tr><th>File</th><th>Change</th><th>Reason</th></tr></thead>
+<tbody>
+  <tr><td><code>predictions/prediction-log.md</code></td><td>P008: 75% &rarr; <strong>80%</strong></td><td>Iran ceasefire resolves energy headwind. Oil crashed from $115 to $95.</td></tr>
+  <tr><td><code>theses/computational-abundance.md</code></td><td>New supporting evidence: Mythos zero-days</td><td>AI finding what humans couldn't for decades = strongest application-layer thesis validation</td></tr>
+  <tr><td><code>theses/computational-abundance.md</code></td><td>Updated disconfirming: Iran/oil resolving</td><td>Oil crash from $115 to $95 removes energy cost headwind</td></tr>
+</tbody>
+</table>
+
+<h2>Predictions Tracker</h2>
+
+<table class="pred-table">
+<thead><tr><th>ID</th><th>Prediction</th><th>Prob</th><th>Status</th><th>Next Check</th></tr></thead>
+<tbody>
+  <tr><td>P022</td><td>NVDA Q1 FY27 &ge; $76B</td><td>85%</td><td><span class="tag tag-green">Pending</span></td><td>~May 2026</td></tr>
+  <tr><td>P021</td><td>MU FQ3 &ge; $33B</td><td>85%</td><td><span class="tag tag-green">Pending</span></td><td>~June 2026</td></tr>
+  <tr><td>P008</td><td>Hyperscaler capex within 10%</td><td><strong>80% &uarr;</strong></td><td><span class="tag tag-green">Upgraded</span> Iran ceasefire.</td><td>Q4 2026 earnings</td></tr>
+  <tr><td>P019</td><td>AVGO Q2 AI semis &ge; $10B</td><td>80%</td><td><span class="tag tag-green">Pending</span></td><td>~June 2026</td></tr>
+  <tr><td>P010</td><td>TSMC 2026 rev &ge; 30% growth</td><td>80%</td><td><span class="tag tag-green">Pending</span></td><td>Jan 2027</td></tr>
+  <tr><td>P015</td><td>DRAM undersupply thru C3Q26</td><td>80%</td><td><span class="tag tag-green">Pending</span></td><td>~Oct 2026</td></tr>
+  <tr><td>P020</td><td>AVGO FY27 AI rev &gt; $60B</td><td>72%</td><td><span class="tag tag-green">Pending</span></td><td>Q1 2028</td></tr>
+  <tr><td>P003</td><td>No lab majority custom silicon</td><td>50%</td><td><span class="tag tag-yellow">At risk</span> Deep dive supports 35&ndash;40%.</td><td>YE 2026</td></tr>
+</tbody>
+</table>
+
+<h2>Catalyst Timeline</h2>
+
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-date">~Apr 10</div>
+    <div class="timeline-content"><strong>TSMC March monthly revenue</strong><span class="note">Expected record ~NT$420B. Near-term supply chain indicator.</span></div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">Apr 13</div>
+    <div class="timeline-content"><strong>BIS IC designer authorization deadline</strong><span class="note">Export control administrative deadline for Taiwan-based IC designers.</span></div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">Apr 15</div>
+    <div class="timeline-content"><strong>ASML Q1 earnings</strong><span class="note">DUV China bill impact. Will they address it on the call?</span></div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date" style="color: var(--green);">Apr 16</div>
+    <div class="timeline-content"><strong>TSMC Q1 2026 earnings &mdash; THE catalyst</strong><span class="note">Revenue, GM, AI accelerator CAGR, N2 ramp, Q2 guidance.</span></div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date" style="color: var(--yellow);">Apr 22</div>
+    <div class="timeline-content"><strong>Iran ceasefire expiration</strong><span class="note">Two-week ceasefire. If negotiations fail, oil re-spikes. Watch closely.</span></div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">~Apr 24</div>
+    <div class="timeline-content"><strong>SK Hynix 1Q26 earnings</strong><span class="note">HBM4 qualification, US ADR update, memory pricing.</span></div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">Apr 28</div>
+    <div class="timeline-content"><strong>Microsoft FY26 Q3 earnings</strong><span class="note">First E7 data. Only pure-NVIDIA hyperscaler &mdash; structural cost test.</span></div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">May 1</div>
+    <div class="timeline-content"><strong>Microsoft E7 Frontier Suite GA</strong><span class="note">$99/user enterprise AI pricing milestone.</span></div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">~May</div>
+    <div class="timeline-content"><strong>NVIDIA Q1 FY27 earnings (P022)</strong><span class="note">$76B+ expected. NVLink Fusion strategy debut.</span></div>
+  </div>
+</div>
+
+<h2>Open Questions</h2>
+
+<div class="question"><strong>1. Anthropic Mythos capability level vs Claude 4 / Opus 4.6 &mdash; generation ahead?</strong> Withheld from general release due to cybersecurity power. Is this a fundamentally new capability tier, or targeted fine-tuning on security? The answer determines whether we're seeing a step-change in model capability or a narrow application breakthrough.</div>
+
+<div class="question"><strong>2. Meta hybrid strategy &mdash; reduces open-source pressure on Anthropic/OpenAI pricing?</strong> If Meta's largest models go proprietary, the open-source alternative weakens. Does this improve pricing power for frontier labs, or does the partial open-sourcing of smaller models still compress margins?</div>
+
+<div class="question"><strong>3. NVIDIA NVLink Fusion adoption &mdash; will custom silicon builders adopt or build proprietary interconnects?</strong> Google and Amazon have their own interconnect stacks. If NVLink Fusion only captures second-tier custom silicon builders, the strategic value is limited. If it co-opts the ecosystem, NVIDIA's platform moat deepens.</div>
+
+<div class="question"><strong>4. P003 downgrade decision &mdash; deep dive supports 35&ndash;40%. Needs Andres's call.</strong> Anthropic's 4.5 GW TPU + Trainium vs 1 GW NVIDIA allocation is the strongest evidence yet. The custom silicon deep dive data supports downgrading P003 from 50% to 35&ndash;40%.</div>
+
+<div class="question"><strong>5. Anthropic October IPO &mdash; if confirmed, changes orbit exposure analysis.</strong> Direct Anthropic ownership would be the cleanest way to express the thesis. AVGO, GOOG (14% equity), TSM, MU are current proxy options. An IPO changes the calculus entirely.</div>
+
+<footer>
+  <p>Generated by AI Ecosystem Analyst | Updated April 8, 2026 | <a href="archive/">Archive</a></p>
+</footer>
+
+</body>
+</html>
