@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheat-Sheet — Quadruple Hyperscaler Night · 2026-04-29 AMC</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2333;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --green: #3fb950;
+    --red: #f85149;
+    --yellow: #d29922;
+    --orange: #db6d28;
+    --purple: #bc8cff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 24px 18px;
+    line-height: 1.5;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 22px; }
+  h1 { font-size: 24px; margin: 0 0 4px; }
+  .meta { color: var(--text-muted); font-size: 13px; }
+  h2 { font-size: 18px; margin: 26px 0 10px; border-bottom: 1px solid var(--border); padding-bottom: 5px; }
+  h3 { font-size: 15px; margin: 14px 0 8px; }
+  h4 { font-size: 13px; margin: 10px 0 4px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 14px; font-size: 13px; }
+  th, td { text-align: left; padding: 7px 9px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { color: var(--text-muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.4px; font-weight: 600; }
+  tr:hover td { background: var(--surface); }
+  .tag { display: inline-block; font-size: 10.5px; padding: 2px 7px; border-radius: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; margin-right: 3px; }
+  .tag-green { background: rgba(63, 185, 80, 0.18); color: var(--green); }
+  .tag-red { background: rgba(248, 81, 73, 0.18); color: var(--red); }
+  .tag-yellow { background: rgba(210, 153, 34, 0.20); color: var(--yellow); }
+  .tag-orange { background: rgba(219, 109, 40, 0.20); color: var(--orange); }
+  .tag-blue { background: rgba(88, 166, 255, 0.18); color: var(--accent); }
+  .tag-purple { background: rgba(188, 140, 255, 0.18); color: var(--purple); }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; margin: 10px 0; }
+  .card.msft { border-left: 4px solid #00a4ef; }
+  .card.goog { border-left: 4px solid #ea4335; }
+  .card.meta { border-left: 4px solid #1877f2; }
+  .card.amzn { border-left: 4px solid #ff9900; }
+  .card.bull { border-left: 4px solid var(--green); }
+  .card.bear { border-left: 4px solid var(--red); }
+  .card.warn { border-left: 4px solid var(--orange); }
+  .banner { padding: 12px 16px; border-radius: 8px; margin: 14px 0; border: 1px solid; }
+  .banner-orange { background: rgba(219, 109, 40, 0.08); border-color: rgba(219, 109, 40, 0.4); }
+  .banner-red { background: rgba(248, 81, 73, 0.08); border-color: rgba(248, 81, 73, 0.4); }
+  .banner-blue { background: rgba(88, 166, 255, 0.08); border-color: rgba(88, 166, 255, 0.4); }
+  .banner-green { background: rgba(63, 185, 80, 0.08); border-color: rgba(63, 185, 80, 0.4); }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; }
+  @media (max-width: 820px) { .grid-2, .grid-4 { grid-template-columns: 1fr; } }
+  ul { margin: 6px 0 10px; padding-left: 18px; }
+  li { margin: 3px 0; }
+  .num { font-variant-numeric: tabular-nums; font-weight: 600; }
+  .muted { color: var(--text-muted); }
+  .ticker { font-weight: 700; letter-spacing: 0.4px; font-size: 16px; }
+  .big-num { font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .kv-row { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 12.5px; margin: 6px 0 10px; }
+  .kv-row span.k { color: var(--text-muted); }
+  .kv-row span.v { color: var(--text); font-weight: 600; }
+  code { background: var(--surface2); padding: 1px 5px; border-radius: 3px; font-size: 12px; color: var(--purple); }
+  .bar { font-weight: 600; }
+  .bar.up { color: var(--green); }
+  .bar.dn { color: var(--red); }
+  .bar.flat { color: var(--yellow); }
+  .checklist { font-size: 12.5px; }
+  .checklist li::marker { color: var(--accent); }
+  .timeline { display: flex; flex-direction: column; gap: 4px; font-size: 12.5px; }
+  .timeline div { padding: 4px 8px; background: var(--surface2); border-left: 2px solid var(--accent); border-radius: 0 4px 4px 0; }
+  footer { margin-top: 36px; padding-top: 14px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+<h1>Cheat-Sheet — Quadruple Hyperscaler Night</h1>
+<div class="meta">Wed 2026-04-29 · MSFT + GOOG + META + AMZN all AMC · ~80-second window · FOMC 2pm ET (Powell's last) · Aggregate cap: ~$11T market cap · Combined 2026 capex bar: <strong>$535–565B (cons)</strong> to $600–645B (preview-frame high)</div>
+</header>
+
+<div class="banner banner-orange">
+<div><strong>The 3 things this night resolves:</strong></div>
+<ol style="margin: 6px 0 0 18px; padding: 0;">
+<li><strong>P008 fork (Iran/oil):</strong> Currently 62%. Any 1 hyperscaler cites energy/power/oil as constraint → <span class="tag tag-red">58–60%</span>. All 4 reaffirm capex w/o energy-cite → <span class="tag tag-green">~68%</span> rebound. Cumulative cut &gt;10% → <span class="tag tag-red">50%</span>.</li>
+<li><strong>WSJ-OpenAI miss bounded vs unbounded test:</strong> If hyperscalers reaffirm capex + Cloud guides hold → <strong>OpenAI-specific event</strong>. If Cloud growth misses + capex cut → <strong>first major comp-abundance disconfirming evidence</strong>.</li>
+<li><strong>Aggregate $11T re-rate:</strong> Group is trading -1% to -2% into print. Capex narrative resets the multiple.</li>
+</ol>
+</div>
+
+<h2>Quick consensus board</h2>
+<table>
+<thead><tr><th>Co</th><th>Period</th><th>Rev cons</th><th>EPS cons</th><th>2026 capex bar</th><th>Cloud line</th><th>Implied move</th></tr></thead>
+<tbody>
+<tr><td><strong>MSFT</strong></td><td>Q3 FY26</td><td class="num">$81.3B (+16%)</td><td class="num">$4.06</td><td class="num">~$120B (reaffirm)</td><td>Azure ≥38% YoY</td><td class="num">±5–6%</td></tr>
+<tr><td><strong>GOOG</strong></td><td>Q1 26</td><td class="num">$92.2B (Bbg) / $106.9B (TipRanks high)</td><td class="num">~$2.40</td><td class="num">$175–185B (FY guide)</td><td>GCP ~$18.4B (+49.6%)</td><td class="num">±6–7%</td></tr>
+<tr><td><strong>META</strong></td><td>Q1 26</td><td class="num">$55.6B (+31%)</td><td class="num">~$5.30</td><td class="num">$115–135B (FY guide)</td><td>n/a</td><td class="num">±7–8%</td></tr>
+<tr><td><strong>AMZN</strong></td><td>Q1 26</td><td class="num">~$177B (+14%)</td><td class="num">$1.63</td><td class="num">~$200B (FY)</td><td>AWS ~$33–34B (+22%)</td><td class="num">±6–7%</td></tr>
+</tbody>
+</table>
+<p class="muted" style="font-size: 12px;">Combined cap bar: ~$535–565B. Each $25B of cumulative cut ≈ 4–5% on the aggregate $11T cap if the multiple holds; more if multiple compresses.</p>
+
+<h2>The two questions to answer for each call</h2>
+<div class="grid-2">
+<div class="card warn">
+<h3>Q1: Did they reaffirm 2026 capex? (P008 fork)</h3>
+<ul class="checklist">
+<li><strong>Reaffirm or raise:</strong> P008 → 68% rebound. Energy/Iran is risk-but-not-binding.</li>
+<li><strong>Cut &lt;5% w/ no energy-cite:</strong> P008 → 65%. Soft but tolerable.</li>
+<li><strong>Cut &lt;5% w/ energy-cite:</strong> P008 → 60%. Iran is binding the buildout.</li>
+<li><strong>Any cut &gt;5% OR explicit energy-cite:</strong> P008 → <span class="tag tag-red">58–60%</span>.</li>
+<li><strong>Cumulative cut &gt;10%:</strong> P008 → <span class="tag tag-red">50%</span> + first major comp-abundance disconfirming entry.</li>
+</ul>
+<p class="muted" style="font-size: 12px;">Listen for: "power constraints", "oil/energy costs", "build-out delays", "permits", "datacenter siting", "transmission", "PPA terms".</p>
+</div>
+<div class="card warn">
+<h3>Q2: Did Cloud growth hold the bar? (OpenAI bounded test)</h3>
+<ul class="checklist">
+<li><strong>Cloud beats + capex reaffirm:</strong> WSJ-OpenAI bounded as OpenAI-specific. Strong tape next session.</li>
+<li><strong>Cloud meets + capex reaffirm:</strong> Bounded. Mixed tape.</li>
+<li><strong>Cloud misses + capex reaffirm:</strong> Murky — capex commitments support, but demand signal cracks.</li>
+<li><strong>Cloud misses + capex cut:</strong> <span class="tag tag-red">UNBOUNDED</span> — first major comp-abundance disconfirming evidence enters tracker tomorrow AM.</li>
+</ul>
+<p class="muted" style="font-size: 12px;">Special focus MSFT: Azure-OpenAI revenue/margin framing given WSJ story; backlog/RPO growth direction.</p>
+</div>
+</div>
+
+<h2>Per-company cards (read order = report order, AMC ~4:00 → 4:15 ET)</h2>
+
+<div class="card msft">
+<h3><span class="ticker">MSFT</span> · Q3 FY26 · <span class="muted">Px ~$412 / -1.1%</span></h3>
+<div class="kv-row">
+<span><span class="k">Rev cons:</span> <span class="v">$81.3B (+16%)</span></span>
+<span><span class="k">EPS cons:</span> <span class="v">$4.06</span></span>
+<span><span class="k">Azure bar:</span> <span class="v">≥38% YoY (cc)</span></span>
+<span><span class="k">Capex Q3:</span> <span class="v">~$30B+ (FY ~$120B)</span></span>
+</div>
+<h4>Bull bar (whisper)</h4>
+<ul>
+<li>Azure <span class="tag tag-green">≥40% cc</span> (whisper)</li>
+<li>2026 capex raise to <span class="tag tag-green">$125–130B</span></li>
+<li>Backlog/RPO <span class="tag tag-green">growing $50B+ QoQ</span></li>
+<li>Copilot E7 Frontier Suite framing pre-5/1 GA</li>
+</ul>
+<h4>Bear bar</h4>
+<ul>
+<li>Azure 35–37% (deceleration)</li>
+<li>Capex cut/flat or "moderation" language</li>
+<li>OpenAI exposure framed defensively (margin pressure / commitment haircut)</li>
+<li>Energy-cite (would be the first; weighty)</li>
+</ul>
+<h4>Listen-for triggers</h4>
+<ul class="checklist">
+<li><strong>"Azure-OpenAI"</strong> revenue/margin disclosure — central to WSJ-OpenAI bounded test</li>
+<li>Azure ex-AI vs AI-driven decomposition (any number changes)</li>
+<li>Capex mix: data center vs server/network shift</li>
+<li>Backlog disclosure — tested for OpenAI commitment durability</li>
+<li>FY26 capex full-year reaffirm? (P008 critical)</li>
+</ul>
+</div>
+
+<div class="card goog">
+<h3><span class="ticker">GOOG</span> · Q1 26 · <span class="muted">Px ~$337 / flat-down</span></h3>
+<div class="kv-row">
+<span><span class="k">Rev cons:</span> <span class="v">$92.2B (Bbg) / $106.9B (TipRanks)</span></span>
+<span><span class="k">EPS cons:</span> <span class="v">~$2.40</span></span>
+<span><span class="k">GCP cons:</span> <span class="v">~$18.4B (+49.6%)</span></span>
+<span><span class="k">Capex FY:</span> <span class="v">$175–185B (P014 ±10%)</span></span>
+</div>
+<h4>Bull bar</h4>
+<ul>
+<li>GCP <span class="tag tag-green">≥$19B (+55%+)</span></li>
+<li>Capex reaffirm or raise toward $185B</li>
+<li>TPU 8 commercial timing/pricing disclosure</li>
+<li>Pentagon AI deal framing as new revenue line</li>
+<li>Search ad rev resilience (AI Overviews monetization)</li>
+</ul>
+<h4>Bear bar</h4>
+<ul>
+<li>GCP misses $18B (deceleration vs prior 49.6%+)</li>
+<li>Capex cut or "phasing" language</li>
+<li>Search erosion narrative reactivates</li>
+<li>EU regulatory cost-cite</li>
+</ul>
+<h4>Listen-for triggers</h4>
+<ul class="checklist">
+<li><strong>P013 read:</strong> Implied FY GCP run-rate ≥$95B (currently 80%)</li>
+<li><strong>P014 read:</strong> capex within ±10% of $175–185B</li>
+<li>TPU 8 commercial availability ("later this year" → quantify)</li>
+<li>Anthropic TPU GW commitment update (any GW number)</li>
+<li>"AI Overviews" monetization data (any conversion/CTR disclosure)</li>
+</ul>
+</div>
+
+<div class="card meta">
+<h3><span class="ticker">META</span> · Q1 26 · <span class="muted">Px ~$667 / -1%</span></h3>
+<div class="kv-row">
+<span><span class="k">Rev cons:</span> <span class="v">$55.6B (+31%)</span></span>
+<span><span class="k">EPS cons:</span> <span class="v">~$5.30</span></span>
+<span><span class="k">Capex FY:</span> <span class="v">$115–135B</span></span>
+<span><span class="k">Layoff:</span> <span class="v">10% (~8K), wave 1 May 20</span></span>
+</div>
+<h4>Bull bar</h4>
+<ul>
+<li>Capex reaffirm <span class="tag tag-green">$115–135B</span></li>
+<li>MTIA 2026 volume disclosure (any unit/wafer number)</li>
+<li>Muse Spark efficiency framing as <em>additive</em> not substitutive</li>
+<li>Reels/AI engagement monetization data</li>
+<li>Layoff = cost discipline tailwind to FY OM</li>
+</ul>
+<h4>Bear bar</h4>
+<ul>
+<li>Capex top-end cut → $115–125B</li>
+<li>"Order of magnitude less compute" Muse Spark framed as Jevons-net-negative</li>
+<li>Ad revenue softness post-China-Singles-Day</li>
+<li>FTC/EU regulatory cost-cite</li>
+<li>Reality Labs loss expanding</li>
+</ul>
+<h4>Listen-for triggers</h4>
+<ul class="checklist">
+<li>MTIA 2026 vs 2027 volume split (P003 critical)</li>
+<li>Muse Spark efficiency: do they pair it w/ capex commitment? (Jevons net test)</li>
+<li>"AI startup unwind" (WSJ 4/29 headline) — which startup?</li>
+<li>Llama 5 timeline / training-cluster scaling</li>
+<li>Capex range — top of range cut would be biggest macro signal</li>
+</ul>
+</div>
+
+<div class="card amzn">
+<h3><span class="ticker">AMZN</span> · Q1 26 · <span class="muted">Px ~$259 / flat</span></h3>
+<div class="kv-row">
+<span><span class="k">Rev cons:</span> <span class="v">~$177B (+14%)</span></span>
+<span><span class="k">EPS cons:</span> <span class="v">$1.63</span></span>
+<span><span class="k">AWS cons:</span> <span class="v">~$33–34B (+22%)</span></span>
+<span><span class="k">Capex FY:</span> <span class="v">~$200B (was -8 to -10% reaction last Q)</span></span>
+</div>
+<h4>Bull bar</h4>
+<ul>
+<li>AWS <span class="tag tag-green">≥$34B / +24%+</span></li>
+<li>Capex reaffirm $200B; mix shift toward AI infra</li>
+<li>Anthropic deal accounting clean (investment vs capex)</li>
+<li>OpenAI × AWS expansion framed (post-MSFT exclusivity)</li>
+<li>Backlog: $200B+ disclosed</li>
+</ul>
+<h4>Bear bar</h4>
+<ul>
+<li>AWS misses $33B</li>
+<li>Capex >$200B framed as "elevated/temporary" (last quarter's reaction template)</li>
+<li>Retail margin compression from oil pass-through</li>
+<li>Iran-specific "war in Iran" cost-cite (Barron's preview already named this)</li>
+</ul>
+<h4>Listen-for triggers</h4>
+<ul class="checklist">
+<li>Anthropic $25B accounting: investment line vs capex (matters for run-rate)</li>
+<li>OpenAI × AWS: GW/dollar commitment specifics</li>
+<li>Trainium 2/3 deployment update (any GW number for Project Rainier 5GW)</li>
+<li><strong>Barron's preview specifically flagged "war in Iran" — listen for energy-cite.</strong> Most likely of the 4 to cite oil given retail exposure.</li>
+<li>FY capex direction: $200B held vs $210B raise vs $190B trimmed</li>
+</ul>
+</div>
+
+<h2>Aggregate scoring (use during/after the night)</h2>
+<table>
+<thead><tr><th>Score</th><th>Pattern</th><th>Implication</th></tr></thead>
+<tbody>
+<tr><td><span class="tag tag-green">4/4 bull</span></td><td>All 4 reaffirm or raise; 0 energy-cites; aggregate ≥$565B</td><td>WSJ-OpenAI bounded as OpenAI-specific. P008 → ~68%. Strong tape Thu. Comp-abundance reinforced.</td></tr>
+<tr><td><span class="tag tag-blue">3/4 bull</span></td><td>3 reaffirm, 1 trims (most likely AMZN energy-cite); aggregate ~$540B</td><td>Mixed. P008 → 60–62%. WSJ-OpenAI mostly bounded but with edge crack. Probably range-bound tape.</td></tr>
+<tr><td><span class="tag tag-yellow">2/4 mixed</span></td><td>2 reaffirm, 2 trim; one energy-cite; aggregate ~$510B</td><td>Bear case starting to fire. P008 → 55–58%. Watch for chip-stock weakness on Thu.</td></tr>
+<tr><td><span class="tag tag-red">1/4 or 0/4 bear</span></td><td>Cumulative capex cut &gt;10%; multiple energy-cites; aggregate &lt;$485B</td><td>P008 → 50%. <strong>First major comp-abundance disconfirming evidence enters tracker.</strong> NVDA/AVGO/TSM repricing risk into May.</td></tr>
+</tbody>
+</table>
+
+<h2>Energy-cite watch (P008 mechanic)</h2>
+<div class="banner banner-red">
+<p style="margin: 0 0 6px;"><strong>What counts as an "energy-cite":</strong> any management quote that ties oil/Iran/power/PPA/transmission constraints to <em>buildout pace</em>, <em>margin</em>, or <em>FY guide composition</em>. Generic "we monitor macro" does NOT count.</p>
+<p style="margin: 0;"><strong>Most likely to cite:</strong> AMZN (retail exposure + Barron's preview already framed Iran). <strong>Least likely:</strong> META (cleanest balance sheet, capex insulated). MSFT/GOOG in the middle.</p>
+</div>
+
+<h2>Cross-stack read-through (post-close, for tomorrow's report)</h2>
+<div class="grid-2">
+<div class="card bull">
+<h3>If aggregate reaffirms (≥$535B)</h3>
+<ul>
+<li><strong>NVDA:</strong> P017 (Q2 ≥$80B) supportive. Q1 read May 20 sets up positive.</li>
+<li><strong>AVGO:</strong> 4/28 selloff was sentiment, not order-book. P019 (Q2 AI ≥$10B) holds 80%.</li>
+<li><strong>TSM:</strong> 5-fab 2nm 2026 ramp validated. Capacity-side bullish.</li>
+<li><strong>MU/SK Hynix:</strong> Memory rebound 4/29 AM extends. P015 88% reinforced.</li>
+<li><strong>CRWV:</strong> Wells Fargo $135 PT validated; pre-earnings (May) bullish.</li>
+</ul>
+</div>
+<div class="card bear">
+<h3>If cumulative cut &gt;10%</h3>
+<ul>
+<li><strong>NVDA:</strong> Demand-signal repricing risk. May 20 Q1 print becomes binary event.</li>
+<li><strong>AVGO:</strong> XPU customer-win narrative survives (custom silicon = budget reallocation, not absolute cut), but 4/28 -4% would extend.</li>
+<li><strong>TSM:</strong> 2nm ramp framing — ASIC + GPU mix adapts; aggregate wafer demand resilient. Less impact than NVDA.</li>
+<li><strong>MU/SKH:</strong> Memory cycle re-derated. P015 → 75% from 88%.</li>
+<li><strong>CRWV:</strong> Hardest hit — capacity oversupply repricing.</li>
+<li><strong>OpenAI specifically:</strong> Funding cascade narrative validated. Oracle/CRWV/SoftBank double-hit.</li>
+</ul>
+</div>
+</div>
+
+<h2>Timeline (ET)</h2>
+<div class="timeline">
+<div><strong>2:00 PM</strong> · FOMC statement (hold 3.5–3.75% expected, third consecutive pause)</div>
+<div><strong>2:30 PM</strong> · Powell presser (last as Chair; Warsh transition ~May 16)</div>
+<div><strong>~4:00 PM</strong> · MSFT earnings hit (typically 4:00–4:05 ET)</div>
+<div><strong>~4:05 PM</strong> · GOOG earnings hit</div>
+<div><strong>~4:10 PM</strong> · META earnings hit (often the latest of the 4)</div>
+<div><strong>~4:15 PM</strong> · AMZN earnings hit</div>
+<div><strong>~4:30 PM</strong> · MSFT call begins (Azure cc growth = first datapoint)</div>
+<div><strong>~5:00 PM</strong> · GOOG call (GCP read = anchor)</div>
+<div><strong>~5:00 PM</strong> · META call</div>
+<div><strong>~5:30 PM</strong> · AMZN call (latest; AWS read + capex framing closes the night)</div>
+</div>
+
+<h2>Active predictions resolving partially or directionally tonight</h2>
+<table>
+<thead><tr><th>ID</th><th>Pred</th><th>Pre</th><th>Bull resolution</th><th>Bear resolution</th></tr></thead>
+<tbody>
+<tr><td>P008</td><td>Big 5 hyperscaler 2026 actual capex within 10% of guide</td><td class="num">62%</td><td class="num">→ ~68% (all 4 reaffirm, 0 energy-cite)</td><td class="num">→ 50% (cum cut &gt;10%)</td></tr>
+<tr><td>P013</td><td>GOOG Cloud rev ≥$95B FY26</td><td class="num">80%</td><td class="num">→ 88% (Q1 GCP ≥$19B)</td><td class="num">→ 65% (GCP misses $18B)</td></tr>
+<tr><td>P014</td><td>GOOG capex within ±10% of $175–185B</td><td class="num">70%</td><td class="num">→ 80% (raise/reaffirm)</td><td class="num">→ 55% (trim)</td></tr>
+<tr><td>P017</td><td>NVDA Q2 FY27 ≥$80B</td><td class="num">75%</td><td class="num">→ 80% (positive read-through)</td><td class="num">→ 65% (capex cut)</td></tr>
+<tr><td>P019</td><td>AVGO Q2 FY26 AI ≥$10B</td><td class="num">80%</td><td class="num">Held (mostly insulated)</td><td class="num">→ 70% (custom-silicon order push-out)</td></tr>
+<tr><td>P003</td><td>No major lab shifts majority training to custom silicon by EOY26</td><td class="num">43%</td><td class="num">Held</td><td class="num">→ 38% (META MTIA 2026 disclosure surprises high)</td></tr>
+</tbody>
+</table>
+
+<h2>Quick-reference: trigger card</h2>
+<div class="grid-4">
+<div class="card bull"><strong>Bull confirms</strong><br>"Reaffirm capex"<br>"Demand signal strong"<br>"Backlog growing"<br>"Capacity tight"<br>"Multi-year contracts"</div>
+<div class="card warn"><strong>Watch</strong><br>"Phasing"<br>"Optimizing pace"<br>"Working with utilities"<br>"Permitting"<br>"Mix shift"</div>
+<div class="card bear"><strong>Bear confirms</strong><br>"Power constraints"<br>"Energy headwind"<br>"Revising guide"<br>"Customer commitment review"<br>"Demand digestion"</div>
+<div class="card"><strong>WSJ-OpenAI specific (MSFT)</strong><br>"Azure-OpenAI revenue mix"<br>"Customer concentration"<br>"Commitment durability"<br>"Multi-cloud customer"<br>"Tier mix in Azure AI"</div>
+</div>
+
+<footer>
+<p>Cheat-sheet for personal use during 4/29 AMC quadruple earnings · Prepared 11:46 ET</p>
+<p>Companion to <code>research/2026/2026-04-29-update.md</code> · Predictions log <code>predictions/prediction-log.md</code> · Thesis <code>theses/computational-abundance.md</code></p>
+</footer>
+
+</div>
+</body>
+</html>
