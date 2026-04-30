@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Ecosystem Update — April 29, 2026</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2333;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --green: #3fb950;
+    --red: #f85149;
+    --yellow: #d29922;
+    --orange: #db6d28;
+    --purple: #bc8cff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 32px 20px;
+    line-height: 1.55;
+  }
+  .container { max-width: 1080px; margin: 0 auto; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 28px; }
+  h1 { font-size: 28px; margin: 0 0 6px; color: var(--text); }
+  .meta { color: var(--text-muted); font-size: 14px; }
+  h2 { font-size: 20px; margin: 32px 0 14px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 16px; margin: 20px 0 10px; color: var(--text); }
+  p { margin: 8px 0 12px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 18px; font-size: 13.5px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { color: var(--text-muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
+  tr:hover td { background: var(--surface); }
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-right: 4px;
+  }
+  .tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
+  .tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
+  .tag-yellow { background: rgba(210, 153, 34, 0.18); color: var(--yellow); }
+  .tag-orange { background: rgba(219, 109, 40, 0.18); color: var(--orange); }
+  .tag-purple { background: rgba(188, 140, 255, 0.18); color: var(--purple); }
+  .tag-blue { background: rgba(88, 166, 255, 0.18); color: var(--accent); }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 18px 20px; margin: 14px 0; }
+  .card.story { border-left: 3px solid var(--accent); }
+  .card.bull { border-left: 3px solid var(--green); }
+  .card.bear { border-left: 3px solid var(--red); }
+  .card.warn { border-left: 3px solid var(--orange); }
+  .banner { padding: 14px 20px; border-radius: 8px; margin: 18px 0; border: 1px solid; }
+  .banner-green { background: rgba(63, 185, 80, 0.08); border-color: rgba(63, 185, 80, 0.4); }
+  .banner-orange { background: rgba(219, 109, 40, 0.08); border-color: rgba(219, 109, 40, 0.4); }
+  .banner-blue { background: rgba(88, 166, 255, 0.08); border-color: rgba(88, 166, 255, 0.4); }
+  .banner-red { background: rgba(248, 81, 73, 0.08); border-color: rgba(248, 81, 73, 0.4); }
+  .banner-title { font-weight: 700; margin-bottom: 4px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 720px) { .grid-2 { grid-template-columns: 1fr; } }
+  ul { margin: 8px 0 14px; padding-left: 20px; }
+  li { margin: 4px 0; }
+  .num { font-variant-numeric: tabular-nums; font-weight: 600; }
+  .muted { color: var(--text-muted); }
+  .key-value { display: flex; flex-wrap: wrap; gap: 10px 24px; font-size: 13px; margin-top: 6px; }
+  .kv { color: var(--text-muted); }
+  .kv span { color: var(--text); font-weight: 600; margin-left: 4px; }
+  code { background: var(--surface2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; color: var(--purple); }
+  footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+<h1>AI Ecosystem Update — April 29, 2026</h1>
+<div class="meta">Daily · Pre-AMC · Quadruple hyperscaler night (MSFT + GOOG + META + AMZN) · WSJ OpenAI miss · Brent &gt;$110 sustained → P008 trigger · UAE leaves OPEC · TSMC ARM divestment + 5-fab 2nm 2026</div>
+</header>
+
+<div class="banner banner-orange">
+<div class="banner-title">Three pre-earnings shocks landed in 24 hours before the most concentrated AI-capex print of the cycle.</div>
+<div>(1) <strong>WSJ: OpenAI missed user/revenue targets</strong> — first credible primary-source demand-side miss; CFO Friar concerned about funding $600B compute. AI infra sector -2 to -5% on 4/28. (2) <strong>Brent $111–115 / WTI $99–103 sustained + UAE leaves OPEC+ effective May 1</strong> — IEA: "largest supply shock on record." Pre-specified P008 trigger fires mechanically: <strong>68% → 62%</strong>. (3) <strong>TSMC ARM divestment + 5-fab 2nm 2026 ramp ("most aggressive expansion in TSMC's history")</strong> — capacity ceiling shifts forward. Tonight AMC (~80-second window) is the resolution fork: aggregate 2026 capex bar <strong>$535–565B (cons) to $600–645B (some preview frames)</strong>.</div>
+</div>
+
+<h2>Market Snapshot (intraday 4/29, pre-AMC)</h2>
+<table>
+<thead><tr><th>Company</th><th>Ticker</th><th>Price</th><th>Day</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>NVIDIA</td><td>NVDA</td><td class="num">~$210</td><td><span class="tag tag-red">-1.1%</span></td><td>ATH $216.61 on 4/27. Down on OpenAI report sympathy. Nemotron 3 Nano Omni + Ising Quantum AI announced 4/28.</td></tr>
+<tr><td>Broadcom</td><td>AVGO</td><td class="num">~$390</td><td><span class="muted">flat</span></td><td><strong>-4% on 4/28</strong> on OpenAI report. ATH $422.65 (4/22). Range 385–396.</td></tr>
+<tr><td>TSMC</td><td>TSM</td><td class="num">~$395</td><td><span class="tag tag-yellow">-3.1% 1d / +6.6% wk</span></td><td>ARM stake fully divested ($231M, 3x gain). 5 2nm fabs ramping in 2026 — most aggressive expansion ever.</td></tr>
+<tr><td>Microsoft</td><td>MSFT</td><td class="num">~$412</td><td><span class="tag tag-red">-1.1%</span></td><td><strong>Reports tonight AMC.</strong> Cons. rev $81.3B (+16%), EPS $4.06. Azure ≥38% = "good enough."</td></tr>
+<tr><td>Alphabet</td><td>GOOG</td><td class="num">~$337</td><td><span class="muted">flat</span></td><td><strong>Reports tonight AMC.</strong> Cons. rev $92.2B–$106.9B range. Cloud cons ~$18.4B (+49.6% YoY).</td></tr>
+<tr><td>Meta</td><td>META</td><td class="num">~$667</td><td><span class="tag tag-red">-1%</span></td><td><strong>Reports tonight AMC.</strong> Cons. rev $55.6B (+31%). Capex guide $115–135B = key.</td></tr>
+<tr><td>Amazon</td><td>AMZN</td><td class="num">~$259</td><td><span class="muted">flat</span></td><td><strong>Reports tonight AMC.</strong> Cons. rev ~$177B (+14%). $200B 2026 capex was -8 to -10% reaction last quarter.</td></tr>
+</tbody>
+</table>
+<p class="muted">Aggregate $11T market cap (MSFT+GOOG+META+AMZN) trading -1% to -2% into the print. Macro: Brent ~$114 / WTI ~$103, both up ~3% intraday on stalled Iran talks. UAE departure from OPEC+ effective May 1 (Fri). FOMC AMC: hold 3.5–3.75%; Powell's last meeting; Senate Banking advanced Kevin Warsh nomination today.</p>
+
+<div class="banner banner-red">
+<div class="banner-title">P008 mechanically downgraded 68% → 62%: pre-specified Brent &gt;$110 sustained trigger fired.</div>
+<div>The 4/24 trigger map said "Brent &gt; $110 sustained → 62%" — honoring the pre-commitment. Brent has held $111–115 for the 4/27–4/29 window after Trump rejected Iran's proposal 4/27. UAE OPEC exit (May 1) is a structural break in oil supply governance — UAE = #3 producer (~12% of OPEC supply), 60 yrs of membership. Tonight's binary: any of MSFT/GOOG/META/AMZN cites energy as a buildout/margin headwind → <strong>58–60%</strong>; all four reaffirm 2026 capex without energy-cite → rebound to <strong>~68%</strong> (not full retrace because oil materially worse vs 4/24); cumulative capex cut &gt;10% → <strong>50%</strong> AND first major disconfirming evidence for comp-abundance entered into tracker.</div>
+</div>
+
+<h2>What Happened</h2>
+
+<div class="card warn">
+<h3>1. WSJ: OpenAI missed user + revenue targets — first credible demand-side disconfirming candidate</h3>
+<div class="key-value">
+<span class="kv">2025 actual rev <span>$13.1B</span></span>
+<span class="kv">2030 target <span>$280B</span></span>
+<span class="kv">Compute commitment <span>$600B by 2030</span></span>
+<span class="kv">Mkt reaction 4/28 <span>NVDA -1%, AMD -4%, ORCL -5%, CRWV -5%, AVGO -4%</span></span>
+</div>
+<ul>
+<li>Multiple monthly revenue target misses in 2026; lost ground specifically to <strong>Anthropic</strong> in coding + enterprise.</li>
+<li>ChatGPT failed to reach internal goal of 1B WAU year-end.</li>
+<li>CFO Friar: worried about ability to fund $600B compute commitment if revenue doesn't keep doubling annually.</li>
+<li>Board scrutinizing large-scale data-center deals.</li>
+<li>Altman + Friar joint denial to CNBC: <em>"This is ridiculous. We are totally aligned on buying as much compute as we can."</em></li>
+</ul>
+<p><strong>Three crucial qualifiers prevent over-weighting:</strong></p>
+<ul>
+<li><strong>(a) Anthropic taking OpenAI's lost share, not vanishing demand.</strong> Anthropic ARR went $9B → $30B in 4 months (per 4/24 disclosure). Compute demand from Anthropic has likely <em>grown faster</em> than OpenAI's miss. Net comp-demand-positive given Anthropic's TPU primary stack scaling faster than OpenAI's NVDA-primary stack.</li>
+<li><strong>(b) GPT-5.5 ~2x price-up (4/24)</strong> was a deliberate test; users substituting to Claude/Gemini ≠ users abandoning AI.</li>
+<li><strong>(c) OpenAI's 2026–2027 compute is purchased <em>via</em> MSFT + Oracle + CoreWeave + AWS</strong> — those contracts are recognized irrespective of OpenAI revenue (until renegotiated).</li>
+</ul>
+<p><strong>Net read:</strong> mildly disconfirming for OpenAI-specific narrative + the $1T IPO valuation; <em>largely confirming</em> for the Anthropic-conviction sub-thesis Andres holds. Filed Moderate (not Strong) until tonight's hyperscaler test resolves. If aggregate 2026 capex is reaffirmed at $535–565B+, the WSJ story is bounded as an OpenAI-specific event. If hyperscalers cut citing demand uncertainty, this becomes the start of a more serious thesis unwind.</p>
+<p class="muted">Logged as Moderate disconfirming evidence in <code>theses/computational-abundance.md</code> (2026-04-28 entry).</p>
+</div>
+
+<div class="card bear">
+<h3>2. Brent $111–115 / WTI $99–103 sustained + UAE leaves OPEC+ May 1</h3>
+<div class="key-value">
+<span class="kv">Brent <span>~$114</span></span>
+<span class="kv">WTI <span>~$103</span></span>
+<span class="kv">UAE OPEC exit <span>May 1, 2026</span></span>
+<span class="kv">Hormuz reopening <span>2H26 per Baker Hughes</span></span>
+</div>
+<ul>
+<li>Trump rejected Iran proposal 4/27; oil broke decisively above $110 Brent and held there.</li>
+<li><strong>UAE announces departure from OPEC + OPEC+ effective May 1, 2026</strong> — first major OPEC defection in decades. UAE = OPEC's #3 producer (~12% supply); 60 yrs of membership. Stated reason: "national interest" and frustration with quotas.</li>
+<li>IEA describes Hormuz dual blockade (since 4/13) as "<strong>largest supply shock on record</strong>" — 10% global oil + 20% global LNG offline.</li>
+<li>Baker Hughes: full Hormuz reopening unlikely until 2H26.</li>
+<li>If Saudi/others follow UAE, marginal-supply discipline weakens, implying higher equilibrium oil prices going forward.</li>
+</ul>
+<p><strong>Direct AI-infrastructure transmission channels:</strong> (1) data center electricity opex (5–15% of opex line) elevated for 18–24 months; (2) Hormuz disruption affects Qatar helium (~1/3 world supply, critical for litho), Korean/Taiwanese fab LNG power supply, Gulf copper/aluminum exports — physical supply chain constraints on the buildout independent of oil price. Tonight's hyperscaler call is the test of whether energy has crossed into capex/margin commentary.</p>
+<p class="muted">Logged as Moderate disconfirming evidence in <code>theses/computational-abundance.md</code> (2026-04-29 entry).</p>
+</div>
+
+<div class="card bull">
+<h3>3. TSMC: ARM stake divested + 5-fab 2nm 2026 ramp confirmed</h3>
+<ul>
+<li><strong>TSMC sold all 1.11M Arm shares at $207.65</strong> (~$231M proceeds, 3x gain). Removes any equity link to a single chip-design IP partner.</li>
+<li><strong>5 2nm fabs entering mass production ramp in 2026</strong> — described at NA Tech Symposium as "most aggressive expansion in TSMC's history." Doubling pace of advanced-node capacity expansion.</li>
+</ul>
+<p><strong>Strategic positioning:</strong> Pure neutral-foundry posture as AI silicon market fragments (NVIDIA + AVGO + Google TPU + Anthropic Trainium + Apple + Meta MTIA + multiple sovereign AI chip programs all need a neutral foundry). $231M is rounding-error vs $52–65B annual capex; signal value &gt; dollar value.</p>
+<p><strong>Read-through:</strong> (1) Faster Rubin ramp for NVIDIA → upside to <code>P017</code> (NVDA Q2 FY27 ≥$80B); (2) More 2nm capacity for AVGO XPU programs (Meta MTIA 2nm, Google TPU 2nm, Anthropic Trainium 3 2nm) → supports <code>P020</code> (Broadcom FY27 AI &gt;$60B); (3) Binding constraint may be moving from CoWoS to advanced-packaging-throughput-on-finished-2nm-wafers — open item for follow-up deep dive.</p>
+<p class="muted">Logged in <code>watchlist/tier1/TSM.md</code> changelog (2026-04-29 entry).</p>
+</div>
+
+<div class="card story">
+<h3>4. Other 4/28–29 notable</h3>
+<ul>
+<li><strong>Qualcomm × OpenAI on-device AI deal (4/29)</strong> — Qualcomm to embed OpenAI models directly into mobile processors. Triggered NVDA +3.6% intraday rally. Validates on-device inference layer; small near-term TAM but signals broader Mag7 + chip-design integration.</li>
+<li><strong>NVIDIA Nemotron 3 Nano Omni (4/28)</strong> — open multimodal model (vision + audio + language + text). Continues open-weight model push.</li>
+<li><strong>NVIDIA Ising Quantum AI (4/28)</strong> — first family of open-source quantum AI models. Scientific compute / quantum-classical hybrid; TAM-immaterial near-term.</li>
+<li><strong>Goldman Sachs HK bans Anthropic AI for bankers (FT/4/28)</strong> — regulatory/data-security driven; HK-specific. Does not affect Anthropic's GSI distribution wave (NEC, Accenture, McKinsey, BCG, Deloitte).</li>
+<li><strong>Anthropic + OpenAI brief House Homeland Security (4/28)</strong> — closed-door briefing on cyber-capable AI models. Anthropic withheld Mythos Preview public release due to security exploit capability. OpenAI tiered-release for GPT-5.4-Cyber.</li>
+<li><strong>Anthropic Project Deal internal experiment (4/28)</strong> — Claude agents acted for 69 employees, closed 186 deals worth &gt;$4,000 in 1 week internal marketplace. Demo-ware but interesting agentic-deployment data point.</li>
+</ul>
+</div>
+
+<h2>Tonight's Resolution Forks (4/29 AMC, ~80-second window)</h2>
+
+<div class="grid-2">
+<div class="card bull">
+<h3>Bull resolution</h3>
+<ul>
+<li>All 4 hyperscalers reaffirm or raise 2026 capex without an energy-cite</li>
+<li>Aggregate 2026 capex tracking ≥$535–565B</li>
+<li>Cloud growth in line or above guide (Azure ≥38%, GCP ≥45%, AWS ≥20%)</li>
+<li>WSJ OpenAI miss bounded as OpenAI-specific event, not sector event</li>
+<li>P008 rebounds <strong>62% → ~68%</strong> (not full 78% retrace because oil materially worse vs 4/24)</li>
+</ul>
+</div>
+<div class="card bear">
+<h3>Bear resolution</h3>
+<ul>
+<li>Any 1 hyperscaler cuts 2026 capex &gt;5% OR cites energy as buildout/margin headwind → P008 → <strong>58–60%</strong></li>
+<li>Cumulative capex cut &gt;10% → P008 → <strong>50%</strong> AND first major comp-abundance disconfirming evidence entered</li>
+<li>Cloud growth misses guide → reinforces WSJ OpenAI demand-side miss</li>
+<li>MSFT specifically discloses Azure-OpenAI revenue/margin headwind → MSFT exposure to OpenAI revenue trouble materializes</li>
+</ul>
+</div>
+</div>
+
+<h2>Key data to extract from each call</h2>
+<ul>
+<li>2026 full-year capex reaffirm/raise/cut + magnitude</li>
+<li>Any explicit mention of <strong>energy / power / oil / electricity</strong> cost as a constraint</li>
+<li>Cloud (Azure / GCP / AWS) growth rate vs guide</li>
+<li>AI revenue contribution in cloud lines (where disclosed)</li>
+<li>Backlog / RPO growth</li>
+<li>Customer mix commentary — especially MSFT's OpenAI exposure framing</li>
+</ul>
+
+<h2>IBKR Wire Addendum (DJ-RT, last 24h)</h2>
+<p><em>Wire-only items not surfaced in web search. The dominant signal: sell-side is leaning <strong>into</strong>, not away from, AI-compute names heading into tonight's prints — counter to WSJ-OpenAI panic narrative.</em></p>
+
+<div class="grid">
+<div class="card bull">
+<h3>Sell-side actions (pre-earnings posture)</h3>
+<ul>
+<li><strong>AMD: Susquehanna PT $300 → $375</strong> (+25%, Positive maintained, 4/29) — 6 days before AMD Q1</li>
+<li><strong>MU: D.A. Davidson initiates Buy at $1,000 PT</strong> — highest on Street; multi-year structural-growth framing</li>
+<li><strong>MU: TD Cowen $550 → $660</strong> (4/28)</li>
+<li><strong>CRWV: Wells Fargo $125 → $135</strong> (Overweight maintained) — bullish stance survived OpenAI panic</li>
+<li><strong>PLTR: Citi $260 → $210</strong> (-19%, Buy maintained) — pre-Q1 (5/4) caution; PLTR-specific, not AI-funding</li>
+</ul>
+</div>
+<div class="card">
+<h3>Counter-narrative: memory rebound 4/29 AM</h3>
+<ul>
+<li><strong>Seagate beat + raised guide</strong> ("structural growth powered by durable demand") drove memory complex up sharply intraday</li>
+<li>WDC <strong>+9.9%</strong> | Sandisk <strong>+8.2%</strong> | MU <strong>+4.5%</strong></li>
+<li>AI-storage demand reading clean and accelerating — reinforces interpretation that 4/28 selloff was OpenAI funding-specific, not aggregate AI-demand collapse</li>
+</ul>
+</div>
+<div class="card">
+<h3>Wire-only stories</h3>
+<ul>
+<li><strong>OpenAI × AWS expansion</strong> (post-MSFT exclusivity end) — confirms triple-cloud OpenAI structure (MSFT + Oracle + AWS); reinforces P007 80%</li>
+<li><strong>Google → Pentagon AI tools</strong> (WSJ) — defense AI revenue stream; symbolic pre-print disclosure</li>
+<li><strong>Meta unwinding deal for AI startup</strong> (WSJ headline only) — needs unpacking; possible Scale AI walk-back</li>
+<li><strong>Strait of Hormuz still blocked</strong> per Pepperstone Market Talk — confirms P008 mechanical environment</li>
+<li><strong>EU DSA action vs Meta</strong> on minors on FB/IG — fines could compound capex math marginally</li>
+</ul>
+</div>
+<div class="card">
+<h3>Insider activity (24h)</h3>
+<ul>
+<li><strong>AMD VP Papermaster:</strong> sold 31,320 sh (10b5-1)</li>
+<li><strong>AMZN Dir Rubinstein:</strong> sold 3,849 sh @ $260.00 (4/24, reported 4/28)</li>
+<li><strong>GOOGL CFO + CEO surrenders</strong> (7,117 + 3,700 sh) — likely RSU tax withholding, neutral signal</li>
+<li><strong>TSM VP Tien Bor-Zen <em>purchased</em> 20 sh @ $388.00</strong> (token, but corporate signal direction)</li>
+<li><strong>CRWV: Omnadora Capital LLC</strong> registered 107,693 sh; Chairman Intrator separately registered 200,000 sh — pattern of pre-earnings exit prep continues</li>
+</ul>
+</div>
+</div>
+
+<p style="margin-top: 1em;"><strong>Synthesis:</strong> The PT-action fingerprints across AMD, MU, CRWV all leaning bullish into earnings is evidence that the sell-side professional cohort is treating WSJ-OpenAI as bounded/tactical, not as the start of an AI-funding-cascade. PLTR is the exception (Citi cut), but PLTR-specific. Seagate AI-storage beat is the cleanest counter-data point on the day.</p>
+
+<h2>Predictions Update</h2>
+<table>
+<thead><tr><th>ID</th><th>Prediction</th><th>Prob</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>P008</td><td>Big 5 hyperscaler 2026 actual capex within 10% of guided ($575–740B)</td><td class="num">68% → <strong>62%</strong></td><td><span class="tag tag-red">Downgraded</span> Brent &gt;$110 sustained pre-spec trigger fired; UAE OPEC exit compounds. Resolves further tonight.</td></tr>
+<tr><td>P003</td><td>No major lab publicly shifts majority of training to custom silicon by EOY26</td><td class="num">43%</td><td><span class="tag tag-blue">Hold</span> WSJ doesn't bear on this</td></tr>
+<tr><td>P013</td><td>Google Cloud revenue ≥$95B FY26</td><td class="num">80%</td><td><span class="tag tag-blue">Resolves partially tonight</span></td></tr>
+<tr><td>P014</td><td>GOOG capex within 10% of $175–185B</td><td class="num">70%</td><td><span class="tag tag-blue">Resolves partially tonight</span></td></tr>
+<tr><td>P015</td><td>DRAM undersupply through C3Q26</td><td class="num">88%</td><td><span class="tag tag-green">Hold; SK Hynix Q1 reaffirms</span></td></tr>
+<tr><td>P017</td><td>NVDA Q2 FY27 ≥$80B</td><td class="num">75%</td><td><span class="tag tag-blue">Hold; tonight's data informs</span></td></tr>
+<tr><td>P019</td><td>AVGO Q2 FY26 AI ≥$10B</td><td class="num">80%</td><td><span class="tag tag-blue">Hold; AVGO 4/28 selloff was sentiment, not order-book</span></td></tr>
+<tr><td>P020</td><td>AVGO FY27 AI &gt;$60B</td><td class="num">72%</td><td><span class="tag tag-blue">Hold</span></td></tr>
+<tr><td>P022</td><td>NVDA Q1 FY27 ≥$76B</td><td class="num">85%</td><td><span class="tag tag-blue">Hold; resolves ~May 20</span></td></tr>
+</tbody>
+</table>
+
+<h2>Watch List</h2>
+<ul>
+<li><strong>Tonight 4/29 AMC:</strong> MSFT Q3 FY26 + GOOG Q1 26 + META Q1 26 + AMZN Q1 26 (~80-second window per Bloomberg)</li>
+<li><strong>Tonight 4/29 ~2pm ET:</strong> FOMC + Powell presser (last as Chair)</li>
+<li><strong>Fri 5/1:</strong> MSFT E7 Frontier Suite GA; UAE OPEC+ exit effective</li>
+<li><strong>Mon 5/4:</strong> PLTR Q1</li>
+<li><strong>Tue 5/5:</strong> AMD Q1 (guided $9.8B ±$300M); ANET Q1 (possible)</li>
+<li><strong>~May 16:</strong> Powell → Warsh transition</li>
+<li><strong>~May 20:</strong> NVIDIA Q1 FY27 (P022 resolution)</li>
+<li><strong>~Jun 2026:</strong> AVGO Q2 (P019); MU FQ3 (P021)</li>
+</ul>
+
+<h2>Open Questions</h2>
+<ol>
+<li><strong>WSJ OpenAI miss — confirming or disconfirming for the broader thesis?</strong> Need: next ChatGPT WAU/DAU disclosure; next OpenAI ARR update; verification that Anthropic ARR is still tracking $30B+. If Anthropic + Gemini growth fully offsets OpenAI miss → comp-demand neutral. If aggregate consumer-AI growth slowed → first real disconfirmation.</li>
+<li><strong>GPT-5.5 price-up volume elasticity test</strong> — still pending. WSJ story is consistent with users substituting to Claude/Gemini, not with users abandoning AI. Not yet possible to disentangle.</li>
+<li><strong>Tonight's MSFT call: OpenAI exposure framing.</strong> Microsoft's relationship with OpenAI (compute + revenue share) is exposed if OpenAI has revenue trouble. Watch for any Azure-OpenAI revenue color and any margin-impact framing.</li>
+<li><strong>UAE OPEC exit second-order effects.</strong> Does Saudi follow with production retaliation? Does ARAMCO crash global price to discipline UAE? Watch oil curves over next 1–2 weeks.</li>
+<li><strong>Iran kinetic re-escalation risk</strong> — current state (dual blockade, no talks scheduled, Trump rejected proposal 4/27) is unstable. Pre-spec trigger: kinetic resumes → P008 to 55–58%.</li>
+<li><strong>2nm wafer demand model</strong> — given TSMC's 5-fab 2026 ramp, is the binding capacity constraint moving from CoWoS to advanced-packaging-throughput-on-finished-2nm-wafers?</li>
+<li><strong>Powell → Warsh transition</strong> — Warsh is hawkish; potential Fed regime shift starting May 16. Mild macro headwind but not AI-specific.</li>
+</ol>
+
+<footer>
+<p>Daily report — pre-AMC. Tonight's quadruple hyperscaler print is the resolution fork for both P008 and the WSJ-OpenAI-miss interpretation. Next update will reflect the post-print analysis.</p>
+<p class="muted">Source materials: WSJ via CNBC/Tom's Hardware (4/28); Bloomberg/Al Jazeera/WashPost on UAE OPEC exit (4/28); IEA + Baker Hughes on Hormuz; TechNode + Digitimes on TSMC ARM divestment + 2nm 5-fab; Yahoo Finance / TipRanks / Seeking Alpha for hyperscaler earnings previews.</p>
+</footer>
+
+</div>
+</body>
+</html>
