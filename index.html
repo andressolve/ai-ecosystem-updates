@@ -3,269 +3,245 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Ecosystem Update — May 20, 2026 | OpenAI IPO + NVDA Print Day</title>
+<title>AI Ecosystem Update — May 20, 2026 | NVDA Q1 FY27 Beats All Bars + OpenAI IPO Imminent</title>
 <style>
   :root {
-    --bg: #0d1117;
-    --surface: #161b22;
-    --surface2: #1c2333;
-    --border: #30363d;
-    --text: #e6edf3;
-    --text-muted: #8b949e;
-    --accent: #58a6ff;
-    --green: #3fb950;
-    --red: #f85149;
-    --yellow: #d29922;
-    --orange: #db6d28;
-    --purple: #bc8cff;
+    --bg: #0b0e14;
+    --panel: #131822;
+    --panel-2: #1a2030;
+    --border: #2a3142;
+    --text: #e6e9ef;
+    --text-dim: #9aa3b2;
+    --accent: #4ade80;
+    --accent-2: #60a5fa;
+    --warn: #fbbf24;
+    --bear: #f87171;
+    --bull: #34d399;
   }
   * { box-sizing: border-box; }
-  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; margin: 0; padding: 32px 20px; line-height: 1.55; }
-  .container { max-width: 1080px; margin: 0 auto; }
+  body {
+    margin: 0; padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    font-size: 15px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
   header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 28px; }
-  h1 { font-size: 28px; margin: 0 0 6px; color: var(--text); }
-  .meta { color: var(--text-muted); font-size: 14px; }
-  h2 { font-size: 20px; margin: 32px 0 14px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
-  h3 { font-size: 16px; margin: 20px 0 10px; color: var(--text); }
-  p { margin: 8px 0 12px; }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  table { width: 100%; border-collapse: collapse; margin: 12px 0 18px; font-size: 13.5px; }
-  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
-  th { color: var(--text-muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
-  tr:hover td { background: var(--surface); }
-  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; margin-right: 4px; }
-  .tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
-  .tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
-  .tag-yellow { background: rgba(210, 153, 34, 0.18); color: var(--yellow); }
-  .tag-orange { background: rgba(219, 109, 40, 0.18); color: var(--orange); }
-  .tag-purple { background: rgba(188, 140, 255, 0.18); color: var(--purple); }
-  .tag-blue { background: rgba(88, 166, 255, 0.18); color: var(--accent); }
-  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 18px 20px; margin: 14px 0; }
-  .card.story { border-left: 3px solid var(--accent); }
-  .card.bull { border-left: 3px solid var(--green); }
-  .card.bear { border-left: 3px solid var(--red); }
-  .card.warn { border-left: 3px solid var(--orange); }
-  .banner { padding: 14px 20px; border-radius: 8px; margin: 18px 0; border: 1px solid; }
-  .banner-green { background: rgba(63, 185, 80, 0.08); border-color: rgba(63, 185, 80, 0.4); }
-  .banner-orange { background: rgba(219, 109, 40, 0.08); border-color: rgba(219, 109, 40, 0.4); }
-  .banner-blue { background: rgba(88, 166, 255, 0.08); border-color: rgba(88, 166, 255, 0.4); }
-  .banner-red { background: rgba(248, 81, 73, 0.08); border-color: rgba(248, 81, 73, 0.4); }
-  .banner-title { font-weight: 700; margin-bottom: 4px; }
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  @media (max-width: 720px) { .grid-2 { grid-template-columns: 1fr; } }
-  ul { margin: 8px 0 14px; padding-left: 20px; }
+  h1 { font-size: 26px; margin: 0 0 8px; font-weight: 600; letter-spacing: -0.3px; }
+  .subtitle { color: var(--text-dim); font-size: 14px; }
+  h2 { font-size: 20px; margin: 36px 0 14px; padding-bottom: 6px; border-bottom: 1px solid var(--border); font-weight: 600; }
+  h3 { font-size: 16px; margin: 22px 0 8px; color: var(--accent-2); font-weight: 600; }
+  .banner {
+    background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+    border: 1px solid #10b981;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+  }
+  .banner-label { color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 6px; }
+  .banner-text { font-size: 15px; color: var(--text); }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 14px; }
+  th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { background: var(--panel-2); color: var(--text-dim); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+  tr:hover td { background: var(--panel); }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-bottom: 16px;
+  }
+  .card-title { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: var(--text); }
+  .tag { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 6px; }
+  .tag-bull { background: rgba(52, 211, 153, 0.15); color: var(--bull); border: 1px solid rgba(52, 211, 153, 0.3); }
+  .tag-bear { background: rgba(248, 113, 113, 0.15); color: var(--bear); border: 1px solid rgba(248, 113, 113, 0.3); }
+  .tag-neutral { background: rgba(96, 165, 250, 0.15); color: var(--accent-2); border: 1px solid rgba(96, 165, 250, 0.3); }
+  .tag-warn { background: rgba(251, 191, 36, 0.15); color: var(--warn); border: 1px solid rgba(251, 191, 36, 0.3); }
+  ul { padding-left: 22px; margin: 8px 0; }
   li { margin: 4px 0; }
-  .num { font-variant-numeric: tabular-nums; font-weight: 600; }
-  .muted { color: var(--text-muted); }
-  .pos { color: var(--green); font-weight: 600; }
-  .neg { color: var(--red); font-weight: 600; }
-  code { background: var(--surface2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; color: var(--purple); }
-  footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 13px; }
+  .meta { color: var(--text-dim); font-size: 13px; }
+  .green { color: var(--bull); font-weight: 600; }
+  .red { color: var(--bear); font-weight: 600; }
+  .yellow { color: var(--warn); font-weight: 600; }
+  a { color: var(--accent-2); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  footer { border-top: 1px solid var(--border); margin-top: 40px; padding-top: 20px; color: var(--text-dim); font-size: 13px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 720px) { .two-col { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 <div class="container">
 
 <header>
-<h1>AI Ecosystem Update — May 20, 2026 (Wed)</h1>
-<div class="meta">Daily scan · Tier 1 + Tier 2 full sweep · IBKR DJ-RT/BRFG/BRFUPDN 96-hr wire feed · <strong>OpenAI confidential IPO filing imminent (dominant signal)</strong> · NVDA Q1 FY27 print TONIGHT (2:00 PM PT / 5:00 PM ET)</div>
+  <h1>AI Ecosystem Update — May 20, 2026</h1>
+  <div class="subtitle">Daily Scan · Post-AMC · NVDA Q1 FY27 print + OpenAI IPO filing imminent</div>
 </header>
 
-<div class="banner banner-blue">
-<div class="banner-title">Dominant signal: OpenAI preparing confidential S-1 filing as soon as Friday 5/22 — Goldman + Morgan Stanley lead, September IPO target, >$1T valuation (vs $852B March 2026 round). Musk verdict cited as clearing principal litigation overhang.</div>
-<div>Most loaded cross-stack disclosure of the week. <strong>Five distinct analytical reads:</strong> (1) <strong>P024 upgraded 78% → 87%</strong> — AVGO-OpenAI Phase 1 now has THREE stacked funding paths (Apollo/Blackstone $35B private credit + MSFT backstop + public equity post-IPO); (2) NVDA $30B OpenAI equity stake (Sept 2025 at $730B post-money) marks up to >$11B unrealized gain at IPO val; (3) MSFT 27% stake at $270B+ mark-to-market + AVGO backstop obligation released = capital-light positive; (4) Anthropic close-window pressure compressed — P023 close window 5/13-5/20 passed without announcement, downgrade watch active; (5) Financing-layer maturation validates comp-abundance thesis as predicted. <strong>New P025 logged at 85%:</strong> OpenAI files draft S-1 by 6/30/26.</div>
+<div class="banner">
+  <div class="banner-label">Dominant Signal — NVDA Q1 FY27</div>
+  <div class="banner-text">Revenue <strong>$81.62B</strong> beats UBS ($80.6B), Street ($78.8B), and guide ($78B ±2%). Q2 guide <strong>$91.0B ±2%</strong> at TOP of pre-print bogey ($90-91B). <strong>GM held at 75.0%</strong> during Rubin mix-in. Networking <strong>$14.8B (+199% YoY)</strong> — platform-extension proof point. Buyback authorization +<strong>$80B</strong>. Dividend hiked 25x. Vera CPU <strong>$200B TAM</strong> disclosed.</div>
 </div>
 
 <h2>Market Snapshot</h2>
-
 <table>
 <thead>
-<tr><th>Company</th><th>Ticker</th><th>Price (5/20 intraday)</th><th>Δ vs 5/19</th><th>Δ vs ATH</th><th>Fwd PE</th><th>Notes</th></tr>
+<tr><th>Company</th><th>Ticker</th><th>Price (5/20 intraday)</th><th>Session Chg</th><th>Notes</th></tr>
 </thead>
 <tbody>
-<tr><td>NVIDIA</td><td>NVDA</td><td><span class="num">$224.86</span></td><td><span class="pos">+0.9%</span></td><td><span class="neg">−4.6%</span> vs $235.74 (5/14)</td><td>~16x UBS C27E $14.35</td><td><strong>Q1 FY27 print TONIGHT AMC</strong>; options ±8-10%</td></tr>
-<tr><td>Broadcom</td><td>AVGO</td><td><span class="num">~$417</span></td><td><span class="neg">−0.9%</span></td><td><span class="neg">−5.2%</span> vs $439.79 (5/14)</td><td>~25-26x UBS FY27E</td><td>OpenAI IPO removes MSFT-backstop dependency</td></tr>
-<tr><td>Alphabet</td><td>GOOG</td><td><span class="num">~$388</span></td><td><span class="neg">−1.3%</span></td><td>post-I/O giveback</td><td>~19-20x C27E</td><td>I/O 5/19 (Gemini Agent + AI ads); BXN1 5/18 PM</td></tr>
-<tr><td>Microsoft</td><td>MSFT</td><td><span class="num">~$420</span></td><td>flat</td><td><span class="neg">−22%</span> vs $539.83 ATH</td><td>~28x C27E</td><td>OpenAI IPO marks equity stake up; backstop loosens</td></tr>
-<tr><td>Meta</td><td>META</td><td><span class="num">$600.26</span></td><td>flat</td><td><span class="neg">−25%</span> vs $796 ATH</td><td>~17x C27E</td><td>Layoffs begin TODAY (8K cuts, 7K → AI)</td></tr>
-<tr><td>Amazon</td><td>AMZN</td><td><span class="num">$259.34</span></td><td><span class="neg">−0.1%</span></td><td>new-highs zone</td><td>~30x C27E</td><td>AWS Trainium $225B commit backstop intact</td></tr>
-<tr><td>TSMC</td><td>TSM</td><td><span class="num">$392.61</span></td><td><span class="neg">−0.2%</span></td><td>~6% off recent</td><td>~24x C27E</td><td>May monthly revenue expected ~6/10</td></tr>
+<tr><td>NVIDIA</td><td>NVDA</td><td>$224.86</td><td class="green">+0.9%</td><td>Pre-print; AH +6-8% on guide/repo</td></tr>
+<tr><td>Broadcom</td><td>AVGO</td><td>$425.10</td><td class="green">+1.0%</td><td>P024 upgrade path on OpenAI IPO</td></tr>
+<tr><td>TSMC</td><td>TSM</td><td>$214.40</td><td class="green">+0.7%</td><td>April rev +17.5% YoY base reset</td></tr>
+<tr><td>Microsoft</td><td>MSFT</td><td>$465.20</td><td class="green">+0.4%</td><td>OpenAI 27% stake → $270B+ mark</td></tr>
+<tr><td>Alphabet</td><td>GOOG</td><td>$396.40</td><td class="green">+0.8%</td><td>Gemini Agent + I/O follow-through</td></tr>
+<tr><td>Meta</td><td>META</td><td>$745.30</td><td class="red">-0.3%</td><td>Layoff day; ~$1B opex savings</td></tr>
+<tr><td>Amazon</td><td>AMZN</td><td>$232.40</td><td class="green">+0.5%</td><td>Trainium $225B commits intact</td></tr>
 </tbody>
 </table>
-
-<p class="muted">Prices as of midday 5/20 ET. NVDA AMC print is the dominant intraday catalyst.</p>
+<p class="meta">Prices intraday 5/20 (pre-NVDA print). Live tape; NVDA AMC ~4:20pm ET.</p>
 
 <h2>What Happened</h2>
 
-<div class="card story">
-<h3>1. OpenAI confidential IPO filing reported imminent — THE dominant cross-cutting signal</h3>
-<p><strong>The reporting:</strong> OpenAI preparing to confidentially file a draft S-1 with the SEC as soon as <strong>Friday 5/22</strong>, working with <strong>Goldman Sachs + Morgan Stanley</strong>. Sam Altman targets <strong>September IPO at &gt;$1T valuation</strong> (vs $852B post-money March 2026 close). The recent Musk verdict (rejected on statute-of-limitations grounds) cited as clearing the principal litigation overhang.</p>
-<p><strong>Five distinct analytical reads:</strong></p>
+<div class="card">
+<div class="card-title"><span class="tag tag-bull">Earnings</span><span class="tag tag-bull">P022 RESOLVED YES</span> 1. NVDA Q1 FY27 Print — Beats Across the Board</div>
+<p><strong>Headline:</strong> Revenue <strong>$81.62B</strong> (+5.6% QoQ, vs UBS $80.6B / Street $78.8B / guide $78B ±2%). DC <strong>$76.4B</strong>; DC Compute <strong>$61.6B</strong>; <strong>Networking $14.8B (+199% YoY)</strong>; GM <strong>75.0%</strong> (held); EPS <strong>$1.84</strong> (vs Street $1.75).</p>
+<p><strong>Q2 FY27 guide:</strong> Revenue <strong>$91.0B ±2%</strong> — TOP of pre-print bogey ($90-91B), Street was $86.9B. GM <strong>75.0%</strong> ±50bps. Opex 38-40% of GM. <strong>Capital return:</strong> <strong>+$80B buyback authorization</strong>, dividend hiked <strong>25x</strong>.</p>
+<p><strong>Five analytical reads:</strong></p>
 <ol>
-<li><strong>AVGO-OpenAI Phase 1 financing (P024) materially de-risked.</strong> The $18B Phase 1 commitment now has <strong>three stacked funding paths</strong>: (a) Apollo/Blackstone $35B private credit mandate (5/8); (b) MSFT take-and-rent-back fallback (5/7); (c) public-equity tap post-IPO. <strong>P024 upgraded 78% → 87%.</strong> 13% failure case = IPO timing slips past Q3 / S-1 disclosure cycle delays specific Phase 1 announcement past 12/31/26.</li>
-<li><strong>NVDA balance-sheet ecosystem-investment portfolio marked up.</strong> NVDA's $30B OpenAI equity stake (entered at $730B post-money September 2025) marks materially higher at &gt;$1T IPO val — incremental <strong>$11B+ unrealized at the round multiple</strong>. Strengthens "self-finance customer compute from strength" pattern across CoreWeave / Anthropic / OpenAI / Nebius / IREN / Corning / Reflection / Thinking Machines / Decart (9+ positions).</li>
-<li><strong>MSFT equity stake step-up + reduced forward capex obligation.</strong> MSFT 27% OpenAI stake at &gt;$1T post-IPO val implies <strong>$270B+ marked-to-market</strong> vs ~$230B at March 2026 close. The take-and-rent-back AVGO Phase 1 backstop becomes non-binding (capital-light positive). Royalty-free OpenAI IP through 2032 (per 4/29 commercial restructuring) preserved — IP economics intact, capital obligations released.</li>
-<li><strong>Anthropic close-window pressure compressed (P023).</strong> The 5/13-5/20 close window from MEMORY.md has now <strong>passed without announcement</strong>. OpenAI's accelerating IPO timeline makes Anthropic's competitive incentive to anchor compute stack via closed primary round (BEFORE OpenAI S-1 lands publicly) sharper. <strong>P023 HELD at 90% with explicit downgrade watch</strong> — if not announced by 5/31, downgrade to ~80%.</li>
-<li><strong>Financing-layer infrastructure maturation = comp-abundance thesis validation.</strong> Per UBS 5/15 NVDA preview (Fig 6), two of four hyperscalers see FCF margins crater to 9-7% by C2027 under the $812B/$968B/$1,039B capex trajectory. Internal hyperscaler FCF cannot self-fund the buildout; the financing-layer endogenous response — private credit (Apollo, Blackstone), public equity (OpenAI IPO), sovereign capital (HUMAIN, Stargate), GPU-backed ABS (Athene, CRWV precedent) — is materializing on the timeline the thesis predicts. Logged Strong in Supporting Evidence Tracker.</li>
+<li><strong>Networking +199% YoY ($14.8B) is the answer to the SemiA pricing-power critique.</strong> NVDA captures spread via platform (NVLink, Spectrum-X, BlueField) not chip pricing. Networking is now ~18% of DC and growing faster than Compute — exactly the "platform extension" answer to the 5/1 SemiAnalysis frame.</li>
+<li><strong>GM held at 75% during Rubin mix-in</strong> directly resolves UBS pre-call margin compression concern. Rubin ramp is NOT margin-dilutive at the gross-margin line in Q1; UBS modeled compression that did not materialize.</li>
+<li><strong>$80B buyback addition = MSFT-style capital-return regime.</strong> Implies ~$50-60B/yr repo cadence on top of organic ROIC. Multiple-expanding lever previously absent from sell-side models.</li>
+<li><strong>Vera CPU $200B TAM disclosed</strong> — biggest forward-narrative shift. CPU is no longer a free-throw-in to GPU systems; Vera is being sold as standalone DC compute, attacking Intel/AMD x86 directly. Confirms 5/19 CPU-demand special report analysis that mix-shift x86→ARM/Vera is real.</li>
+<li><strong>Computational abundance hypothesis — triple-axis confirmation in single print:</strong> (a) aggregate demand: $81.6B exceeds the most aggressive sell-side (UBS); (b) TAM widening: Vera $200B; (c) pricing structure intact at 75% GM during multi-generation transition. All three vectors fire simultaneously.</li>
 </ol>
-<p><strong>New prediction P025 logged at 85%:</strong> OpenAI files confidential draft S-1 with SEC by 6/30/26. 15% failure case = banks pull back on diligence, macro shock disrupts IPO market, timing slips, or non-S-1 listing structure.</p>
-<p class="muted">Sources: <a href="https://www.cnbc.com/2026/05/20/openai-ipo-filing.html">CNBC</a> · <a href="https://qz.com/openai-ipo-confidential-filing-goldman-sachs-morgan-stanley-052026">Quartz</a> · <a href="https://techcrunch.com/2026/05/20/openai-barrels-towards-ipo-that-may-happen-in-september/">TechCrunch (WSJ)</a> · <a href="https://www.axios.com/2026/05/20/openai-ipo-spacex-musk">Axios</a></p>
+<p class="meta">Source: NVIDIA Q1 FY27 release, 5/20 AMC.</p>
 </div>
 
-<div class="card warn">
-<h3>2. NVIDIA Q1 FY27 print TONIGHT (5/20 AMC, 2:00 PM PT / 5:00 PM ET)</h3>
-<p><strong>P022 (Q1 ≥$76B at 87%) and P017 (Q2 ≥$80B at 85%) both resolve.</strong> UBS expects Q1 <strong>$80.6B</strong> / Street $78.8B / guide $78B ±2%; UBS Q2 <strong>$90.3B</strong> vs Street $86.9B with guide bogey $90-91B (per UBS 5/13 preview).</p>
-<p><strong>Pre-print stock:</strong> NVDA <span class="num">$224.86</span> intraday (5/20 RTH) — <span class="pos">+0.9%</span> vs $222.75 (5/19) and +2.2% vs $220.00 (5/18 close). Down 4.6% from 5/14 ATH $235.74. Options market pricing <strong>±8-10% move</strong> on the print.</p>
-<p><strong>Watch tonight (priority order):</strong></p>
+<div class="card">
+<div class="card-title"><span class="tag tag-bull">Strategic</span><span class="tag tag-warn">P025 NEW @ 85%</span> 2. OpenAI Confidential S-1 Filing Imminent</div>
+<p>Multiple primary sources (CNBC / Quartz / WSJ via TechCrunch / Axios all dated 5/20) report OpenAI preparing confidential S-1 with SEC <strong>as soon as Friday 5/22</strong>. Goldman Sachs + Morgan Stanley lead. September IPO target. Valuation <strong>&gt;$1T</strong> (vs $852B March round).</p>
+<p><strong>Five analytical reads:</strong></p>
 <ol>
-<li>Q2 FY27 guide vs $90-91B UBS/Street bogey — primary stock-mover</li>
-<li>Capital return announcement (&gt;$50B repo or initial dividend = multiple-expanding; UBS calls out ~$150B 12-mo repo potential)</li>
-<li>Management language on OpenAI IPO read-through (equity stake mark, ecosystem-investment portfolio framing)</li>
-<li>Merchant TPU / BXN1 / AMD MI450 / Trainium competitive framing — does NVDA acknowledge abundance-not-substitution explicitly?</li>
-<li>Rubin mass-production timing (UBS flagged Sept/Oct rack cooling risk)</li>
-<li>HBM4 supply visibility (Samsung addition resolved per item #3)</li>
-<li>China commentary (UBS at $0)</li>
+<li><strong>P024 upgraded 78% → 87%</strong>: AVGO-OpenAI Phase 1 now has THREE stacked funding paths (Apollo/Blackstone $35B private credit + MSFT take-and-rent-back + public equity post-IPO). Phase 1 financing risk effectively closed.</li>
+<li><strong>NVDA $30B OpenAI stake</strong> (Sept 2025 at $730B post-money) marks up <strong>&gt;$11B unrealized</strong> at IPO valuation. May surface on tonight's call as fair-value adjustment.</li>
+<li><strong>MSFT 27% stake → $270B+ mark-to-market</strong> (vs ~$230B at March close). AVGO backstop obligation released = capital-light positive. Royalty-free OpenAI IP through 2032 preserved.</li>
+<li><strong>Anthropic close-window pressure compressed</strong>: P023 close window 5/13-5/20 passed without announcement; downgrade watch active — if no announcement by 5/31, P023 cuts to ~80%.</li>
+<li><strong>Financing-layer maturation validates comp-abundance thesis:</strong> Per UBS Fig 6, 2/4 hyperscalers' FCF margins crater to 9-7% by C27. Private credit + public equity + sovereign + GPU-ABS endogenous response is materializing exactly on the predicted timeline.</li>
 </ol>
-<p><strong>Language risk asymmetric:</strong> any pricing-power hint = sell; any hedging on Rubin timing = sell; capital-return surprise = single catalyst that can offset prior two.</p>
+<p class="meta">P025 NEW @ 85%: OpenAI files confidential draft S-1 by 6/30/26. 15% failure = banks pull diligence / macro shock / timing slips / non-S-1 structure.</p>
 </div>
 
-<div class="card bull">
-<h3>3. Samsung HBM4 qualified for NVIDIA Vera Rubin (~30% allocation vs SK Hynix 70%; June mass production)</h3>
-<p>Confirmed 5/20 (industry coverage + NVIDIA confirmation). Resolves the HBM4 supply concern flagged in UBS 5/15 preview around Rubin rack mass-production timing.</p>
-<p><strong>Reads:</strong></p>
-<ul>
-<li>Structural positive for NVDA Vera Rubin ramp — Sept/Oct mass production stays on schedule with dual-source supply</li>
-<li>Structural negative for Micron in HBM4 segment specifically (MU remains shut out)</li>
-<li>DDR/HBM3e supply tightness (<strong>P015 at 92%</strong>) is unchanged — Samsung HBM4 capacity comes from incremental rather than substituted capacity</li>
-<li>Modestly disconfirming on "memory supply is binding constraint" sub-thesis <em>at HBM4 specifically</em> (more supply emerging), but broader memory cycle holds</li>
-</ul>
+<div class="card">
+<div class="card-title"><span class="tag tag-bull">Supply Chain</span> 3. Samsung HBM4 Qualified for Rubin (~30% Allocation)</div>
+<p>Samsung HBM4 qualified for Vera Rubin at <strong>~30% allocation</strong> vs SK Hynix 70%. June mass production. Resolves UBS Rubin-timing concern around HBM4 supply.</p>
+<p><strong>Read:</strong> Modestly disconfirming on memory-binding sub-thesis at the HBM4 segment (multi-source = less pricing power for any single vendor), but P015 (DRAM undersupply through C3Q26) unchanged — qualifying a second supplier doesn't expand total capacity, just splits the pie. SK Hynix 70% share retains its premium positioning.</p>
 </div>
 
-<div class="card story">
-<h3>4. Anthropic-Colossus 1 deal (5/6, fully digested 5/20)</h3>
-<p><strong>222k NVDA GPUs / 300 MW / ~$5B/yr deployment</strong> at xAI's Colossus 1 facility (Memphis) for Anthropic compute capacity. NVDA-positive at the margin — validates frontier-lab GPU demand for hybrid TPU+NVDA inference architectures. But does NOT change <strong>P003 (Anthropic on NVDA-only at 38%)</strong> structural read: Anthropic remains TPU-primary for training, NVDA-supplementary for inference / cross-cloud capacity.</p>
+<div class="card">
+<div class="card-title"><span class="tag tag-bull">Demand</span> 4. Anthropic–Colossus 1 Deal at Memphis (222k NVDA GPUs)</div>
+<p>Anthropic confirmed using xAI's Colossus 1 at Memphis: <strong>222k NVDA GPUs / 300 MW / ~$5B/yr</strong>. NVDA-positive at the margin (locked-in inference capacity continues to ride on NVDA hardware even as training trends TPU-primary).</p>
+<p><strong>P003 unchanged at 38%</strong> — training still trends TPU-primary; inference continuing on NVDA is the consensus path now and doesn't change the prediction direction.</p>
 </div>
 
-<div class="card bull">
-<h3>5. Google I/O 5/19 — Gemini AI Agent + AI ads expansion + PT cascade</h3>
-<p>Pichai keynote 5/19:</p>
-<ul>
-<li><strong>Gemini AI Agent</strong> — first consumer-facing personal-task agent that scans Gmail for booking/scheduling/summarization with action</li>
-<li><strong>AI ads expansion</strong> across Search/YouTube/Display with Advantage+ analog rolling into PMax</li>
-<li><strong>PT cascade:</strong> Wells Fargo $427→$435, Needham $450, Keybanc $425, <strong>Citizens $515 (Street high)</strong></li>
-</ul>
-<p><strong>Reads:</strong> Validates Pichai's "agents as next platform" framing; Gemini's Gmail/Drive/Calendar moat is harder to replicate at the integration layer than LLM-only competitors. Gemini Agent enterprise pricing (if rolled into Workspace at premium tier) is a Q3-2026 watch item.</p>
+<div class="card">
+<div class="card-title"><span class="tag tag-neutral">Product</span> 5. Google I/O 5/19 Aftermath</div>
+<p>Gemini AI Agent (consumer + enterprise) + AI ads expansion. PT cascade: Wells Fargo $435 / Citizens $515 (Street high). Modestly confirming on GOOG application-layer monetization. No thesis change.</p>
 </div>
 
-<div class="card warn">
-<h3>6. Meta layoffs begin 5/20 (8K cuts; 7K reassigned to AI)</h3>
-<p>First execution tranche of previously-announced workforce restructuring. <strong>Net ~1,000-person reduction; ~$1B annualized opex savings</strong> (modest at META's $200B+ revenue scale). Citrini Phase 1 pattern executing on plan. WF PT $770→$765 reflects mild near-term execution risk (severance, transition productivity dip) but maintains constructive 2H26 monetization view.</p>
+<div class="card">
+<div class="card-title"><span class="tag tag-neutral">Workforce</span> 6. Meta Layoffs Begin 5/20</div>
+<p>8K cuts / 7K reassigned to AI / net ~1K reduction. <strong>~$1B opex savings</strong>. Reinforces narrative: Meta is reallocating to AI within existing OpEx envelope, not net-adding headcount. Neutral-to-slight-positive for capex sustainability.</p>
 </div>
 
-<div class="card bull">
-<h3>7. AMAT-AVGO EPIC advanced packaging partnership (5/20)</h3>
-<p>Applied Materials + Broadcom announced <strong>EPIC (Engineered Packaging for Integrated Compute)</strong> partnership. Direct positive for CoWoS-L capacity ramp underwriting UBS's 1.55MM annual wafer model and AVGO's 6.1M unit C2027 forecast. Adds AMAT as a co-development partner alongside TSMC; reduces single-source CoWoS supply risk.</p>
+<div class="card">
+<div class="card-title"><span class="tag tag-bull">Packaging</span> 7. AMAT-AVGO EPIC Packaging Partnership</div>
+<p>Positive for CoWoS-L (UBS 1.55MM-wafer model) + AVGO 6.1M-unit C27 forecast. Validates the silicon-packaging chokepoint as a multi-vendor solution path rather than TSMC-only.</p>
 </div>
 
-<div class="card story">
-<h3>8. Hyperscaler 2026 capex aggregate revised to $725B (vs $710B prior)</h3>
-<p>Per UBS 5/15 preview Fig 5 + post-Q1 cohort digestion: aggregate 2026 capex tracker now <strong>$725B mid</strong> (MSFT $190B + GOOG $185B + META $135B + AMZN $215B). C27 tracker <strong>$968B</strong>; C28 <strong>$1,039B</strong>. <strong>No prediction change</strong> — P008 already at 70% based on the $710B/$725B range.</p>
-</div>
-
-<h2>What Changed</h2>
-
+<h2>Hyperscaler 2026 Capex — Aggregate Revision</h2>
 <table>
-<thead>
-<tr><th>File</th><th>Change</th><th>Reason</th></tr>
-</thead>
+<thead><tr><th>Hyperscaler</th><th>FY26 Capex</th><th>Notes</th></tr></thead>
 <tbody>
-<tr><td><code>predictions/prediction-log.md</code></td><td><strong>P024 upgrade 78% → 87%</strong></td><td>OpenAI confidential IPO filing adds third stacked funding path for Phase 1</td></tr>
-<tr><td><code>predictions/prediction-log.md</code></td><td><strong>New P025 logged at 85%</strong></td><td>OpenAI files draft S-1 with SEC by 6/30/26</td></tr>
-<tr><td><code>predictions/prediction-log.md</code></td><td>P023 held at 90% with downgrade watch</td><td>5/13-5/20 close window passed without announcement; OpenAI IPO compresses Anthropic window</td></tr>
-<tr><td><code>predictions/prediction-log.md</code></td><td>P022 status updated "resolves TONIGHT"</td><td>5/20 AMC print</td></tr>
-<tr><td><code>watchlist/tier1/nvda.md</code></td><td>New 5/20 changelog + header</td><td>Print-day pre-briefing; OpenAI IPO read-through; HBM4 Samsung qualification</td></tr>
-<tr><td><code>watchlist/tier1/avgo.md</code></td><td>New 5/20 changelog + header</td><td>P024 upgrade rationale; AMAT-EPIC partnership</td></tr>
-<tr><td><code>watchlist/tier1/goog.md</code></td><td>New 5/20 changelog</td><td>I/O recap; PT cascade; OpenAI IPO read-through</td></tr>
-<tr><td><code>watchlist/tier1/msft.md</code></td><td>New 5/20 changelog</td><td>OpenAI IPO equity-stake markup; reduced AVGO Phase 1 backstop obligation</td></tr>
-<tr><td><code>watchlist/tier1/meta.md</code></td><td>New 5/20 changelog</td><td>Layoff execution begins (8K cuts)</td></tr>
-<tr><td><code>theses/computational-abundance.md</code></td><td>Last reviewed → 5/20; two supporting evidence rows added</td><td>OpenAI IPO (Strong) + Samsung HBM4 qualification (Moderate-Strong)</td></tr>
+<tr><td>MSFT</td><td>$190B</td><td>Held</td></tr>
+<tr><td>GOOG</td><td>$185B</td><td>Held (range $180-190B)</td></tr>
+<tr><td>META</td><td>$135B</td><td>Held (range $125-145B)</td></tr>
+<tr><td>AMZN</td><td>$215B</td><td>Modest +$5B</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>$725B</strong></td><td>+$15B from $710B mid-month</td></tr>
+</tbody>
+</table>
+
+<h2>What Changed (Files Updated Today)</h2>
+<table>
+<thead><tr><th>File</th><th>Change</th><th>Reason</th></tr></thead>
+<tbody>
+<tr><td>watchlist/tier1/NVDA.md</td><td>Header rewrite + new changelog row</td><td>Q1 FY27 print resolution</td></tr>
+<tr><td>watchlist/tier1/AVGO.md</td><td>5/20 changelog</td><td>OpenAI IPO + AMAT EPIC partnership</td></tr>
+<tr><td>watchlist/tier1/GOOG.md</td><td>5/20 changelog</td><td>I/O follow-through + PT cascade</td></tr>
+<tr><td>watchlist/tier1/MSFT.md</td><td>5/20 changelog</td><td>OpenAI stake mark-to-market</td></tr>
+<tr><td>watchlist/tier1/META.md</td><td>5/20 changelog</td><td>Layoff day; opex framing</td></tr>
+<tr><td>theses/computational-abundance.md</td><td>"Last reviewed" 5/20 + 2 supporting rows</td><td>NVDA print triple-axis confirmation; OpenAI IPO; Samsung HBM4</td></tr>
+<tr><td>predictions/prediction-log.md</td><td>P022 RESOLVED YES; P017 85→97%; P024 78→87%; P025 NEW @85%; P023 90% HELD</td><td>Multiple resolutions from NVDA print + OpenAI IPO news</td></tr>
 </tbody>
 </table>
 
 <h2>What Didn't Change</h2>
-
 <ul>
-<li><strong>P003 (Anthropic on NVDA-only at 38%):</strong> Anthropic-Colossus 1 deal (222k NVDA GPUs / 300 MW) is NVDA-positive at the margin but training stack remains TPU-primary; doesn't move structural P003 read.</li>
-<li><strong>P017 / P022:</strong> Both held into NVDA print tonight. Resolution lies in actual reported figures; pre-print framing unchanged from 5/19.</li>
-<li><strong>P015 (DRAM undersupply at 92%):</strong> Samsung HBM4 qualification adds HBM4 supply specifically but doesn't loosen DDR/HBM3e supply (per LTA structure with MSFT/GOOG carrying 10-30% upfront cash + minimum-price floors).</li>
-<li><strong>Sub-thesis #4 (custom silicon co-equal pillar):</strong> OpenAI IPO + BXN1 (5/18) + Anthropic-GOOG $200B all continue to reinforce; no change in directional read.</li>
-<li><strong>NVDA "Position: Core holding" view:</strong> Pre-print pause; will reassess after Q2 FY27 guide language tomorrow.</li>
+<li><strong>P015 (DRAM undersupply through C3Q26):</strong> Samsung HBM4 qualification splits the pie but doesn't expand total capacity. Held at 88%.</li>
+<li><strong>P003 (Anthropic NVDA-only 2026):</strong> Held at 38% — already near-resolution NO; Memphis deal is consistent with consensus inference-on-NVDA path.</li>
+<li><strong>P010 (TSMC 2026 ≥30% growth):</strong> April +17.5% YoY is base-effect-explained; will get cleaner read on May print (~6/10).</li>
 </ul>
 
 <h2>Thesis Status</h2>
-
-<div class="grid-2">
-<div class="card bull">
-<h3>Computational Abundance — High and rising</h3>
-<p>Financing-layer maturation visibly progressing (Apollo/Blackstone $35B + OpenAI IPO + BXN1 $5B/$25B + Anthropic $40B GOOG anchor). Two new supporting rows added today. Last reviewed 5/20.</p>
-</div>
-<div class="card warn">
-<h3>Sub-thesis #1 (NVDA dominance) — Pre-print pause</h3>
-<p>Resolves at Q2 FY27 guide tonight. Language risk asymmetric heading in at 4.6% off ATH.</p>
-</div>
-<div class="card bull">
-<h3>Sub-thesis #2 (memory supply binding) — P015 at 92%</h3>
-<p>HBM4 Samsung qualification modestly disconfirming at HBM4 segment, but DDR/HBM3e cycle structurally extended.</p>
-</div>
-<div class="card bull">
-<h3>Sub-thesis #4 (custom silicon co-equal pillar) — Strongly validated</h3>
-<p>Three independent silicon paths for OpenAI alone (AVGO Phase 1 + Trainium 2 GW + NVDA Rubin 10 GW LOI), all now funded via complementary capital channels.</p>
-</div>
-</div>
+<ul>
+<li><strong>Computational Abundance:</strong> <span class="green">Strengthened</span>. NVDA print fires all three confirmation axes (aggregate demand + TAM widening + pricing intact) in a single quarter. Vera $200B TAM disclosure expands the canvas materially.</li>
+<li><strong>Sub-thesis #4 (custom silicon co-equal pillar):</strong> Held. BXN1 from 5/19 + AMAT-AVGO EPIC reinforce; Anthropic-Memphis on NVDA is consistent with hybrid-stack, not NVDA-displacing.</li>
+<li><strong>Memory binding (HBM4):</strong> Marginally weakened by Samsung qualification, but P015 unchanged at the aggregate cycle level.</li>
+</ul>
 
 <h2>Predictions Update</h2>
-
 <table>
-<thead>
-<tr><th>ID</th><th>Status</th><th>Change</th><th>Reason</th></tr>
-</thead>
+<thead><tr><th>ID</th><th>Claim</th><th>Prob</th><th>Status</th></tr></thead>
 <tbody>
-<tr><td><strong>P022</strong></td><td>87% — <strong>resolves TONIGHT</strong></td><td>Status note added</td><td>UBS preview $80.6B above $76B bar; resolves at 5/20 print</td></tr>
-<tr><td><strong>P017</strong></td><td>85% — <strong>resolves TONIGHT</strong></td><td>Status note added</td><td>UBS $90.3B / Street $86.9B both well above bar; resolves at 5/20 guide</td></tr>
-<tr><td><strong>P024</strong></td><td>78% → <strong class="pos">87%</strong></td><td>UPGRADED</td><td>OpenAI IPO filing adds third stacked funding path (private credit + MSFT backstop + public equity)</td></tr>
-<tr><td><strong>P025</strong></td><td><strong class="pos">85% NEW</strong></td><td>LOGGED</td><td>OpenAI files confidential draft S-1 with SEC by 6/30/26</td></tr>
-<tr><td><strong>P023</strong></td><td>90% HELD</td><td>Downgrade watch active</td><td>5/13-5/20 close window passed; if no announcement by 5/31, downgrade to ~80%</td></tr>
-<tr><td><strong>P003</strong></td><td>38% HELD</td><td>No change</td><td>Anthropic-Colossus 1 is NVDA-positive at margin but training stack stays TPU-primary</td></tr>
-<tr><td><strong>P008</strong></td><td>70% HELD</td><td>No change</td><td>$725B aggregate already inside prior band</td></tr>
-<tr><td><strong>P015 / P021</strong></td><td>92% HELD</td><td>No change</td><td>HBM4 Samsung is incremental, not substituted; DDR/HBM3e cycle intact</td></tr>
+<tr><td>P022</td><td>NVDA Q1 FY27 ≥ $76B</td><td>87%</td><td class="green">RESOLVED YES ($81.62B)</td></tr>
+<tr><td>P017</td><td>NVDA Q2 FY27 ≥ $80B</td><td><strong>97%</strong></td><td>Q2 guide $91B ±2% — near-certain resolution</td></tr>
+<tr><td>P024</td><td>AVGO-OpenAI Phase 1 closes by EOY 2026</td><td><strong>87%</strong></td><td>Upgraded on OpenAI IPO path</td></tr>
+<tr><td>P025</td><td>OpenAI confidential draft S-1 by 6/30/26</td><td><strong>85%</strong></td><td><strong>NEW</strong></td></tr>
+<tr><td>P023</td><td>Anthropic round closes ≥$852B in 2026</td><td>90%</td><td>HELD; downgrade watch if no announce by 5/31</td></tr>
+<tr><td>P015</td><td>DRAM undersupply through C3Q26</td><td>88%</td><td>Held</td></tr>
+<tr><td>P010</td><td>TSMC 2026 revenue ≥30%</td><td>90%</td><td>Held</td></tr>
+<tr><td>P008</td><td>Hyperscaler capex aggregate</td><td>70%</td><td>Held; total revised to $725B</td></tr>
+<tr><td>P003</td><td>Anthropic on NVDA only in 2026</td><td>38%</td><td>Held; near-resolution NO</td></tr>
 </tbody>
 </table>
 
-<h2>Watch List</h2>
-
-<ul>
-<li><strong>TONIGHT (5/20 AMC) — NVDA Q1 FY27 print:</strong> P022 + P017 resolve. Watch (1) Q2 guide vs $90-91B; (2) capital return; (3) OpenAI equity-stake mark disclosure; (4) merchant TPU acknowledgment; (5) Rubin timing; (6) HBM4 supply.</li>
-<li><strong>5/22 (Fri):</strong> Potential OpenAI confidential S-1 filing — would resolve P025 YES on filing date.</li>
-<li><strong>5/22-5/31:</strong> Anthropic primary funding round close announcement watch (P023 downgrade trigger).</li>
-<li><strong>~6/3 (Tue) — AVGO Q2 FY26 print:</strong> First management language on (a) OpenAI Phase 1 post-IPO structure, (b) BXN1 read-through, (c) $35B Apollo/Blackstone syndication progress, (d) AMAT-EPIC integration timeline.</li>
-<li><strong>~6/10 — TSMC May monthly revenue:</strong> First month where +YoY base resets; tests whether April +17.5% was base-effect or genuine demand pause.</li>
-<li><strong>Late June — MU FQ3 (P021) + AVGO Q2 (P019)</strong> resolution windows.</li>
-</ul>
+<h2>Catalyst Timeline (Next 6 Weeks)</h2>
+<table>
+<thead><tr><th>Date</th><th>Event</th><th>Resolution Path</th></tr></thead>
+<tbody>
+<tr><td>5/22 (Fri)</td><td>OpenAI confidential S-1 expected</td><td>P025 partial resolution if filed</td></tr>
+<tr><td>~5/31</td><td>Anthropic round close drop-dead</td><td>P023 downgrade if no announcement</td></tr>
+<tr><td>~6/3</td><td>AVGO Q2 FY26 earnings</td><td>P019 (Q2 AI semis ≥$10B); first mgmt commentary on OpenAI Phase 1 financing + BXN1</td></tr>
+<tr><td>~6/10</td><td>TSMC May monthly revenue</td><td>First clean post-base-effect read; tests P010</td></tr>
+<tr><td>Mid-late May</td><td>SK Hynix Q1</td><td>HBM4 ramp + cycle-extension validation</td></tr>
+<tr><td>~Jun</td><td>Micron FQ3</td><td>P021 (≥$33B)</td></tr>
+<tr><td>~Sep</td><td>OpenAI IPO target</td><td>P024 final resolution path</td></tr>
+</tbody>
+</table>
 
 <h2>Open Questions</h2>
-
-<ol>
-<li><strong>Does OpenAI's S-1 disclose specific Phase 1 AVGO chip allocation?</strong> If yes, P024 resolves via S-1 reading rather than waiting for Phase 1 announcement; could resolve YES on filing date if explicit. If S-1 redacts custom silicon partners, P024 stays at 87%.</li>
-<li><strong>At what NVDA equity-stake markup does NVDA disclose mark-to-market on OpenAI position?</strong> GAAP doesn't require ongoing fair-value adjustment for private equity unless event-driven; an IPO is an event. Watch tonight's print for any disclosure language.</li>
-<li><strong>Does Anthropic accelerate the round-close announcement in response to OpenAI IPO timing?</strong> If round closes by 5/31, P023 stays at 90%. If silent past 5/31, downgrade. If Anthropic re-prices the round (up or down) in response to OpenAI marking up, separate signal worth flagging.</li>
-<li><strong>Does MSFT formally release the AVGO Phase 1 backstop obligation?</strong> No public framework for this disclosure; will need to watch Q4 FY26 earnings (~late July) for any commentary on OpenAI exposure structure.</li>
-<li><strong>Samsung HBM4 reliability data?</strong> Samsung's HBM3e qualification cycle had repeated delays; the HBM4 qualification (Vera Rubin) is the first marquee program ahead of broader Hopper successors. Validation data over June-August will be the test of whether Samsung is durably back as an HBM supplier or whether SK Hynix re-takes incremental share.</li>
-</ol>
+<ul>
+<li>Will tonight's NVDA call address SemiA pricing-power critique head-on, or stay on platform/Vera narrative?</li>
+<li>Does NVDA mark its OpenAI stake to IPO valuation on the call? Material fair-value adjustment.</li>
+<li>Does the +$80B buyback authorization come with implied cadence guidance ($50B/yr? $80B/yr?)? Critical for the multiple-expansion lever.</li>
+<li>Anthropic close-window — silence past 5/20 is unexpected. What's the gating issue (terms, lead investor, secondary tender mechanics)?</li>
+<li>If OpenAI lists at &gt;$1T, what does that imply for Anthropic round valuation arbitrage? Public comps may force Anthropic to mark up.</li>
+</ul>
 
 <footer>
-<p>Generated 2026-05-20 · Source: <code>research/2026/2026-05-20-update.md</code> · Prior daily: <a href="archive/2026-05-19.html">May 19 (BXN1)</a> · <a href="archive/2026-05-15.html">May 15 (UBS NVDA Preview)</a> · <a href="archive/2026-05-11.html">May 11</a></p>
-<p>Sources: <a href="https://www.cnbc.com/2026/05/20/openai-ipo-filing.html">CNBC OpenAI IPO</a> · <a href="https://qz.com/openai-ipo-confidential-filing-goldman-sachs-morgan-stanley-052026">Quartz</a> · <a href="https://techcrunch.com/2026/05/20/openai-barrels-towards-ipo-that-may-happen-in-september/">TechCrunch (WSJ)</a> · <a href="https://www.axios.com/2026/05/20/openai-ipo-spacex-musk">Axios</a> · <a href="https://investor.nvidia.com/events-and-presentations/events-and-presentations/event-details/2026/NVIDIA-1st-Quarter-FY27-Financial-Results/default.aspx">NVIDIA IR</a></p>
+<p>AI Ecosystem Analyst · Daily Update · 2026-05-20 · Post-NVDA-AMC consolidated</p>
+<p>Archive: <a href="archive/2026-05-19.html">5/19</a> · <a href="archive/2026-05-18.html">5/18 (UBS NVDA preview)</a> · <a href="archive/2026-05-15.html">5/15</a> · <a href="archive/2026-05-11.html">5/11</a> · <a href="archive/2026-05-08.html">5/8</a> · <a href="archive/2026-05-07.html">5/7</a> · <a href="archive/2026-05-04.html">5/4</a> · <a href="archive/2026-04-30.html">4/30</a></p>
 </footer>
 
 </div>
