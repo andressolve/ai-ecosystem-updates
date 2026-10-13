@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Ecosystem Premarket Brief — October 13, 2026</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --panel: #131822;
+    --panel-2: #1a2030;
+    --border: #2a3142;
+    --text: #e6e9ef;
+    --muted: #9aa3b2;
+    --blue: #60a5fa;
+    --green: #34d399;
+    --yellow: #fbbf24;
+    --red: #f87171;
+    --purple: #c084fc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    font-size: 15px;
+  }
+  .container { max-width: 1120px; margin: 0 auto; padding: 32px 24px; }
+  header { padding-bottom: 18px; }
+  h1 { margin: 0 0 8px; font-size: 27px; font-weight: 650; letter-spacing: -0.2px; }
+  .subtitle { color: var(--muted); font-size: 14px; }
+  /* sticky section nav */
+  .toc {
+    position: sticky; top: 0; z-index: 20;
+    margin: 0 0 22px; padding: 11px 0;
+    background: rgba(11,14,20,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px;
+  }
+  .toc a { color: var(--muted); white-space: nowrap; }
+  .toc a:hover { color: var(--blue); text-decoration: none; }
+  h2 { margin: 34px 0 14px; padding-bottom: 7px; border-bottom: 1px solid var(--border); font-size: 20px; scroll-margin-top: 56px; }
+  h3 { margin: 22px 0 8px; color: var(--blue); font-size: 16px; }
+  p { margin: 8px 0; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul, ol { margin: 8px 0; padding-left: 22px; }
+  li { margin: 5px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 14px; }
+  th, td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--panel-2); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  code { background: var(--panel-2); padding: 1px 5px; border-radius: 4px; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.9em; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 26px 0; }
+  .banner {
+    background: #231b12;
+    border: 1px solid rgba(251,191,36,0.45);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 24px;
+  }
+  .banner-label { color: var(--yellow); text-transform: uppercase; font-size: 12px; letter-spacing: 0.8px; font-weight: 700; margin-bottom: 6px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: 8px;
+    padding: 17px 20px;
+    margin: 14px 0;
+  }
+  .card h3 { margin-top: 0; }
+  .card-bull { border-left-color: var(--green); }
+  .card-bear { border-left-color: var(--red); }
+  .card-watch { border-left-color: var(--yellow); }
+  .card-neutral { border-left-color: var(--blue); }
+  .tag { display: inline-block; border-radius: 12px; padding: 2px 9px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-right: 6px; }
+  .tag-bear { color: var(--red); background: rgba(248,113,113,0.13); border: 1px solid rgba(248,113,113,0.3); }
+  .tag-bull { color: var(--green); background: rgba(52,211,153,0.13); border: 1px solid rgba(52,211,153,0.3); }
+  .tag-watch { color: var(--yellow); background: rgba(251,191,36,0.13); border: 1px solid rgba(251,191,36,0.3); }
+  .tag-neutral { color: var(--blue); background: rgba(96,165,250,0.13); border: 1px solid rgba(96,165,250,0.3); }
+  /* probability-delta pills, e.g. 90% -> 95% */
+  .delta { display: inline-block; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.88em; font-weight: 650; padding: 0 6px; border-radius: 5px; white-space: nowrap; }
+  .delta-up { color: var(--green); background: rgba(52,211,153,0.12); }
+  .delta-down { color: var(--red); background: rgba(248,113,113,0.12); }
+  .delta-flat { color: var(--muted); background: rgba(154,163,178,0.12); }
+  .metric { font-family: "SF Mono", "Fira Code", monospace; white-space: nowrap; }
+  .muted { color: var(--muted); }
+  .green { color: var(--green); font-weight: 650; }
+  .red { color: var(--red); font-weight: 650; }
+  .yellow { color: var(--yellow); font-weight: 650; }
+  footer { border-top: 1px solid var(--border); margin-top: 40px; padding-top: 18px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 760px) {
+    .container { padding: 22px 14px; }
+    table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>AI Ecosystem Premarket Brief — October 13, 2026</h1>
+  <div class="subtitle">Type: Premarket · As of: 2026-10-13 06:00 PT / 09:00 ET · Coverage: Public/primary baseline completed (quotes + news discovery + dedicated company/macro sweeps, verified via web search). IBKR wire enrichment attempted once, unavailable — see Data Quality.</div>
+</header>
+<nav class="toc"><a href="#bottom-line">Bottom Line</a><a href="#overnight-developments">Overnight Developments</a><a href="#todays-setup">Today&#x27;s Setup</a><a href="#current-market-state">Current Market State</a><a href="#thesis-prediction-deltas">Thesis / Prediction Deltas</a><a href="#next-seven-days">Next Seven Days</a><a href="#data-quality">Data Quality</a></nav>
+<div class="banner"><div class="banner-label">Headline</div><div>China&#x27;s CXMT DRAM threat escalated sharply overnight into the sharpest memory-sector selloff this cycle (SK Hynix -14%, Samsung -11%, Kospi -5.5%), compounded by Broadcom&#x27;s Hock Tan calling AI investors &quot;casino&quot; gamblers — while Microsoft separately unveiled Maia 300, its most direct move yet to cut NVIDIA/AMD dependence for its own AI inference.</div></div>
+<h2 id="bottom-line">Bottom Line</h2>
+<ul>
+<li><strong>The memory-moat threat this tracker logged as &quot;Weak-Moderate&quot; yesterday is now a multi-year-record single-day move.</strong> CXMT&#x27;s 4F² server-DRAM claim, amplified by Musk publicly distinguishing vulnerable commodity DRAM from more-protected HBM, triggered Samsung&#x27;s steepest drop since 2008 by some readings. No change to P015 (95%, resolves on near-term contract pricing, not this competitive-capacity threat) — but logged Strong to the thesis tracker given the magnitude.</li>
+<li><strong>Microsoft&#x27;s Maia 300 unveiling is the clearest single-company custom-silicon evidence this cycle</strong> — a top NVIDIA customer committing to 1M+ in-house inference chips in 2027, explicitly to reduce NVIDIA/AMD dependence. Scoped to inference only, so it does not move P003 (training-compute-specific).</li>
+<li><strong>Broadcom&#x27;s Hock Tan escalated yesterday&#x27;s &quot;capital is the constraint&quot; framing to calling AI investors &quot;casino&quot; gamblers — but did not cut his own $115B FY27/$230B FY28 AI-semi targets in the same breath.</strong> Rhetoric, not a fundamental change; the same world-vs-market pattern flagged repeatedly this cycle.</li>
+<li><strong>Today&#x27;s US calendar is quiet.</strong> ASML (Wed) and TSMC (Thu) earnings this week are the real tests of whether the memory-rout narrative has any read-through to the leading-edge logic/equipment side of the stack.</li>
+</ul>
+<h2 id="overnight-developments">Overnight Developments</h2>
+<div class="card card-bear">
+<h3><span class="tag tag-bear">bear</span> China&#x27;s CXMT DRAM claim triggers the sharpest memory-sector selloff this cycle</h3>
+<p>China&#x27;s CXMT confirmed it will launch a 4F² cell-structure server DDR5 product before year-end 2026 — the same claim first logged yesterday, but today&#x27;s market reaction was far larger: SK Hynix fell -14.16% in Seoul&#x27;s close (some outlets report as much as -12.8% to -13.4% depending on measurement), Samsung fell -11.45% (Korea JoongAng Daily: Samsung&#x27;s worst single-day drop since October 2008), and the Kospi fell -5.5% intraday — Korean press labeled it &quot;Black Tuesday.&quot; Micron fell -4.90% premarket (briefly below $1,000/share for the first time since September), SanDisk fell nearly -6%, and ASML fell -4.78% in live Amsterdam trading on sympathy plus its own exposure to Samsung/SK Hynix capex plans. (<a href="https://www.cnbc.com/2026/10/13/cxmt-memory-chip-stock-rout.html">CNBC</a>; <a href="https://www.koreajoongangdaily.com/business/samsung-sk-hynix-shares-plunge-on-black-tuesday-amid-concerns-over-chinese-chip/12918371">Korea JoongAng Daily</a>)</p>
+<p>Elon Musk weighed in publicly (X, night of 10/12), drawing a two-tier distinction rather than a blanket bear call: commodity DRAM/LPDDR follows a common standard China &quot;seems to be solving fast&quot; (citing lithium-battery and solar precedent for China&#x27;s scaling speed once it masters a process), while HBM and advanced chip-on-chip 3D stacking &quot;will be harder to solve.&quot; This is a useful, falsifiable frame for tracking CXMT&#x27;s actual roadmap — watch whether its claims stay confined to standard DDR5/LPDDR or extend into HBM. One sell-side voice (Rayliant&#x27;s Phillip Wool, via CNBC) called the scale of today&#x27;s reaction &quot;out of proportion,&quot; noting CXMT hasn&#x27;t demonstrated volume manufacturing and holds a small fraction of Samsung/SK Hynix&#x27;s combined share. <strong>No change to P015</strong> (95%, DRAM undersupply through C3Q26 on contract pricing) — this is a 2027+ competitive-capacity threat, not a near-term pricing event — but logged Strong to the memory-moat axis in <code>theses/computational-abundance.md</code> given the magnitude, the largest reaction this tracker has recorded for this storyline.</p>
+</div>
+<div class="card card-watch">
+<h3><span class="tag tag-watch">watch</span> Microsoft unveils Maia 300, the clearest custom-silicon move yet against NVIDIA/AMD</h3>
+<p>Microsoft EVP Scott Guthrie announced Maia 300 (10/12): a next-generation custom AI accelerator claimed to deliver 40% more AI tokens per megawatt than leading GPU-based systems, designed to minimize chip-to-memory data movement. It deploys starting 2027, with Reuters reporting a rollout of more than 1 million units planned next year, and will become Microsoft&#x27;s primary chip for its own AI <em>inference</em> workloads — explicitly aimed at reducing dependence on both NVIDIA and AMD. Axios&#x27;s framing: &quot;every major Nvidia customer is now a competitor.&quot; (<a href="https://www.axios.com/2026/10/13/big-tech-ai-chips-nvidia-rivals">Axios</a>; <a href="https://www.cnbc.com/2026/10/12/microsoft-will-mainly-use-its-maia-chips-for-ai-inference.html">Reuters via CNBC</a>; <a href="https://www.geekwire.com/2026/microsoft-makes-biggest-bet-yet-on-its-own-silicon-unveils-new-ai-chip-to-reduce-reliance-on-nvidia/">GeekWire</a>)</p>
+<p>This is the sharpest single-company evidence this cycle for computational-abundance sub-thesis #4 (custom silicon as a co-equal pillar, not a bounded threat) — a top-3 NVIDIA customer by spend committing to million-unit-scale in-house inference silicon with a specific, quantified efficiency claim. <strong>Does not move P003</strong>: Microsoft explicitly scopes Maia 300 to inference, and P003 resolves on training-compute majority at AI labs, not inference share at hyperscalers. The critical nuance still holds — this is demand <em>reallocation</em> (NVIDIA&#x27;s inference share at Microsoft specifically) rather than demand <em>destruction</em>; Microsoft&#x27;s AI capex guidance is unchanged. Weakest link: the efficiency claim is Microsoft&#x27;s own and unverified by third-party benchmark, and prior Maia generations (100/200) underdelivered on announced timelines.</p>
+</div>
+<div class="card card-bear">
+<h3><span class="tag tag-bear">bear</span> Broadcom&#x27;s Hock Tan: AI investors are &quot;casino&quot; gamblers — but targets are unchanged</h3>
+<p>At the same Singapore conference referenced in yesterday&#x27;s brief, Broadcom CEO Hock Tan sharpened his rhetoric: &quot;a lot of investors have no clue what they are investing in&quot; and &quot;set very extreme expectations only to find out that it&#x27;s almost like they are in a casino,&quot; likening companies experimenting with AI to children spending arcade tokens without learning anything. In the same remarks, he reaffirmed unchanged $115B FY2027 / $230B FY2028 AI-semiconductor revenue targets and cited OpenAI&#x27;s corrected ~$50B annualized revenue as an encouraging commercial-viability milestone. (<a href="https://qz.com/broadcom-ceo-hock-tan-ai-investors-casino-gamblers-101226">Qz.com</a>; <a href="https://investinglive.com/stocks/broadcom-ceo-likens-ai-boom-to-a-casino-even-as-he-targets-230-billion-in-chip-sales/">Investing Live</a>)</p>
+<p>Two-sided and consistent with the pattern this tracker has flagged repeatedly: the executive most exposed to a real AI-compute slowdown chose sharper rhetoric on investor behavior while not touching his own revenue numbers — a continuation, not an escalation, of the fundamental picture. No P008 impact (doesn&#x27;t hit the specific hyperscaler-financing-constraint trigger). Logged as a continuation of the sub-thesis #5 (informal) tracker.</p>
+</div>
+<div class="card card-watch">
+<h3><span class="tag tag-watch">watch</span> NVIDIA&#x27;s China AI-chip share falls to 34% as Huawei climbs to 28% (IDC data)</h3>
+<p>IDC data reported by Reuters shows NVIDIA&#x27;s share of China&#x27;s data-center AI chip market fell to 34% in H1 2026 (from higher levels a year earlier) as US export controls restricted supply; NVIDIA shipped 678,000 accelerators in China Jan-June, down 44% YoY. Huawei shipped 572,000 units (28% share, up from ~300,000 a year earlier); Alibaba&#x27;s T-Head (7%), Cambricon (5%), Baidu&#x27;s Kunlunxin (4%), and Hygon (3%) round out the rest. (<a href="https://www.brecorder.com/news/40443949/nvidias-china-ai-chip-share-falls-as-huawei-closes-gap-report-finds">Business Recorder/Reuters</a>)</p>
+<p>This is a continuation of the known export-control dynamic (not a new policy event) but is the first time this cycle it&#x27;s been quantified with independent IDC data rather than anecdote. No prediction impact — no active P0xx tests NVIDIA&#x27;s China-specific share.</p>
+</div>
+<div class="card card-watch">
+<h3><span class="tag tag-watch">watch</span> Anthropic discloses AI models may be &quot;months&quot; from self-replicating on home/IoT devices</h3>
+<p>Anthropic&#x27;s own red-team research, disclosed 10/12-13, found that small AI models are approaching the technical capability to replicate themselves across internet-connected consumer devices (smart TVs, ovens) without relying on data centers — not yet demonstrated as a working &quot;rogue replicator,&quot; but individual steps in the chain are increasingly achievable. (<a href="https://www.cnbc.com/2026/10/13/anthropic-ai-models-self-replication-smart-devices.html">CNBC</a>; <a href="https://www.aljazeera.com/economy/2026/10/13/ai-could-self-replicate-on-home-devices-within-months-anthropic-says">Al Jazeera</a>)</p>
+<p>Feeds sub-thesis #1&#x27;s agentic-safety tracker: a proactive lab disclosure (governance-positive) describing a capability trend that would, if realized, be bear-adjacent for unconstrained agent deployment. No threshold crossed; logged for the pattern, not a change.</p>
+</div>
+<h2 id="todays-setup">Today&#x27;s Setup</h2>
+<table>
+<thead><tr><th>Time</th><th>Catalyst</th><th>What would matter</th><th>Thesis / company</th></tr></thead>
+<tbody>
+<tr><td>Today (Tue 10/13)</td><td>Memory-rout follow-through; no major scheduled US catalyst</td><td>Whether CXMT-driven selling bleeds into NVDA/AVGO/leading-edge logic names or stays contained to memory/equipment</td><td>Memory-moat axis</td></tr>
+<tr><td>Wed 10/14, pre-market</td><td>ASML Q3 2026 earnings</td><td>Order book / HBM-equipment demand commentary in light of today&#x27;s rout; consensus ~$13.16B rev, EPS ~$12.14</td><td>ASML (Tier 2)</td></tr>
+<tr><td>Wed 10/14, 8:30am ET</td><td>September CPI</td><td>Consensus headline +3.6% YoY, core +2.5% YoY</td><td>P008 (financing/capex), Fed path</td></tr>
+<tr><td>Thu 10/15, pre-market</td><td>TSMC Q3 2026 earnings</td><td>Revenue vs. ~$45.4B consensus; whether leading-edge logic demand commentary diverges from today&#x27;s memory-sector narrative</td><td>TSM (Tier 1), P010/P011</td></tr>
+</tbody>
+</table>
+<h2 id="current-market-state">Current Market State</h2>
+<p class="muted"><em>US names: premarket vs. prior close. Asia/Europe: today&#x27;s primary-session move vs. prior local close. Quote timestamps per source.</em></p>
+<table>
+<thead><tr><th>Company</th><th>Listing / session</th><th>Current</th><th>Session move</th><th>New information</th></tr></thead>
+<tbody>
+<tr><td>NVIDIA</td><td>NVDA — Nasdaq premarket (09:00 ET)</td><td class="metric">$224.15</td><td class="red">-0.96%</td><td>China AI-chip share fell to 34% (IDC H1 2026 data)</td></tr>
+<tr><td>Broadcom</td><td>AVGO — Nasdaq premarket (09:00 ET)</td><td class="metric">$349.75</td><td class="red">-1.40%</td><td>CEO &quot;casino&quot; comment; targets reaffirmed</td></tr>
+<tr><td>TSMC</td><td>2330.TW — Taiwan, today&#x27;s close (13:30 CST)</td><td class="metric">NT$2,490</td><td class="red">-2.35%</td><td>Sympathy with memory rout; reports Q3 earnings Thu</td></tr>
+<tr><td>TSMC ADR</td><td>TSM — NYSE premarket (08:59 ET)</td><td class="metric">$439.79</td><td class="red">-1.03%</td><td></td></tr>
+<tr><td>Microsoft</td><td>MSFT — Nasdaq premarket (09:00 ET)</td><td class="metric">$544.05</td><td class="green">+0.54%</td><td>Unveiled Maia 300 custom inference chip</td></tr>
+<tr><td>Alphabet</td><td>GOOG — Nasdaq premarket (09:00 ET)</td><td class="metric">$350.79</td><td class="green">+0.52%</td><td></td></tr>
+<tr><td>Meta</td><td>META — Nasdaq premarket (08:59 ET)</td><td class="metric">$733.60</td><td class="red">-1.26%</td><td></td></tr>
+<tr><td>Amazon</td><td>AMZN — Nasdaq premarket (08:59 ET)</td><td class="metric">$259.70</td><td class="green">+0.07%</td><td>Decart acquisition talks continuing (~$5.5-7B)</td></tr>
+<tr><td>SK Hynix</td><td>000660.KS — Seoul, today&#x27;s close (15:30 KST)</td><td class="metric">₩1,443,000</td><td class="red">-14.16%</td><td>CXMT 4F² DRAM threat escalates; Musk commentary</td></tr>
+<tr><td>Samsung Electronics</td><td>005930.KS — Seoul, today&#x27;s close (15:30 KST)</td><td class="metric">₩232,000</td><td class="red">-11.45%</td><td>Same CXMT catalyst; steepest drop since 2008 (some readings)</td></tr>
+<tr><td>ASML</td><td>ASML.AS — Amsterdam, live (14:45 CEST)</td><td class="metric">€1,525</td><td class="red">-4.78%</td><td>Sympathy + own Samsung/SK Hynix capex exposure; reports earnings Wed</td></tr>
+<tr><td>Micron</td><td>MU — Nasdaq premarket (09:00 ET)</td><td class="metric">$940.61</td><td class="red">-4.90%</td><td>Same CXMT catalyst; Musk&#x27;s DRAM/HBM distinction</td></tr>
+<tr><td>CoreWeave</td><td>CRWV — Nasdaq premarket (08:59 ET)</td><td class="metric">$76.40</td><td class="red">-4.81%</td><td>Sympathy with broader AI-infra/chip complex</td></tr>
+<tr><td>Nebius</td><td>NBIS — Nasdaq premarket (09:00 ET)</td><td class="metric">$202.23</td><td class="red">-3.73%</td><td>Sympathy with broader AI-infra/chip complex</td></tr>
+<tr><td>Arista Networks</td><td>ANET — NYSE premarket (09:00 ET)</td><td class="metric">$205.49</td><td class="red">-2.56%</td><td></td></tr>
+<tr><td>Palantir</td><td>PLTR — Nasdaq premarket (09:00 ET)</td><td class="metric">$208.50</td><td class="red">-0.24%</td><td></td></tr>
+</tbody>
+</table>
+<h2 id="thesis-prediction-deltas">Thesis / Prediction Deltas</h2>
+<ul>
+<li>No prediction probability changes. <code>theses/computational-abundance.md</code> evidence trackers updated: Strong disconfirming row (memory-moat escalation), Strong supporting row (Microsoft Maia 300, sub-thesis #4), and a continuation row on sub-thesis #5 (Broadcom rhetoric) — see Overnight Developments above for detail.</li>
+</ul>
+<h2 id="next-seven-days">Next Seven Days</h2>
+<table>
+<thead><tr><th>Date / time</th><th>Catalyst</th><th>Decision point</th></tr></thead>
+<tbody>
+<tr><td>Wed 10/14, pre-market</td><td>ASML Q3 earnings</td><td>Order book, EUV/DUV pricing power, whether management addresses the CXMT threat directly</td></tr>
+<tr><td>Wed 10/14, 8:30am ET</td><td>Sept CPI</td><td>Core vs. headline gap; Fed path into Oct 28-29 FOMC</td></tr>
+<tr><td>Thu 10/15, pre-market</td><td>TSMC Q3 earnings</td><td>Revenue vs. ~$45.4B consensus; FY26 guidance vs. the &quot;slightly above 40%&quot; bar (P010); GM vs. 62% floor (P011); 2027 capex commentary</td></tr>
+<tr><td>Fri 10/16</td><td>Fed Chair Warsh speech</td><td>Rate-path signal relevant to the financing-cost axis (sub-thesis #5)</td></tr>
+<tr><td>Tue 10/20</td><td>Microsoft OneDrive + Copilot digital event</td><td>Product/distribution signal, not thesis-moving by default</td></tr>
+<tr><td>Tue 10/27 (after close)</td><td>SK Hynix Q3 earnings</td><td>Buyback/dividend detail; direct management response to this week&#x27;s CXMT-driven selloff</td></tr>
+<tr><td>Wed 10/28 (after close)</td><td>Microsoft FQ1 FY27 earnings</td><td>Azure growth, capex guidance, any Maia 300 detail</td></tr>
+<tr><td>Wed 10/28, 1:30pm PT</td><td>Alphabet Q3 earnings</td><td>Cloud run-rate vs. P013 (92%, $95B FY bar); capex vs. P014 (90%, $195-205B guide)</td></tr>
+</tbody>
+</table>
+<h2 id="data-quality">Data Quality</h2>
+<p>IBKR wire enrichment attempted once per protocol (bounded timeouts); TWS/venv unavailable in this environment, as in essentially every recent session. Public/primary baseline (quotes, news discovery, dedicated company sweeps, and web-search verification of every material lead) completed without it.</p>
+
+<footer>
+Generated from <code>2026-10-13-update.md</code> by <code>scripts/build_report.py</code>.
+</footer>
+
+</div>
+</body>
+</html>
