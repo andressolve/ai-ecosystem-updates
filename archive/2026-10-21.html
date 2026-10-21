@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Ecosystem Premarket Brief — October 21, 2026</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --panel: #131822;
+    --panel-2: #1a2030;
+    --border: #2a3142;
+    --text: #e6e9ef;
+    --muted: #9aa3b2;
+    --blue: #60a5fa;
+    --green: #34d399;
+    --yellow: #fbbf24;
+    --red: #f87171;
+    --purple: #c084fc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    font-size: 15px;
+  }
+  .container { max-width: 1120px; margin: 0 auto; padding: 32px 24px; }
+  header { padding-bottom: 18px; }
+  h1 { margin: 0 0 8px; font-size: 27px; font-weight: 650; letter-spacing: -0.2px; }
+  .subtitle { color: var(--muted); font-size: 14px; }
+  /* sticky section nav */
+  .toc {
+    position: sticky; top: 0; z-index: 20;
+    margin: 0 0 22px; padding: 11px 0;
+    background: rgba(11,14,20,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px;
+  }
+  .toc a { color: var(--muted); white-space: nowrap; }
+  .toc a:hover { color: var(--blue); text-decoration: none; }
+  h2 { margin: 34px 0 14px; padding-bottom: 7px; border-bottom: 1px solid var(--border); font-size: 20px; scroll-margin-top: 56px; }
+  h3 { margin: 22px 0 8px; color: var(--blue); font-size: 16px; }
+  p { margin: 8px 0; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul, ol { margin: 8px 0; padding-left: 22px; }
+  li { margin: 5px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 14px; }
+  th, td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--panel-2); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  code { background: var(--panel-2); padding: 1px 5px; border-radius: 4px; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.9em; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 26px 0; }
+  .banner {
+    background: #231b12;
+    border: 1px solid rgba(251,191,36,0.45);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 24px;
+  }
+  .banner-label { color: var(--yellow); text-transform: uppercase; font-size: 12px; letter-spacing: 0.8px; font-weight: 700; margin-bottom: 6px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: 8px;
+    padding: 17px 20px;
+    margin: 14px 0;
+  }
+  .card h3 { margin-top: 0; }
+  .card-bull { border-left-color: var(--green); }
+  .card-bear { border-left-color: var(--red); }
+  .card-watch { border-left-color: var(--yellow); }
+  .card-neutral { border-left-color: var(--blue); }
+  .tag { display: inline-block; border-radius: 12px; padding: 2px 9px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-right: 6px; }
+  .tag-bear { color: var(--red); background: rgba(248,113,113,0.13); border: 1px solid rgba(248,113,113,0.3); }
+  .tag-bull { color: var(--green); background: rgba(52,211,153,0.13); border: 1px solid rgba(52,211,153,0.3); }
+  .tag-watch { color: var(--yellow); background: rgba(251,191,36,0.13); border: 1px solid rgba(251,191,36,0.3); }
+  .tag-neutral { color: var(--blue); background: rgba(96,165,250,0.13); border: 1px solid rgba(96,165,250,0.3); }
+  /* probability-delta pills, e.g. 90% -> 95% */
+  .delta { display: inline-block; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.88em; font-weight: 650; padding: 0 6px; border-radius: 5px; white-space: nowrap; }
+  .delta-up { color: var(--green); background: rgba(52,211,153,0.12); }
+  .delta-down { color: var(--red); background: rgba(248,113,113,0.12); }
+  .delta-flat { color: var(--muted); background: rgba(154,163,178,0.12); }
+  .metric { font-family: "SF Mono", "Fira Code", monospace; white-space: nowrap; }
+  .muted { color: var(--muted); }
+  .green { color: var(--green); font-weight: 650; }
+  .red { color: var(--red); font-weight: 650; }
+  .yellow { color: var(--yellow); font-weight: 650; }
+  footer { border-top: 1px solid var(--border); margin-top: 40px; padding-top: 18px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 760px) {
+    .container { padding: 22px 14px; }
+    table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>AI Ecosystem Premarket Brief — October 21, 2026</h1>
+  <div class="subtitle">Type: Premarket · As of: 2026-10-21 06:00 PT / 09:00 ET · Coverage: Public/primary baseline completed (quotes + news discovery + targeted web verification across the Tuesday 6am PT → Wednesday 6am PT window). IBKR wire enrichment not attempted — no venv/TWS available in this environment, expected per prior sessions.</div>
+</header>
+<nav class="toc"><a href="#bottom-line">Bottom Line</a><a href="#overnight-developments">Overnight Developments</a><a href="#todays-setup">Today&#x27;s Setup</a><a href="#current-market-state">Current Market State</a><a href="#thesis-prediction-deltas">Thesis / Prediction Deltas</a><a href="#next-seven-days">Next Seven Days</a><a href="#data-quality">Data Quality</a></nav>
+<div class="banner"><div class="banner-label">Headline</div><div>GTC Berlin lands the most quantified capacity-expansion data of the cycle the same morning Korea&#x27;s chip exports surge +222.5% YoY and a second hyperscaler (Google) launches a direct software-layer challenge to NVIDIA&#x27;s CUDA moat.</div></div>
+<h2 id="bottom-line">Bottom Line</h2>
+<ul>
+<li><strong>NVIDIA&#x27;s GTC Berlin keynote delivered the most quantified, named-partner capacity-expansion data of the cycle</strong> — Amkor&#x27;s advanced-packaging capacity +300% by 2028, NVIDIA&#x27;s own test capacity doubling CY2026→CY2027, substrate capacity +2.5x, SPIL optical-engine capacity +15x — plus DSX POD modular factories cutting deployment from ~6 months to 14 days and a live commercial Nokia/T-Mobile AI-RAN call. Strong, specific supporting evidence for the computational-abundance thesis.</li>
+<li><strong>Memory snapped back sharply</strong> (SK Hynix +5.81%, Samsung +5.67% in Seoul) on Korea&#x27;s +222.5% YoY chip-export surge (hard customs data) and Super Micro&#x27;s guidance raise — a harder-data reversal of yesterday&#x27;s mostly-recirculated selloff. Separately, Samsung and SK Hynix are upgrading China NAND fabs to defend share after YMTC overtook Samsung in China&#x27;s own NAND market — a new, NAND-specific competitive-threat axis distinct from the DRAM/CXMT thread tracked since 10/12.</li>
+<li><strong>Google launched TorchTPU</strong> days after Amazon&#x27;s TorchNeuron — the second hyperscaler software-layer (not just hardware) challenge to NVIDIA&#x27;s CUDA moat this week. No existing prediction probabilities changed; no new predictions added.</li>
+</ul>
+<h2 id="overnight-developments">Overnight Developments</h2>
+<div class="card card-bull">
+<h3><span class="tag tag-bull">bull</span> GTC Berlin keynote day brings the most quantified capacity-expansion data this cycle</h3>
+<p>NVIDIA&#x27;s Jensen Huang keynote ran 11am-1pm CEST at Tempodrom (Berlin) — concurrent with/just ahead of this report. Same-day NVIDIA Newsroom releases carried real figures, not vague &quot;accelerate&quot; language: Amkor&#x27;s advanced-packaging capacity <strong>+300% by end-2028</strong>; NVIDIA&#x27;s total test capacity <strong>doubling CY2026→CY2027</strong> across US/Taiwan/Singapore; a <strong>$1.1B capacity-reservation advance</strong> to Taiwan&#x27;s KYEC for new US test facilities (high-volume manufacturing targeted April 2027); substrate capacity <strong>+2.5x over three years</strong>; SPIL&#x27;s co-packaged-optics optical-engine capacity <strong>+15x by mid-2027</strong>, doubling again by end-2028 (named partners: Amkor, IBIDEN, KYEC, Samsung Electro-Mechanics, SPIL, Unimicron). Separately, NVIDIA&#x27;s new <strong>DSX POD</strong> — pre-integrated modular Vera Rubin AI-factory containers — cuts deployment from ~6 months to as little as <strong>14 days</strong> (Dell/HPE/Lenovo/Schneider Electric/Vertiv shipping worldwide &quot;early 2027&quot;); NVIDIA cites ~$10B invested in Europe over the past year. Nokia and T-Mobile separately completed the <strong>first AI-RAN call on a live commercial cell site</strong> (Bellevue, WA, on T-Mobile&#x27;s production network) — a genuine commercial milestone, not a lab demo, putting T-Mobile ahead of BT/Deutsche Telekom/Elisa, which remain at pilot/field-trial stage (DT&#x27;s trials don&#x27;t start until 2027). This is the most concrete capacity/deployment-velocity disclosure logged this cycle across packaging, substrate, and test — if DSX POD&#x27;s deployment-speed claim holds in practice, it shortens the lag between capex commitment and usable compute, a separate lever on the abundance thesis from raw capacity volume. No active prediction tests packaging/substrate capacity directly, so no probability change. (<a href="https://nvidianews.nvidia.com/news/nvidia-and-supply-chain-partners-expand-capacity-to-accelerate-ai-infrastructure-buildout">NVIDIA Newsroom — capacity</a>; <a href="https://nvidianews.nvidia.com/news/nvidia-introduces-dsx-pod-ai-factories-to-accelerate-europes-infrastructure-deployment">NVIDIA Newsroom — DSX POD</a>; <a href="https://www.nokia.com/blog/from-the-lab-to-the-live-network-nokia-t-mobile-and-nvidia-complete-worlds-first-ai-ran-call/">Nokia</a>)</p>
+</div>
+<div class="card card-bull">
+<h3><span class="tag tag-bull">bull</span> Korea&#x27;s chip exports surge +222.5% YoY; Seoul snaps back sharply on harder data than yesterday&#x27;s selloff</h3>
+<p>Korea&#x27;s customs data: semiconductor exports <strong>+222.5% YoY to $27.5B</strong> in the first 20 days of October 2026 — an all-time mid-month high, with chips now 44.7% of total exports. Separately, Super Micro raised its earnings outlook citing AI-platform demand, directly rebutting the AI-capex-fear narrative that had been weighing on the sector. Together these drove a ~3.3% KOSPI rebound and a sharp Seoul snapback: <strong>SK Hynix +5.81%</strong> to ₩1.294M, <strong>Samsung +5.67%</strong> to ₩223,500 — reversing yesterday&#x27;s -4.23%/-2.98% selloff, which this desk flagged on 10/20 as substantially recirculated and stale. Government customs data is a harder, more durable data point than yesterday&#x27;s inputs — a direct, dateable confirmation that AI-driven chip demand is still running at triple-digit YoY growth into Q4. Doesn&#x27;t move P015 (already at its 95% ceiling, resolves specifically on C3Q26 <em>contract pricing</em>, not export volumes) but reinforces the demand trend that resolution will reflect. (<a href="https://www.koreajoongangdaily.com/business/kospi-rebounds-over-3-on-eased-ai-spending-woes/12932490">Korea JoongAng Daily</a>; <a href="https://www.mt.co.kr/en/economy/2026/10/21/2026102108331616913">MoneyToday</a>; <a href="https://www.koreatimes.co.kr/economy/20261021/exports-double-in-1st-20-days-of-october-on-robust-chip-shipments">Korea Times</a>; <a href="https://en.fnnews.com/news/202610210917242052">FNNews</a>)</p>
+</div>
+<div class="card card-watch">
+<h3><span class="tag tag-watch">watch</span> Samsung, SK Hynix upgrading China NAND fabs to defend share after YMTC overtakes Samsung — a new, NAND-specific competitive-threat axis</h3>
+<p>Reuters exclusive: Samsung&#x27;s Xian plant (40% of its global NAND output) is converting from ~200-layer to <strong>286-layer V9 NAND</strong> — 5,000 wafers/month by Dec 2026, scaling to 40,000/month by Dec 2027. SK Hynix&#x27;s Dalian plant moves from 192-layer to <strong>240+-layer</strong> NAND. Both companies told Reuters the upgrades are being done &quot;in close consultation with Washington,&quot; and Samsung specifically frames the move as a technology upgrade — not capacity expansion or new-facility construction — an attempt to stay inside BIS&#x27;s 2025 position against licensing capacity/technology upgrades at foreign China fabs (that framing is the companies&#x27; own characterization, not an independently verified legal conclusion). The strategic driver: <strong>YMTC&#x27;s China NAND market share hit 38.5% in Q2 2026</strong> (up from 28% in 2025), <strong>overtaking Samsung</strong> (now 33.5%). This is the first NAND-specific evidence that a Chinese competitor has already overtaken a major incumbent in its own home market — a different, and in one sense sharper, data point than the CXMT/DRAM thread (realized share loss vs. a roadmap claim), even as Samsung/SK Hynix&#x27;s compliance-framed response shows a credible path to defend share rather than cede China outright. No prediction impact. (<a href="https://www.cnbc.com/2026/10/21/samsung-sk-hynix-upgrading-china-plants-to-make-more-advanced-chips-people-say-reuters.html">CNBC via Reuters</a>; <a href="https://www.investing.com/news/stock-market-news/exclusivesamsung-sk-hynix-upgrading-china-plants-to-make-more-advanced-chips-people-say-4961549">Investing.com</a>)</p>
+</div>
+<div class="card card-bull">
+<h3><span class="tag tag-bull">bull</span> Google launches TorchTPU days after Amazon&#x27;s TorchNeuron — second hyperscaler software-layer challenge to CUDA this week</h3>
+<p>Google announced <strong>TorchTPU</strong> (10/20): an open-source PyTorch distribution letting existing PyTorch code run on Google TPUs/Cloud via a configuration change rather than a rewrite, with Meta, Hugging Face, and others on compatibility — directly analogous to Amazon&#x27;s TorchNeuron (Trainium, announced 10/19-20). No adoption numbers disclosed. TPU-PyTorch support (torch_xla) has existed for years — what&#x27;s new is the &quot;no-rewrite, drop-in&quot; packaging, landing the same week as Amazon&#x27;s move, which went further by submitting changes to decouple PyTorch&#x27;s own internals from NVIDIA-specific assumptions. Separately, Google Cloud added three OpenAI models (GPT-Astra, GPT-6.1 Sol, GPT-6 Luna) to its <strong>Model Garden</strong> in private preview (10/21) — a billing/distribution deal, not an infrastructure partnership; this mainly confirms multi-cloud model distribution is now standard (OpenAI&#x27;s Microsoft exclusivity lapsed in April 2026, already known) rather than adding new compute-demand information. Doesn&#x27;t move P003 (training-compute-specific) — both items are developer-portability/inference-distribution moves, not evidence of a training-majority shift. Logged as a second Moderate supporting row for sub-thesis #4 (custom-silicon/software threat to NVIDIA), escalating from Amazon&#x27;s single-hyperscaler move two days ago. (<a href="https://techcrunch.com/2026/10/20/google-has-joined-amazon-in-attacking-nvidias-stronghold-with-ai-app-developers/">TechCrunch</a>; <a href="https://www.unite.ai/google-cloud-adds-openais-gpt-astra-and-gpt-6-models-to-model-garden/">Unite.AI</a>)</p>
+</div>
+<div class="card card-neutral">
+<h3><span class="tag tag-neutral">neutral</span> Four workers killed in TSMC construction accident; all Taiwan construction paused pending investigation</h3>
+<p>Four construction workers died (three on 10/20 evening, a fourth on 10/21 morning after surgery) when bolts on a steel connecting-plate broke during installation work on a building under construction at TSMC&#x27;s <strong>Fab 22 site in Kaohsiung</strong> — 2nm fab construction/expansion, not an active production line. TSMC and its contractor suspended steel-structure work at the site and paused similar work at all TSMC Taiwan construction sites pending investigation; no statement yet on any production-timeline impact. Per Tom&#x27;s Hardware, this is the ninth construction-related death at TSMC sites since 2024 — worth tracking as a safety-oversight thread on the capacity buildout, though today&#x27;s event is a human tragedy and execution-risk watch item, not a demand or production datapoint. (<a href="https://www.bloomberg.com/news/articles/2026-10-21/tsmc-suspends-some-construction-after-deadly-accident-kills-four">Bloomberg</a>; <a href="https://www.taiwannews.com.tw/news/6462220">Taiwan News</a>)</p>
+</div>
+<div class="card">
+<h3>Also: Micron&#x27;s Taichung union signs labor deal; separate Taoyuan union proceeds with a one-day warning strike tomorrow</h3>
+<p>Micron Memory Taiwan and the Taichung-site union signed a labor-management agreement (terms undisclosed) and withdrew from mediation that had been scheduled for 10/22 — resolving that specific dispute. A <strong>separate</strong> union representing Taoyuan workers is still proceeding with a one-day warning strike on <strong>10/22</strong> over bonuses/profit-sharing — the same dispute behind the 10/7 99% strike-authorization vote tracked since September. Net: one of two parallel Micron Taiwan labor disputes is resolved; the other proceeds to a contained, one-day action, not an open-ended walkout. No change to P015. (<a href="https://www.investing.com/news/economy-news/micron-taiwan-union-sign-deal-withdraw-from-mediation-4961824">Reuters via Investing.com</a>)</p>
+</div>
+<h2 id="todays-setup">Today&#x27;s Setup</h2>
+<table>
+<thead><tr><th>Time</th><th>Catalyst</th><th>What would matter</th><th>Thesis / company</th></tr></thead>
+<tbody>
+<tr><td>Wed 10/21, 8am MT</td><td>Micron technology webinar (CTO Scott DeBoer)</td><td>DRAM/HBM/NAND roadmap detail</td><td>MU</td></tr>
+<tr><td>Wed 10/21 (AMC)</td><td>Meta Q3 2026 earnings</td><td>AI capex guidance, Muse adoption commentary</td><td>META</td></tr>
+<tr><td>Wed 10/21 (AMC)</td><td>Tesla Q3 2026 earnings</td><td>Physical AI (FSD/Optimus) data points</td><td>Physical AI demand-driver</td></tr>
+<tr><td>Thu 10/22</td><td>Micron Taoyuan one-day warning strike</td><td>Whether it escalates to an open-ended work stoppage</td><td>MU</td></tr>
+</tbody>
+</table>
+<h2 id="current-market-state">Current Market State</h2>
+<table>
+<thead><tr><th>Company</th><th>Listing / session</th><th>Current</th><th>Session move</th><th>New information</th></tr></thead>
+<tbody>
+<tr><td>NVIDIA</td><td>NVDA · Nasdaq pre-market (09:00 ET)</td><td class="metric">$220.40</td><td class="green">+1.82%</td><td>GTC Berlin capacity disclosures</td></tr>
+<tr><td>Broadcom</td><td>AVGO · Nasdaq pre-market (08:59 ET)</td><td class="metric">$337.43</td><td class="green">+0.92%</td><td></td></tr>
+<tr><td>TSMC (ADR)</td><td>TSM · NYSE pre-market (09:00 ET)</td><td class="metric">$431.30</td><td class="green">+1.46%</td><td>Kaohsiung construction accident</td></tr>
+<tr><td>Microsoft</td><td>MSFT · Nasdaq pre-market (08:59 ET)</td><td class="metric">$531.00</td><td class="red">-0.16%</td><td></td></tr>
+<tr><td>Alphabet</td><td>GOOG · Nasdaq pre-market (09:00 ET)</td><td class="metric">$333.38</td><td class="red">-0.90%</td><td>TorchTPU launch; OpenAI models on Cloud</td></tr>
+<tr><td>Meta</td><td>META · Nasdaq pre-market (09:00 ET)</td><td class="metric">$691.38</td><td class="red">-0.41%</td><td>Reports today AMC</td></tr>
+<tr><td>Amazon</td><td>AMZN · Nasdaq pre-market (08:59 ET)</td><td class="metric">$262.96</td><td class="green">+0.13%</td><td></td></tr>
+<tr><td>Micron</td><td>MU · Nasdaq pre-market (09:00 ET)</td><td class="metric">$923.03</td><td class="green">+3.01%</td><td>Taichung deal signed; Taoyuan strike 10/22</td></tr>
+<tr><td>Arista</td><td>ANET · NYSE pre-market (08:41 ET)</td><td class="metric">$186.00</td><td class="green">+2.65%</td><td></td></tr>
+<tr><td>Palantir</td><td>PLTR · Nasdaq pre-market (09:00 ET)</td><td class="metric">$193.35</td><td class="green">+0.39%</td><td></td></tr>
+<tr><td>CoreWeave</td><td>CRWV · Nasdaq pre-market (08:59 ET)</td><td class="metric">$63.80</td><td class="green">+2.69%</td><td></td></tr>
+<tr><td>Nebius</td><td>NBIS · Nasdaq pre-market (09:00 ET)</td><td class="metric">$176.10</td><td class="green">+2.71%</td><td></td></tr>
+<tr><td>SK Hynix</td><td>000660.KS · Seoul (primary), closed 15:30 KST</td><td class="metric">1,294,000 KRW</td><td class="green">+5.81%</td><td>Korea export data; China NAND fab upgrade</td></tr>
+<tr><td>Samsung</td><td>005930.KS · Seoul (primary), closed 15:30 KST</td><td class="metric">223,500 KRW</td><td class="green">+5.67%</td><td>Korea export data; China NAND fab upgrade</td></tr>
+<tr><td>TSMC</td><td>2330.TW · Taiwan (primary), closed 13:30 CST</td><td class="metric">2,420 TWD</td><td class="green">+0.62%</td><td>Kaohsiung construction accident</td></tr>
+<tr><td>ASML</td><td>ASML.AS · Amsterdam (primary), open 14:45 CEST</td><td class="metric">1,484 EUR</td><td class="green">+1.98%</td><td></td></tr>
+</tbody>
+</table>
+<h2 id="thesis-prediction-deltas">Thesis / Prediction Deltas</h2>
+<ul>
+<li>No existing prediction probabilities changed; no new predictions added.</li>
+<li>Added Strong supporting row (computational-abundance thesis): GTC Berlin capacity-expansion disclosures (Amkor, NVIDIA test capacity, KYEC advance, substrate, SPIL optical) plus DSX POD deployment-speed improvement and the Nokia/T-Mobile live commercial AI-RAN call.</li>
+<li>Added Strong supporting row: Korea&#x27;s +222.5% YoY chip-export surge plus Super Micro&#x27;s guidance raise, driving today&#x27;s Seoul snapback.</li>
+<li>Added Moderate supporting/two-sided row (sub-thesis #4): Google&#x27;s TorchTPU — a second hyperscaler software-layer CUDA-moat challenge within 48 hours of Amazon&#x27;s TorchNeuron.</li>
+<li>Added Moderate two-sided disconfirming row: Samsung/SK Hynix upgrading China NAND fabs to defend share after YMTC overtook Samsung in China&#x27;s NAND market — first NAND-specific competitive-threat evidence, distinct from the DRAM/CXMT axis.</li>
+</ul>
+<h2 id="next-seven-days">Next Seven Days</h2>
+<table>
+<thead><tr><th>Date / time</th><th>Catalyst</th><th>Decision point</th></tr></thead>
+<tbody>
+<tr><td>Wed 10/21 (AMC)</td><td>Meta + Tesla Q3 2026 earnings</td><td>AI capex guidance (Meta); physical AI data (Tesla)</td></tr>
+<tr><td>Thu 10/22</td><td>Micron Taoyuan one-day warning strike</td><td>Whether it escalates to an open-ended work stoppage</td></tr>
+<tr><td>~Oct 28-30 (exact dates TBC)</td><td>MSFT/GOOG/AMZN Q3 earnings + FOMC decision (10/28)</td><td>First Big-5 capex/financing-cost commentary post-CoreWeave-credit-stress; tests P008, P013, P014</td></tr>
+<tr><td>~November (unconfirmed)</td><td>Anthropic reported IPO</td><td>Reported valuation ~$1.5T per Nomura/sell-side chatter — unconfirmed, watch for official filing</td></tr>
+</tbody>
+</table>
+<h2 id="data-quality">Data Quality</h2>
+<p>IBKR wire enrichment unavailable (no venv/TWS in this environment); public/primary baseline completed in full, including direct verification of the GTC Berlin capacity disclosures, the Korea export data, the Samsung/SK Hynix China NAND story, the TorchTPU launch, and the TSMC construction accident.</p>
+
+<footer>
+Generated from <code>2026-10-21-update.md</code> by <code>scripts/build_report.py</code>.
+</footer>
+
+</div>
+</body>
+</html>
