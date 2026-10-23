@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Ecosystem Premarket Brief — October 23, 2026</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --panel: #131822;
+    --panel-2: #1a2030;
+    --border: #2a3142;
+    --text: #e6e9ef;
+    --muted: #9aa3b2;
+    --blue: #60a5fa;
+    --green: #34d399;
+    --yellow: #fbbf24;
+    --red: #f87171;
+    --purple: #c084fc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    font-size: 15px;
+  }
+  .container { max-width: 1120px; margin: 0 auto; padding: 32px 24px; }
+  header { padding-bottom: 18px; }
+  h1 { margin: 0 0 8px; font-size: 27px; font-weight: 650; letter-spacing: -0.2px; }
+  .subtitle { color: var(--muted); font-size: 14px; }
+  /* sticky section nav */
+  .toc {
+    position: sticky; top: 0; z-index: 20;
+    margin: 0 0 22px; padding: 11px 0;
+    background: rgba(11,14,20,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px;
+  }
+  .toc a { color: var(--muted); white-space: nowrap; }
+  .toc a:hover { color: var(--blue); text-decoration: none; }
+  h2 { margin: 34px 0 14px; padding-bottom: 7px; border-bottom: 1px solid var(--border); font-size: 20px; scroll-margin-top: 56px; }
+  h3 { margin: 22px 0 8px; color: var(--blue); font-size: 16px; }
+  p { margin: 8px 0; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul, ol { margin: 8px 0; padding-left: 22px; }
+  li { margin: 5px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 14px; }
+  th, td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--panel-2); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  code { background: var(--panel-2); padding: 1px 5px; border-radius: 4px; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.9em; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 26px 0; }
+  .banner {
+    background: #231b12;
+    border: 1px solid rgba(251,191,36,0.45);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 24px;
+  }
+  .banner-label { color: var(--yellow); text-transform: uppercase; font-size: 12px; letter-spacing: 0.8px; font-weight: 700; margin-bottom: 6px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: 8px;
+    padding: 17px 20px;
+    margin: 14px 0;
+  }
+  .card h3 { margin-top: 0; }
+  .card-bull { border-left-color: var(--green); }
+  .card-bear { border-left-color: var(--red); }
+  .card-watch { border-left-color: var(--yellow); }
+  .card-neutral { border-left-color: var(--blue); }
+  .tag { display: inline-block; border-radius: 12px; padding: 2px 9px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-right: 6px; }
+  .tag-bear { color: var(--red); background: rgba(248,113,113,0.13); border: 1px solid rgba(248,113,113,0.3); }
+  .tag-bull { color: var(--green); background: rgba(52,211,153,0.13); border: 1px solid rgba(52,211,153,0.3); }
+  .tag-watch { color: var(--yellow); background: rgba(251,191,36,0.13); border: 1px solid rgba(251,191,36,0.3); }
+  .tag-neutral { color: var(--blue); background: rgba(96,165,250,0.13); border: 1px solid rgba(96,165,250,0.3); }
+  /* probability-delta pills, e.g. 90% -> 95% */
+  .delta { display: inline-block; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.88em; font-weight: 650; padding: 0 6px; border-radius: 5px; white-space: nowrap; }
+  .delta-up { color: var(--green); background: rgba(52,211,153,0.12); }
+  .delta-down { color: var(--red); background: rgba(248,113,113,0.12); }
+  .delta-flat { color: var(--muted); background: rgba(154,163,178,0.12); }
+  .metric { font-family: "SF Mono", "Fira Code", monospace; white-space: nowrap; }
+  .muted { color: var(--muted); }
+  .green { color: var(--green); font-weight: 650; }
+  .red { color: var(--red); font-weight: 650; }
+  .yellow { color: var(--yellow); font-weight: 650; }
+  footer { border-top: 1px solid var(--border); margin-top: 40px; padding-top: 18px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 760px) {
+    .container { padding: 22px 14px; }
+    table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>AI Ecosystem Premarket Brief — October 23, 2026</h1>
+  <div class="subtitle">Type: Premarket · As of: 2026-10-23 06:00 PT / 09:00 ET · Coverage: Public/primary baseline completed (quotes + news discovery + targeted web verification across the Thursday 6am PT → Friday 6am PT window). IBKR wire enrichment not attempted — no venv/TWS available in this environment, expected per prior sessions.</div>
+</header>
+<nav class="toc"><a href="#bottom-line">Bottom Line</a><a href="#overnight-developments">Overnight Developments</a><a href="#todays-setup">Today&#x27;s Setup</a><a href="#current-market-state">Current Market State</a><a href="#thesis-prediction-deltas">Thesis / Prediction Deltas</a><a href="#next-seven-days">Next Seven Days</a><a href="#data-quality">Data Quality</a></nav>
+<div class="banner"><div class="banner-label">Headline</div><div>Markets stabilize after Thursday&#x27;s AI-capex-doubt rout fully confirmed at the close (S&amp;P -1.21%, worst since July; Nasdaq -2.6%, worst since June) — but NVIDIA&#x27;s own CEO just handed sub-thesis #5 its clearest evidence yet: neocloud demand is &quot;off the charts,&quot; he told CNBC at GTC Berlin, &quot;there&#x27;s a scarcity of capital.&quot;</div></div>
+<h2 id="bottom-line">Bottom Line</h2>
+<ul>
+<li><strong>The capex-doubt selloff fully materialized Thursday, and today&#x27;s premarket is calmer, not continuing.</strong> The S&amp;P 500 closed -1.21% (worst since July) and the Nasdaq Composite -2.6% (worst since June) on Thursday&#x27;s cash session — confirming yesterday&#x27;s premarket read. This morning&#x27;s premarket moves are modest by comparison (-0.05% to -1.9% across Tier 1, vs. yesterday&#x27;s 2-5% drops), consistent with a one-day digestion rather than a second leg down.</li>
+<li><strong>Jensen Huang, on the record, names capital — not chips or demand — as the binding constraint.</strong> At GTC Berlin (10/22), Huang told CNBC neocloud demand is &quot;off the charts&quot; but &quot;there&#x27;s a scarcity of capital&quot; to fund it, also naming power as a second choke point. This is the single most informed, most AI-bullish voice in the ecosystem directly validating both halves of the current debate: demand is real and large, and financing — not silicon — is now the limiting variable. Directly engages sub-thesis #5 (financing fragility), landing the same week CoreWeave&#x27;s CDS sits above 1,000bps.</li>
+<li><strong>SK Hynix formally scrapped Solidigm&#x27;s US IPO; shares rose anyway.</strong> Resolves a governance dispute tracked since 2026-10-04. Micron&#x27;s Taoyuan strike concluded exactly on schedule, no escalation.</li>
+<li>Apple closed Thursday within $42B of NVIDIA&#x27;s market-cap crown — a sentiment readout on the capex-restraint-vs-capex-intensity divide, not a thesis change. No existing prediction probabilities changed.</li>
+</ul>
+<h2 id="overnight-developments">Overnight Developments</h2>
+<div class="card card-watch">
+<h3><span class="tag tag-watch">watch</span> Jensen Huang: neocloud demand is &quot;off the charts,&quot; but capital is now the scarce resource</h3>
+<p>At NVIDIA&#x27;s GTC Berlin event, Huang told CNBC&#x27;s Arjun Kharpal (interview published 10/22): &quot;What is missing in the middle is the working capital to fuel that growth… because there&#x27;s just so much demand across so many sectors of AI, there&#x27;s a scarcity of capital.&quot; He separately named power as a second bottleneck. This is a genuinely two-sided data point for the computational abundance thesis. On the demand side, it&#x27;s direct, on-record reinforcement from the industry&#x27;s most informed (and most incentive-aligned-to-be-bullish) observer — &quot;off the charts&quot; is not analyst chatter, it&#x27;s NVIDIA&#x27;s own CEO describing order flow he sees directly. On the financing-fragility side (sub-thesis #5), it&#x27;s the clearest admission yet that the constraint has shifted from chip supply to balance sheets — arriving the same week CoreWeave&#x27;s 5yr CDS sits above 1,000bps (down from its 10/15-10/19 record but still deep distress territory) and its equity is down ~29% in three weeks, and days after the Broadcom/Blackstone lending tranches and Nebius&#x27;s new Citi facility. No prediction moves on this alone — no P0xx is worded around a CEO quote — but it raises the bar for the next concrete test: whether NVIDIA itself extends direct vendor financing or backstops to capital-constrained neoclouds. Logged two-sided to <code>theses/computational-abundance.md</code>. (<a href="https://www.cnbc.com/2026/10/22/nvidia-jensen-huang-neocloud-demand-capital.html">CNBC</a>)</p>
+</div>
+<div class="card card-neutral">
+<h3><span class="tag tag-neutral">neutral</span> SK Hynix formally scraps Solidigm&#x27;s US IPO; Micron&#x27;s Taoyuan strike ends on schedule</h3>
+<p>SK Hynix issued a company statement (10/23) withdrawing Solidigm&#x27;s planned US IPO, citing &quot;capital market conditions and share-price trends&quot; — the resolution of a dispute this file has tracked since 2026-10-04, when minority shareholders and then Korea&#x27;s FSS Governor (parliamentary audit, 10/19) raised &quot;duplicate listing&quot; and disclosure-governance objections. <strong>000660.KS closed +4.42% in Seoul today (1,277,000 won)</strong> despite broader risk-off conditions elsewhere — the market treated the cancellation as removing an overhang, not as a negative signal about Solidigm&#x27;s or SK Hynix&#x27;s underlying business. Separately, Micron&#x27;s Taoyuan union&#x27;s previously-flagged 24-hour warning strike concluded exactly on schedule at 9am local time (~70% of members signed statements opposing management&#x27;s offer, but only the 11 union officers actually struck — rank-and-file stayed on the job); formal negotiations resume 10/27. Neither item tests P015 (95%, DRAM undersupply through C3Q26). (<a href="https://www.bloomberg.com/news/articles/2026-10-22/sk-hynix-scraps-solidigm-us-ipo-after-shareholder-concerns">Bloomberg</a>; <a href="https://www.digitimes.com/news/a20261023PD239/strike-taiwan-micron-management-2026.html">Digitimes</a>)</p>
+</div>
+<div class="card card-watch">
+<h3><span class="tag tag-watch">watch</span> Apple closes in on NVIDIA for the world&#x27;s-most-valuable-company crown</h3>
+<p>Apple closed Thursday at a record $348.22 (~$5.082T market cap), now just ~$42B behind NVIDIA (~$5.124T) — Apple&#x27;s lead over the gap has shrunk by roughly $570B over six sessions as NVIDIA fell on the broader AI-capex-doubt rout. Polymarket odds of Apple ending October as the world&#x27;s most valuable company jumped from ~5% early Wednesday to 22% Thursday. This is a market-sentiment readout on the same capex-doubt-vs-capex-restraint divide already logged yesterday (Meta/Tesla beat-and-raise, sold off anyway) — Apple&#x27;s comparatively modest AI infrastructure spend is being rewarded relative to the infrastructure-intensive names, not new information about either company&#x27;s fundamentals. No thesis or prediction impact. (<a href="https://www.benzinga.com/markets/prediction-markets/26/10/62392089/apple-5-trillion-nvidia-market-cap">Benzinga</a>; <a href="https://247wallst.com/investing/2026/10/23/apple-is-just-42-billion-away-from-passing-nvidia-as-the-worlds-most-valuable-company/">24/7 Wall St.</a>)</p>
+</div>
+<h2 id="todays-setup">Today&#x27;s Setup</h2>
+<table>
+<thead><tr><th>Time</th><th>Catalyst</th><th>What would matter</th><th>Thesis / company</th></tr></thead>
+<tbody>
+<tr><td>Mon 10/27</td><td>Micron-Taoyuan union formal negotiations resume</td><td>Whether the dispute settles (as Taichung&#x27;s did) or escalates to a renewed/open-ended strike</td><td>MU</td></tr>
+<tr><td>Wed 10/28</td><td>Alphabet Q3 2026 earnings (call 1:30pm PT) + FOMC decision</td><td>Cloud/capex guidance; rate path</td><td>GOOG, P008/P013/P014</td></tr>
+<tr><td>Wed 10/28 (AMC)</td><td>Microsoft FQ1 2027 earnings</td><td>Azure/capex guidance, Maia 300 deployment detail</td><td>MSFT, P008/P014</td></tr>
+<tr><td>Thu 10/29 (expected, unconfirmed)</td><td>Amazon Q3 2026 earnings</td><td>AWS/capex guidance</td><td>AMZN, P008</td></tr>
+</tbody>
+</table>
+<h2 id="current-market-state">Current Market State</h2>
+<table>
+<thead><tr><th>Company</th><th>Listing / session</th><th>Current</th><th>Session move</th><th>New information</th></tr></thead>
+<tbody>
+<tr><td>NVIDIA</td><td>NVDA · Nasdaq pre-market (09:00 ET)</td><td class="metric">$212.10</td><td class="red">-0.05%</td><td>Huang &quot;scarcity of capital&quot; remarks; Higgsfield investment</td></tr>
+<tr><td>Broadcom</td><td>AVGO · Nasdaq pre-market (09:00 ET)</td><td class="metric">$321.80</td><td class="red">-0.45%</td><td></td></tr>
+<tr><td>TSMC (ADR)</td><td>TSM · NYSE pre-market (08:58 ET)</td><td class="metric">$412.94</td><td class="green">+0.14%</td><td></td></tr>
+<tr><td>Microsoft</td><td>MSFT · Nasdaq pre-market (09:00 ET)</td><td class="metric">$518.67</td><td class="red">-0.46%</td><td></td></tr>
+<tr><td>Alphabet</td><td>GOOG · Nasdaq pre-market (09:00 ET)</td><td class="metric">$318.01</td><td class="red">-0.86%</td><td></td></tr>
+<tr><td>Meta</td><td>META · Nasdaq pre-market (09:00 ET)</td><td class="metric">$642.17</td><td class="red">-1.03%</td><td></td></tr>
+<tr><td>Amazon</td><td>AMZN · Nasdaq pre-market (09:00 ET)</td><td class="metric">$249.15</td><td class="red">-0.49%</td><td></td></tr>
+<tr><td>Micron</td><td>MU · Nasdaq pre-market (09:00 ET)</td><td class="metric">$866.00</td><td class="green">+1.11%</td><td>Taoyuan strike concluded on schedule</td></tr>
+<tr><td>Arista</td><td>ANET · NYSE pre-market (08:59 ET)</td><td class="metric">$171.00</td><td class="red">-0.04%</td><td></td></tr>
+<tr><td>Palantir</td><td>PLTR · Nasdaq pre-market (08:59 ET)</td><td class="metric">$195.70</td><td class="red">-0.25%</td><td></td></tr>
+<tr><td>CoreWeave</td><td>CRWV · Nasdaq pre-market (09:00 ET)</td><td class="metric">$54.93</td><td class="red">-1.21%</td><td></td></tr>
+<tr><td>Nebius</td><td>NBIS · Nasdaq pre-market (09:00 ET)</td><td class="metric">$158.31</td><td class="red">-0.54%</td><td></td></tr>
+<tr><td>SK Hynix</td><td>000660.KS · Seoul (primary), closed 15:30 KST</td><td class="metric">1,277,000 KRW</td><td class="green">+4.42%</td><td>Solidigm US IPO formally scrapped</td></tr>
+<tr><td>Samsung</td><td>005930.KS · Seoul (primary), closed 15:30 KST</td><td class="metric">215,500 KRW</td><td class="green">+0.47%</td><td></td></tr>
+<tr><td>TSMC</td><td>2330.TW · Taiwan (primary), closed 13:30 CST</td><td class="metric">2,385 TWD</td><td class="green">+0.00%</td><td></td></tr>
+<tr><td>ASML</td><td>ASML.AS · Amsterdam (primary), open 14:45 CEST</td><td class="metric">1,394 EUR</td><td class="red">-1.83%</td><td></td></tr>
+</tbody>
+</table>
+<h2 id="thesis-prediction-deltas">Thesis / Prediction Deltas</h2>
+<ul>
+<li>No existing prediction probabilities changed.</li>
+<li>Added Moderate two-sided row (sub-thesis #5): Jensen Huang&#x27;s on-record &quot;scarcity of capital&quot; remarks at GTC Berlin.</li>
+<li>Added Weak-Moderate row: SK Hynix&#x27;s formal cancellation of Solidigm&#x27;s US IPO (resolves the 10/4-20 governance-overhang thread) and Micron&#x27;s Taoyuan strike concluding on schedule.</li>
+</ul>
+<h2 id="next-seven-days">Next Seven Days</h2>
+<table>
+<thead><tr><th>Date / time</th><th>Catalyst</th><th>Decision point</th></tr></thead>
+<tbody>
+<tr><td>Mon 10/27</td><td>Micron-Taoyuan formal negotiations resume</td><td>Settlement vs. escalation</td></tr>
+<tr><td>Wed 10/28</td><td>GOOG + MSFT earnings, FOMC decision</td><td>Tests P008, P013, P014; rate path</td></tr>
+<tr><td>Thu 10/29 (expected)</td><td>AMZN Q3 2026 earnings</td><td>Tests P008</td></tr>
+<tr><td>~November (unconfirmed)</td><td>Anthropic reported IPO</td><td>Watch for an official filing</td></tr>
+</tbody>
+</table>
+<h2 id="data-quality">Data Quality</h2>
+<p>IBKR wire enrichment unavailable (no venv/TWS in this environment); public/primary baseline completed in full, including direct verification of Thursday&#x27;s confirmed close, the Huang CNBC interview, the SK Hynix/Solidigm statement, and the Apple/NVIDIA market-cap reporting.</p>
+
+<footer>
+Generated from <code>2026-10-23-update.md</code> by <code>scripts/build_report.py</code>.
+</footer>
+
+</div>
+</body>
+</html>
