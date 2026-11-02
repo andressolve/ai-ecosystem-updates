@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Ecosystem Premarket Brief — 2026-11-02</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --panel: #131822;
+    --panel-2: #1a2030;
+    --border: #2a3142;
+    --text: #e6e9ef;
+    --muted: #9aa3b2;
+    --blue: #60a5fa;
+    --green: #34d399;
+    --yellow: #fbbf24;
+    --red: #f87171;
+    --purple: #c084fc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    font-size: 15px;
+  }
+  .container { max-width: 1120px; margin: 0 auto; padding: 32px 24px; }
+  header { padding-bottom: 18px; }
+  h1 { margin: 0 0 8px; font-size: 27px; font-weight: 650; letter-spacing: -0.2px; }
+  .subtitle { color: var(--muted); font-size: 14px; }
+  /* sticky section nav */
+  .toc {
+    position: sticky; top: 0; z-index: 20;
+    margin: 0 0 22px; padding: 11px 0;
+    background: rgba(11,14,20,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px;
+  }
+  .toc a { color: var(--muted); white-space: nowrap; }
+  .toc a:hover { color: var(--blue); text-decoration: none; }
+  h2 { margin: 34px 0 14px; padding-bottom: 7px; border-bottom: 1px solid var(--border); font-size: 20px; scroll-margin-top: 56px; }
+  h3 { margin: 22px 0 8px; color: var(--blue); font-size: 16px; }
+  p { margin: 8px 0; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul, ol { margin: 8px 0; padding-left: 22px; }
+  li { margin: 5px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 14px; }
+  th, td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--panel-2); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  code { background: var(--panel-2); padding: 1px 5px; border-radius: 4px; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.9em; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 26px 0; }
+  .banner {
+    background: #231b12;
+    border: 1px solid rgba(251,191,36,0.45);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 24px;
+  }
+  .banner-label { color: var(--yellow); text-transform: uppercase; font-size: 12px; letter-spacing: 0.8px; font-weight: 700; margin-bottom: 6px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: 8px;
+    padding: 17px 20px;
+    margin: 14px 0;
+  }
+  .card h3 { margin-top: 0; }
+  .card-bull { border-left-color: var(--green); }
+  .card-bear { border-left-color: var(--red); }
+  .card-watch { border-left-color: var(--yellow); }
+  .card-neutral { border-left-color: var(--blue); }
+  .tag { display: inline-block; border-radius: 12px; padding: 2px 9px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-right: 6px; }
+  .tag-bear { color: var(--red); background: rgba(248,113,113,0.13); border: 1px solid rgba(248,113,113,0.3); }
+  .tag-bull { color: var(--green); background: rgba(52,211,153,0.13); border: 1px solid rgba(52,211,153,0.3); }
+  .tag-watch { color: var(--yellow); background: rgba(251,191,36,0.13); border: 1px solid rgba(251,191,36,0.3); }
+  .tag-neutral { color: var(--blue); background: rgba(96,165,250,0.13); border: 1px solid rgba(96,165,250,0.3); }
+  /* probability-delta pills, e.g. 90% -> 95% */
+  .delta { display: inline-block; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.88em; font-weight: 650; padding: 0 6px; border-radius: 5px; white-space: nowrap; }
+  .delta-up { color: var(--green); background: rgba(52,211,153,0.12); }
+  .delta-down { color: var(--red); background: rgba(248,113,113,0.12); }
+  .delta-flat { color: var(--muted); background: rgba(154,163,178,0.12); }
+  .metric { font-family: "SF Mono", "Fira Code", monospace; white-space: nowrap; }
+  .muted { color: var(--muted); }
+  .green { color: var(--green); font-weight: 650; }
+  .red { color: var(--red); font-weight: 650; }
+  .yellow { color: var(--yellow); font-weight: 650; }
+  footer { border-top: 1px solid var(--border); margin-top: 40px; padding-top: 18px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 760px) {
+    .container { padding: 22px 14px; }
+    table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>AI Ecosystem Premarket Brief — 2026-11-02</h1>
+  <div class="subtitle">Type: Premarket · As of: 2026-11-02 06:15 MST / 08:15 ET · Coverage: Public/primary baseline completed; no IBKR wire enrichment this run (no TWS/venv in this environment)</div>
+</header>
+<nav class="toc"><a href="#bottom-line">Bottom Line</a><a href="#overnight-developments">Overnight Developments</a><a href="#todays-setup">Today&#x27;s Setup</a><a href="#current-market-state">Current Market State</a><a href="#thesis-prediction-deltas">Thesis / Prediction Deltas</a><a href="#next-seven-days">Next Seven Days</a><a href="#data-quality">Data Quality</a></nav>
+<div class="banner"><div class="banner-label">Headline</div><div>S&amp;P Global turns negative on Meta&#x27;s credit outlook over AI capex/cash-flow risk, while WSJ reports CoreWeave, Nebius, and Nscale are &quot;effectively shut out&quot; of the bond market — the financing-fragility axis escalates on two fronts the same morning Marvell agrees to buy Lumentum for $115B to build an AI-optics leader.</div></div>
+<h2 id="bottom-line">Bottom Line</h2>
+<ul>
+<li><strong>S&amp;P Global revised Meta&#x27;s outlook from stable to negative</strong>, the first rating-agency action this cycle on a Big-4 hyperscaler, projecting free operating cash flow deficits of -$39B (2026) and -$71B (2027) and explicitly calling Meta&#x27;s AI monetization &quot;more limited than that of its peers.&quot; No downgrade today — a trajectory flag.</li>
+<li><strong>CoreWeave, Nebius, and Nscale have moved from &quot;expensive credit&quot; to &quot;effectively shut out&quot; of the bond market</strong>, per WSJ — a qualitative escalation in the financing-fragility thread tracked since August, though CoreWeave&#x27;s CDS print (&gt;1,100bps) is not a fresh record.</li>
+<li><strong>Marvell agreed to buy Lumentum for $115B</strong> in an all-stock deal to build a combined AI-optical-connectivity leader; NVIDIA holds ~$2B equity stakes in both companies from earlier this year.</li>
+<li>No existing prediction probabilities change on today&#x27;s evidence. Markets are broadly calm/modestly higher premarket after Friday&#x27;s systemic AI-capex-doubt selloff (Nasdaq -2.86%, its worst day since June; October was the Nasdaq&#x27;s worst month since March 2025).</li>
+</ul>
+<h2 id="overnight-developments">Overnight Developments</h2>
+<div class="card card-bear">
+<h3><span class="tag tag-bear">bear</span> S&amp;P Global cuts Meta&#x27;s credit outlook to negative on AI capex/cash-flow risk</h3>
+<p>S&amp;P Global Ratings revised Meta&#x27;s outlook from stable to negative, citing the $135-145B 2026 capex plan and projecting free operating cash flow deficits of <strong>-$39B in 2026 and -$71B in 2027</strong>, with FOCF potentially staying negative beyond 2028. S&amp;P said Meta&#x27;s &quot;ability to monetize its AI investments is more limited than that of its peers&quot; — a differentiated, falsifiable knock on Meta specifically rather than a sector-wide call. This is not a downgrade; S&amp;P is flagging trajectory, not acting on the rating today. It is the first rating-agency action this cycle on a Big-4 hyperscaler, extending the pattern already logged from Meta&#x27;s first negative-FCF quarter (10/22) and its $95B equity raise (10/26) to a formal external credit opinion. (<a href="https://www.gurufocus.com/news/9161452/sp-global-lowers-meta-platforms-outlook-to-negative-amid-ai-spending-concerns-meta">GuruFocus</a>, <a href="https://fortune.com/2026/11/02/s-p-global-negative-outlook-meta-underscores-risks-ai-boom-cfo/">Fortune</a>)</p>
+</div>
+<div class="card card-bear">
+<h3><span class="tag tag-bear">bear</span> CoreWeave, Nebius, and Nscale &quot;effectively shut out&quot; of the bond market</h3>
+<p>WSJ reports the three neoclouds have moved from merely paying more for credit to struggling to access it at all in recent weeks, as lenders and investors demand tougher terms. CoreWeave bonds issued earlier this year at a 9.75% coupon now trade at yields above 15%; its 5yr CDS has climbed above 1,100bps — elevated, but inside the ~1,190bps record already logged on 10/19. What&#x27;s available is secured, contract-backed capital — the type of structure behind Nebius&#x27;s existing $3.5B Citi facility, consistent with CEO Arkady Volozh&#x27;s own 10/26 comment that customer-advance financing, not open debt markets, is Nebius&#x27;s path. Pimco CIO Dan Ivascyn: &quot;the bar is going higher and higher in terms of proving to lenders that this investment will turn into sufficient revenue.&quot; Still no actual default, covenant breach, or failed refinancing — the concrete escalation this thread has been watching for since late October. (WSJ via <a href="https://aiweekly.co/alerts/wsj-coreweave-nebius-and-nscale-effectively-shut-out-of-the-bond-market-as-lenders">aiweekly.co</a>, <a href="https://app.dealroom.co/news/note/coreweave-nebius-and-nscale-effectively-shut-out-of-the-bond-market-as-ai-lenders-tighten-terms">Dealroom</a>)</p>
+</div>
+<div class="card card-neutral">
+<h3><span class="tag tag-neutral">neutral</span> Marvell to acquire Lumentum for $115B, building an AI-optics leader</h3>
+<p>Marvell agreed to acquire data-center optics maker Lumentum in an all-stock deal valued at $115B enterprise value — Marvell shareholders get 67% of the combined company, paying $1,132/share (a 23.9% premium to Lumentum&#x27;s October 28 unaffected close). The combination targets what the companies claim is a ~$550B total addressable market in AI connectivity as networks move beyond copper to optical interconnects, with over $1B in claimed annual run-rate cost synergies. NVIDIA invested ~$2B in each company earlier this year, making it a strategic shareholder on both sides of the deal. Marvell is Broadcom&#x27;s most direct comp in custom silicon and attach chips; this concentrates Marvell&#x27;s bet specifically on the optical layer that is also the largest physical constraint on Broadcom&#x27;s own Spectrum-X switch roadmap. (<a href="https://www.bloomberg.com/news/articles/2026-11-02/marvell-reaches-115-billion-deal-for-lumentum-holdings">Bloomberg</a>, <a href="https://www.investing.com/news/stock-market-news/marvell-to-buy-lumentum-in-115-billion-deal-in-ai-datacenter-bet-4991167">Reuters via Investing.com</a>)</p>
+</div>
+<div class="card card-watch">
+<h3><span class="tag tag-watch">watch</span> NVIDIA&#x27;s Vera Rubin VR200 rack ramp slips 1-2 months on PCB defects</h3>
+<p>Reports out of Taiwan&#x27;s supply chain indicate Vera Rubin VR200 rack-cabinet volume production is delayed roughly one to two months into Q4 2026, caused by defects in midplane PCBs and passive components — a named board partner encountered an impedance mismatch during validation that degraded high-speed signal integrity. This reads as a supply-chain quality issue, not a design or demand problem, but it&#x27;s a concrete execution data point worth tracking into NVIDIA&#x27;s next earnings commentary. (Reported via Taiwan supply-chain trade press, 11/2 — not yet addressed by NVIDIA directly)</p>
+</div>
+<h2 id="todays-setup">Today&#x27;s Setup</h2>
+<table>
+<thead><tr><th>Time</th><th>Catalyst</th><th>What would matter</th><th>Thesis / company</th></tr></thead>
+<tbody>
+<tr><td>10:00 AM ET</td><td>ISM Manufacturing PMI (October)</td><td>A reading confirming/denying continued manufacturing softness</td><td>Macro</td></tr>
+<tr><td>After close</td><td>Palantir Q3 2026 earnings (webcast 5:00 PM ET)</td><td>Enterprise AI adoption read-through; stock trades at ~165x earnings, high bar</td><td>Tier 2 — application layer</td></tr>
+</tbody>
+</table>
+<h2 id="current-market-state">Current Market State</h2>
+<table>
+<thead><tr><th>Company</th><th>Listing / session</th><th>Current</th><th>Session move</th><th>New information</th></tr></thead>
+<tbody>
+<tr><td>NVIDIA</td><td>NVDA — Nasdaq premarket (08:00 ET)</td><td class="metric">$206.61</td><td class="green">+0.96%</td><td>VR200 rack delay (see above)</td></tr>
+<tr><td>Broadcom</td><td>AVGO — Nasdaq premarket (08:00 ET)</td><td class="metric">$327.25</td><td class="green">+0.36%</td><td>Marvell/Lumentum competitive context</td></tr>
+<tr><td>TSMC</td><td>2330.TW — Taiwan, today&#x27;s close (13:30 CST)</td><td class="metric">NT$2,330</td><td class="red">-1.69%</td><td>Catching down to Friday&#x27;s US selloff; Morningstar flagged 2028-29 revenue &quot;uncertainty&quot;</td></tr>
+<tr><td>TSMC ADR</td><td>TSM — NYSE premarket (08:00 ET)</td><td class="metric">$412.75</td><td class="green">+1.63%</td><td></td></tr>
+<tr><td>Microsoft</td><td>MSFT — Nasdaq premarket (08:00 ET)</td><td class="metric">$523.70</td><td class="green">+0.34%</td><td></td></tr>
+<tr><td>Alphabet</td><td>GOOG — Nasdaq premarket (08:00 ET)</td><td class="metric">$279.76</td><td class="green">+0.55%</td><td></td></tr>
+<tr><td>Meta</td><td>META — Nasdaq premarket (08:00 ET)</td><td class="metric">$611.59</td><td class="red">-0.55%</td><td>S&amp;P outlook cut to negative (see above)</td></tr>
+<tr><td>Amazon</td><td>AMZN — Nasdaq premarket (08:00 ET)</td><td class="metric">$240.83</td><td class="green">+0.20%</td><td></td></tr>
+<tr><td>SK Hynix</td><td>000660.KS — Seoul, today&#x27;s close (15:30 KST)</td><td class="metric">₩1,472,000</td><td class="green">+3.81%</td><td></td></tr>
+<tr><td>Samsung Electronics</td><td>005930.KS — Seoul, today&#x27;s close (15:30 KST)</td><td class="metric">₩229,000</td><td class="green">+1.78%</td><td></td></tr>
+<tr><td>ASML</td><td>ASML.AS — Amsterdam, live (13:45 CET)</td><td class="metric">€1,413</td><td class="green">+0.04%</td><td></td></tr>
+<tr><td>Micron</td><td>MU — Nasdaq premarket (08:00 ET)</td><td class="metric">$896.11</td><td class="green">+1.29%</td><td></td></tr>
+<tr><td>CoreWeave</td><td>CRWV — Nasdaq premarket (07:59 ET)</td><td class="metric">$56.57</td><td class="green">+3.10%</td><td>Bond-market access squeeze (see above)</td></tr>
+<tr><td>Nebius</td><td>NBIS — Nasdaq premarket (07:59 ET)</td><td class="metric">$157.34</td><td class="green">+2.08%</td><td>Bond-market access squeeze (see above)</td></tr>
+<tr><td>Palantir</td><td>PLTR — Nasdaq premarket (08:00 ET)</td><td class="metric">$186.85</td><td class="green">+1.49%</td><td>Reports today, AMC</td></tr>
+<tr><td>Arista Networks</td><td>ANET — NYSE premarket (07:53 ET)</td><td class="metric">$170.30</td><td class="green">+0.85%</td><td></td></tr>
+</tbody>
+</table>
+<h2 id="thesis-prediction-deltas">Thesis / Prediction Deltas</h2>
+<p>No prediction probabilities changed. Two new entries logged to the Disconfirming Evidence Tracker in <code>theses/computational-abundance.md</code> (sub-thesis #5, informal — financing fragility): the S&amp;P/Meta outlook cut and the CoreWeave/Nebius/Nscale bond-market access story. Both are evidence-quality escalations within an already-tracked thread, not new predictions.</p>
+<h2 id="next-seven-days">Next Seven Days</h2>
+<table>
+<thead><tr><th>Date / time</th><th>Catalyst</th><th>Decision point</th></tr></thead>
+<tbody>
+<tr><td>Mon 11/2, AMC (5:00 PM ET)</td><td>Palantir Q3 2026 earnings</td><td>Enterprise AI adoption signal; valuation (~165x earnings) leaves little room for a soft print</td></tr>
+<tr><td>Tue 11/3</td><td>JOLTS (September)</td><td>Labor-market read ahead of Friday&#x27;s payrolls</td></tr>
+<tr><td>Tue 11/3, AMC (5:00 PM ET)</td><td>AMD Q3 2026 earnings</td><td>Data-center GPU competitive read-through vs. NVIDIA</td></tr>
+<tr><td>Wed 11/4</td><td>ADP employment report (October)</td><td>Labor-market read ahead of Friday&#x27;s payrolls</td></tr>
+<tr><td>Fri 11/6</td><td>October nonfarm payrolls</td><td>Consensus ~+55K jobs, unemployment steady at 4.2% (vs. September&#x27;s +29K) — a weak or strong print shapes December FOMC expectations, which bears on financing costs across the AI-infra stack</td></tr>
+<tr><td>Mon 11/10 (outside window, flag)</td><td>CoreWeave Q3 2026 earnings (estimated)</td><td>First earnings read since the bond-market-access story broke</td></tr>
+</tbody>
+</table>
+<h2 id="data-quality">Data Quality</h2>
+<p>IBKR wire enrichment unavailable in this environment (no TWS/venv); public/primary baseline (Yahoo Finance quotes, Google News/HuggingNews discovery feed, direct web verification of every item used above) completed and cross-checked across multiple outlets for each item cited.</p>
+
+<footer>
+Generated from <code>2026-11-02-update.md</code> by <code>scripts/build_report.py</code>.
+</footer>
+
+</div>
+</body>
+</html>
