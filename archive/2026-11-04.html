@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Ecosystem Premarket Brief — November 4, 2026</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --panel: #131822;
+    --panel-2: #1a2030;
+    --border: #2a3142;
+    --text: #e6e9ef;
+    --muted: #9aa3b2;
+    --blue: #60a5fa;
+    --green: #34d399;
+    --yellow: #fbbf24;
+    --red: #f87171;
+    --purple: #c084fc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    font-size: 15px;
+  }
+  .container { max-width: 1120px; margin: 0 auto; padding: 32px 24px; }
+  header { padding-bottom: 18px; }
+  h1 { margin: 0 0 8px; font-size: 27px; font-weight: 650; letter-spacing: -0.2px; }
+  .subtitle { color: var(--muted); font-size: 14px; }
+  /* sticky section nav */
+  .toc {
+    position: sticky; top: 0; z-index: 20;
+    margin: 0 0 22px; padding: 11px 0;
+    background: rgba(11,14,20,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px;
+  }
+  .toc a { color: var(--muted); white-space: nowrap; }
+  .toc a:hover { color: var(--blue); text-decoration: none; }
+  h2 { margin: 34px 0 14px; padding-bottom: 7px; border-bottom: 1px solid var(--border); font-size: 20px; scroll-margin-top: 56px; }
+  h3 { margin: 22px 0 8px; color: var(--blue); font-size: 16px; }
+  p { margin: 8px 0; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul, ol { margin: 8px 0; padding-left: 22px; }
+  li { margin: 5px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 14px; }
+  th, td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--panel-2); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  code { background: var(--panel-2); padding: 1px 5px; border-radius: 4px; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.9em; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 26px 0; }
+  .banner {
+    background: #231b12;
+    border: 1px solid rgba(251,191,36,0.45);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 24px;
+  }
+  .banner-label { color: var(--yellow); text-transform: uppercase; font-size: 12px; letter-spacing: 0.8px; font-weight: 700; margin-bottom: 6px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: 8px;
+    padding: 17px 20px;
+    margin: 14px 0;
+  }
+  .card h3 { margin-top: 0; }
+  .card-bull { border-left-color: var(--green); }
+  .card-bear { border-left-color: var(--red); }
+  .card-watch { border-left-color: var(--yellow); }
+  .card-neutral { border-left-color: var(--blue); }
+  .tag { display: inline-block; border-radius: 12px; padding: 2px 9px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-right: 6px; }
+  .tag-bear { color: var(--red); background: rgba(248,113,113,0.13); border: 1px solid rgba(248,113,113,0.3); }
+  .tag-bull { color: var(--green); background: rgba(52,211,153,0.13); border: 1px solid rgba(52,211,153,0.3); }
+  .tag-watch { color: var(--yellow); background: rgba(251,191,36,0.13); border: 1px solid rgba(251,191,36,0.3); }
+  .tag-neutral { color: var(--blue); background: rgba(96,165,250,0.13); border: 1px solid rgba(96,165,250,0.3); }
+  /* probability-delta pills, e.g. 90% -> 95% */
+  .delta { display: inline-block; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.88em; font-weight: 650; padding: 0 6px; border-radius: 5px; white-space: nowrap; }
+  .delta-up { color: var(--green); background: rgba(52,211,153,0.12); }
+  .delta-down { color: var(--red); background: rgba(248,113,113,0.12); }
+  .delta-flat { color: var(--muted); background: rgba(154,163,178,0.12); }
+  .metric { font-family: "SF Mono", "Fira Code", monospace; white-space: nowrap; }
+  .muted { color: var(--muted); }
+  .green { color: var(--green); font-weight: 650; }
+  .red { color: var(--red); font-weight: 650; }
+  .yellow { color: var(--yellow); font-weight: 650; }
+  footer { border-top: 1px solid var(--border); margin-top: 40px; padding-top: 18px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 760px) {
+    .container { padding: 22px 14px; }
+    table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>AI Ecosystem Premarket Brief — November 4, 2026</h1>
+  <div class="subtitle">Type: Premarket · As of: 2026-11-04 08:00 ET / 06:00 MT · Coverage: Public/primary baseline completed; dedicated web verification on all items below</div>
+</header>
+<nav class="toc"><a href="#bottom-line">Bottom Line</a><a href="#overnight-developments">Overnight Developments</a><a href="#todays-setup">Today&#x27;s Setup</a><a href="#current-market-state">Current Market State</a><a href="#thesis-prediction-deltas">Thesis / Prediction Deltas</a><a href="#next-seven-days">Next Seven Days</a><a href="#data-quality">Data Quality</a></nav>
+<div class="banner"><div class="banner-label">Headline</div><div>Democrats swept control of Congress and flipped the Texas and Georgia governorships in the 11/3 midterms, with both incoming governors having campaigned explicitly on halting new AI data-center construction — the first electoral test of the political-risk axis this thesis has tracked since May.</div></div>
+<h2 id="bottom-line">Bottom Line</h2>
+<ul>
+<li>Texas (Gina Hinojosa) and Georgia (Keisha Lance Bottoms) governorships flipped Democratic on explicit data-center-moratorium platforms — together the two states are commonly cited as roughly a third-plus of the US data-center pipeline. CoreWeave -9.32% and Nebius -7.21% premarket; this escalates the &quot;political/community opposition&quot; disconfirming thread from administrative pauses to an actual change in executive control of the two largest data-center states. New prediction P041 added to track whether it becomes a binding pause.</li>
+<li>Two genuine demand-side counterweights landed the same morning: Arista posted its fastest revenue growth since its 2014 IPO and raised 2027 guidance to ~$18.5B, and Apple called memory pricing &quot;unprecedented,&quot; prompting TrendForce to raise its Q4 DRAM/NAND price forecasts — both reinforce that the underlying compute and memory demand are real even as the financing/political-risk narrative dominates the tape.</li>
+<li>SK Hynix&#x27;s $45B New York NAND plant is stalled on a US-China export-license holdup for its Dalian, China facility — a new, concrete friction point on the memory supply-response timeline, though it does not bear on near-term contract pricing.</li>
+<li>No existing prediction probabilities changed.</li>
+</ul>
+<h2 id="overnight-developments">Overnight Developments</h2>
+<div class="card card-bear">
+<h3><span class="tag tag-bear">bear</span> Democrats flip Texas and Georgia governorships on explicit data-center-moratorium platforms</h3>
+<p>Democrats won control of both chambers of Congress in the November 3 midterms. In the two most consequential state races for this thesis, Gina Hinojosa defeated incumbent Greg Abbott for Texas governor (52.9%–45.6%), having campaigned explicitly on a moratorium on new data-center construction, an end to related water/power tax breaks, and stricter water/power-usage regulation. Texas alone is commonly cited as accounting for more than 25% of planned US data-center capacity through 2030. Keisha Lance Bottoms won the Georgia governorship, ending two decades of Republican control in the state where Atlanta is the most active data-center construction market in the country.</p>
+<p>This is the clearest escalation yet of a thread this file has tracked since May 27 (the Pope/Sanders-bill/14-state-moratorium row, logged Weak-Moderate) through outgoing Gov. Abbott&#x27;s own administrative ERCOT/TCEQ permitting pauses (August 3, September 21-22, logged Moderate-Strong). Those were a sitting governor pausing approvals pending an audit; this is a <em>successor</em> elected on an explicit promise to stop new construction outright. Because Abbott already demonstrated the mechanism — a direct agency order, not legislation — Hinojosa likely has the same administrative lever available immediately upon taking office in January 2027, which is why this is logged Strong on the thesis tracker rather than treated as mere campaign rhetoric. Separately, the FTC escalated its AI-safety probe of Anthropic and OpenAI from document requests (first reported October 15) to formal subpoenas and compelled executive testimony — a distinct regulatory axis (consumer-protection/agent-safety, not data-center siting), but a second same-week signal that a Democratic-controlled Washington raises the odds of broader AI regulatory scrutiny.</p>
+<p>Market reaction split cleanly along this line: broad indices were mixed-to-higher on a divided-government/rate-path read, while AI-datacenter-exposed names sold off — the Goldman Sachs Broad AI basket (already down &gt;24% from its October peak) fell further, and our own premarket quotes show CoreWeave -9.32% and Nebius -7.21%, larger than the ~1-3% several outlets cited in earlier premarket snapshots, suggesting the move built through the morning.</p>
+<p>No Tier 1 hyperscaler has yet cited this specific outcome as a 2027 capex risk. New prediction P041 tracks whether Hinojosa (or the Texas legislature) actually enacts a binding administrative or statutory pause before 2027-12-31 — logged at a genuine-guess 50%, since no comparable base rate exists.</p>
+</div>
+<div class="card card-bull">
+<h3><span class="tag tag-bull">bull</span> Arista&#x27;s fastest growth since IPO and Apple&#x27;s &quot;unprecedented&quot; memory warning confirm real demand underneath the financing-fragility story</h3>
+<p>Arista reported Q3 2026 revenue of $3.66B (+58.5% YoY, the highest growth rate since its 2014 IPO), beating its own $3.3B guide, and raised FY2026 guidance to $13.3B (+48%) with an initial 2027 framing of ~$18.5B (+38-40%) — a clean, audited demand print landing the same morning the broader tape is selling AI-infrastructure names on political and financing-fragility fears. Stock +3.58% premarket.</p>
+<p>Separately, Apple CEO John Ternus told Apple&#x27;s Q4 2026 earnings call that memory pricing is &quot;unprecedented,&quot; said Apple paid more for memory in September than in June, and expects costs to keep rising into and beyond the December quarter — guiding Apple&#x27;s own gross margin down to 45-46% partly as a result. TrendForce responded by raising its Q4 2026 contract-price forecasts to +10-15% QoQ for conventional DRAM and +15-20% QoQ for NAND. A buyer with every incentive to talk prices down calling the environment &quot;unprecedented&quot; is a stronger, independent confirmation of memory pricing power than supplier commentary alone. Reinforces P015 (95%, at ceiling) and P028 (55%).</p>
+</div>
+<div class="card card-watch">
+<h3><span class="tag tag-watch">watch</span> SK Hynix&#x27;s New York fab stalls on a US-China export-license holdup</h3>
+<p>Reuters reports SK Hynix&#x27;s planned $45B New York NAND plant is stalled because the US Commerce Department has not approved export licenses the company needs to equip its Dalian, China facility — SK Hynix argues increased Dalian output would help fund the New York buildout, but Commerce revoked standing authorizations for foreign chipmakers in China in 2025 and replaced them with annual, quantity-limited licenses still pending approval. This is a genuine US-China export-control collision with SK Hynix&#x27;s own US capacity-expansion plans; it does not bear on near-term DRAM contract pricing (P015 unaffected) but is a new friction point on the 2027+ supply-response timeline this file has tracked since the June ADR/Yongin entries.</p>
+</div>
+<h2 id="todays-setup">Today&#x27;s Setup</h2>
+<table>
+<thead><tr><th>Time</th><th>Catalyst</th><th>What would matter</th><th>Thesis / company</th></tr></thead>
+<tbody>
+<tr><td>8:15am ET</td><td>ADP employment report</td><td>A soft print reinforces December rate-cut odds; a hot print cuts the other way</td><td>Macro / cost-of-capital (sub-thesis #5)</td></tr>
+<tr><td>~10am ET</td><td>ISM Services PMI</td><td>Services-sector health read, same rate-path debate</td><td>Macro</td></tr>
+<tr><td>Ongoing</td><td>Market open reaction to TX/GA election results</td><td>Watch whether CoreWeave/Nebius/Applied Digital stabilize or the selloff broadens into Tier 1 (NVDA/AVGO/TSM)</td><td>Political/community-opposition axis</td></tr>
+</tbody>
+</table>
+<h2 id="current-market-state">Current Market State</h2>
+<table>
+<thead><tr><th>Company</th><th>Listing / session</th><th>Current</th><th>Session move</th><th>New information</th></tr></thead>
+<tbody>
+<tr><td>NVIDIA</td><td><code>NVDA</code> — Nasdaq, premarket</td><td class="metric">$202.95</td><td class="red">-1.81%</td><td>China RTX Pro 5500 orders ~$70B, NVIDIA can fill ~1% in next 4mo (supply, not export-license, constraint)</td></tr>
+<tr><td>Broadcom</td><td><code>AVGO</code> — Nasdaq, premarket</td><td class="metric">$328.27</td><td class="red">-1.16%</td><td></td></tr>
+<tr><td>TSMC</td><td><code>2330.TW</code> — Taiwan, closed</td><td class="metric">2,260 TWD</td><td class="red">-1.53%</td><td>October monthly revenue due 11/10</td></tr>
+<tr><td>TSMC ADR</td><td><code>TSM</code> — NYSE, premarket</td><td class="metric">$401.14</td><td class="red">-0.90%</td><td></td></tr>
+<tr><td>Microsoft</td><td><code>MSFT</code> — Nasdaq, premarket</td><td class="metric">$530.00</td><td class="green">+1.73%</td><td></td></tr>
+<tr><td>Alphabet</td><td><code>GOOG</code> — Nasdaq, premarket</td><td class="metric">$280.00</td><td class="green">+0.62%</td><td></td></tr>
+<tr><td>Meta</td><td><code>META</code> — Nasdaq, premarket</td><td class="metric">$624.00</td><td class="green">+0.48%</td><td>Priced $15B 5-part bond, seeking up to $25B total, plus a debut euro bond — continued AI-capex debt issuance</td></tr>
+<tr><td>Amazon</td><td><code>AMZN</code> — Nasdaq, premarket</td><td class="metric">$259.98</td><td class="green">+3.71%</td><td></td></tr>
+<tr><td>SK Hynix</td><td><code>000660.KS</code> — Seoul, closed 15:30 KST</td><td class="metric">1,396,000 KRW</td><td class="red">-0.14%</td><td>NY fab stalled on Dalian export-license holdup (see above)</td></tr>
+<tr><td>Samsung Electronics</td><td><code>005930.KS</code> — Seoul, closed 15:30 KST</td><td class="metric">218,000 KRW</td><td class="red">-0.68%</td><td></td></tr>
+<tr><td>ASML</td><td><code>ASML.AS</code> — Amsterdam, open 13:45 CET</td><td class="metric">1,360 EUR</td><td class="red">-1.83%</td><td></td></tr>
+<tr><td>Micron</td><td><code>MU</code> — Nasdaq, premarket</td><td class="metric">$832.91</td><td class="red">-2.60%</td><td>Apple memory-cost warning / TrendForce Q4 DRAM+NAND price-forecast raise is a tailwind; Dec 9 investor event ahead</td></tr>
+<tr><td>Arista Networks</td><td><code>ANET</code> — NYSE, premarket</td><td class="metric">$176.00</td><td class="green">+3.58%</td><td>Q3 beat, FY27 guide ~$18.5B (see above)</td></tr>
+<tr><td>Palantir</td><td><code>PLTR</code> — Nasdaq, premarket</td><td class="metric">$164.74</td><td class="red">-6.08%</td><td>Continuation of 11/3&#x27;s post-earnings bookings-deceleration reaction; no new catalyst identified</td></tr>
+<tr><td>CoreWeave</td><td><code>CRWV</code> — Nasdaq, premarket</td><td class="metric">$48.73</td><td class="red">-9.32%</td><td>TX/GA election fallout (see above)</td></tr>
+<tr><td>Nebius</td><td><code>NBIS</code> — Nasdaq, premarket</td><td class="metric">$140.70</td><td class="red">-7.21%</td><td>TX/GA election fallout (see above)</td></tr>
+</tbody>
+</table>
+<h2 id="thesis-prediction-deltas">Thesis / Prediction Deltas</h2>
+<ul>
+<li>New prediction <strong>P041</strong> added: Texas enacts a binding administrative or statutory data-center-construction pause before 2027-12-31 — <strong>50% (guess)</strong>.</li>
+<li><code>theses/computational-abundance.md</code> political/community-opposition disconfirming entry escalated to <strong>Strong</strong> (from Weak-Moderate/Moderate-Strong on prior entries) following the TX/GA election results.</li>
+<li>No existing prediction probabilities changed.</li>
+</ul>
+<h2 id="next-seven-days">Next Seven Days</h2>
+<table>
+<thead><tr><th>Date / time</th><th>Catalyst</th><th>Decision point</th></tr></thead>
+<tbody>
+<tr><td>Nov 6 (Fri), 8:30am ET</td><td>October jobs report</td><td>Confirms/denies labor-market softening feeding December rate-cut odds</td></tr>
+<tr><td>Nov 10 (Tue), 8:30am ET</td><td>October CPI</td><td>Inflation read ahead of December FOMC</td></tr>
+<tr><td>Nov 10 (Tue), 13:30 Taiwan time</td><td>TSMC October monthly revenue</td><td>Fastest public read on AI-chip demand pace; compare to Q3&#x27;s fourth consecutive guidance raise (P010/P011)</td></tr>
+<tr><td>Nov 17 (Tue), after close</td><td>NVIDIA Q3 FY2027 earnings (guided $108.0B ±2%)</td><td>The single most important print for the thesis this cycle; first management commentary opportunity on TX/GA political risk and China RTX Pro 5500 fulfillment</td></tr>
+<tr><td>Dec 9</td><td>Micron investor event</td><td>HBM/DRAM pricing commentary against TrendForce&#x27;s raised Q4 forecast</td></tr>
+</tbody>
+</table>
+<h2 id="data-quality">Data Quality</h2>
+<p>IBKR wire enrichment unavailable (no venv/TWS in this environment); public/primary baseline completed.</p>
+
+<footer>
+Generated from <code>2026-11-04-update.md</code> by <code>scripts/build_report.py</code>.
+</footer>
+
+</div>
+</body>
+</html>
