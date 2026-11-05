@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Ecosystem Premarket Brief — November 5, 2026</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --panel: #131822;
+    --panel-2: #1a2030;
+    --border: #2a3142;
+    --text: #e6e9ef;
+    --muted: #9aa3b2;
+    --blue: #60a5fa;
+    --green: #34d399;
+    --yellow: #fbbf24;
+    --red: #f87171;
+    --purple: #c084fc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    font-size: 15px;
+  }
+  .container { max-width: 1120px; margin: 0 auto; padding: 32px 24px; }
+  header { padding-bottom: 18px; }
+  h1 { margin: 0 0 8px; font-size: 27px; font-weight: 650; letter-spacing: -0.2px; }
+  .subtitle { color: var(--muted); font-size: 14px; }
+  /* sticky section nav */
+  .toc {
+    position: sticky; top: 0; z-index: 20;
+    margin: 0 0 22px; padding: 11px 0;
+    background: rgba(11,14,20,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px;
+  }
+  .toc a { color: var(--muted); white-space: nowrap; }
+  .toc a:hover { color: var(--blue); text-decoration: none; }
+  h2 { margin: 34px 0 14px; padding-bottom: 7px; border-bottom: 1px solid var(--border); font-size: 20px; scroll-margin-top: 56px; }
+  h3 { margin: 22px 0 8px; color: var(--blue); font-size: 16px; }
+  p { margin: 8px 0; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul, ol { margin: 8px 0; padding-left: 22px; }
+  li { margin: 5px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 14px; }
+  th, td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--panel-2); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  code { background: var(--panel-2); padding: 1px 5px; border-radius: 4px; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.9em; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 26px 0; }
+  .banner {
+    background: #231b12;
+    border: 1px solid rgba(251,191,36,0.45);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 24px;
+  }
+  .banner-label { color: var(--yellow); text-transform: uppercase; font-size: 12px; letter-spacing: 0.8px; font-weight: 700; margin-bottom: 6px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: 8px;
+    padding: 17px 20px;
+    margin: 14px 0;
+  }
+  .card h3 { margin-top: 0; }
+  .card-bull { border-left-color: var(--green); }
+  .card-bear { border-left-color: var(--red); }
+  .card-watch { border-left-color: var(--yellow); }
+  .card-neutral { border-left-color: var(--blue); }
+  .tag { display: inline-block; border-radius: 12px; padding: 2px 9px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-right: 6px; }
+  .tag-bear { color: var(--red); background: rgba(248,113,113,0.13); border: 1px solid rgba(248,113,113,0.3); }
+  .tag-bull { color: var(--green); background: rgba(52,211,153,0.13); border: 1px solid rgba(52,211,153,0.3); }
+  .tag-watch { color: var(--yellow); background: rgba(251,191,36,0.13); border: 1px solid rgba(251,191,36,0.3); }
+  .tag-neutral { color: var(--blue); background: rgba(96,165,250,0.13); border: 1px solid rgba(96,165,250,0.3); }
+  /* probability-delta pills, e.g. 90% -> 95% */
+  .delta { display: inline-block; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.88em; font-weight: 650; padding: 0 6px; border-radius: 5px; white-space: nowrap; }
+  .delta-up { color: var(--green); background: rgba(52,211,153,0.12); }
+  .delta-down { color: var(--red); background: rgba(248,113,113,0.12); }
+  .delta-flat { color: var(--muted); background: rgba(154,163,178,0.12); }
+  .metric { font-family: "SF Mono", "Fira Code", monospace; white-space: nowrap; }
+  .muted { color: var(--muted); }
+  .green { color: var(--green); font-weight: 650; }
+  .red { color: var(--red); font-weight: 650; }
+  .yellow { color: var(--yellow); font-weight: 650; }
+  footer { border-top: 1px solid var(--border); margin-top: 40px; padding-top: 18px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 760px) {
+    .container { padding: 22px 14px; }
+    table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>AI Ecosystem Premarket Brief — November 5, 2026</h1>
+  <div class="subtitle">Type: Premarket · As of: 2026-11-05 06:45 PT / 09:45 ET · Coverage: Public/primary baseline completed; IBKR wire enrichment not attempted (no incremental need — public/primary sweep was dense enough)</div>
+</header>
+<nav class="toc"><a href="#bottom-line">Bottom Line</a><a href="#overnight-developments">Overnight Developments</a><a href="#todays-setup">Today&#x27;s Setup</a><a href="#current-market-state">Current Market State</a><a href="#thesis-prediction-deltas">Thesis / Prediction Deltas</a><a href="#next-seven-days">Next Seven Days</a><a href="#data-quality">Data Quality</a></nav>
+<div class="banner"><div class="banner-label">Headline</div><div>The political/data-center-opposition axis that broke Tuesday escalated sharply overnight: Ohio&#x27;s governor-elect joins Texas and Georgia as a third moratorium-campaigning state (Wells Fargo: 39% of planned US data-center power capacity combined), Meta&#x27;s President said on the record that new builds will be &quot;very challenging,&quot; and CoreWeave&#x27;s bonds — not just its stock — hit new lows. Seoul&#x27;s reaction roughly doubled Tuesday&#x27;s move.</div></div>
+<h2 id="bottom-line">Bottom Line</h2>
+<ul>
+<li><strong>The electoral risk axis widened and deepened in one session.</strong> Ohio&#x27;s Amy Acton (D) is a third flipped governorship campaigning on a data-center moratorium; Wells Fargo now sizes Texas+Georgia+Ohio at a combined 39% of planned US data-center power capacity, and unofficial tallies show local moratorium ballot measures passed 43 of 44 times across 10 states on Tuesday — evidence this is a broad voter position, not three isolated races. Escalated to <strong>Very Strong</strong> on the thesis tracker.</li>
+<li><strong>Credit, not just equity, is now pricing it.</strong> CoreWeave&#x27;s 2031 bonds traded as low as 79.5 cents (new lows) and the stock closed Wednesday at its lowest level since May 2025. Seoul&#x27;s memory names took the sharpest hit of this axis to date: SK Hynix -9.46%, Samsung -7.57%, Kospi -5.28% — roughly double Tuesday&#x27;s -5.0%/-4.2% reaction to the separate financing-fragility story.</li>
+<li><strong>A Tier 1 executive put it on the record.</strong> Meta President Dina Powell McCormick said at a WSJ conference that new US data-center build-outs will be &quot;very challenging&quot; with &quot;a lot more review&quot; ahead — short of an earnings-call citation, but the clearest hyperscaler acknowledgment yet.</li>
+<li><strong>Separately, a real memory-supply setback:</strong> Micron paused its $4.5B Taoyuan, Taiwan HBM/DRAM fab over a labor dispute (union demanding 15% of operating profit in cash) — two-sided for the thesis, bearish for 2028 capacity, reinforcing for near-term pricing power.</li>
+<li>No prediction probabilities changed; P041 (Texas binding pause) gets a context note, held at 50%.</li>
+</ul>
+<h2 id="overnight-developments">Overnight Developments</h2>
+<div class="card card-bear">
+<h3><span class="tag tag-bear">bear</span> Political/data-center-opposition axis escalates: Ohio joins, Meta concedes it, credit confirms it</h3>
+<p>Ohio&#x27;s governor-elect Amy Acton (D) campaigned on a conditional data-center moratorium (developers must cover full utility costs, use union labor, and meet environmental standards), making her the third incoming governor — alongside Texas&#x27;s Gina Hinojosa and Georgia&#x27;s Keisha Lance Bottoms — elected Tuesday on an explicit data-center restriction platform. Wells Fargo&#x27;s post-election sizing puts Texas (27%) + Georgia (7%) + Ohio (5%) at a combined <strong>39%</strong> of planned US data-center power capacity, a sharper figure than yesterday&#x27;s &quot;roughly a third-plus&quot; estimate (<a href="https://finance.yahoo.com/markets/stocks/articles/texas-blue-wave-could-threaten-153956098.html">Yahoo Finance/Wells Fargo</a>). Separately, unofficial tallies show local data-center moratorium or restriction ballot measures passed in <strong>43 of 44 votes across 10 states</strong> Tuesday — the public-opinion base beneath the three governors&#x27; races (<a href="https://fortune.com/2026/11/04/democrats-midterm-election-2026-anti-data-center-governors-texas-georgia-ohio-ai-infrastructure-big-tech-spending-moratorium-regulations/">Fortune</a>).</p>
+<p>Meta&#x27;s President and Vice Chair, Dina Powell McCormick, said on the record at the WSJ Tech conference in Napa (Wednesday) that after Tuesday&#x27;s results, &quot;to start new data center build-outs today in the United States will be very challenging,&quot; and she expects &quot;a lot more review&quot; of new projects — while noting some officials remain open to negotiation (<a href="https://gizmodo.com/metas-president-on-midterm-results-building-data-centers-is-going-to-be-harder-2000835444">Gizmodo</a>; <a href="https://seekingalpha.com/news/4666232-meta-executive-says-election-outcomes-add-hurdles-to-data-center-expansion">Seeking Alpha</a>). This is a conference remark, not an earnings-call citation — the specific trigger the thesis file set yesterday for escalating &quot;Very Strong&quot; to the next level — but it is the first unambiguous, on-record concession from a Big 4 hyperscaler executive.</p>
+<p>Credit markets moved beyond equities overnight: CoreWeave&#x27;s 2031 bonds traded as low as 79.5 cents, new lows, and the stock closed Wednesday at $49.85, its lowest level since May 2025 (<a href="https://uk.finance.yahoo.com/news/coreweave-bonds-hit-lows-texas-154016333.html">Bloomberg</a>). This morning&#x27;s premarket shows a further leg down: CoreWeave -3.92%, Nebius -3.88%, on top of Tuesday&#x27;s -9.3%/-7.2%. Seoul&#x27;s close was the sharpest reaction to this axis yet — Kospi -5.28%, SK Hynix -9.46%, Samsung -7.57% — roughly double Tuesday&#x27;s -5.0%/-4.2% move on the separate (financing-fragility) Nasdaq-correction story, suggesting the market now rates political/siting risk above funding-access risk.</p>
+<p><strong>Why this matters:</strong> breadth (three states and a 43-of-44 ballot base, not three governors), credit confirmation (bonds, not just equity), and corporate acknowledgment (a Tier 1 executive on record) all moved in the same direction in one session. Escalated to <strong>Very Strong</strong> on the thesis tracker, up from Strong. Still short of falsification: no capacity has actually been halted, and none of the three governors takes office before January 2027. The monitoring trigger is unchanged — a binding post-inauguration agency directive, or an actual earnings-call citation by a Tier 1 hyperscaler, would move this further.</p>
+</div>
+<div class="card card-bear">
+<h3><span class="tag tag-bear">bear</span> Micron pauses $4.5B Taiwan HBM/DRAM fab over a labor dispute</h3>
+<p>Micron has largely frozen construction of its Taoyuan, Taiwan plant — budgeted at $3-4.5B and intended to add HBM/DRAM capacity by 2028 — after the local union demanded 15% of operating profit paid fully in cash rather than stock. Micron is reportedly concerned a prior agreement could be overturned; only minimal site security continues. The company says current Taiwan operations are unaffected. MU fell -4.67% premarket, closing below $800 for the first time since July (<a href="https://www.bloomberg.com/news/articles/2026-11-05/micron-pauses-work-on-4-5-billion-taiwan-plant-after-labor-spat">Bloomberg</a>; <a href="https://www.gurufocus.com/news/9173974/micron-technology-halts-taiwan-memory-chip-plant-amid-labor-disputes-mu">GuruFocus</a>).</p>
+<p>This is a sharper escalation of the Taoyuan dispute than October&#x27;s scheduled one-day warning strike — a full construction freeze on a facility earmarked for future HBM/DRAM capacity, not a strike. Two-sided for the thesis: bearish for the supply-side response (one capacity-expansion project now frozen indefinitely, on top of SK Hynix&#x27;s separate export-license-stalled New York plant logged yesterday), but it reinforces the pricing-power read by removing future relief. Does not change P015 (DRAM contract pricing through C3Q26, already at its 95% ceiling), which resolves on a nearer horizon than this fab&#x27;s 2028 timeline.</p>
+</div>
+<div class="card card-watch">
+<h3><span class="tag tag-watch">watch</span> NVIDIA: ~600,000 H200 chips stuck in Hong Kong awaiting Chinese import approval</h3>
+<p>Reuters reports roughly 600,000 of NVIDIA&#x27;s H200 chips sit in Hong Kong awaiting Beijing&#x27;s approval for import into mainland China. Several major Chinese internet firms (reportedly including Alibaba, ByteDance, and DeepSeek) have each obtained about 10,000 H200s under a limited framework agreed after July&#x27;s US-China trade talks, but Beijing hasn&#x27;t approved large-volume imports; total approvals could land under 200,000 chips. An 8-card H200 server reportedly sold in mainland China for over $900K by late October, roughly 3x its price a year earlier (<a href="https://www.yahoo.com/news/articles/exclusive-nvidia-chips-pile-112651215.html">Reuters via Yahoo</a>).</p>
+<p>This confirms, with a concrete volume figure, the China-demand-but-blocked dynamic already behind NVIDIA&#x27;s $0 China Data Center revenue assumption and the reported 51%+ non-China capacity allocation policy on new contracts (logged 11/3). No prediction impact.</p>
+</div>
+<div class="card card-neutral">
+<h3><span class="tag tag-neutral">neutral</span> Microsoft declines to expand a Nscale Texas lease — not clearly the same political story</h3>
+<p>Microsoft has declined an option that would have more than doubled its Nscale lease at the Ward County, Texas site — a deal the FT describes as worth &quot;tens of billions of dollars&quot; at the larger size. Microsoft&#x27;s existing Texas contract is unaffected; this is a declined expansion, not a cancellation (<a href="https://www.centraloregondaily.com/news/consumer/microsoft-rejects-multibillion-dollar-ai-deal-with-uks-nscale-ft-reports/article_d8d6d035-bf8b-5498-a154-e8171e985af4.html">FT via search</a>). It follows Microsoft&#x27;s October walk-away from a separate ~$3B Nscale UK lease over grid-connection delays. Nscale lost $1B on $141M of H1 2026 revenue and is preparing a roughly $35B IPO.</p>
+<p>No reporting ties this decision to the election, and it lands the same week Nscale disclosed weak financials ahead of its own IPO — read this as Microsoft capital discipline toward a stretched counterparty, not confirmed evidence of the political axis, even though the timing is coincidental.</p>
+</div>
+<h2 id="todays-setup">Today&#x27;s Setup</h2>
+<table>
+<thead><tr><th>Time</th><th>Catalyst</th><th>What would matter</th><th>Thesis / company</th></tr></thead>
+<tbody>
+<tr><td>Premarket/intraday</td><td>Continued reaction to the political-risk axis</td><td>Whether CoreWeave/Nebius/memory names stabilize or extend Wednesday-Thursday&#x27;s declines</td><td>Political/community-opposition axis; CRWV, NBIS, SK Hynix, Samsung</td></tr>
+<tr><td>After close</td><td>Cloudflare (NET), Akamai (AKAM), Microchip (MCHP) earnings</td><td>Not core coverage, but Cloudflare/Akamai results touch edge-compute/AI-traffic demand signals</td><td>Adjacent demand read</td></tr>
+</tbody>
+</table>
+<h2 id="current-market-state">Current Market State</h2>
+<table>
+<thead><tr><th>Company</th><th>Listing / session</th><th>Current</th><th>Session move</th><th>New information</th></tr></thead>
+<tbody>
+<tr><td>NVIDIA</td><td><code>NVDA</code> — Nasdaq premarket</td><td class="metric">$196.78</td><td class="red">-1.67%</td><td>See H200/Hong Kong item above</td></tr>
+<tr><td>Broadcom</td><td><code>AVGO</code> — Nasdaq premarket</td><td class="metric">$317.39</td><td class="red">-2.49%</td><td></td></tr>
+<tr><td>TSMC (ADR)</td><td><code>TSM</code> — NYSE premarket</td><td class="metric">$385.41</td><td class="red">-2.61%</td><td></td></tr>
+<tr><td>Microsoft</td><td><code>MSFT</code> — Nasdaq premarket</td><td class="metric">$557.26</td><td class="green">+0.26%</td><td>See Nscale item above</td></tr>
+<tr><td>Alphabet</td><td><code>GOOG</code> — Nasdaq premarket</td><td class="metric">$290.79</td><td class="green">+1.21%</td><td></td></tr>
+<tr><td>Meta</td><td><code>META</code> — Nasdaq premarket</td><td class="metric">$636.47</td><td class="green">+1.03%</td><td>See Powell McCormick item above</td></tr>
+<tr><td>Amazon</td><td><code>AMZN</code> — Nasdaq premarket</td><td class="metric">$271.50</td><td class="green">+2.06%</td><td></td></tr>
+<tr><td>SK Hynix</td><td><code>000660.KS</code> — Seoul close</td><td class="metric">₩1,264,000</td><td class="red">-9.46%</td><td>Political-risk contagion, see above</td></tr>
+<tr><td>Samsung Electronics</td><td><code>005930.KS</code> — Seoul close</td><td class="metric">₩201,500</td><td class="red">-7.57%</td><td>Political-risk contagion, see above</td></tr>
+<tr><td>TSMC</td><td><code>2330.TW</code> — Taiwan close</td><td class="metric">NT$2,240</td><td class="red">-0.88%</td><td></td></tr>
+<tr><td>ASML</td><td><code>ASML.AS</code> — Amsterdam, live</td><td class="metric">€1,302</td><td class="red">-2.63%</td><td></td></tr>
+<tr><td>Micron</td><td><code>MU</code> — Nasdaq premarket</td><td class="metric">$758.06</td><td class="red">-4.67%</td><td>Taiwan fab pause, see above</td></tr>
+<tr><td>Arista</td><td><code>ANET</code> — NYSE premarket</td><td class="metric">$171.75</td><td class="red">-3.77%</td><td></td></tr>
+<tr><td>Palantir</td><td><code>PLTR</code> — Nasdaq premarket</td><td class="metric">$167.60</td><td class="red">-2.39%</td><td></td></tr>
+<tr><td>CoreWeave</td><td><code>CRWV</code> — Nasdaq premarket</td><td class="metric">$46.52</td><td class="red">-3.92%</td><td>Bonds at new lows, see above</td></tr>
+<tr><td>Nebius</td><td><code>NBIS</code> — Nasdaq premarket</td><td class="metric">$136.03</td><td class="red">-3.88%</td><td>Reports Q3 before open 11/12</td></tr>
+</tbody>
+</table>
+<p class="muted"><em>Quote time for all rows: 2026-11-05, ~08:00 ET (US) / 15:30 KST (Seoul) / 13:30 CST (Taiwan) / 13:45 CET (Amsterdam).</em></p>
+<h2 id="thesis-prediction-deltas">Thesis / Prediction Deltas</h2>
+<ul>
+<li>Political/community-opposition disconfirming axis escalated <strong>Strong → Very Strong</strong> on <code>theses/computational-abundance.md</code> (Ohio flip, Wells Fargo 39% figure, 43-of-44 ballot measures, Meta executive&#x27;s on-record comment, CoreWeave bond weakness).</li>
+<li>New Moderate, two-sided disconfirming row: Micron&#x27;s Taiwan fab pause.</li>
+<li>New Moderate, adjacent disconfirming row: NVIDIA&#x27;s Hong Kong H200 stockpile.</li>
+<li>P041 (Texas binding pause by end of 2027): held at <strong>50%</strong>, context note added — today&#x27;s evidence strengthens the political mood but isn&#x27;t new information about Texas&#x27;s specific mechanism.</li>
+<li>No other prediction probabilities changed.</li>
+</ul>
+<h2 id="next-seven-days">Next Seven Days</h2>
+<table>
+<thead><tr><th>Date / time</th><th>Catalyst</th><th>Decision point</th></tr></thead>
+<tbody>
+<tr><td>Thu 11/5, after close</td><td>Cloudflare, Akamai, Microchip earnings</td><td>Adjacent demand/edge-compute read, not core coverage</td></tr>
+<tr><td>Thu 11/12, before open</td><td>Nebius Q3 2026 earnings (consensus: ~$906M revenue, -$0.71 EPS)</td><td>First hard test of whether political/financing stress has reached actual bookings or guidance</td></tr>
+</tbody>
+</table>
+<h2 id="data-quality">Data Quality</h2>
+<p>IBKR wire enrichment not attempted this run — the public/primary sweep surfaced enough primary and wire-quality sourcing (Bloomberg, Reuters, FT, Wells Fargo) that enrichment wasn&#x27;t needed to clear the materiality bar.</p>
+
+<footer>
+Generated from <code>2026-11-05-update.md</code> by <code>scripts/build_report.py</code>.
+</footer>
+
+</div>
+</body>
+</html>
