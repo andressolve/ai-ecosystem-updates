@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Ecosystem Premarket Brief — November 6, 2026</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --panel: #131822;
+    --panel-2: #1a2030;
+    --border: #2a3142;
+    --text: #e6e9ef;
+    --muted: #9aa3b2;
+    --blue: #60a5fa;
+    --green: #34d399;
+    --yellow: #fbbf24;
+    --red: #f87171;
+    --purple: #c084fc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    font-size: 15px;
+  }
+  .container { max-width: 1120px; margin: 0 auto; padding: 32px 24px; }
+  header { padding-bottom: 18px; }
+  h1 { margin: 0 0 8px; font-size: 27px; font-weight: 650; letter-spacing: -0.2px; }
+  .subtitle { color: var(--muted); font-size: 14px; }
+  /* sticky section nav */
+  .toc {
+    position: sticky; top: 0; z-index: 20;
+    margin: 0 0 22px; padding: 11px 0;
+    background: rgba(11,14,20,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px;
+  }
+  .toc a { color: var(--muted); white-space: nowrap; }
+  .toc a:hover { color: var(--blue); text-decoration: none; }
+  h2 { margin: 34px 0 14px; padding-bottom: 7px; border-bottom: 1px solid var(--border); font-size: 20px; scroll-margin-top: 56px; }
+  h3 { margin: 22px 0 8px; color: var(--blue); font-size: 16px; }
+  p { margin: 8px 0; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul, ol { margin: 8px 0; padding-left: 22px; }
+  li { margin: 5px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 14px; }
+  th, td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--panel-2); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  code { background: var(--panel-2); padding: 1px 5px; border-radius: 4px; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.9em; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 26px 0; }
+  .banner {
+    background: #231b12;
+    border: 1px solid rgba(251,191,36,0.45);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 24px;
+  }
+  .banner-label { color: var(--yellow); text-transform: uppercase; font-size: 12px; letter-spacing: 0.8px; font-weight: 700; margin-bottom: 6px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: 8px;
+    padding: 17px 20px;
+    margin: 14px 0;
+  }
+  .card h3 { margin-top: 0; }
+  .card-bull { border-left-color: var(--green); }
+  .card-bear { border-left-color: var(--red); }
+  .card-watch { border-left-color: var(--yellow); }
+  .card-neutral { border-left-color: var(--blue); }
+  .tag { display: inline-block; border-radius: 12px; padding: 2px 9px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-right: 6px; }
+  .tag-bear { color: var(--red); background: rgba(248,113,113,0.13); border: 1px solid rgba(248,113,113,0.3); }
+  .tag-bull { color: var(--green); background: rgba(52,211,153,0.13); border: 1px solid rgba(52,211,153,0.3); }
+  .tag-watch { color: var(--yellow); background: rgba(251,191,36,0.13); border: 1px solid rgba(251,191,36,0.3); }
+  .tag-neutral { color: var(--blue); background: rgba(96,165,250,0.13); border: 1px solid rgba(96,165,250,0.3); }
+  /* probability-delta pills, e.g. 90% -> 95% */
+  .delta { display: inline-block; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.88em; font-weight: 650; padding: 0 6px; border-radius: 5px; white-space: nowrap; }
+  .delta-up { color: var(--green); background: rgba(52,211,153,0.12); }
+  .delta-down { color: var(--red); background: rgba(248,113,113,0.12); }
+  .delta-flat { color: var(--muted); background: rgba(154,163,178,0.12); }
+  .metric { font-family: "SF Mono", "Fira Code", monospace; white-space: nowrap; }
+  .muted { color: var(--muted); }
+  .green { color: var(--green); font-weight: 650; }
+  .red { color: var(--red); font-weight: 650; }
+  .yellow { color: var(--yellow); font-weight: 650; }
+  footer { border-top: 1px solid var(--border); margin-top: 40px; padding-top: 18px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 760px) {
+    .container { padding: 22px 14px; }
+    table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>AI Ecosystem Premarket Brief — November 6, 2026</h1>
+  <div class="subtitle">Type: Premarket · As of: 2026-11-06 08:00 ET / 06:00 MT · Coverage: Public/primary baseline completed; IBKR wire enrichment not run in this environment (no TWS/venv available)</div>
+</header>
+<nav class="toc"><a href="#bottom-line">Bottom Line</a><a href="#overnight-developments">Overnight Developments</a><a href="#todays-setup">Today&#x27;s Setup</a><a href="#current-market-state">Current Market State</a><a href="#thesis-prediction-deltas">Thesis / Prediction Deltas</a><a href="#next-seven-days">Next Seven Days</a><a href="#data-quality">Data Quality</a></nav>
+<div class="banner"><div class="banner-label">Headline</div><div>The political/data-center-opposition axis stopped being rhetoric and became a crash: the Nasdaq fell -5.5% on 11/5 (worst day since April 2025, ~$3T of S&amp;P 500 market cap erased), NVDA lost ~$440-450B (-9.26%, worst since the January 2025 DeepSeek shock), and Asian chip stocks opened near limit-down overnight — followed by a sharp US premarket reversal this morning (NVDA +4.08%, AVGO +4.59%, TSM +7.00%, CRWV +9.94%).</div></div>
+<h2 id="bottom-line">Bottom Line</h2>
+<ul>
+<li><strong>This is a market event, not a world event.</strong> Nothing about actual AI compute demand, NVIDIA&#x27;s order book, or TSMC&#x27;s capacity changed overnight — NVDA&#x27;s own Q3 FY27 print is still 11/17. What changed is that the political/moratorium axis this tracker has followed since 11/3 produced its first real price crash and its first quantified capacity-at-risk estimates (Citi: &gt;500 US data-center bans/pauses tracked by October 2026, up from near zero mid-2025; UBS: ~30% of 2028 capacity additions at risk) — see Overnight Developments.</li>
+<li>A new, NVDA-specific risk surfaced alongside the broader selloff: House Republicans have asked Jensen Huang for a closed-door briefing (11/18, the day after NVDA&#x27;s 11/17 earnings) over a NYT report alleging a Chinese-intelligence-linked relationship. Distinct from the moratorium axis; worth tracking into the earnings/briefing window.</li>
+<li>Today&#x27;s setup is a tug-of-war between a dip-buying premarket rebound in chip-exposed names and the October jobs report at 8:30am ET — the first major macro data point to land inside this selloff.</li>
+<li>No prediction probabilities changed. P041 (Texas-specific administrative/statutory pause, 50%) gets a context note: today&#x27;s evidence is about market pricing of the political mood, not new information on Texas&#x27;s own mechanism.</li>
+</ul>
+<h2 id="overnight-developments">Overnight Developments</h2>
+<div class="card card-bear">
+<h3><span class="tag tag-bear">bear</span> Nasdaq&#x27;s worst day since April 2025 crystallizes the political/data-center-opposition axis into a quantified, real repricing</h3>
+<p>The Nasdaq fell -5.5% on 11/5 (S&amp;P 500 -4.4%), its worst session since April 2025, erasing roughly $3T in S&amp;P 500 market value. NVDA fell -9.26% to $181.60 (~$440-450B lost, its worst day since the January 2025 DeepSeek shock); AMD and Micron were down as much as 16% intraday; Qualcomm fell ~9-11% after guiding Q1 EPS below Street on weak handset sales, adding a company-specific trigger on top of the political story. The proximate cause, per wire coverage, was a delayed market reaction to this week&#x27;s midterm results (Democratic sweep, Texas/Georgia/Ohio governors-elect on explicit data-center-moratorium platforms) compounding with bubble-valuation concerns. Two new figures quantify the axis for the first time: Citi Research&#x27;s tracker of US data-center bans/pauses went from near zero through mid-2025 to ~20 by December 2025, over 300 by June 2026, and over 500 by October 2026; UBS separately estimates ~30% of expected 2028 US data-center capacity additions are at risk from construction pauses. That 30% figure is in tension with the SemiAnalysis finding (logged 11/5) that only ~4% (1.5 of 38 GW) of <em>2027</em> capacity was actually delayed as of September — different years and different methodologies (realized delay vs. forward-looking risk estimate), not necessarily contradictory, but not yet reconciled either. (<a href="https://www.cnbc.com/2026/11/05/qualcomm-earnings-chip-stocks-election.html">CNBC</a>, <a href="https://fortune.com/2026/11/05/wall-street-drop-off-tech-ai-plunge-2-trillion/">Fortune</a>, <a href="https://www.benzinga.com/markets/tech/26/11/62940088/from-micron-to-amd-ai-stocks-crater-and-citi-just-flagged-an-exponential-new-threat-to-data-centers">Benzinga/Citi</a>)</p>
+</div>
+<div class="card card-watch">
+<h3><span class="tag tag-watch">watch</span> Asian chip stocks open near limit-down, then recover sharply into their local closes; US premarket is bouncing hard</h3>
+<p>SK Hynix closed Seoul&#x27;s 11/6 session -10.44%, Samsung -6.35% (both reportedly deeper intraday — SK Hynix as low as -11.7%); Taiwan&#x27;s TAIEX fell as much as ~9% intraday (its largest-ever point drop) before closing -4.51%, and TSMC (2330.TW) closed -4.69% after opening near its 10% limit-down band. In US premarket this morning, the same names are sharply higher: NVDA +4.08%, AVGO +4.59%, TSM ADR +7.00%, Micron +7.45%, Arista +5.65%, CoreWeave +9.94%, Nebius +9.66%. CNBC&#x27;s Jim Cramer argued NVDA&#x27;s multiple is &quot;the cheapest...in about a decade&quot;; there&#x27;s active debate over whether NVIDIA should deploy its $235B buyback authorization at current levels. Former Goldman Sachs CEO Lloyd Blankfein called the moratorium &quot;hysteria&quot; a &quot;gift to China&quot; the same day. On CNBC, Niles Investment Management&#x27;s Dan Niles took the opposite side, warning most neocloud providers (naming CoreWeave and Nebius) could go to zero on overbuilding, debt, and weak cash flow, and said he doesn&#x27;t think Thursday marked the cycle&#x27;s peak. (<a href="https://247wallst.com/investing/2026/11/06/asias-chip-stocks-crashed-overnight-with-sk-hynix-down-11-7-and-taiwan-off-more-than-8-now-nasdaq-futures-are-pointing-higher/">24/7 Wall St.</a>, <a href="https://www.benzinga.com/markets/tech/26/11/62968934/ai-bubble-about-to-burst-top-tech-investor-warns-most-neocloud-players-could-go-to-zero">Benzinga/Niles</a>)</p>
+</div>
+<div class="card card-watch">
+<h3><span class="tag tag-watch">watch</span> Congressional Republicans request a closed-door briefing from Jensen Huang over alleged ties to a Chinese intelligence asset</h3>
+<p>Three House Republican committee chairs (Foreign Affairs&#x27; Brian Mast, the China Select Committee&#x27;s John Moolenaar, and Intelligence&#x27;s Rick Crawford) made public a letter requesting Jensen Huang brief Congress on 11/18 — the day after NVDA&#x27;s 11/17 Q3 FY27 earnings — about a New York Times report that U.S. intelligence identified Chinese national and Megaspeed executive Alice Huang as funneling information to Beijing and found she had &quot;developed a close relationship&quot; with him. Trump was reportedly briefed on the underlying intelligence roughly a year ago and took no action. NVIDIA says the contacts involved only &quot;ordinary business information,&quot; not trade secrets or anything tied to US national security. This is a new, NVDA-specific political/regulatory risk, distinct from the data-center-moratorium axis, landing one day after earnings and worth tracking through the briefing date. (<a href="https://www.cnbc.com/2026/11/05/nvidia-jensen-huang-china-spy-congress.html">CNBC</a>)</p>
+</div>
+<h2 id="todays-setup">Today&#x27;s Setup</h2>
+<table>
+<thead><tr><th>Time</th><th>Catalyst</th><th>What would matter</th><th>Thesis / company</th></tr></thead>
+<tbody>
+<tr><td>8:30am ET</td><td>October nonfarm payrolls</td><td>First major macro data point to land inside this selloff; a weak print compounds AI-capex-fragility fears, a strong print could reinforce the dip-buying case</td><td>Macro; read-through to all Tier 1</td></tr>
+<tr><td>Ongoing</td><td>Dip-buying vs. follow-through selling in NVDA/AVGO/TSM/MU/CRWV/NBIS premarket</td><td>Whether this morning&#x27;s bounce holds into the cash open or fades</td><td>NVDA, AVGO, TSM, MU, CRWV, NBIS</td></tr>
+</tbody>
+</table>
+<h2 id="current-market-state">Current Market State</h2>
+<table>
+<thead><tr><th>Company</th><th>Listing / session</th><th>Current</th><th>Session move</th><th>New information</th></tr></thead>
+<tbody>
+<tr><td>NVIDIA</td><td><code>NVDA</code> — Nasdaq premarket, 08:00 ET</td><td class="metric">$189.01</td><td class="green">+4.08%</td><td>Jensen Huang congressional briefing request (11/18)</td></tr>
+<tr><td>Broadcom</td><td><code>AVGO</code> — Nasdaq premarket, 08:00 ET</td><td class="metric">$304.90</td><td class="green">+4.59%</td><td></td></tr>
+<tr><td>TSMC</td><td><code>2330.TW</code> — Taiwan close, 13:30 CST</td><td class="metric">2,135 TWD</td><td class="red">-4.69%</td><td>Opened near limit-down, recovered into close</td></tr>
+<tr><td>TSMC ADR</td><td><code>TSM</code> — NYSE premarket, 08:00 ET</td><td class="metric">$377.83</td><td class="green">+7.00%</td><td>October revenue due 11/10</td></tr>
+<tr><td>Microsoft</td><td><code>MSFT</code> — Nasdaq premarket, 08:00 ET</td><td class="metric">$530.81</td><td class="red">-0.96%</td><td></td></tr>
+<tr><td>Alphabet</td><td><code>GOOG</code> — Nasdaq premarket, 08:00 ET</td><td class="metric">$281.16</td><td class="red">-0.21%</td><td></td></tr>
+<tr><td>Meta</td><td><code>META</code> — Nasdaq premarket, 07:59 ET</td><td class="metric">$604.00</td><td class="red">-0.18%</td><td></td></tr>
+<tr><td>Amazon</td><td><code>AMZN</code> — Nasdaq premarket, 08:00 ET</td><td class="metric">$260.60</td><td class="green">+0.15%</td><td></td></tr>
+<tr><td>SK Hynix</td><td><code>000660.KS</code> — Seoul close, 15:30 KST</td><td class="metric">1,132,000 KRW</td><td class="red">-10.44%</td><td></td></tr>
+<tr><td>Samsung Electronics</td><td><code>005930.KS</code> — Seoul close, 15:30 KST</td><td class="metric">188,700 KRW</td><td class="red">-6.35%</td><td></td></tr>
+<tr><td>ASML</td><td><code>ASML.AS</code> — Amsterdam, live 13:45 CET</td><td class="metric">1,299 EUR</td><td class="green">+3.92%</td><td></td></tr>
+<tr><td>Micron</td><td><code>MU</code> — Nasdaq premarket, 07:59 ET</td><td class="metric">$705.27</td><td class="green">+7.45%</td><td></td></tr>
+<tr><td>Arista Networks</td><td><code>ANET</code> — NYSE premarket, 07:50 ET</td><td class="metric">$168.16</td><td class="green">+5.65%</td><td></td></tr>
+<tr><td>CoreWeave</td><td><code>CRWV</code> — Nasdaq premarket, 07:59 ET</td><td class="metric">$48.00</td><td class="green">+9.94%</td><td>Dan Niles &quot;could go to zero&quot; warning</td></tr>
+<tr><td>Nebius</td><td><code>NBIS</code> — Nasdaq premarket, 08:00 ET</td><td class="metric">$132.00</td><td class="green">+9.66%</td><td>Same Niles warning</td></tr>
+<tr><td>Palantir</td><td><code>PLTR</code> — Nasdaq premarket, 07:59 ET</td><td class="metric">$158.61</td><td class="green">+2.34%</td><td></td></tr>
+</tbody>
+</table>
+<p>Hyperscaler premarket moves (MSFT/GOOG/META roughly flat to slightly down, AMZN flat to up) are notably muted versus the chip-heavy rebound — consistent with yesterday&#x27;s selloff and today&#x27;s bounce both being concentrated in the semis/neocloud complex rather than broad-based across the stack.</p>
+<h2 id="thesis-prediction-deltas">Thesis / Prediction Deltas</h2>
+<ul>
+<li><code>theses/computational-abundance.md</code>: added a Strong disconfirming row — the political/data-center-opposition axis produced its first quantified capacity-at-risk figures (Citi&#x27;s &gt;500 bans/pauses tracker, UBS&#x27;s ~30% 2028-at-risk estimate) and its first actual price crash, rather than election results and rhetoric alone. Explicitly flagged as a market/pricing event, not evidence against the underlying compute-demand thesis. No probability changes.</li>
+<li>P041 (Texas-specific binding pause, 50%): context note only — today&#x27;s evidence is about market reaction to the broader political mood, not new information on Texas&#x27;s own administrative or legislative mechanism.</li>
+</ul>
+<h2 id="next-seven-days">Next Seven Days</h2>
+<table>
+<thead><tr><th>Date / time</th><th>Catalyst</th><th>Decision point</th></tr></thead>
+<tbody>
+<tr><td>2026-11-06, 8:30am ET</td><td>October nonfarm payrolls</td><td>Macro overlay on today&#x27;s dip-buying vs. follow-through</td></tr>
+<tr><td>2026-11-10, ~1:30pm Taipei</td><td>TSMC October monthly revenue</td><td>First demand read since the Q3 beat-and-raise, landing inside this selloff</td></tr>
+<tr><td>2026-11-12, before market open</td><td>Nebius Q3 2026 earnings</td><td>Consensus ~$906M revenue, -$0.71 EPS; key &quot;world vs. market&quot; test against this week&#x27;s political/financing-fragility selloff</td></tr>
+<tr><td>2026-11-17</td><td>NVIDIA Q3 FY27 earnings</td><td>First hard demand/supply read since the crash; also one day before the requested Huang congressional briefing</td></tr>
+<tr><td>2026-11-18</td><td>Requested closed-door briefing: Jensen Huang before House committee chairs</td><td>Tests whether the Chinese-intelligence-allegation story develops into a sustained NVDA-specific political risk</td></tr>
+</tbody>
+</table>
+<h2 id="data-quality">Data Quality</h2>
+<p>IBKR wire enrichment unavailable in this environment (no TWS/venv); public/primary baseline completed.</p>
+
+<footer>
+Generated from <code>2026-11-06-update.md</code> by <code>scripts/build_report.py</code>.
+</footer>
+
+</div>
+</body>
+</html>
