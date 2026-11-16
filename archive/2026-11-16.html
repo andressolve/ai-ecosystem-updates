@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Ecosystem Premarket Brief — November 16, 2026</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --panel: #131822;
+    --panel-2: #1a2030;
+    --border: #2a3142;
+    --text: #e6e9ef;
+    --muted: #9aa3b2;
+    --blue: #60a5fa;
+    --green: #34d399;
+    --yellow: #fbbf24;
+    --red: #f87171;
+    --purple: #c084fc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    font-size: 15px;
+  }
+  .container { max-width: 1120px; margin: 0 auto; padding: 32px 24px; }
+  header { padding-bottom: 18px; }
+  h1 { margin: 0 0 8px; font-size: 27px; font-weight: 650; letter-spacing: -0.2px; }
+  .subtitle { color: var(--muted); font-size: 14px; }
+  /* sticky section nav */
+  .toc {
+    position: sticky; top: 0; z-index: 20;
+    margin: 0 0 22px; padding: 11px 0;
+    background: rgba(11,14,20,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px;
+  }
+  .toc a { color: var(--muted); white-space: nowrap; }
+  .toc a:hover { color: var(--blue); text-decoration: none; }
+  h2 { margin: 34px 0 14px; padding-bottom: 7px; border-bottom: 1px solid var(--border); font-size: 20px; scroll-margin-top: 56px; }
+  h3 { margin: 22px 0 8px; color: var(--blue); font-size: 16px; }
+  p { margin: 8px 0; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul, ol { margin: 8px 0; padding-left: 22px; }
+  li { margin: 5px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 14px; }
+  th, td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--panel-2); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  code { background: var(--panel-2); padding: 1px 5px; border-radius: 4px; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.9em; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 26px 0; }
+  .banner {
+    background: #231b12;
+    border: 1px solid rgba(251,191,36,0.45);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 24px;
+  }
+  .banner-label { color: var(--yellow); text-transform: uppercase; font-size: 12px; letter-spacing: 0.8px; font-weight: 700; margin-bottom: 6px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: 8px;
+    padding: 17px 20px;
+    margin: 14px 0;
+  }
+  .card h3 { margin-top: 0; }
+  .card-bull { border-left-color: var(--green); }
+  .card-bear { border-left-color: var(--red); }
+  .card-watch { border-left-color: var(--yellow); }
+  .card-neutral { border-left-color: var(--blue); }
+  .tag { display: inline-block; border-radius: 12px; padding: 2px 9px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-right: 6px; }
+  .tag-bear { color: var(--red); background: rgba(248,113,113,0.13); border: 1px solid rgba(248,113,113,0.3); }
+  .tag-bull { color: var(--green); background: rgba(52,211,153,0.13); border: 1px solid rgba(52,211,153,0.3); }
+  .tag-watch { color: var(--yellow); background: rgba(251,191,36,0.13); border: 1px solid rgba(251,191,36,0.3); }
+  .tag-neutral { color: var(--blue); background: rgba(96,165,250,0.13); border: 1px solid rgba(96,165,250,0.3); }
+  /* probability-delta pills, e.g. 90% -> 95% */
+  .delta { display: inline-block; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.88em; font-weight: 650; padding: 0 6px; border-radius: 5px; white-space: nowrap; }
+  .delta-up { color: var(--green); background: rgba(52,211,153,0.12); }
+  .delta-down { color: var(--red); background: rgba(248,113,113,0.12); }
+  .delta-flat { color: var(--muted); background: rgba(154,163,178,0.12); }
+  .metric { font-family: "SF Mono", "Fira Code", monospace; white-space: nowrap; }
+  .muted { color: var(--muted); }
+  .green { color: var(--green); font-weight: 650; }
+  .red { color: var(--red); font-weight: 650; }
+  .yellow { color: var(--yellow); font-weight: 650; }
+  footer { border-top: 1px solid var(--border); margin-top: 40px; padding-top: 18px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 760px) {
+    .container { padding: 22px 14px; }
+    table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>AI Ecosystem Premarket Brief — November 16, 2026</h1>
+  <div class="subtitle">Type: Premarket · As of: 2026-11-16 06:00 MST / 07:00 CST / 08:00 EST · Coverage: Public/primary baseline completed. IBKR wire enrichment attempted and unavailable — no venv/TWS in this environment (consistent with recent sessions).</div>
+</header>
+<nav class="toc"><a href="#bottom-line">Bottom Line</a><a href="#overnight-developments">Overnight Developments</a><a href="#todays-setup">Today&#x27;s Setup</a><a href="#current-market-state">Current Market State</a><a href="#thesis-prediction-deltas">Thesis / Prediction Deltas</a><a href="#next-seven-days">Next Seven Days</a><a href="#data-quality">Data Quality</a></nav>
+<div class="banner"><div class="banner-label">Headline</div><div>NVIDIA&#x27;s succession fight went from &quot;settled around an interim CEO&quot; to genuinely contested overnight: the FT reports Jensen Huang is discussing a comeback with allies, Musk is backing a 176,000-signature open letter for his reinstatement, and Treasury Secretary Bessent is publicly pushing for an outside CEO instead — all landing into a broad, stack-wide selloff the morning before NVDA&#x27;s Q3 FY27 earnings.</div></div>
+<h2 id="bottom-line">Bottom Line</h2>
+<ul>
+<li><strong>NVIDIA&#x27;s leadership question is now a live fight, not a settled interim arrangement.</strong> The FT reported Sunday that Huang has discussed a possible return with confidants; an ally is organizing a &quot;war room&quot; of Silicon Valley executives to lobby the board, and Musk is among 176,000+ signers of an open letter urging reinstatement. Treasury Secretary Bessent wants an outside CEO instead, and press reports (unconfirmed) name Arm&#x27;s CEO Rene Haas as one candidate headhunters have sounded out. This is still governance/personnel noise, not new information about chip demand or supply — same treatment as every prior entry in this saga — but it is driving real price action into tomorrow&#x27;s earnings.</li>
+<li><strong>Separately, and more consequential for the core thesis: SemiAnalysis cut its own 2030 global AI accelerator capex forecast by ~40% on 11/13</strong> (from $1.531T to $923B), with smaller cuts to physical volumes (silicon area -15%, HBM bit demand -12%, power draw -34%) than to dollars. This is the most direct, quantified disconfirming data point logged against the computational-abundance thesis to date — see the dedicated card below for the important nuance and the sourcing caveat.</li>
+<li><strong>The result is a broad, stack-wide selloff this morning ahead of NVDA&#x27;s Tuesday earnings:</strong> SK Hynix -7.89%, Nebius -6.97%, CoreWeave -5.89%, TSMC (Taiwan) -5.74%, Micron -5.53%, Samsung -4.47%, Broadcom -3.36%, Arista -3.94%, TSMC ADR -4.68%, NVDA -2.70%. No single company-specific catalyst explains the breadth; this reads as a pre-earnings, pre-IPO risk-off move across the entire AI-capex trade.</li>
+<li><strong>No thesis or prediction probability changes.</strong> Two context notes added (P042, P043); see Thesis / Prediction Deltas.</li>
+</ul>
+<h2 id="overnight-developments">Overnight Developments</h2>
+<div class="card card-bear">
+<h3><span class="tag tag-bear">bear</span> NVIDIA succession crisis widens: Huang comeback talk splits Silicon Valley</h3>
+<p>The Financial Times reported Sunday (11/15) that Jensen Huang has discussed a possible NVIDIA return with confidants since his 11/11 resignation, and that an ally is organizing a &quot;war room&quot; of Silicon Valley executives to lobby the board for his reinstatement. Elon Musk is among the signers of an open letter urging reinstatement, which had more than 176,000 signatures by Monday morning per Forbes; Musk&#x27;s stated rationale is that many of Huang&#x27;s own supply-chain deals were handshake agreements rather than written contracts, and could unwind without him personally driving them. Pulling the other way, Treasury Secretary Scott Bessent has publicly called for a &quot;dramatic shakeup&quot; favoring an outside CEO, and analyst Dan Ives said he sees no realistic path back for Huang. Press reports (The Information, unconfirmed) say headhunters have sounded out Arm CEO Rene Haas as one external candidate. NVIDIA has called succession speculation premature and says CFO Colette Kress continues as interim CEO; no board decision has been reported. NVDA fell further in Monday premarket (-2.70% to $158.44), part of the broader selloff described above, heading into Tuesday&#x27;s (11/17, after close) Q3 FY27 earnings — consensus is roughly $108.8B revenue and $2.47 adjusted EPS. This is an escalation of the governance thread opened 11/12, not new information about demand or supply, consistent with every prior entry in this saga. Watch whether tomorrow&#x27;s call, run by Kress, becomes a de facto referendum on interim leadership — the pre-set P035 test (hold ~65% if she reaffirms the ~70% FY2028 growth guide, cut toward ~50% if she withdraws or declines to repeat it) is logically separate from the comeback talk itself. (<a href="https://finance.yahoo.com/markets/stocks/articles/jensen-huang-discusses-comeback-nvidia-192628314.html">FT via Yahoo Finance</a>; <a href="https://www.forbes.com/sites/zacharyfolk/2026/11/16/nvidia-shares-slip-in-premarket-as-jensen-huang-reportedly-weighs-ceo-comeback/">Forbes</a>; <a href="https://www.foxbusiness.com/technology/jensen-huang-weighs-nvidia-ceo-comeback-ally-plans-war-room-report">Fox Business</a>; <a href="https://www.cnbc.com/2026/11/16/morning-squawk-nvidia-share-calls-reinstate-huang-ceo.html">CNBC</a>)</p>
+</div>
+<div class="card card-bear">
+<h3><span class="tag tag-bear">bear</span> Disconfirming: SemiAnalysis cuts its own 2030 AI accelerator capex forecast by ~40%</h3>
+<p>SemiAnalysis revised its Accelerator &amp; HBM Model on 11/13, cutting its projected 2030 global AI accelerator capex from $1.531T to $923B — a 40% cut, $608B in absolute terms. The 2028 forecast fell 28% (roughly $1.05T to $758B) and 2029 fell about 41%; cumulative 2027-2030 spending was cut by roughly $1.6T. The firm attributes the revision to tighter capital markets and slower expansion among frontier AI labs, and sees NVIDIA as the most exposed supplier. The important nuance: physical volumes were cut far less than dollars — by 2030, logic silicon area falls only about 15% and HBM bit demand only about 12%, while accelerator power draw falls 34% (122.8GW to 80.7GW) — all smaller than the 40% capex cut. That gap suggests the revision leans more on lower assumed chip prices and efficiency gains than on a proportional collapse in the physical scale of the buildout, which is a genuinely two-sided read for this project&#x27;s core hypothesis: cheaper, more efficient compute is part of the computational-abundance logic, even as it undercuts the dollar-capex figure this thesis has used as a demand proxy. <strong>Sourcing caveat:</strong> I could not reach SemiAnalysis&#x27;s own paywalled institutional note; the figures above are consistent across three independent secondary outlets (a research Substack, PANews, Futunn) but have not been verified against the primary model. Flagging prominently per standing instructions on disconfirming evidence, while also flagging the sourcing gap — next session should try to access the primary note directly. This also needs reconciling against two other SemiAnalysis-adjacent figures already in the thesis tracker at different horizons: the ~4%-realized-2027-delay figure (logged 11/5) and UBS&#x27;s ~30%-of-2028-capacity-at-risk estimate (logged 11/6) — three different vintages and methodologies that should eventually sit in one consistent table. (<a href="https://404kresearch.substack.com/p/semianalysis-slashes-ai-accelerator">404K Research</a>; <a href="https://panews.io/articles/01a1e432-cec3-71c9-9cab-0e3d5a0ad7b2">PANews</a>; <a href="https://news.futunn.com/en/post/1004613632/semianalysis-sharply-cuts-ai-compute-forecasts-2028-capital-expenditure-forecast">Futunn</a>)</p>
+</div>
+<h2 id="todays-setup">Today&#x27;s Setup</h2>
+<table>
+<thead><tr><th>Time</th><th>Catalyst</th><th>What would matter</th><th>Thesis / company</th></tr></thead>
+<tbody>
+<tr><td>Tue 11/17, after close</td><td>NVIDIA Q3 FY27 earnings (consensus ~$108.8B revenue, ~$2.47 adj. EPS)</td><td>Whether Kress reaffirms the ~70% FY2028 growth guide</td><td>P035, NVDA</td></tr>
+<tr><td>Tue 11/17 (same call)</td><td>NVDA earnings call Q&amp;A</td><td>Any direct commentary on succession/comeback talk from Kress or the board</td><td>P042, NVDA</td></tr>
+<tr><td>~11/18-11/19 (estimate; could slip to 11/20-24)</td><td>Anthropic IPO pricing and Nasdaq debut as &quot;ANT&quot;</td><td>Final price vs. $70-78 range</td><td>P043</td></tr>
+<tr><td>Wed 11/18</td><td>House Republican committee chairs&#x27; requested closed-door briefing with Huang</td><td>Content of briefing re: Megaspeed/espionage allegations</td><td>NVDA governance</td></tr>
+</tbody>
+</table>
+<h2 id="current-market-state">Current Market State</h2>
+<table>
+<thead><tr><th>Company</th><th>Listing / session</th><th>Current</th><th>Session move</th><th>New information</th></tr></thead>
+<tbody>
+<tr><td>NVIDIA</td><td><code>NVDA</code> — Nasdaq, pre-market (08:00 ET)</td><td class="metric">$158.44</td><td class="red">-2.70%</td><td>Succession fight widens; see above</td></tr>
+<tr><td>Broadcom</td><td><code>AVGO</code> — Nasdaq, pre-market (08:00 ET)</td><td class="metric">$335.34</td><td class="red">-3.36%</td><td>Sympathetic move, no company-specific news</td></tr>
+<tr><td>TSMC</td><td><code>2330.TW</code> — Taiwan, closed (13:30 CST)</td><td class="metric">2,215 TWD</td><td class="red">-5.74%</td><td>Sympathetic move ahead of NVDA earnings</td></tr>
+<tr><td>TSMC ADR</td><td><code>TSM</code> — NYSE, pre-market (08:00 ET)</td><td class="metric">$380.06</td><td class="red">-4.68%</td><td></td></tr>
+<tr><td>Microsoft</td><td><code>MSFT</code> — Nasdaq, pre-market (08:00 ET)</td><td class="metric">$524.20</td><td class="green">+0.06%</td><td></td></tr>
+<tr><td>Alphabet</td><td><code>GOOG</code> — Nasdaq, pre-market (08:00 ET)</td><td class="metric">$291.37</td><td class="red">-0.39%</td><td></td></tr>
+<tr><td>Meta</td><td><code>META</code> — Nasdaq, pre-market (08:00 ET)</td><td class="metric">$636.77</td><td class="red">-0.77%</td><td></td></tr>
+<tr><td>Amazon</td><td><code>AMZN</code> — Nasdaq, pre-market (08:00 ET)</td><td class="metric">$265.50</td><td class="red">-0.44%</td><td></td></tr>
+<tr><td>SK Hynix</td><td><code>000660.KS</code> — Seoul, closed (15:30 KST)</td><td class="metric">1,120,000 KRW</td><td class="red">-7.89%</td><td>Sympathetic move; also pledged $1B+ over 5 years to domestic chip suppliers (Reuters)</td></tr>
+<tr><td>Samsung Electronics</td><td><code>005930.KS</code> — Seoul, closed (15:30 KST)</td><td class="metric">196,800 KRW</td><td class="red">-4.47%</td><td></td></tr>
+<tr><td>ASML</td><td><code>ASML.AS</code> — Amsterdam, open (13:45 CET)</td><td class="metric">1,312 EUR</td><td class="red">-2.00%</td><td></td></tr>
+<tr><td>Micron</td><td><code>MU</code> — Nasdaq, pre-market (08:00 ET)</td><td class="metric">$735.30</td><td class="red">-5.53%</td><td>Sympathetic move with memory-sector peers</td></tr>
+<tr><td>Arista Networks</td><td><code>ANET</code> — NYSE, pre-market (08:00 ET)</td><td class="metric">$189.52</td><td class="red">-3.94%</td><td></td></tr>
+<tr><td>Palantir</td><td><code>PLTR</code> — Nasdaq, pre-market (08:00 ET)</td><td class="metric">$165.71</td><td class="red">-1.36%</td><td></td></tr>
+<tr><td>CoreWeave</td><td><code>CRWV</code> — Nasdaq, pre-market (08:00 ET)</td><td class="metric">$50.00</td><td class="red">-5.89%</td><td></td></tr>
+<tr><td>Nebius</td><td><code>NBIS</code> — Nasdaq, pre-market (07:59 ET)</td><td class="metric">$107.80</td><td class="red">-6.97%</td><td>Citi reiterated Buy, cut PT to $215</td></tr>
+</tbody>
+</table>
+<h2 id="thesis-prediction-deltas">Thesis / Prediction Deltas</h2>
+<ul>
+<li>No prediction probabilities changed today.</li>
+<li><strong>P042</strong> (NVIDIA names a permanent CEO by 2027-06-30, 65%): context note added — the succession fight is now genuinely contested (Huang comeback push vs. Bessent/Ives favoring an outside hire), but no board decision reported either way. Held at 65%.</li>
+<li><strong>P043</strong> (Anthropic IPO prices at/above $70, trades by 11/30, 80%): context note added — bankers reportedly weighing pricing above the $70-78 range on strong demand, a positive signal, but the specific 11/18 pricing date is now less certain (estimates range 11/18-11/24). Held at 80%.</li>
+<li><strong>theses/computational-abundance.md</strong>: two new rows added to the Disconfirming Evidence Tracker (SemiAnalysis&#x27;s 2030 capex cut, Strong but secondary-sourced; the NVIDIA succession-crisis widening, Weak for the hypothesis/Strong for NVDA specifically). See Overnight Developments above for the substance.</li>
+</ul>
+<h2 id="next-seven-days">Next Seven Days</h2>
+<table>
+<thead><tr><th>Date / time</th><th>Catalyst</th><th>Decision point</th></tr></thead>
+<tbody>
+<tr><td>Tue 11/17, after close</td><td>NVIDIA Q3 FY27 earnings</td><td>P035 pre-set test on the FY2028 growth guide</td></tr>
+<tr><td>~11/18-11/24 (estimate)</td><td>Anthropic IPO pricing</td><td>P043</td></tr>
+<tr><td>Wed 11/18</td><td>House briefing with Huang on Megaspeed/espionage allegations</td><td>NVDA governance, political-risk axis</td></tr>
+</tbody>
+</table>
+<h2 id="data-quality">Data Quality</h2>
+<p>IBKR wire enrichment unavailable; public/primary baseline completed. The SemiAnalysis 2030-capex figures in this report are sourced only secondarily (a research Substack and two financial-news aggregators); I could not reach SemiAnalysis&#x27;s own paywalled note to verify directly.</p>
+
+<footer>
+Generated from <code>2026-11-16-update.md</code> by <code>scripts/build_report.py</code>.
+</footer>
+
+</div>
+</body>
+</html>
