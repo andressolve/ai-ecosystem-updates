@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Ecosystem Premarket Brief — November 17, 2026</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --panel: #131822;
+    --panel-2: #1a2030;
+    --border: #2a3142;
+    --text: #e6e9ef;
+    --muted: #9aa3b2;
+    --blue: #60a5fa;
+    --green: #34d399;
+    --yellow: #fbbf24;
+    --red: #f87171;
+    --purple: #c084fc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    font-size: 15px;
+  }
+  .container { max-width: 1120px; margin: 0 auto; padding: 32px 24px; }
+  header { padding-bottom: 18px; }
+  h1 { margin: 0 0 8px; font-size: 27px; font-weight: 650; letter-spacing: -0.2px; }
+  .subtitle { color: var(--muted); font-size: 14px; }
+  /* sticky section nav */
+  .toc {
+    position: sticky; top: 0; z-index: 20;
+    margin: 0 0 22px; padding: 11px 0;
+    background: rgba(11,14,20,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px;
+  }
+  .toc a { color: var(--muted); white-space: nowrap; }
+  .toc a:hover { color: var(--blue); text-decoration: none; }
+  h2 { margin: 34px 0 14px; padding-bottom: 7px; border-bottom: 1px solid var(--border); font-size: 20px; scroll-margin-top: 56px; }
+  h3 { margin: 22px 0 8px; color: var(--blue); font-size: 16px; }
+  p { margin: 8px 0; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul, ol { margin: 8px 0; padding-left: 22px; }
+  li { margin: 5px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 14px; }
+  th, td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--panel-2); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  code { background: var(--panel-2); padding: 1px 5px; border-radius: 4px; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.9em; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 26px 0; }
+  .banner {
+    background: #231b12;
+    border: 1px solid rgba(251,191,36,0.45);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 24px;
+  }
+  .banner-label { color: var(--yellow); text-transform: uppercase; font-size: 12px; letter-spacing: 0.8px; font-weight: 700; margin-bottom: 6px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: 8px;
+    padding: 17px 20px;
+    margin: 14px 0;
+  }
+  .card h3 { margin-top: 0; }
+  .card-bull { border-left-color: var(--green); }
+  .card-bear { border-left-color: var(--red); }
+  .card-watch { border-left-color: var(--yellow); }
+  .card-neutral { border-left-color: var(--blue); }
+  .tag { display: inline-block; border-radius: 12px; padding: 2px 9px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-right: 6px; }
+  .tag-bear { color: var(--red); background: rgba(248,113,113,0.13); border: 1px solid rgba(248,113,113,0.3); }
+  .tag-bull { color: var(--green); background: rgba(52,211,153,0.13); border: 1px solid rgba(52,211,153,0.3); }
+  .tag-watch { color: var(--yellow); background: rgba(251,191,36,0.13); border: 1px solid rgba(251,191,36,0.3); }
+  .tag-neutral { color: var(--blue); background: rgba(96,165,250,0.13); border: 1px solid rgba(96,165,250,0.3); }
+  /* probability-delta pills, e.g. 90% -> 95% */
+  .delta { display: inline-block; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.88em; font-weight: 650; padding: 0 6px; border-radius: 5px; white-space: nowrap; }
+  .delta-up { color: var(--green); background: rgba(52,211,153,0.12); }
+  .delta-down { color: var(--red); background: rgba(248,113,113,0.12); }
+  .delta-flat { color: var(--muted); background: rgba(154,163,178,0.12); }
+  .metric { font-family: "SF Mono", "Fira Code", monospace; white-space: nowrap; }
+  .muted { color: var(--muted); }
+  .green { color: var(--green); font-weight: 650; }
+  .red { color: var(--red); font-weight: 650; }
+  .yellow { color: var(--yellow); font-weight: 650; }
+  footer { border-top: 1px solid var(--border); margin-top: 40px; padding-top: 18px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 760px) {
+    .container { padding: 22px 14px; }
+    table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>AI Ecosystem Premarket Brief — November 17, 2026</h1>
+  <div class="subtitle">Type: Premarket · As of: 2026-11-17 06:00 MST / 07:00 CST / 08:00 EST · Coverage: Public/primary baseline completed. IBKR wire enrichment unavailable — no venv/TWS in this environment (consistent with recent sessions).</div>
+</header>
+<nav class="toc"><a href="#bottom-line">Bottom Line</a><a href="#overnight-developments">Overnight Developments</a><a href="#todays-setup">Today&#x27;s Setup</a><a href="#current-market-state">Current Market State</a><a href="#thesis-prediction-deltas">Thesis / Prediction Deltas</a><a href="#next-seven-days">Next Seven Days</a><a href="#data-quality">Data Quality</a></nav>
+<div class="banner"><div class="banner-label">Headline</div><div>Hours before NVIDIA&#x27;s first earnings call under interim CEO Colette Kress, the Commerce Department&#x27;s Bureau of Industry and Security issued a confirmed interim final rule closing China&#x27;s AI-chip remote-access loophole — reportedly written at Treasury/NSC direction after Bessent forced it through Commerce — while NVIDIA&#x27;s own reported response (a new board export-control committee, a China-leasing sales bar) remains unverified beyond anonymous-sourced reporting.</div></div>
+<h2 id="bottom-line">Bottom Line</h2>
+<ul>
+<li><strong>BIS issued a confirmed interim final rule (11/16) closing the China AI-chip remote-access/rental loophole.</strong> Overseas data centers serving China/Macau-headquartered firms above a 12-million-TPP threshold now need a US export license; the rule extends licensing to Singapore, Malaysia, Thailand, Indonesia, and Brazil, and formally rescinds the Biden-era AI Diffusion Rule. Multiple outlets report the rule was &quot;written by and at the direction of&quot; Treasury and the NSC — an unusual departure from Commerce authoring its own export rules — after Bessent reportedly forced it through Commerce Secretary Lutnick&#x27;s department.</li>
+<li><strong>NVIDIA&#x27;s own response is reported, not yet verified against a primary source.</strong> CNBC-sourced reporting (via an AI aggregator, not fetched directly) says NVIDIA will bar sales to any buyer leasing more than 50% of its GPUs to China, and that NVIDIA&#x27;s board created a new &quot;National Security and Export Control Oversight Committee&quot; — allegedly in response to a 10-day Bessent ultimatum. Neither claim could be confirmed against nvidianews.nvidia.com or a filing in this session; treat as a lead, not a fact, until verified.</li>
+<li><strong>NVDA earnings tonight, after close — Kress&#x27;s first call as interim CEO.</strong> Consensus is roughly $108.8B revenue and $2.47 adjusted EPS; Reuters reports options pricing in a ~$335B swing. The pre-set P035 test (hold ~65% if she reaffirms the ~70% FY2028 growth guide, cut toward ~50% if she withdraws it) is live tonight.</li>
+<li><strong>No prediction probabilities changed.</strong> One context note added to P042 (NVIDIA permanent-CEO prediction); one new two-sided row added to the thesis disconfirming tracker. See Thesis / Prediction Deltas.</li>
+</ul>
+<h2 id="overnight-developments">Overnight Developments</h2>
+<div class="card card-bear">
+<h3><span class="tag tag-bear">bear</span> BIS closes China&#x27;s AI-chip remote-access loophole, rescinds the AI Diffusion Rule</h3>
+<p>The Bureau of Industry and Security issued an interim final rule, &quot;Addressing Remote Access to Advanced Semiconductors&quot; (RIN 0694-AK50), effective on publication (11/16). Data centers in third countries serving China- or Macau-headquartered entities above roughly 12 million aggregate TPP (reported as roughly 760 H100-class or 200 B300-class GPUs, with some outlets giving slightly different equivalences) now need a US export license; existing operators get a 90-day window to apply. New case-by-case licensing is extended to Singapore, Malaysia, Thailand, Indonesia, and Brazil as &quot;higher-than-normal diversion risk&quot; jurisdictions. The rule formally rescinds the Biden-era AI Diffusion Rule. Multiple trade-compliance outlets (a law-firm client alert, two trade-press sites) report the rule&#x27;s own text states it was &quot;written by and at the direction of the Department of Treasury and the National Security Council&quot; — Commerce normally authors its own export rules — and that Politico has reported Treasury Secretary Bessent forced the rule through Commerce Secretary Lutnick&#x27;s department after a months-long internal dispute connected to the Megaspeed/Jensen Huang espionage allegations. Same-day reaction: Baidu fell to a record low (-5.8%), Alibaba -5%, Hang Seng Tech -1.1%, while domestic Chinese substitutes rallied (SMIC +6.8%, Hua Hong +8%). This is the most concrete, dollar-and-threshold-quantified US-China AI chip trade action logged on this thesis&#x27;s political-risk axis — distinct from the domestic data-center-moratorium axis tracked since early November, which concerns permitting, not export policy. It is two-sided for the core compute-demand thesis: it closes a channel that was inflating China-linked access to NVIDIA-class compute (narrowly disconfirming for &quot;unconstrained global demand&quot;), but it is close to irrelevant to the US hyperscaler buildout that drives the overwhelming majority of the demand this thesis tracks. It is, however, a new and NVDA-specific governance complication landing hours before tonight&#x27;s earnings call. (<a href="https://www.nixonpeabody.com/insights/alerts/2026/11/16/bis-targets-remote-access-to-advanced-chips-through-overseas-data-centers">Nixon Peabody</a>; <a href="https://convergedigest.com/bis-remote-access-ai-chip-export-controls/">Converge Digest</a>; <a href="https://thenextweb.com/news/us-remote-access-ai-chips-rule-china-singapore-malaysia">TheNextWeb</a>; <a href="https://mlq.ai/news/commerce-issues-a-rule-to-stop-chinese-companies-reaching-advanced-ai-chips-through-overseas-data-centers/">mlq.ai</a>)</p>
+</div>
+<div class="card card-watch">
+<h3><span class="tag tag-watch">watch</span> NVIDIA&#x27;s reported response — a board export-control committee and a China-leasing sales bar — is unverified</h3>
+<p>Reporting relayed through an AI news aggregator (citing CNBC sources and NVIDIA&#x27;s own X account, neither independently fetched this session) claims NVIDIA created a new board-level &quot;National Security and Export Control Oversight Committee&quot; (reportedly chaired by director Suzanne Nora Johnson, whose board seat and Audit Committee membership are independently confirmed via NVIDIA&#x27;s own site) and that NVIDIA will bar chip sales to any buyer leasing more than 50% of its GPUs to Chinese firms. The reported trigger is a 10-day ultimatum from Bessent, separately corroborated by Reuters-sourced reporting (11/15) that he demanded the board explain the Megaspeed matter and separately pushed for the next CEO to be hired from outside the company. I could not confirm the committee or the sales-bar policy against nvidianews.nvidia.com, investor.nvidia.com, or an 8-K in this session — flagging per standing instructions on sourcing gaps rather than asserting either as fact. Watch for a primary NVIDIA announcement and for whether tonight&#x27;s earnings call addresses either item directly. (<a href="https://www.unite.ai/?p=518035">Reuters via Unite.AI, Bessent ultimatum</a>)</p>
+</div>
+<h2 id="todays-setup">Today&#x27;s Setup</h2>
+<table>
+<thead><tr><th>Time</th><th>Catalyst</th><th>What would matter</th><th>Thesis / company</th></tr></thead>
+<tbody>
+<tr><td>Tue 11/17, after close</td><td>NVIDIA Q3 FY27 earnings (consensus ~$108.8B revenue, ~$2.47 adj. EPS; options price a ~$335B swing) — Kress&#x27;s first call as interim CEO</td><td>Whether Kress reaffirms the ~70% FY2028 growth guide; any direct comment on the BIS rule, the reported board committee, or succession</td><td>P035, P042, NVDA</td></tr>
+<tr><td>~11/18 (estimate; could slip to 11/19-11/24)</td><td>Anthropic IPO pricing ($70-78 range); trading expected ~11/19 as <code>ANT</code></td><td>Final price vs. range; bankers reportedly weighing pricing above range on demand</td><td>P043</td></tr>
+<tr><td>Wed 11/18</td><td>House Republican committee chairs&#x27; requested closed-door briefing with Huang</td><td>Content re: Megaspeed/espionage allegations, now compounded by the BIS rule</td><td>NVDA governance</td></tr>
+</tbody>
+</table>
+<h2 id="current-market-state">Current Market State</h2>
+<table>
+<thead><tr><th>Company</th><th>Listing / session</th><th>Current</th><th>Session move</th><th>New information</th></tr></thead>
+<tbody>
+<tr><td>NVIDIA</td><td><code>NVDA</code> — Nasdaq, pre-market (08:00 ET)</td><td class="metric">$157.80</td><td class="green">+1.06%</td><td>BIS rule + reported board response; see above</td></tr>
+<tr><td>Broadcom</td><td><code>AVGO</code> — Nasdaq, pre-market (08:00 ET)</td><td class="metric">$336.75</td><td class="green">+1.00%</td><td></td></tr>
+<tr><td>TSMC</td><td><code>2330.TW</code> — Taiwan, closed (13:30 CST)</td><td class="metric">2,170 TWD</td><td class="red">-2.03%</td><td></td></tr>
+<tr><td>TSMC ADR</td><td><code>TSM</code> — NYSE, pre-market (08:00 ET)</td><td class="metric">$373.70</td><td class="green">+0.07%</td><td></td></tr>
+<tr><td>Microsoft</td><td><code>MSFT</code> — Nasdaq, pre-market (08:00 ET)</td><td class="metric">$515.82</td><td class="red">-0.42%</td><td></td></tr>
+<tr><td>Alphabet</td><td><code>GOOG</code> — Nasdaq, pre-market (08:00 ET)</td><td class="metric">$280.76</td><td class="red">-0.18%</td><td></td></tr>
+<tr><td>Meta</td><td><code>META</code> — Nasdaq, pre-market (08:00 ET)</td><td class="metric">$621.94</td><td class="red">-0.71%</td><td></td></tr>
+<tr><td>Amazon</td><td><code>AMZN</code> — Nasdaq, pre-market (08:00 ET)</td><td class="metric">$258.61</td><td class="green">+0.33%</td><td></td></tr>
+<tr><td>SK Hynix</td><td><code>000660.KS</code> — Seoul, closed (15:30 KST)</td><td class="metric">1,098,000 KRW</td><td class="red">-1.96%</td><td></td></tr>
+<tr><td>Samsung Electronics</td><td><code>005930.KS</code> — Seoul, closed (15:30 KST)</td><td class="metric">190,300 KRW</td><td class="red">-3.30%</td><td></td></tr>
+<tr><td>ASML</td><td><code>ASML.AS</code> — Amsterdam, open (13:45 CET)</td><td class="metric">1,290 EUR</td><td class="red">-1.26%</td><td></td></tr>
+<tr><td>Micron</td><td><code>MU</code> — Nasdaq, pre-market (08:00 ET)</td><td class="metric">$732.00</td><td class="green">+1.81%</td><td></td></tr>
+<tr><td>Arista Networks</td><td><code>ANET</code> — NYSE, pre-market (08:00 ET)</td><td class="metric">$191.39</td><td class="green">+2.34%</td><td></td></tr>
+<tr><td>Palantir</td><td><code>PLTR</code> — Nasdaq, pre-market (08:00 ET)</td><td class="metric">$161.10</td><td class="green">+0.44%</td><td></td></tr>
+<tr><td>CoreWeave</td><td><code>CRWV</code> — Nasdaq, pre-market (08:00 ET)</td><td class="metric">$50.65</td><td class="green">+1.54%</td><td></td></tr>
+<tr><td>Nebius</td><td><code>NBIS</code> — Nasdaq, pre-market (07:59 ET)</td><td class="metric">$110.30</td><td class="green">+2.96%</td><td></td></tr>
+</tbody>
+</table>
+<h2 id="thesis-prediction-deltas">Thesis / Prediction Deltas</h2>
+<ul>
+<li>No prediction probabilities changed today.</li>
+<li><strong>P042</strong> (NVIDIA names a permanent CEO by 2027-06-30, 65%): context note added — Bessent reportedly gave the board a 10-day ultimatum tied to the Megaspeed export-control matter and separately pushed for an external CEO hire; NVIDIA&#x27;s reported new board export-control committee is unverified. Neither names a permanent CEO. Held at 65%.</li>
+<li><strong>theses/computational-abundance.md</strong>: one new Moderate-Strong, two-sided row added to the Disconfirming Evidence Tracker — the BIS remote-access rule (confirmed) and NVIDIA&#x27;s reported response (unverified). See Overnight Developments above.</li>
+</ul>
+<h2 id="next-seven-days">Next Seven Days</h2>
+<table>
+<thead><tr><th>Date / time</th><th>Catalyst</th><th>Decision point</th></tr></thead>
+<tbody>
+<tr><td>Tue 11/17, after close</td><td>NVIDIA Q3 FY27 earnings</td><td>P035 pre-set test on the FY2028 growth guide; P042 context</td></tr>
+<tr><td>Wed 11/18</td><td>House briefing with Huang on Megaspeed/espionage allegations</td><td>NVDA governance, now intersecting with the BIS rule</td></tr>
+<tr><td>~11/18-11/24 (estimate)</td><td>Anthropic IPO pricing</td><td>P043</td></tr>
+</tbody>
+</table>
+<h2 id="data-quality">Data Quality</h2>
+<p>IBKR wire enrichment unavailable; public/primary baseline completed. NVIDIA&#x27;s reported board export-control committee and China-leasing sales bar are sourced only to an AI-news aggregator citing anonymous CNBC reporting and NVIDIA&#x27;s own X account — I could not reach nvidianews.nvidia.com, investor.nvidia.com, or an SEC filing to verify either claim directly in this session. Flagged for primary verification next session.</p>
+
+<footer>
+Generated from <code>2026-11-17-update.md</code> by <code>scripts/build_report.py</code>.
+</footer>
+
+</div>
+</body>
+</html>
