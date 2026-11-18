@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Ecosystem Premarket Brief — November 18, 2026</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --panel: #131822;
+    --panel-2: #1a2030;
+    --border: #2a3142;
+    --text: #e6e9ef;
+    --muted: #9aa3b2;
+    --blue: #60a5fa;
+    --green: #34d399;
+    --yellow: #fbbf24;
+    --red: #f87171;
+    --purple: #c084fc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    font-size: 15px;
+  }
+  .container { max-width: 1120px; margin: 0 auto; padding: 32px 24px; }
+  header { padding-bottom: 18px; }
+  h1 { margin: 0 0 8px; font-size: 27px; font-weight: 650; letter-spacing: -0.2px; }
+  .subtitle { color: var(--muted); font-size: 14px; }
+  /* sticky section nav */
+  .toc {
+    position: sticky; top: 0; z-index: 20;
+    margin: 0 0 22px; padding: 11px 0;
+    background: rgba(11,14,20,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px;
+  }
+  .toc a { color: var(--muted); white-space: nowrap; }
+  .toc a:hover { color: var(--blue); text-decoration: none; }
+  h2 { margin: 34px 0 14px; padding-bottom: 7px; border-bottom: 1px solid var(--border); font-size: 20px; scroll-margin-top: 56px; }
+  h3 { margin: 22px 0 8px; color: var(--blue); font-size: 16px; }
+  p { margin: 8px 0; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul, ol { margin: 8px 0; padding-left: 22px; }
+  li { margin: 5px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 14px; }
+  th, td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--panel-2); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  code { background: var(--panel-2); padding: 1px 5px; border-radius: 4px; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.9em; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 26px 0; }
+  .banner {
+    background: #231b12;
+    border: 1px solid rgba(251,191,36,0.45);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 24px;
+  }
+  .banner-label { color: var(--yellow); text-transform: uppercase; font-size: 12px; letter-spacing: 0.8px; font-weight: 700; margin-bottom: 6px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: 8px;
+    padding: 17px 20px;
+    margin: 14px 0;
+  }
+  .card h3 { margin-top: 0; }
+  .card-bull { border-left-color: var(--green); }
+  .card-bear { border-left-color: var(--red); }
+  .card-watch { border-left-color: var(--yellow); }
+  .card-neutral { border-left-color: var(--blue); }
+  .tag { display: inline-block; border-radius: 12px; padding: 2px 9px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-right: 6px; }
+  .tag-bear { color: var(--red); background: rgba(248,113,113,0.13); border: 1px solid rgba(248,113,113,0.3); }
+  .tag-bull { color: var(--green); background: rgba(52,211,153,0.13); border: 1px solid rgba(52,211,153,0.3); }
+  .tag-watch { color: var(--yellow); background: rgba(251,191,36,0.13); border: 1px solid rgba(251,191,36,0.3); }
+  .tag-neutral { color: var(--blue); background: rgba(96,165,250,0.13); border: 1px solid rgba(96,165,250,0.3); }
+  /* probability-delta pills, e.g. 90% -> 95% */
+  .delta { display: inline-block; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.88em; font-weight: 650; padding: 0 6px; border-radius: 5px; white-space: nowrap; }
+  .delta-up { color: var(--green); background: rgba(52,211,153,0.12); }
+  .delta-down { color: var(--red); background: rgba(248,113,113,0.12); }
+  .delta-flat { color: var(--muted); background: rgba(154,163,178,0.12); }
+  .metric { font-family: "SF Mono", "Fira Code", monospace; white-space: nowrap; }
+  .muted { color: var(--muted); }
+  .green { color: var(--green); font-weight: 650; }
+  .red { color: var(--red); font-weight: 650; }
+  .yellow { color: var(--yellow); font-weight: 650; }
+  footer { border-top: 1px solid var(--border); margin-top: 40px; padding-top: 18px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 760px) {
+    .container { padding: 22px 14px; }
+    table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>AI Ecosystem Premarket Brief — November 18, 2026</h1>
+  <div class="subtitle">Type: Premarket · As of: 2026-11-18 08:05 ET / 05:05 PT · Coverage: Public/primary baseline completed; IBKR wire enrichment not attempted (see Data Quality)</div>
+</header>
+<nav class="toc"><a href="#bottom-line">Bottom Line</a><a href="#overnight-developments">Overnight Developments</a><a href="#todays-setup">Today&#x27;s Setup</a><a href="#current-market-state">Current Market State</a><a href="#thesis-prediction-deltas">Thesis / Prediction Deltas</a><a href="#next-seven-days">Next Seven Days</a><a href="#data-quality">Data Quality</a></nav>
+<div class="banner"><div class="banner-label">Headline</div><div>NVIDIA&#x27;s governance and legal risk escalated on three fronts overnight — the board reportedly ruling out a Huang comeback, a newly reported SEC civil probe into its disclosures, and a Senate Banking Committee summons for both Huang and Commerce Secretary Lutnick — while markets continue digesting yesterday&#x27;s blowout Q3 print with a broad stack-wide rally.</div></div>
+<h2 id="bottom-line">Bottom Line</h2>
+<ul>
+<li>NVIDIA governance/legal risk deepened in three distinct ways since yesterday&#x27;s earnings, all NVDA-specific political/disclosure risk rather than compute-demand evidence: the board reportedly (anonymous sourcing) rules out reinstating Huang; the WSJ reports the SEC opened a civil probe into NVIDIA&#x27;s disclosures; and Senate Banking Committee Chairman Tim Scott has summoned Huang (Dec. 3) and Commerce Secretary Lutnick (Dec. 10) to a public hearing, with Lutnick&#x27;s office confirming he will appear. No prediction probabilities changed — P042 (permanent CEO by 6/30/2027) held at 65%.</li>
+<li>The market&#x27;s first full reaction to NVIDIA&#x27;s Q3 beat and FY2028 guide raise (<span class="delta delta-up">65% → 75% ↑</span>) is a stack-wide rally: NVDA, AVGO, TSM, MU, CRWV and NBIS all up in premarket; SK Hynix and Samsung closed higher in Seoul; ASML is up live in Amsterdam.</li>
+<li>Anthropic&#x27;s IPO is scheduled to price today within its $70–78 range, with trading set to begin tomorrow (11/19) as ANT — the live test for P043 (80%).</li>
+</ul>
+<h2 id="overnight-developments">Overnight Developments</h2>
+<div class="card card-watch">
+<h3><span class="tag tag-watch">watch</span> NVIDIA governance and legal risk escalates on three fronts</h3>
+<p>Three distinct developments landed since yesterday&#x27;s earnings call, continuing the governance story opened by Huang&#x27;s 11/11 resignation. First, CNBC and Business Insider (11/16-17, citing anonymous sources) report the NVIDIA board is not considering reinstating Huang — independent corroboration of Harvey Jones&#x27;s on-call remarks already logged yesterday. Second, the Wall Street Journal reported (11/17) that the SEC has opened a civil investigation into NVIDIA&#x27;s disclosures; secondary coverage ties this to the Singapore revenue-reporting change flagged 11/13 and to a newly reported detail that NVIDIA&#x27;s own sales staff introduced Alibaba to Alice Huang in 2022, predating that year&#x27;s export curbs. Neither the SEC nor NVIDIA has confirmed the probe&#x27;s existence or scope — this is WSJ reporting relayed through secondary coverage, not a primary filing. Third, Senate Banking Committee Chairman Tim Scott has summoned both Huang (requested for December 3) and Commerce Secretary Howard Lutnick (December 10) to a public hearing on chip smuggling and alleged interference with export-control enforcement; a Commerce spokesperson confirmed Lutnick agreed to appear. This is a more concrete, public mechanism than the House Foreign Affairs/Select Committee on China/Intelligence Committee&#x27;s closed-door briefing request for Huang, originally proposed for today (11/18) in a letter sent 11/4 — that request&#x27;s status remains unconfirmed. None of this names a permanent CEO, so P042 holds at 65%. <a href="https://techcrunch.com/2026/11/17/sec-reportedly-investigating-nvidia-amid-huang-exit/">TechCrunch on the SEC probe</a> · <a href="../../watchlist/tier1/nvda.md">Watchlist entry</a> · <a href="../../predictions/prediction-log.md">Prediction log</a></p>
+</div>
+<div class="card card-neutral">
+<h3><span class="tag tag-neutral">neutral</span> Market digests NVIDIA&#x27;s Q3 beat with a broad stack-wide rally</h3>
+<p>NVIDIA&#x27;s Q3 FY27 beat and FY2028 guide raise to ~75% growth (full detail in <a href="2026-11-17-nvda-q3-fy27-earnings.md">yesterday&#x27;s earnings note</a>) is still working through the stack this morning. In premarket, NVDA is +2.84%, AVGO +1.99%, TSM +2.69%, MU +1.51%, CRWV +3.73% and NBIS +4.64%. SK Hynix closed Seoul +4.19% and Samsung +2.31%; ASML is +3.48% live in Amsterdam. This is the market&#x27;s first full-session reaction to the print; no new company-specific information has emerged since the call to separately explain the move.</p>
+</div>
+<h2 id="todays-setup">Today&#x27;s Setup</h2>
+<table>
+<thead><tr><th>Time</th><th>Catalyst</th><th>What would matter</th><th>Thesis / company</th></tr></thead>
+<tbody>
+<tr><td>During NY session</td><td>Anthropic IPO expected to price within $70–78 range</td><td>A price below $70 or a postponement would be the first failure signal for P043</td><td>P043 (80%)</td></tr>
+<tr><td>Ongoing</td><td>House Foreign Affairs/Select China/Intelligence Committees&#x27; requested closed-door Huang briefing, originally proposed for today</td><td>Confirmation the briefing occurred (or was postponed again)</td><td>NVDA governance axis</td></tr>
+</tbody>
+</table>
+<h2 id="current-market-state">Current Market State</h2>
+<table>
+<thead><tr><th>Company</th><th>Listing / session</th><th>Current</th><th>Session move</th><th>New information</th></tr></thead>
+<tbody>
+<tr><td>NVIDIA</td><td><code>NVDA</code> Nasdaq, premarket (08:00 ET)</td><td class="metric">$159.88</td><td class="green">+2.84%</td><td></td></tr>
+<tr><td>Broadcom</td><td><code>AVGO</code> Nasdaq, premarket (08:00 ET)</td><td class="metric">$348.39</td><td class="green">+1.99%</td><td></td></tr>
+<tr><td>TSMC ADR</td><td><code>TSM</code> NYSE, premarket (08:00 ET)</td><td class="metric">$369.36</td><td class="green">+2.69%</td><td></td></tr>
+<tr><td>Microsoft</td><td><code>MSFT</code> Nasdaq, premarket (08:00 ET)</td><td class="metric">$505.48</td><td class="red">-0.15%</td><td></td></tr>
+<tr><td>Alphabet</td><td><code>GOOG</code> Nasdaq, premarket (08:00 ET)</td><td class="metric">$279.80</td><td class="green">+0.79%</td><td></td></tr>
+<tr><td>Meta</td><td><code>META</code> Nasdaq, premarket (08:00 ET)</td><td class="metric">$616.80</td><td class="red">-0.33%</td><td></td></tr>
+<tr><td>Amazon</td><td><code>AMZN</code> Nasdaq, premarket (08:00 ET)</td><td class="metric">$258.42</td><td class="green">+0.21%</td><td></td></tr>
+<tr><td>Micron</td><td><code>MU</code> Nasdaq, premarket (08:00 ET)</td><td class="metric">$723.15</td><td class="green">+1.51%</td><td></td></tr>
+<tr><td>CoreWeave</td><td><code>CRWV</code> Nasdaq, premarket (08:00 ET)</td><td class="metric">$51.75</td><td class="green">+3.73%</td><td></td></tr>
+<tr><td>Nebius</td><td><code>NBIS</code> Nasdaq, premarket (08:00 ET)</td><td class="metric">$110.95</td><td class="green">+4.64%</td><td></td></tr>
+<tr><td>SK Hynix</td><td><code>000660.KS</code> Seoul, closed (15:30 KST)</td><td class="metric">₩1,144,000</td><td class="green">+4.19%</td><td></td></tr>
+<tr><td>Samsung Electronics</td><td><code>005930.KS</code> Seoul, closed (15:30 KST)</td><td class="metric">₩194,700</td><td class="green">+2.31%</td><td></td></tr>
+<tr><td>TSMC</td><td><code>2330.TW</code> Taiwan, closed (13:30 CST)</td><td class="metric">NT$2,175</td><td class="green">+0.23%</td><td></td></tr>
+<tr><td>ASML</td><td><code>ASML.AS</code> Amsterdam, open (13:45 CET)</td><td class="metric">€1,280</td><td class="green">+3.48%</td><td></td></tr>
+</tbody>
+</table>
+<p>All moves are session-internal: US premarket vs. prior US close; Seoul/Taiwan vs. prior local close; Amsterdam live vs. prior European close.</p>
+<h2 id="thesis-prediction-deltas">Thesis / Prediction Deltas</h2>
+<ul>
+<li>No prediction probability changes. P042 held at 65% with a context note (board rules out Huang reinstatement, SEC civil probe reported, Senate Banking summons issued). See <code>theses/computational-abundance.md</code> and <code>predictions/prediction-log.md</code>.</li>
+</ul>
+<h2 id="next-seven-days">Next Seven Days</h2>
+<table>
+<thead><tr><th>Date / time</th><th>Catalyst</th><th>Decision point</th></tr></thead>
+<tbody>
+<tr><td>2026-11-19</td><td>Anthropic begins trading as ANT</td><td>P043 resolution</td></tr>
+<tr><td>2026-12-03 (requested)</td><td>Huang to testify before Senate Banking Committee</td><td>First public, on-record Huang statement since resignation</td></tr>
+<tr><td>2026-12-10 (requested)</td><td>Commerce Secretary Lutnick to testify before Senate Banking Committee</td><td>Commerce&#x27;s account of Megaspeed enforcement and export licensing</td></tr>
+<tr><td>~2026-12-16 (unconfirmed)</td><td>Micron fiscal Q1 FY2027 earnings</td><td>Tests the $61.5B ±$1.5B revenue guide set 9/30</td></tr>
+</tbody>
+</table>
+<h2 id="data-quality">Data Quality</h2>
+<p>IBKR wire enrichment was not attempted this run; public/primary baseline (quotes, news discovery, dedicated company searches) completed. A secondary-sourced claim that TSMC is demanding upfront cash for orders exceeding customer credit limits could not be corroborated against a primary source this session and is omitted pending verification.</p>
+
+<footer>
+Generated from <code>2026-11-18-update.md</code> by <code>scripts/build_report.py</code>.
+</footer>
+
+</div>
+</body>
+</html>
