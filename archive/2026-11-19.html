@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Ecosystem Premarket Brief — November 19, 2026</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --panel: #131822;
+    --panel-2: #1a2030;
+    --border: #2a3142;
+    --text: #e6e9ef;
+    --muted: #9aa3b2;
+    --blue: #60a5fa;
+    --green: #34d399;
+    --yellow: #fbbf24;
+    --red: #f87171;
+    --purple: #c084fc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    font-size: 15px;
+  }
+  .container { max-width: 1120px; margin: 0 auto; padding: 32px 24px; }
+  header { padding-bottom: 18px; }
+  h1 { margin: 0 0 8px; font-size: 27px; font-weight: 650; letter-spacing: -0.2px; }
+  .subtitle { color: var(--muted); font-size: 14px; }
+  /* sticky section nav */
+  .toc {
+    position: sticky; top: 0; z-index: 20;
+    margin: 0 0 22px; padding: 11px 0;
+    background: rgba(11,14,20,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px;
+  }
+  .toc a { color: var(--muted); white-space: nowrap; }
+  .toc a:hover { color: var(--blue); text-decoration: none; }
+  h2 { margin: 34px 0 14px; padding-bottom: 7px; border-bottom: 1px solid var(--border); font-size: 20px; scroll-margin-top: 56px; }
+  h3 { margin: 22px 0 8px; color: var(--blue); font-size: 16px; }
+  p { margin: 8px 0; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul, ol { margin: 8px 0; padding-left: 22px; }
+  li { margin: 5px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 14px; }
+  th, td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--panel-2); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  code { background: var(--panel-2); padding: 1px 5px; border-radius: 4px; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.9em; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 26px 0; }
+  .banner {
+    background: #231b12;
+    border: 1px solid rgba(251,191,36,0.45);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 24px;
+  }
+  .banner-label { color: var(--yellow); text-transform: uppercase; font-size: 12px; letter-spacing: 0.8px; font-weight: 700; margin-bottom: 6px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: 8px;
+    padding: 17px 20px;
+    margin: 14px 0;
+  }
+  .card h3 { margin-top: 0; }
+  .card-bull { border-left-color: var(--green); }
+  .card-bear { border-left-color: var(--red); }
+  .card-watch { border-left-color: var(--yellow); }
+  .card-neutral { border-left-color: var(--blue); }
+  .tag { display: inline-block; border-radius: 12px; padding: 2px 9px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-right: 6px; }
+  .tag-bear { color: var(--red); background: rgba(248,113,113,0.13); border: 1px solid rgba(248,113,113,0.3); }
+  .tag-bull { color: var(--green); background: rgba(52,211,153,0.13); border: 1px solid rgba(52,211,153,0.3); }
+  .tag-watch { color: var(--yellow); background: rgba(251,191,36,0.13); border: 1px solid rgba(251,191,36,0.3); }
+  .tag-neutral { color: var(--blue); background: rgba(96,165,250,0.13); border: 1px solid rgba(96,165,250,0.3); }
+  /* probability-delta pills, e.g. 90% -> 95% */
+  .delta { display: inline-block; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.88em; font-weight: 650; padding: 0 6px; border-radius: 5px; white-space: nowrap; }
+  .delta-up { color: var(--green); background: rgba(52,211,153,0.12); }
+  .delta-down { color: var(--red); background: rgba(248,113,113,0.12); }
+  .delta-flat { color: var(--muted); background: rgba(154,163,178,0.12); }
+  .metric { font-family: "SF Mono", "Fira Code", monospace; white-space: nowrap; }
+  .muted { color: var(--muted); }
+  .green { color: var(--green); font-weight: 650; }
+  .red { color: var(--red); font-weight: 650; }
+  .yellow { color: var(--yellow); font-weight: 650; }
+  footer { border-top: 1px solid var(--border); margin-top: 40px; padding-top: 18px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 760px) {
+    .container { padding: 22px 14px; }
+    table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>AI Ecosystem Premarket Brief — November 19, 2026</h1>
+  <div class="subtitle">Type: Premarket · As of: 2026-11-19 08:01 ET / 05:01 PT · Coverage: Public/primary baseline completed; IBKR wire enrichment not attempted (no venv/TWS in this environment — see Data Quality)</div>
+</header>
+<nav class="toc"><a href="#bottom-line">Bottom Line</a><a href="#overnight-developments">Overnight Developments</a><a href="#todays-setup">Today&#x27;s Setup</a><a href="#current-market-state">Current Market State</a><a href="#thesis-prediction-deltas">Thesis / Prediction Deltas</a><a href="#next-seven-days">Next Seven Days</a><a href="#data-quality">Data Quality</a></nav>
+<div class="banner"><div class="banner-label">Headline</div><div>Anthropic priced its IPO at $83/share — above the top of its $70-78 range — raising a reported $81B at a valuation north of $1 trillion; shares begin trading today as ANT. Separately, TSMC, Samsung and NVIDIA all curtailed some China-bound chip shipments this week as the 11/16 BIS rule starts biting in practice.</div></div>
+<h2 id="bottom-line">Bottom Line</h2>
+<ul>
+<li><strong>Anthropic&#x27;s IPO priced above range, not just inside it</strong> — $83/share vs. the $70-78 range, raising ~$81B at a valuation reportedly over $1 trillion. Trading opens today on Nasdaq as ANT. This resolves P043 (80% → <strong>RESOLVED YES</strong>), and the above-range print is a stronger outcome than the prediction anticipated.</li>
+<li><strong>The new BIS export rule has teeth:</strong> TSMC and Samsung both told Chinese customers this week they&#x27;re holding some shipments pending new US export licenses (FT, corroborated by Reuters), and NVIDIA itself reportedly stopped shipping some licensed Hopper chips to China. This is the first concrete implementation evidence behind the 11/16 rule logged in the thesis tracker — material to a narrow China revenue channel, immaterial to the US hyperscaler demand this thesis actually tracks.</li>
+<li>Texas&#x27;s TCEQ quietly resumed normal data-center permit reviews on 11/17, ending Governor Abbott&#x27;s own September pause — a mild disconfirming data point for the political-moratorium axis (P041 context note, no probability change).</li>
+<li>No other thesis-changing developments since yesterday&#x27;s cutoff.</li>
+</ul>
+<h2 id="overnight-developments">Overnight Developments</h2>
+<div class="card card-bull">
+<h3><span class="tag tag-bull">bull</span> Anthropic&#x27;s IPO prices above range in the largest AI-sector debut to date</h3>
+<p>Anthropic priced its IPO at $83/share, above the top of its disclosed $70-78 range, raising approximately $81B (WSJ, BBC) at a valuation Axios reports above $1 trillion. Trading begins today on Nasdaq under ticker ANT, with gray-market indications reportedly more than 20% above the IPO price ahead of the open (Bloomberg). The $26B private placement logged 11/12 — NVIDIA and Google at $10B each, AMD $2.5B, Broadcom/Micron/Microsoft $1B each, TSMC $0.5B — closes at the same $83 price, meaning every one of those strategic buyers is already sitting on an unrealized gain before the stock opens for public trading. This resolves P043 (Anthropic prices at or above $70 and opens for trading by 11/30) <strong>YES</strong>, and the margin — pricing above the range rather than at its floor — is a stronger result than the 80% probability assigned 11/12 implied. Context, not a reason to discount the print: 89 AI-safety researchers reportedly published a joint statement hours before the debut arguing Anthropic is &quot;not a safe company&quot; (HuggingNews aggregation of the story; not independently verified against a primary source this session) — a reminder that the IPO&#x27;s strong pricing is a market judgment on revenue growth and capital demand, not a resolution of the safety debate. <a href="../../predictions/prediction-log.md">Prediction log</a> · <a href="https://www.sec.gov/Archives/edgar/data/2130357/000162828026074338/anthropicpbc-sx1ax3.htm">S-1/A, SEC</a></p>
+</div>
+<div class="card card-watch">
+<h3><span class="tag tag-watch">watch</span> BIS export rule starts biting: TSMC, Samsung and NVIDIA all curtail China shipments</h3>
+<p>The Financial Times reported (citing people briefed on the matter) that TSMC and Samsung have told Chinese customers in recent days that they will hold certain chips pending new US export licenses required by the 11/16 BIS rule that closed the remote-access/rental loophole (logged in <code>theses/computational-abundance.md</code> 11-16). Reuters independently corroborated and added detail: TSMC is also suspending some previously-permitted advanced-manufacturing orders and generally limiting affected China customers to older process nodes. Reported affected TSMC customers include smartphone-chip clients Xiaomi, Oppo and Vivo — notably broader than pure AI accelerators, extending the rule&#x27;s practical reach into general advanced-node China demand. Separately, NVIDIA itself reportedly told customers it will stop shipping some licensed Hopper-class chips to China (CBS News), following a reported $2.4B quarter of China Hopper revenue disclosed at last week&#x27;s earnings. This is the first concrete, multi-company implementation record behind a rule that was, as of 11/16, just a published text with a 90-day grace window. It doesn&#x27;t change the thesis&#x27;s core read: Chinese AI-accelerator access has been curtailed by export rules since 2022-2023, and none of TSMC&#x27;s, Samsung&#x27;s, or NVIDIA&#x27;s guidance depends materially on it. 2330.TW closed Taiwan -3.45% on the news; TSM ADR +0.73% in US premarket (the ADR&#x27;s premarket move does not reflect the Taiwan session&#x27;s reaction — treat the Taiwan close as the more complete market read). <a href="https://www.newsquawk.com/headlines/tsmc-2330-tt-and-samsung-electronics-005930-ks-suspend-shipments-of-certain-chips-to-chinese-customers-while-seeking-us-export-licences-under-new-restrictions-ft-reports">FT via multiple syndication</a> · <a href="https://www.investing.com/news/stock-market-news/tsmc-tightens-china-ai-chip-curbs-as-new-us-rules-close-manufacturing-loophole-sources-say-5038806">Reuters via Investing.com</a> · <a href="../../watchlist/tier1/nvda.md">Watchlist: NVDA</a> · <a href="../../watchlist/tier1/tsm.md">TSM</a> · <a href="../../watchlist/tier2/samsung.md">Samsung</a></p>
+</div>
+<h2 id="todays-setup">Today&#x27;s Setup</h2>
+<table>
+<thead><tr><th>Time</th><th>Catalyst</th><th>What would matter</th><th>Thesis / company</th></tr></thead>
+<tbody>
+<tr><td>NY session</td><td>Anthropic (ANT) begins trading on Nasdaq after an above-range $83 IPO price</td><td>First-day close relative to the $83 open — a sharp reversal would complicate the &quot;demand was real&quot; read of the above-range pricing</td><td>P043 (resolved YES)</td></tr>
+<tr><td>Ongoing</td><td>US lawmakers reportedly seeking a Microsoft briefing on reported AI deal talks with ByteDance (Reuters, 11/18)</td><td>Confirmation of the briefing, or any detail on deal terms</td><td>MSFT — new, separate political-scrutiny thread from the NVDA governance axis</td></tr>
+</tbody>
+</table>
+<h2 id="current-market-state">Current Market State</h2>
+<table>
+<thead><tr><th>Company</th><th>Listing / session</th><th>Current</th><th>Session move</th><th>New information</th></tr></thead>
+<tbody>
+<tr><td>NVIDIA</td><td><code>NVDA</code> Nasdaq, premarket (08:01 ET)</td><td class="metric">$153.07</td><td class="green">+1.40%</td><td></td></tr>
+<tr><td>Broadcom</td><td><code>AVGO</code> Nasdaq, premarket (08:00 ET)</td><td class="metric">$364.14</td><td class="green">+2.85%</td><td></td></tr>
+<tr><td>TSMC ADR</td><td><code>TSM</code> NYSE, premarket (08:01 ET)</td><td class="metric">$365.27</td><td class="green">+0.73%</td><td>China shipment pause (see above)</td></tr>
+<tr><td>Microsoft</td><td><code>MSFT</code> Nasdaq, premarket (08:00 ET)</td><td class="metric">$515.60</td><td class="green">+1.44%</td><td>Lawmakers seek ByteDance-deal briefing</td></tr>
+<tr><td>Alphabet</td><td><code>GOOG</code> Nasdaq, premarket (08:01 ET)</td><td class="metric">$289.98</td><td class="green">+3.86%</td><td></td></tr>
+<tr><td>Meta</td><td><code>META</code> Nasdaq, premarket (08:01 ET)</td><td class="metric">$626.00</td><td class="green">+1.56%</td><td></td></tr>
+<tr><td>Amazon</td><td><code>AMZN</code> Nasdaq, premarket (08:01 ET)</td><td class="metric">$274.19</td><td class="green">+2.41%</td><td></td></tr>
+<tr><td>Micron</td><td><code>MU</code> Nasdaq, premarket (08:01 ET)</td><td class="metric">$739.90</td><td class="green">+4.91%</td><td></td></tr>
+<tr><td>CoreWeave</td><td><code>CRWV</code> Nasdaq, premarket (08:01 ET)</td><td class="metric">$50.90</td><td class="green">+6.42%</td><td></td></tr>
+<tr><td>Nebius</td><td><code>NBIS</code> Nasdaq, premarket (08:00 ET)</td><td class="metric">$114.40</td><td class="green">+6.96%</td><td></td></tr>
+<tr><td>SK Hynix</td><td><code>000660.KS</code> Seoul, closed (16:30 KST)</td><td class="metric">₩1,183,000</td><td class="green">+3.41%</td><td></td></tr>
+<tr><td>Samsung Electronics</td><td><code>005930.KS</code> Seoul, closed (16:30 KST)</td><td class="metric">₩196,900</td><td class="green">+1.13%</td><td>China shipment pause (see above)</td></tr>
+<tr><td>TSMC</td><td><code>2330.TW</code> Taiwan, closed (13:30 CST)</td><td class="metric">NT$2,100</td><td class="red">-3.45%</td><td>China shipment pause (see above)</td></tr>
+<tr><td>ASML</td><td><code>ASML.AS</code> Amsterdam, open (13:45 CET)</td><td class="metric">€1,313</td><td class="green">+4.12%</td><td></td></tr>
+</tbody>
+</table>
+<p>All moves are session-internal: US premarket vs. prior US close; Seoul/Taiwan vs. prior local close; Amsterdam live vs. prior European close.</p>
+<h2 id="thesis-prediction-deltas">Thesis / Prediction Deltas</h2>
+<ul>
+<li><strong>P043 (Anthropic IPO prices ≥$70 and opens by 11/30): 80% → RESOLVED YES.</strong> Priced at $83 (above range), trading opens today as ANT.</li>
+<li><strong>P041 (Texas moratorium by 2027-12-31): held at 50%, context note added.</strong> TCEQ resumed normal permit reviews 11/17, ending Abbott&#x27;s own pause.</li>
+<li>No other prediction probability changes.</li>
+</ul>
+<h2 id="next-seven-days">Next Seven Days</h2>
+<table>
+<thead><tr><th>Date / time</th><th>Catalyst</th><th>Decision point</th></tr></thead>
+<tbody>
+<tr><td>2026-11-19</td><td>Anthropic (ANT) first day of trading</td><td>Already resolves P043; watch close-vs-open for market follow-through</td></tr>
+<tr><td>~2026-12-16 (unconfirmed)</td><td>Micron fiscal Q1 FY2027 earnings</td><td>Tests the $61.5B ±$1.5B revenue guide set 9/30</td></tr>
+<tr><td>2026-12-03 (requested)</td><td>Huang to testify before Senate Banking Committee</td><td>First public, on-record Huang statement since resignation</td></tr>
+<tr><td>2026-12-10 (requested)</td><td>Commerce Secretary Lutnick to testify before Senate Banking Committee</td><td>Commerce&#x27;s account of Megaspeed enforcement and export licensing</td></tr>
+</tbody>
+</table>
+<h2 id="data-quality">Data Quality</h2>
+<p>IBKR wire enrichment was not attempted — no Python venv or TWS instance exists in this environment, consistent with prior sessions. Public/primary baseline (quotes, news discovery, dedicated company searches) completed. A HuggingNews-aggregated claim that a Wall Street $500B NVIDIA chip-financing pledge has &quot;deployed zero capital with no deals until 2027&quot; could not be corroborated against a primary or wire source this session and is omitted pending verification.</p>
+
+<footer>
+Generated from <code>2026-11-19-update.md</code> by <code>scripts/build_report.py</code>.
+</footer>
+
+</div>
+</body>
+</html>
