@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Ecosystem Premarket Brief — November 20, 2026</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --panel: #131822;
+    --panel-2: #1a2030;
+    --border: #2a3142;
+    --text: #e6e9ef;
+    --muted: #9aa3b2;
+    --blue: #60a5fa;
+    --green: #34d399;
+    --yellow: #fbbf24;
+    --red: #f87171;
+    --purple: #c084fc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    font-size: 15px;
+  }
+  .container { max-width: 1120px; margin: 0 auto; padding: 32px 24px; }
+  header { padding-bottom: 18px; }
+  h1 { margin: 0 0 8px; font-size: 27px; font-weight: 650; letter-spacing: -0.2px; }
+  .subtitle { color: var(--muted); font-size: 14px; }
+  /* sticky section nav */
+  .toc {
+    position: sticky; top: 0; z-index: 20;
+    margin: 0 0 22px; padding: 11px 0;
+    background: rgba(11,14,20,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px;
+  }
+  .toc a { color: var(--muted); white-space: nowrap; }
+  .toc a:hover { color: var(--blue); text-decoration: none; }
+  h2 { margin: 34px 0 14px; padding-bottom: 7px; border-bottom: 1px solid var(--border); font-size: 20px; scroll-margin-top: 56px; }
+  h3 { margin: 22px 0 8px; color: var(--blue); font-size: 16px; }
+  p { margin: 8px 0; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul, ol { margin: 8px 0; padding-left: 22px; }
+  li { margin: 5px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 14px; }
+  th, td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--panel-2); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  code { background: var(--panel-2); padding: 1px 5px; border-radius: 4px; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.9em; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 26px 0; }
+  .banner {
+    background: #231b12;
+    border: 1px solid rgba(251,191,36,0.45);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 24px;
+  }
+  .banner-label { color: var(--yellow); text-transform: uppercase; font-size: 12px; letter-spacing: 0.8px; font-weight: 700; margin-bottom: 6px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: 8px;
+    padding: 17px 20px;
+    margin: 14px 0;
+  }
+  .card h3 { margin-top: 0; }
+  .card-bull { border-left-color: var(--green); }
+  .card-bear { border-left-color: var(--red); }
+  .card-watch { border-left-color: var(--yellow); }
+  .card-neutral { border-left-color: var(--blue); }
+  .tag { display: inline-block; border-radius: 12px; padding: 2px 9px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-right: 6px; }
+  .tag-bear { color: var(--red); background: rgba(248,113,113,0.13); border: 1px solid rgba(248,113,113,0.3); }
+  .tag-bull { color: var(--green); background: rgba(52,211,153,0.13); border: 1px solid rgba(52,211,153,0.3); }
+  .tag-watch { color: var(--yellow); background: rgba(251,191,36,0.13); border: 1px solid rgba(251,191,36,0.3); }
+  .tag-neutral { color: var(--blue); background: rgba(96,165,250,0.13); border: 1px solid rgba(96,165,250,0.3); }
+  /* probability-delta pills, e.g. 90% -> 95% */
+  .delta { display: inline-block; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.88em; font-weight: 650; padding: 0 6px; border-radius: 5px; white-space: nowrap; }
+  .delta-up { color: var(--green); background: rgba(52,211,153,0.12); }
+  .delta-down { color: var(--red); background: rgba(248,113,113,0.12); }
+  .delta-flat { color: var(--muted); background: rgba(154,163,178,0.12); }
+  .metric { font-family: "SF Mono", "Fira Code", monospace; white-space: nowrap; }
+  .muted { color: var(--muted); }
+  .green { color: var(--green); font-weight: 650; }
+  .red { color: var(--red); font-weight: 650; }
+  .yellow { color: var(--yellow); font-weight: 650; }
+  footer { border-top: 1px solid var(--border); margin-top: 40px; padding-top: 18px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 760px) {
+    .container { padding: 22px 14px; }
+    table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>AI Ecosystem Premarket Brief — November 20, 2026</h1>
+  <div class="subtitle">Type: Premarket · As of: 2026-11-20 08:00 ET / 05:00 PT · Coverage: Public/primary baseline completed; IBKR wire enrichment not attempted (no venv/TWS in this environment — see Data Quality)</div>
+</header>
+<nav class="toc"><a href="#bottom-line">Bottom Line</a><a href="#overnight-developments">Overnight Developments</a><a href="#todays-setup">Today&#x27;s Setup</a><a href="#current-market-state">Current Market State</a><a href="#thesis-prediction-deltas">Thesis / Prediction Deltas</a><a href="#next-seven-days">Next Seven Days</a><a href="#data-quality">Data Quality</a></nav>
+<div class="banner"><div class="banner-label">Headline</div><div>The AI-stack selloff is in its fifth session and deepening: the Nasdaq 100 is now roughly 15% below its October record, NVIDIA is trading at a fresh 52-week low, and nearly every Tier 1/Tier 2 name is down 2-7% across Asia&#x27;s close and US premarket. NVIDIA&#x27;s governance overhang widened to a third investigating body — California&#x27;s attorney general — while Anthropic&#x27;s debut outperformed the falling tape.</div></div>
+<h2 id="bottom-line">Bottom Line</h2>
+<ul>
+<li><strong>The selloff is continuing, not resetting.</strong> Nasdaq 100 closed -2.2% on 11/19 (now ~15% off its October peak); this morning&#x27;s prices show SK Hynix -5.92%, Samsung -7.01%, TSMC Taiwan -4.76% and ASML -6.35% at their local closes/live session, with NVDA, AVGO, TSM, MSFT, META, MU, CRWV and NBIS all down 2-6% in US premarket. No single overnight catalyst explains the full move — it is the market continuing to digest the accumulating NVIDIA governance/legal overhang and the broader AI-capex-doubt narrative that has been building since 11/5.</li>
+<li><strong>NVIDIA&#x27;s legal exposure widened to a third body.</strong> California Attorney General Rob Bonta said (Bloomberg TV, 11/17, more widely syndicated 11/19) his office is evaluating whether &quot;the law and facts justify&quot; an examination of NVIDIA and Jensen Huang, citing &quot;red flags&quot; around possible chip diversion to China — alongside the already-logged SEC civil probe (WSJ, 11/17) and the Senate Banking Committee hearing requests for Huang (Dec. 3) and Lutnick (Dec. 10). No formal investigation has been opened; this is a public statement of intent to evaluate, not a filed action. P042 held at 65% with a context note.</li>
+<li><strong>Anthropic&#x27;s debut outperformed a down market.</strong> ANT opened at $111.50 (+34.3% over the $83 offer), traded as low as $92.72, and closed its first session at $97.17 (+17.1%), on 846M shares — a strong result on a day the Nasdaq 100 fell more than 2%. P043 is already resolved YES (logged 11/19).</li>
+<li><strong>Export-rule compliance is broadening beyond GPUs.</strong> TSMC confirmed (Digitimes, 11/20) it will comply with new, narrower foundry/OSAT export-license exemptions; TrendForce reports Samsung Foundry, ASE and Amkor face the same tighter customer-verification requirements, which could delay orders from Chinese fabless chip designers generally — a wider channel than the GPU-specific rule logged 11/16-11/19.</li>
+</ul>
+<h2 id="overnight-developments">Overnight Developments</h2>
+<div class="card card-bear">
+<h3><span class="tag tag-bear">bear</span> NVIDIA&#x27;s governance exposure widens to a third investigating body: California&#x27;s attorney general</h3>
+<p>California AG Rob Bonta told Bloomberg Television (11/17 interview, more broadly syndicated 11/19) that his office is determining whether &quot;the law and facts justify&quot; examining NVIDIA and Jensen Huang, and that such an examination could &quot;very possibly&quot; be pursued. He cited unspecified &quot;red flags,&quot; including the possibility of chip diversion to China, without giving further detail or confirming any formal filing. This is the third distinct scrutiny channel now in play, alongside the SEC&#x27;s civil probe into NVIDIA&#x27;s disclosures (WSJ, 11/17) and the Senate Banking Committee&#x27;s summonses of Huang (Dec. 3) and Commerce Secretary Lutnick (Dec. 10). None of the three has produced a finding, charge, or named successor. This resolves nothing for P042 (permanent CEO by 2027-06-30, held at 65%) but adds to the breadth of the overhang the market is pricing. <a href="https://stocktwits.com/news-articles/markets/equity/california-ag-rob-bonta-highlights-red-flags-in-his-investigation-into-nvidia-and-jensen-huang/cNbO44MR9hO">Stocktwits/Bloomberg TV summary</a> · <a href="https://www.investmentnews.com/equities/embattled-nvidia-faces-sec-probe-as-california-attorney-general-eyes-action/269054">InvestmentNews</a> · <a href="../../watchlist/tier1/nvda.md">Watchlist: NVDA</a></p>
+</div>
+<div class="card card-watch">
+<h3><span class="tag tag-watch">watch</span> The AI-stack selloff extends to a fifth session; NVDA at a fresh 52-week low</h3>
+<p>NVDA&#x27;s US premarket print of $141.18 (-3.29%) implies an 11/19 close near $146 — below the $148.80 52-week low recorded as of 11/17, consistent with multiple outlets&#x27; headlines that NVDA hit a new 52-week low this week and is now roughly 40% off its 2026 high. The Nasdaq 100 fell 2.2% on 11/19 and is down roughly 15% from its October record. This morning every tracked Tier 1/Tier 2 name is red: AVGO -3.07%, TSM ADR -5.75%, MSFT -2.15%, GOOG -0.79%, META -3.52%, AMZN -2.30%, MU -5.07%, ANET -4.58%, PLTR -4.14%, CRWV -5.59%, NBIS -6.09% in premarket; SK Hynix -5.92%, Samsung -7.01%, TSMC Taiwan -4.76% at Seoul/Taiwan close; ASML -6.35% in a live Amsterdam session. No single new piece of information explains the full magnitude — this reads as continued de-risking against the accumulating NVIDIA governance drip (SEC probe, Senate hearings, now California AG) and the broader AI-capex-sustainability doubt that has repeatedly resurfaced since the 11/5 moratorium-driven crash, rather than a fresh, independent shock. The move is large enough to flag for today&#x27;s setup even though no part of it individually clears the bar for its own card. <a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE5INVNuU2E4Z3Bsa0FYa0RqbHNYM3ZlS1lZV3BlODA2Q2F2ejlxMllHQnl2YzhmMm5IeW5RdU9tUzhGUUdlVTJtMUozbkJYZGZOMFpnMmRaWWxpRDY0OVF3a1JiTVBrZmNWMkJsTVotRERzWUZvQVNV?oc=5">Barron&#x27;s framing</a> · [Current Market State below]</p>
+</div>
+<div class="card card-neutral">
+<h3><span class="tag tag-neutral">neutral</span> Anthropic&#x27;s debut closes +17% despite the broader selloff</h3>
+<p>ANT opened at $111.50 (+34.3% over the $83 offer price), traded in a $92.72-$115.10 range, and closed its first Nasdaq session at $97.17 (+17.1%), with 846M shares traded — more than SpaceX&#x27;s 522M on its own debut day. The after-hours print was $92.60. This happened the same session the Nasdaq 100 fell more than 2%, making the relative strength of the debut notable: Anthropic absorbed a large amount of market attention and capital without a comparable drawdown, even as the rest of the AI stack sold off. P043 (priced ≥$70, traded by 11/30) is already resolved YES as of 11/19; no further prediction action needed. <a href="https://www.forbes.com/sites/fionariley/2026/11/19/anthropic-ipo-live-stock-closes-day-at-97-up-more-than-17/">Forbes</a> · <a href="https://www.bloomberg.com/news/live-blog/2026-11-19/anthropic-trading-debut-live-updates">Bloomberg live blog</a></p>
+</div>
+<div class="card card-neutral">
+<h3><span class="tag tag-neutral">neutral</span> TSMC confirms compliance with a broader, non-GPU-specific export rule</h3>
+<p>Digitimes reports (11/20) TSMC has confirmed it will comply with new US rules narrowing export-license exemptions for foundries and outsourced assembly/test (OSAT) providers. TrendForce separately reports (citing Central News Agency and Commercial Times) that TSMC, Samsung Foundry, ASE and Amkor all face stricter customer-verification requirements that could delay orders from Chinese fabless chip designers generally while licenses are reviewed — a wider scope than the GPU/AI-accelerator-specific BIS rule logged 11/16-11/19, which already covered the Xiaomi/Oppo/Vivo smartphone-chip shipment holds. No dollar impact disclosed; TSMC&#x27;s guidance depends on non-China AI/HPC demand, which this does not touch. <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQcGVFa0NDRkExcVRYSzVVWWxGSVlMSU5NQS1FQXlPYXQtREgzYS1qRVN3NTNGWXFMZnVUY0ZOU0ptbFR1MkZQV3V2RjNGbTJjRnk0Y0JvcnlxV2Jza3hXUE1fUmdJRkRnOGluQXBEczJxel9ON0dqWGoyODFEYUVKc2YtSktBXzhtRGN4RUUzbkJWcjFpTUtodGg3M2xqWk5iWW1B?oc=5">TSMC/Digitimes via Yahoo Finance</a> · <a href="../../watchlist/tier1/tsm.md">Watchlist: TSM</a></p>
+</div>
+<h2 id="todays-setup">Today&#x27;s Setup</h2>
+<table>
+<thead><tr><th>Time</th><th>Catalyst</th><th>What would matter</th><th>Thesis / company</th></tr></thead>
+<tbody>
+<tr><td>Ongoing</td><td>California AG&#x27;s &quot;red flags&quot; statement (11/17, syndicated 11/19)</td><td>Any formal filing, subpoena, or statement narrowing/dropping the review</td><td>P042, NVDA governance axis</td></tr>
+<tr><td>Ongoing</td><td>Continuing stack-wide selloff</td><td>Whether today&#x27;s US cash session extends or stabilizes the move; watch for any single name decoupling on company-specific news</td><td>All Tier 1/Tier 2</td></tr>
+</tbody>
+</table>
+<h2 id="current-market-state">Current Market State</h2>
+<table>
+<thead><tr><th>Company</th><th>Listing / session</th><th>Current</th><th>Session move</th><th>New information</th></tr></thead>
+<tbody>
+<tr><td>NVIDIA</td><td><code>NVDA</code> Nasdaq, premarket (08:00 ET)</td><td class="metric">$141.18</td><td class="red">-3.29%</td><td>California AG review (see above)</td></tr>
+<tr><td>Broadcom</td><td><code>AVGO</code> Nasdaq, premarket (08:00 ET)</td><td class="metric">$336.00</td><td class="red">-3.07%</td><td></td></tr>
+<tr><td>TSMC ADR</td><td><code>TSM</code> NYSE, premarket (08:00 ET)</td><td class="metric">$331.86</td><td class="red">-5.75%</td><td>Export-rule compliance confirmed (see above)</td></tr>
+<tr><td>Microsoft</td><td><code>MSFT</code> Nasdaq, premarket (08:00 ET)</td><td class="metric">$487.57</td><td class="red">-2.15%</td><td></td></tr>
+<tr><td>Alphabet</td><td><code>GOOG</code> Nasdaq, premarket (08:00 ET)</td><td class="metric">$268.87</td><td class="red">-0.79%</td><td></td></tr>
+<tr><td>Meta</td><td><code>META</code> Nasdaq, premarket (08:00 ET)</td><td class="metric">$575.24</td><td class="red">-3.52%</td><td></td></tr>
+<tr><td>Amazon</td><td><code>AMZN</code> Nasdaq, premarket (08:00 ET)</td><td class="metric">$251.44</td><td class="red">-2.30%</td><td></td></tr>
+<tr><td>Micron</td><td><code>MU</code> Nasdaq, premarket (07:59 ET)</td><td class="metric">$655.41</td><td class="red">-5.07%</td><td></td></tr>
+<tr><td>Arista Networks</td><td><code>ANET</code> NYSE, premarket (08:00 ET)</td><td class="metric">$180.90</td><td class="red">-4.58%</td><td></td></tr>
+<tr><td>Palantir</td><td><code>PLTR</code> Nasdaq, premarket (08:00 ET)</td><td class="metric">$147.31</td><td class="red">-4.14%</td><td></td></tr>
+<tr><td>CoreWeave</td><td><code>CRWV</code> Nasdaq, premarket (07:59 ET)</td><td class="metric">$42.40</td><td class="red">-5.59%</td><td></td></tr>
+<tr><td>Nebius</td><td><code>NBIS</code> Nasdaq, premarket (08:00 ET)</td><td class="metric">$91.01</td><td class="red">-6.09%</td><td></td></tr>
+<tr><td>SK Hynix</td><td><code>000660.KS</code> Seoul, closed (15:30 KST)</td><td class="metric">₩1,113,000</td><td class="red">-5.92%</td><td></td></tr>
+<tr><td>Samsung Electronics</td><td><code>005930.KS</code> Seoul, closed (15:30 KST)</td><td class="metric">₩183,100</td><td class="red">-7.01%</td><td></td></tr>
+<tr><td>TSMC</td><td><code>2330.TW</code> Taiwan, closed (13:30 CST)</td><td class="metric">NT$2,000</td><td class="red">-4.76%</td><td>Export-rule compliance confirmed (see above)</td></tr>
+<tr><td>ASML</td><td><code>ASML.AS</code> Amsterdam, open (13:45 CET)</td><td class="metric">€1,206</td><td class="red">-6.35%</td><td></td></tr>
+</tbody>
+</table>
+<p>All moves are session-internal: US premarket vs. prior US close; Seoul/Taiwan vs. prior local close; Amsterdam live vs. prior European close.</p>
+<h2 id="thesis-prediction-deltas">Thesis / Prediction Deltas</h2>
+<ul>
+<li><strong>P042 (NVIDIA names a permanent CEO by 2027-06-30) held at 65%.</strong> Context note added: California&#x27;s attorney general is now a third scrutiny body alongside the SEC civil probe and the Senate Banking Committee hearings; none names a CEO or changes the succession timeline.</li>
+<li>No other prediction probability changes. P043 (Anthropic IPO) remains resolved YES from 11/19.</li>
+</ul>
+<h2 id="next-seven-days">Next Seven Days</h2>
+<table>
+<thead><tr><th>Date / time</th><th>Catalyst</th><th>Decision point</th></tr></thead>
+<tbody>
+<tr><td>2026-12-01</td><td>Huang scheduled House Foreign Affairs/Select China/Intelligence interview</td><td>First confirmed closed-door Congressional appearance since his resignation</td></tr>
+<tr><td>2026-12-02</td><td>NVIDIA general counsel Tim Teter scheduled House interview</td><td>Legal/compliance detail on the Megaspeed matter</td></tr>
+<tr><td>2026-12-03</td><td>Huang to testify before Senate Banking Committee</td><td>First public, on-record Huang statement since resignation</td></tr>
+<tr><td>2026-12-10</td><td>Commerce Secretary Lutnick to testify before Senate Banking Committee</td><td>Commerce&#x27;s account of Megaspeed enforcement and export licensing</td></tr>
+<tr><td>~2026-12-16 (unconfirmed)</td><td>Micron fiscal Q1 FY2027 earnings</td><td>Tests the $61.5B ±$1.5B revenue guide set 9/30</td></tr>
+</tbody>
+</table>
+<h2 id="data-quality">Data Quality</h2>
+<p>IBKR wire enrichment was not attempted — no Python venv or TWS instance exists in this environment, consistent with prior sessions. Public/primary baseline (quotes, news discovery, dedicated company searches) completed.</p>
+
+<footer>
+Generated from <code>2026-11-20-update.md</code> by <code>scripts/build_report.py</code>.
+</footer>
+
+</div>
+</body>
+</html>
