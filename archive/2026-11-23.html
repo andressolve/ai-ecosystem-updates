@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Ecosystem Premarket Brief — November 23, 2026</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --panel: #131822;
+    --panel-2: #1a2030;
+    --border: #2a3142;
+    --text: #e6e9ef;
+    --muted: #9aa3b2;
+    --blue: #60a5fa;
+    --green: #34d399;
+    --yellow: #fbbf24;
+    --red: #f87171;
+    --purple: #c084fc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    font-size: 15px;
+  }
+  .container { max-width: 1120px; margin: 0 auto; padding: 32px 24px; }
+  header { padding-bottom: 18px; }
+  h1 { margin: 0 0 8px; font-size: 27px; font-weight: 650; letter-spacing: -0.2px; }
+  .subtitle { color: var(--muted); font-size: 14px; }
+  /* sticky section nav */
+  .toc {
+    position: sticky; top: 0; z-index: 20;
+    margin: 0 0 22px; padding: 11px 0;
+    background: rgba(11,14,20,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px;
+  }
+  .toc a { color: var(--muted); white-space: nowrap; }
+  .toc a:hover { color: var(--blue); text-decoration: none; }
+  h2 { margin: 34px 0 14px; padding-bottom: 7px; border-bottom: 1px solid var(--border); font-size: 20px; scroll-margin-top: 56px; }
+  h3 { margin: 22px 0 8px; color: var(--blue); font-size: 16px; }
+  p { margin: 8px 0; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul, ol { margin: 8px 0; padding-left: 22px; }
+  li { margin: 5px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 14px; }
+  th, td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--panel-2); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  code { background: var(--panel-2); padding: 1px 5px; border-radius: 4px; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.9em; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 26px 0; }
+  .banner {
+    background: #231b12;
+    border: 1px solid rgba(251,191,36,0.45);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 24px;
+  }
+  .banner-label { color: var(--yellow); text-transform: uppercase; font-size: 12px; letter-spacing: 0.8px; font-weight: 700; margin-bottom: 6px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: 8px;
+    padding: 17px 20px;
+    margin: 14px 0;
+  }
+  .card h3 { margin-top: 0; }
+  .card-bull { border-left-color: var(--green); }
+  .card-bear { border-left-color: var(--red); }
+  .card-watch { border-left-color: var(--yellow); }
+  .card-neutral { border-left-color: var(--blue); }
+  .tag { display: inline-block; border-radius: 12px; padding: 2px 9px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-right: 6px; }
+  .tag-bear { color: var(--red); background: rgba(248,113,113,0.13); border: 1px solid rgba(248,113,113,0.3); }
+  .tag-bull { color: var(--green); background: rgba(52,211,153,0.13); border: 1px solid rgba(52,211,153,0.3); }
+  .tag-watch { color: var(--yellow); background: rgba(251,191,36,0.13); border: 1px solid rgba(251,191,36,0.3); }
+  .tag-neutral { color: var(--blue); background: rgba(96,165,250,0.13); border: 1px solid rgba(96,165,250,0.3); }
+  /* probability-delta pills, e.g. 90% -> 95% */
+  .delta { display: inline-block; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.88em; font-weight: 650; padding: 0 6px; border-radius: 5px; white-space: nowrap; }
+  .delta-up { color: var(--green); background: rgba(52,211,153,0.12); }
+  .delta-down { color: var(--red); background: rgba(248,113,113,0.12); }
+  .delta-flat { color: var(--muted); background: rgba(154,163,178,0.12); }
+  .metric { font-family: "SF Mono", "Fira Code", monospace; white-space: nowrap; }
+  .muted { color: var(--muted); }
+  .green { color: var(--green); font-weight: 650; }
+  .red { color: var(--red); font-weight: 650; }
+  .yellow { color: var(--yellow); font-weight: 650; }
+  footer { border-top: 1px solid var(--border); margin-top: 40px; padding-top: 18px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 760px) {
+    .container { padding: 22px 14px; }
+    table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>AI Ecosystem Premarket Brief — November 23, 2026</h1>
+  <div class="subtitle">Type: Premarket · As of: 2026-11-23 08:15 ET / 05:15 PT · Coverage: Public/primary baseline completed; IBKR wire enrichment unavailable in this environment (no TWS/venv).</div>
+</header>
+<nav class="toc"><a href="#bottom-line">Bottom Line</a><a href="#overnight-developments">Overnight Developments</a><a href="#todays-setup">Today&#x27;s Setup</a><a href="#current-market-state">Current Market State</a><a href="#thesis-prediction-deltas">Thesis / Prediction Deltas</a><a href="#next-seven-days">Next Seven Days</a><a href="#data-quality">Data Quality</a></nav>
+<div class="banner"><div class="banner-label">Headline</div><div>AI-stack names are bouncing hard premarket after five straight down sessions, but the move looks broad and sector-wide rather than tied to a single new catalyst — treat it as a relief bounce, not confirmed news-driven buying.</div></div>
+<h2 id="bottom-line">Bottom Line</h2>
+<ul>
+<li>NVDA, AVGO, TSM, MU, CRWV and NBIS are all up 5-8% in US premarket trading. No single verified news item explains the move; most of the recirculating &quot;catalyst&quot; headlines (Trump&#x27;s comment on Jensen Huang, the board&#x27;s refusal) trace back to November 15-17 reporting already in the record, not anything new since Friday&#x27;s close.</li>
+<li>Broadcom is the one name with a genuinely new, dated development: a single-analyst report (Ming-Chi Kuo, Friday 11/20) that Google cut 2027 orders for Broadcom&#x27;s TPU v8i chip by ~20%, shifting volume to MediaTek. Unconfirmed by either company, but it drove most of AVGO&#x27;s ~12% Friday decline and is now logged to the watchlist and thesis files.</li>
+<li>NVIDIA&#x27;s governance story deepened in specificity (NYT/ABC, 11/22-23: intelligence tracked Alice Huang&#x27;s contacts with China&#x27;s Ministry of State Security) without changing the substance of what&#x27;s already known. No prediction probability change.</li>
+<li>Treasury Secretary Bessent&#x27;s self-set 10-day deadline for NVIDIA&#x27;s board and outside counsel to answer export-control questions runs out around November 25 — this week.</li>
+</ul>
+<h2 id="overnight-developments">Overnight Developments</h2>
+<div class="card card-bear">
+<h3><span class="tag tag-bear">bear</span> Broadcom: Google reportedly cut 2027 TPU orders ~20%, shifting to MediaTek</h3>
+<p>Ming-Chi Kuo of TF International Securities published a supply-chain survey (Friday, 11/20) estimating Google cut 2027 shipments of its Broadcom-designed TPU v8i (&quot;Sunfish&quot;) series by roughly 20% (about 1 million units), with the volume shifting to MediaTek&#x27;s competing v8t design. Neither Google nor Broadcom has commented or changed guidance. AVGO fell about 12% Friday (worst day since June 4) in a broad chip-sector selloff, so the analyst report can&#x27;t be cleanly isolated from the index-wide move, but coverage attributes meaningful idiosyncratic underperformance to it. This is the first quantified, dated instance of the MediaTek-diversification risk already tracked in the Broadcom file (the &quot;COT&quot; risk) actually moving volume, rather than remaining a roadmap debate. It says nothing about total TPU demand or about custom silicon&#x27;s standing versus NVIDIA — Google reallocating between two custom-silicon vendors is a Broadcom-specific share question, not a compute-demand one. Logged to <code>watchlist/tier1/avgo.md</code> and <code>theses/computational-abundance.md</code>. <a href="https://247wallst.com/investing/2026/11/20/broadcom-plunges-11-as-google-reportedly-shifts-tpu-orders-to-mediatek-overshadowing-goldmans-460-target-marvell-sinks-10/">TF International note, via 24/7 Wall St.</a></p>
+</div>
+<div class="card card-watch">
+<h3><span class="tag tag-watch">watch</span> NVIDIA: Alice Huang reporting deepens, Bessent&#x27;s deadline lands this week</h3>
+<p>The New York Times and ABC News (11/22-23) reported that US intelligence tracked contacts between Alice Huang — the Megaspeed executive at the center of the export-control allegations — and China&#x27;s Ministry of State Security during the period of her relationship with Jensen Huang. This adds specificity to the MSS-recruitment allegation already known since late October; it is not a new allegation. NVIDIA has said Megaspeed received only ordinary business information, no trade secrets, and nothing relevant to national security. No source reviewed shows NVIDIA itself had knowledge of any intelligence activity. Separately, premarket headlines recirculating Trump&#x27;s comment that he &quot;would not mind&quot; Huang&#x27;s return, and framing it as the cause of today&#x27;s rally, are not new reporting — that comment and board chair Harvey Jones&#x27;s refusal to reinstate Huang both date to the November 15-17 window already logged. Treasury Secretary Bessent&#x27;s self-set 10-day deadline (from a November 15 Fox News interview) for the board and its outside counsel to answer export-control compliance questions runs out around November 25, this week. No prediction probability change — P042 holds at 65%. <a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxPVzVyaXo0aXJLT2VuWXdDRlJIWEw1RDBlTWtxcG9RN2ZydEN0T2U5dnlCRnJXWFVKeVZ2X2JXUmpHUTQ5d0tCNHFGc0VKZHE4TFdVQXFId1k5YkRGU29pdF9VM3FES1ZDbEItTW9rQWRYQTVTakxtMG1uVnZwV1ZTRmc4XzV0MmtVX2NWYUhvWHM?oc=5">NYT</a> · <a href="https://www.aljazeera.com/news/2026/11/15/us-treasury-chief-calls-for-outsider-to-lead-embattled-tech-firm-nvidia">Bessent deadline, Al Jazeera</a></p>
+</div>
+<div class="card card-neutral">
+<h3><span class="tag tag-neutral">neutral</span> A circulating &quot;AI proved the Riemann Hypothesis&quot; headline is a mischaracterization</h3>
+<p>Headlines this weekend (&quot;Meta AI Chief Says Superintelligence Is Arriving Following AI Proof of Riemann Hypothesis&quot;) and a disputing mathematician&#x27;s response both trace back to an Anthropic research post from <strong>August 2026</strong>, not a new result. That post never claimed a proof of the Riemann Hypothesis: it reported an unconditional improvement to a zero-density bound (the share of zeros known to lie on the critical line rose from 41.6% to 67.2%), reviewed internally and by two outside mathematicians (Brian Conrey, Dan Goldston), with a Lean-formalized component. The mathematician named in this weekend&#x27;s dispute headline does not appear to be connected to Anthropic&#x27;s actual work. This is a hype-cycle distortion of old, more modest evidence, not a new scientific-AI data point — worth flagging precisely because the computational-abundance thesis is supposed to be tested by evidence like this, and overstated claims are the pattern the thesis review is built to catch. No file changes; nothing here moves any tracker.</p>
+</div>
+<h2 id="todays-setup">Today&#x27;s Setup</h2>
+<table>
+<thead><tr><th>Time</th><th>Catalyst</th><th>What would matter</th><th>Thesis / company</th></tr></thead>
+<tbody>
+<tr><td>Nov 24 (AMC)</td><td>Dell Technologies Q3 FY2027 earnings</td><td>AI server shipment volume/backlog and memory-cost commentary — a read on enterprise AI infrastructure demand and HBM/DRAM pricing pass-through</td><td>Demand-side cross-check; memory thesis</td></tr>
+<tr><td>~Nov 25</td><td>Bessent&#x27;s self-set deadline for NVIDIA board/outside counsel to answer export-control questions</td><td>Whether NVIDIA or the board responds publicly, and what it says about Megaspeed/China sales compliance</td><td>NVDA governance, P042</td></tr>
+</tbody>
+</table>
+<h2 id="current-market-state">Current Market State</h2>
+<table>
+<thead><tr><th>Company</th><th>Listing / session</th><th>Current</th><th>Session move</th><th>New information</th></tr></thead>
+<tbody>
+<tr><td>NVIDIA</td><td>NVDA, Nasdaq premarket</td><td class="metric">$135.55</td><td class="green">+7.98%</td><td></td></tr>
+<tr><td>Broadcom</td><td>AVGO, Nasdaq premarket</td><td class="metric">$319.06</td><td class="green">+4.81%</td><td>See TPU order-cut item above</td></tr>
+<tr><td>TSMC</td><td>TSM ADR, NYSE premarket</td><td class="metric">$339.46</td><td class="green">+6.51%</td><td></td></tr>
+<tr><td>TSMC (primary)</td><td>2330.TW, Taiwan, closed</td><td class="metric">NT$2,030</td><td class="green">+1.50%</td><td></td></tr>
+<tr><td>Microsoft</td><td>MSFT, Nasdaq premarket</td><td class="metric">$498.70</td><td class="green">+2.93%</td><td></td></tr>
+<tr><td>Alphabet</td><td>GOOG, Nasdaq premarket</td><td class="metric">$277.29</td><td class="green">+5.03%</td><td></td></tr>
+<tr><td>Meta</td><td>META, Nasdaq premarket</td><td class="metric">$580.10</td><td class="green">+3.43%</td><td></td></tr>
+<tr><td>Amazon</td><td>AMZN, Nasdaq premarket</td><td class="metric">$254.15</td><td class="green">+2.97%</td><td></td></tr>
+<tr><td>Micron</td><td>MU, Nasdaq premarket</td><td class="metric">$625.42</td><td class="green">+5.20%</td><td></td></tr>
+<tr><td>SK Hynix</td><td>000660.KS, Seoul, closed</td><td class="metric">₩1,085,000</td><td class="red">-2.52%</td><td></td></tr>
+<tr><td>Samsung Electronics</td><td>005930.KS, Seoul, closed</td><td class="metric">₩177,500</td><td class="red">-3.06%</td><td></td></tr>
+<tr><td>ASML</td><td>ASML.AS, Amsterdam, open</td><td class="metric">€1,221</td><td class="green">+4.52%</td><td></td></tr>
+<tr><td>CoreWeave</td><td>CRWV, Nasdaq premarket</td><td class="metric">$42.09</td><td class="green">+6.53%</td><td></td></tr>
+<tr><td>Nebius</td><td>NBIS, Nasdaq premarket</td><td class="metric">$87.90</td><td class="green">+8.10%</td><td></td></tr>
+<tr><td>Arista Networks</td><td>ANET, Nasdaq premarket</td><td class="metric">$174.50</td><td class="green">+4.10%</td><td></td></tr>
+<tr><td>Palantir</td><td>PLTR, Nasdaq premarket</td><td class="metric">$149.96</td><td class="green">+4.51%</td><td></td></tr>
+</tbody>
+</table>
+<p>Quotes as of 2026-11-23 08:00-08:01 ET (US names, premarket) and local session close/open times for Seoul, Taiwan and Amsterdam. The Seoul close (-2.52%/-3.06%) predates the US premarket rally by several hours — the two moves are not necessarily inconsistent; Seoul&#x27;s session ended before whatever is driving the US bounce took hold. VanEck Semiconductor ETF (SMH), not in the standard watchlist table, was $423.25 premarket (+5.80%) versus Friday&#x27;s $400.06 close — comfortably above the $396.85 intraday low that P055 (SMH holds this floor through Dec 21) tracks. Premarket trades don&#x27;t count toward that prediction&#x27;s regular-session resolution criterion.</p>
+<h2 id="thesis-prediction-deltas">Thesis / Prediction Deltas</h2>
+<p>No prediction probabilities changed. P042 (NVIDIA permanent CEO by 2027-06-30) holds at 65% — nothing in this weekend&#x27;s reporting is new to the succession question. New thesis evidence row added for the Broadcom/Google TPU report (two-sided: Moderate for Broadcom specifically, neutral for the broader custom-silicon-versus-NVIDIA question).</p>
+<h2 id="next-seven-days">Next Seven Days</h2>
+<table>
+<thead><tr><th>Date / time</th><th>Catalyst</th><th>Decision point</th></tr></thead>
+<tbody>
+<tr><td>Nov 24 (AMC)</td><td>Dell Technologies Q3 FY2027 earnings</td><td>AI server/backlog read-through</td></tr>
+<tr><td>~Nov 25</td><td>Bessent&#x27;s 10-day deadline for NVIDIA board/counsel answers</td><td>Whether NVIDIA responds publicly on export-control compliance</td></tr>
+<tr><td>Dec 3</td><td>Senate Banking Committee hearing, Jensen Huang</td><td>Testimony on chip-smuggling/export-control enforcement</td></tr>
+<tr><td>Dec 8</td><td>P036 resolution date</td><td>Independent verification of OpenAI&#x27;s Navier-Stokes claim</td></tr>
+<tr><td>Dec 10</td><td>Senate Banking Committee hearing, Commerce Secretary Lutnick</td><td>Testimony on export-control enforcement</td></tr>
+</tbody>
+</table>
+<h2 id="data-quality">Data Quality</h2>
+<p>IBKR wire enrichment unavailable in this environment (no TWS/venv); public/primary baseline completed. Several Google News RSS categories (Microsoft, Meta, TSMC, Micron, SK Hynix, Arista, CoreWeave, AI infrastructure, AI policy) returned HTTP 429 from the automated feed and were backfilled with direct web searches — no material misses identified in that backfill.</p>
+
+<footer>
+Generated from <code>2026-11-23-update.md</code> by <code>scripts/build_report.py</code>.
+</footer>
+
+</div>
+</body>
+</html>
