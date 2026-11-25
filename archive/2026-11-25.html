@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Ecosystem Premarket Brief — November 25, 2026</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --panel: #131822;
+    --panel-2: #1a2030;
+    --border: #2a3142;
+    --text: #e6e9ef;
+    --muted: #9aa3b2;
+    --blue: #60a5fa;
+    --green: #34d399;
+    --yellow: #fbbf24;
+    --red: #f87171;
+    --purple: #c084fc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    font-size: 15px;
+  }
+  .container { max-width: 1120px; margin: 0 auto; padding: 32px 24px; }
+  header { padding-bottom: 18px; }
+  h1 { margin: 0 0 8px; font-size: 27px; font-weight: 650; letter-spacing: -0.2px; }
+  .subtitle { color: var(--muted); font-size: 14px; }
+  /* sticky section nav */
+  .toc {
+    position: sticky; top: 0; z-index: 20;
+    margin: 0 0 22px; padding: 11px 0;
+    background: rgba(11,14,20,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px;
+  }
+  .toc a { color: var(--muted); white-space: nowrap; }
+  .toc a:hover { color: var(--blue); text-decoration: none; }
+  h2 { margin: 34px 0 14px; padding-bottom: 7px; border-bottom: 1px solid var(--border); font-size: 20px; scroll-margin-top: 56px; }
+  h3 { margin: 22px 0 8px; color: var(--blue); font-size: 16px; }
+  p { margin: 8px 0; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul, ol { margin: 8px 0; padding-left: 22px; }
+  li { margin: 5px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 14px; }
+  th, td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--panel-2); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  code { background: var(--panel-2); padding: 1px 5px; border-radius: 4px; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.9em; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 26px 0; }
+  .banner {
+    background: #231b12;
+    border: 1px solid rgba(251,191,36,0.45);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 24px;
+  }
+  .banner-label { color: var(--yellow); text-transform: uppercase; font-size: 12px; letter-spacing: 0.8px; font-weight: 700; margin-bottom: 6px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: 8px;
+    padding: 17px 20px;
+    margin: 14px 0;
+  }
+  .card h3 { margin-top: 0; }
+  .card-bull { border-left-color: var(--green); }
+  .card-bear { border-left-color: var(--red); }
+  .card-watch { border-left-color: var(--yellow); }
+  .card-neutral { border-left-color: var(--blue); }
+  .tag { display: inline-block; border-radius: 12px; padding: 2px 9px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-right: 6px; }
+  .tag-bear { color: var(--red); background: rgba(248,113,113,0.13); border: 1px solid rgba(248,113,113,0.3); }
+  .tag-bull { color: var(--green); background: rgba(52,211,153,0.13); border: 1px solid rgba(52,211,153,0.3); }
+  .tag-watch { color: var(--yellow); background: rgba(251,191,36,0.13); border: 1px solid rgba(251,191,36,0.3); }
+  .tag-neutral { color: var(--blue); background: rgba(96,165,250,0.13); border: 1px solid rgba(96,165,250,0.3); }
+  /* probability-delta pills, e.g. 90% -> 95% */
+  .delta { display: inline-block; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.88em; font-weight: 650; padding: 0 6px; border-radius: 5px; white-space: nowrap; }
+  .delta-up { color: var(--green); background: rgba(52,211,153,0.12); }
+  .delta-down { color: var(--red); background: rgba(248,113,113,0.12); }
+  .delta-flat { color: var(--muted); background: rgba(154,163,178,0.12); }
+  .metric { font-family: "SF Mono", "Fira Code", monospace; white-space: nowrap; }
+  .muted { color: var(--muted); }
+  .green { color: var(--green); font-weight: 650; }
+  .red { color: var(--red); font-weight: 650; }
+  .yellow { color: var(--yellow); font-weight: 650; }
+  footer { border-top: 1px solid var(--border); margin-top: 40px; padding-top: 18px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 760px) {
+    .container { padding: 22px 14px; }
+    table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>AI Ecosystem Premarket Brief — November 25, 2026</h1>
+  <div class="subtitle">Type: Premarket · As of: 2026-11-25, ~06:00 MST / 08:00 ET · Coverage: Public/primary baseline completed; IBKR wire enrichment not attempted (no TWS/venv in this environment, consistent with every recent session).</div>
+</header>
+<nav class="toc"><a href="#bottom-line">Bottom Line</a><a href="#overnight-developments">Overnight Developments</a><a href="#todays-setup">Today&#x27;s Setup</a><a href="#current-market-state">Current Market State</a><a href="#thesis-prediction-deltas">Thesis / Prediction Deltas</a><a href="#next-seven-days">Next Seven Days</a><a href="#data-quality">Data Quality</a></nav>
+<div class="banner"><div class="banner-label">Headline</div><div>A broad AI-stack selloff resumed overnight — tariff concerns and a resurfacing &quot;has the AI memory boom peaked&quot; debate erased most of Monday&#x27;s governance-relief rally (NVDA -5.76% premarket, Samsung -9.87% and SK Hynix -11.05% in a completed Seoul session, SoftBank -15% in its worst prolonged decline since 2008) — even as Dell posted a record $132.3B AI order backlog, and new reporting raised a direct conflict-of-interest question about Trump&#x27;s own NVIDIA shareholding the same week he pushed the board to reinstate Jensen Huang.</div></div>
+<h2 id="bottom-line">Bottom Line</h2>
+<ul>
+<li>The AI/semis/neocloud complex is selling off broadly again, on top of Monday&#x27;s partial reversal: NVDA -5.76% premarket ($146.43), Broadcom -3.91%, TSMC ADR -4.88%, Micron -6.73%, CoreWeave and Nebius -6-7% premarket (reportedly down double digits intraday Monday-Tuesday per secondary coverage). In Asia, where the primary session is complete, Samsung closed -9.87% and SK Hynix -11.05% in Seoul; TSMC closed -3.59% in Taipei. SoftBank fell as much as 15% — its worst prolonged decline since 2008. Coverage ties the move to resurfacing tariff concerns plus a renewed &quot;AI memory boom has peaked&quot; debate, not a single new company-specific shock.</li>
+<li>Dell&#x27;s Q3 FY2027 results (SEC 8-K, after the 11/24 close) are the cleanest hard demand data point of the week: record $54.9B revenue (+103% YoY), a $132.3B AI order backlog (up from $95B last quarter) on $60.2B of new bookings, and a raised FY2027 revenue guide of $202.0B (+78% YoY). This is a genuine divergence from the week&#x27;s risk-off tape — equity markets are selling the AI-infrastructure complex while the demand-side print from one of its largest integrators just got stronger.</li>
+<li>Financing-fragility evidence continues to accumulate: Bloomberg, Reuters and the FT report ING (~$500M, including a Stargate New Mexico slice), Société Générale (~$300M, Oracle-linked Wisconsin/Texas projects) and, per a single Bloomberg-sourced account not yet independently confirmed, HSBC (~$300M, Oracle-linked New Mexico) have all put AI-data-center-linked loans up for sale at a discount since mid-November. This is banks shifting risk off their own balance sheets, not a default — but it is the most concrete new financing-fragility data point since the CoreWeave/Oracle CDS widening logged in October.</li>
+<li>NVIDIA&#x27;s governance story gained a political dimension: CBS News and a WSJ opinion piece report Trump held millions of dollars of NVDA stock while personally pressing the board to reinstate Huang, raising a disclosed conflict-of-interest question. Treasury Secretary Bessent&#x27;s self-set 10-day deadline (from his November 15 remarks) for the NVIDIA board and outside counsel to answer export-control questions lands today; no public response has been reported. Separately, a single-sourced report says firms linked to Alice Huang — the same figure already flagged in this thesis&#x27;s 11/18 entry over a 2022 NVIDIA-Alibaba introduction — pledged $270M in AI servers for China-related loans; this needs primary-source verification before being treated as settled.</li>
+<li>US markets are closed Thursday 11/26 for Thanksgiving and hold a shortened session Friday 11/27.</li>
+</ul>
+<h2 id="overnight-developments">Overnight Developments</h2>
+<div class="card card-bear">
+<h3><span class="tag tag-bear">bear</span> Tariff concerns and a renewed &quot;AI memory boom peaked&quot; debate drive a broad, multi-session selloff</h3>
+<p>The AI/semis/neocloud complex extended Tuesday&#x27;s partial reversal of Monday&#x27;s reinstatement rally. NVDA -5.76% premarket, Broadcom -3.91%, TSMC ADR -4.88%, Microsoft -3.22%, Alphabet -3.59%, Amazon -2.76%, Arista -4.31%, Palantir -4.45%, CoreWeave -6.82% and Nebius -6.37% premarket. In completed Asian sessions, Samsung closed -9.87% and SK Hynix -11.05% in Seoul, and TSMC closed -3.59% in Taipei. SoftBank (an OpenAI investor and Arm owner) fell as much as 15%, its worst prolonged decline since 2008. Secondary coverage attributes the move to resurfacing US tariff concerns compounding an intensifying sell-side and press debate over whether the memory cycle has peaked — Micron fell again (-6.73% premarket) amid aggregator reports of a sharply cut price target, though we could not independently verify the specific firm or magnitude of that cut against a named sell-side note; treat it as an unconfirmed lead, not a sourced fact. No single new idiosyncratic catalyst was identified; this is logged because the breadth and magnitude (a completed Korean session down double digits, SoftBank&#x27;s worst prolonged decline in nearly two decades) clear the materiality bar for today&#x27;s setup, not because any individual headline is new.</p>
+</div>
+<div class="card card-bear">
+<h3><span class="tag tag-bear">bear</span> Banks continue shedding AI-data-center loan exposure at a discount</h3>
+<p>Bloomberg, Reuters and the Financial Times report ING shopped roughly $500M of data-center loans (bids due 11/19, including a $25M slice tied to the Stargate campus in New Mexico plus Vantage- and CyrusOne-linked debt) and Société Générale offered roughly $300M of Oracle-linked debt tied to Wisconsin and Texas projects — together reported as up to $800M by the FT. A separate, single Bloomberg-sourced account (not independently corroborated here) puts HSBC&#x27;s sale of an Oracle-linked New Mexico loan slice at roughly $300M. Analysts quoted in the FT coverage describe this as shifting risk rather than eliminating it, and the sales reportedly came at steep discounts. This is the clearest concrete financing-fragility data point since the CoreWeave/Oracle CDS widening logged on this thesis in mid-October (CoreWeave&#x27;s 5-year CDS had moved past 1,000bps, implying a reported ~63% five-year default probability, versus roughly 30% a year earlier) — banks are not waiting for a credit event before de-risking.</p>
+</div>
+<div class="card card-bull">
+<h3><span class="tag tag-bull">bull</span> Dell&#x27;s Q3 FY2027 beat is the first hard demand read since the governance reversal</h3>
+<p>Dell&#x27;s SEC 8-K (after the close, 11/24) reports record quarterly revenue of $54.9B (+103% YoY), a $132.3B AI order backlog (up from $95B entering the quarter) built on $60.2B of new AI orders, and a raised FY2027 revenue guide of $202.0B (+78% YoY) — up sharply from the roughly $140B guide given at the start of the fiscal year. Dell said every order was vetted for customer quality and for access to capital, land and power, and that more than 7,500 customers are now deploying Dell AI Factories. Non-GAAP operating expenses fell to 7% of revenue, which Dell&#x27;s CFO called the lowest in the company&#x27;s 42-year history. This print lands the same week equity markets are selling the AI-infrastructure complex on demand-peak and financing-fragility worries — a genuine divergence between what one of the sector&#x27;s largest integrators is reporting booked and what the market is pricing, worth tracking rather than resolving either way today.</p>
+</div>
+<div class="card card-watch">
+<h3><span class="tag tag-watch">watch</span> NVIDIA governance gains a political conflict-of-interest dimension as Bessent&#x27;s deadline lands</h3>
+<p>CBS News and a Wall Street Journal opinion piece report that Trump held millions of dollars of NVDA stock while personally pressing NVIDIA&#x27;s board to reinstate Huang as CEO — a disclosed conflict-of-interest question layered on top of an already-unusual sequence (the board reinstated Huang on 11/23 citing &quot;senior levels of the United States government,&quot; six days after Chair Harvey Jones told analysts the board did not intend to reinstate him). Separately, Senate Minority Leader Schumer has demanded &quot;a full accounting&quot; of Trump&#x27;s defense of Huang, and the House Select Committee on China has reportedly widened its inquiry to seek testimony from both Huang and Trump administration officials — an escalation from the narrower closed-door-briefing request logged previously. Treasury Secretary Bessent&#x27;s self-set 10-day deadline (from his November 15 Fox News remarks) for the NVIDIA board and outside counsel to answer export-control questions over the Megaspeed matter lands today; no public response from NVIDIA or its outside counsel has been reported as of this writing. None of this affects the SEC civil disclosure probe, the California AG inquiry, or the Senate Banking hearings already scheduled for Huang (12/3) and Lutnick (12/10). A single-sourced HuggingNews item reports that firms linked to &quot;Alice Huang&quot; — the same name already flagged in this thesis&#x27;s 11/18 entry over a 2022 NVIDIA sales-staff introduction connecting Alibaba to Alice Huang, predating that year&#x27;s export curbs — pledged $270M in AI servers for China-related loans; this has not been independently verified against a primary source and should be checked before being treated as a confirmed data point.</p>
+</div>
+<h2 id="todays-setup">Today&#x27;s Setup</h2>
+<table>
+<thead><tr><th>Time</th><th>Catalyst</th><th>What would matter</th><th>Thesis / company</th></tr></thead>
+<tbody>
+<tr><td>Nov 25 (today)</td><td>Bessent&#x27;s self-set 10-day deadline for NVIDIA board/outside counsel to answer export-control questions</td><td>Whether NVIDIA or its outside counsel responds publicly, and whether it changes the dynamic heading into the December Senate Banking hearings</td><td>NVDA governance</td></tr>
+<tr><td>Nov 26</td><td>US markets closed (Thanksgiving)</td><td>—</td><td>—</td></tr>
+<tr><td>Nov 27</td><td>Shortened post-Thanksgiving session</td><td>Low-volume, light-data session</td><td>—</td></tr>
+<tr><td>Dec 1</td><td>Democratic lawmakers&#x27; self-set accountability deadline for Commerce Secretary Lutnick</td><td>Whether Commerce responds on the Megaspeed entity-list delay</td><td>NVDA governance, export controls</td></tr>
+<tr><td>Dec 3</td><td>Senate Banking Committee: Jensen Huang testimony</td><td>Export-control enforcement, the foreign-intelligence-targeting allegation, board governance</td><td>NVDA</td></tr>
+<tr><td>Dec 10</td><td>Senate Banking Committee: Howard Lutnick testimony</td><td>Commerce Department export-enforcement accountability</td><td>NVDA, export controls</td></tr>
+<tr><td>~Dec 10</td><td>TSMC November monthly revenue</td><td>Watch for continuation of the record run (October was NT$586.89B)</td><td>TSM</td></tr>
+</tbody>
+</table>
+<h2 id="current-market-state">Current Market State</h2>
+<table>
+<thead><tr><th>Company</th><th>Listing / session</th><th>Current</th><th>Session move</th><th>New information</th></tr></thead>
+<tbody>
+<tr><td>NVIDIA</td><td>NVDA, Nasdaq, premarket</td><td class="metric">$146.43</td><td class="red">-5.76%</td><td>See selloff and governance items above</td></tr>
+<tr><td>Broadcom</td><td>AVGO, Nasdaq, premarket</td><td class="metric">$289.32</td><td class="red">-3.91%</td><td></td></tr>
+<tr><td>TSMC ADR</td><td>TSM, NYSE, premarket</td><td class="metric">$332.15</td><td class="red">-4.88%</td><td></td></tr>
+<tr><td>TSMC (primary)</td><td>2330.TW, Taiwan, closed</td><td class="metric">NT$2,150</td><td class="red">-3.59%</td><td>Continuation of Monday&#x27;s partial-reversal theme</td></tr>
+<tr><td>Microsoft</td><td>MSFT, Nasdaq, premarket</td><td class="metric">$480.18</td><td class="red">-3.22%</td><td></td></tr>
+<tr><td>Alphabet</td><td>GOOG, Nasdaq, premarket</td><td class="metric">$266.66</td><td class="red">-3.59%</td><td></td></tr>
+<tr><td>Meta</td><td>META, Nasdaq, premarket</td><td class="metric">$581.12</td><td class="red">-1.47%</td><td></td></tr>
+<tr><td>Amazon</td><td>AMZN, Nasdaq, premarket</td><td class="metric">$245.33</td><td class="red">-2.76%</td><td></td></tr>
+<tr><td>Micron</td><td>MU, Nasdaq, premarket</td><td class="metric">$587.40</td><td class="red">-6.73%</td><td>Memory-cycle-peak debate intensifying; see note above</td></tr>
+<tr><td>SK Hynix</td><td>000660.KS, Seoul, closed</td><td class="metric">₩1,030,000</td><td class="red">-11.05%</td><td></td></tr>
+<tr><td>Samsung Electronics</td><td>005930.KS, Seoul, closed</td><td class="metric">₩170,700</td><td class="red">-9.87%</td><td></td></tr>
+<tr><td>ASML</td><td>ASML.AS, Amsterdam, open</td><td class="metric">€1,161</td><td class="red">-3.36%</td><td></td></tr>
+<tr><td>CoreWeave</td><td>CRWV, Nasdaq, premarket</td><td class="metric">$39.70</td><td class="red">-6.82%</td><td></td></tr>
+<tr><td>Nebius</td><td>NBIS, Nasdaq, premarket</td><td class="metric">$81.75</td><td class="red">-6.37%</td><td></td></tr>
+<tr><td>Arista Networks</td><td>ANET, NYSE, premarket</td><td class="metric">$161.30</td><td class="red">-4.31%</td><td></td></tr>
+<tr><td>Palantir</td><td>PLTR, Nasdaq, premarket</td><td class="metric">$154.00</td><td class="red">-4.45%</td><td></td></tr>
+</tbody>
+</table>
+<h2 id="thesis-prediction-deltas">Thesis / Prediction Deltas</h2>
+<ul>
+<li>No prediction probability changes today. P055 (SMH holds its November 20 low of $396.85 through December 21) was not re-tested this run — today&#x27;s semis premarket weakness is suggestive but we did not obtain a verified current SMH quote; check before next update.</li>
+<li>Logged to <code>theses/computational-abundance.md</code>: a new Disconfirming Evidence Tracker entry for the bank AI-data-center loan sales (financing-fragility axis), and a new Supporting Evidence Tracker entry for Dell&#x27;s record AI backlog and raised guide.</li>
+</ul>
+<h2 id="next-seven-days">Next Seven Days</h2>
+<table>
+<thead><tr><th>Date / time</th><th>Catalyst</th><th>Decision point</th></tr></thead>
+<tbody>
+<tr><td>Nov 25</td><td>Bessent&#x27;s 10-day deadline for NVIDIA board/counsel response</td><td>Public response or continued silence</td></tr>
+<tr><td>Nov 26</td><td>Thanksgiving (US markets closed)</td><td>—</td></tr>
+<tr><td>Nov 27</td><td>Shortened US session</td><td>—</td></tr>
+<tr><td>Dec 1</td><td>Lutnick accountability deadline (Democratic lawmakers)</td><td>Commerce Department response</td></tr>
+<tr><td>Dec 3</td><td>Senate Banking Committee hearing — Jensen Huang</td><td>Testimony on export-control enforcement and governance</td></tr>
+<tr><td>Dec 8</td><td>P036 (Navier-Stokes verification) resolution date</td><td>Prediction log</td></tr>
+<tr><td>Dec 10</td><td>Senate Banking Committee hearing — Howard Lutnick</td><td>Testimony on Commerce enforcement</td></tr>
+<tr><td>~Dec 10</td><td>TSMC November monthly revenue</td><td>Record-run continuation check</td></tr>
+</tbody>
+</table>
+<h2 id="data-quality">Data Quality</h2>
+<p>IBKR wire enrichment not attempted; no TWS/venv available in this environment, consistent with every recent session. The specific claim of a sharply cut Micron price target (circulating via aggregator coverage) and the Alice Huang-linked $270M China-loan report (single-sourced via HuggingNews) could not be independently verified this run and are flagged as unconfirmed leads above, not sourced facts.</p>
+
+<footer>
+Generated from <code>2026-11-25-update.md</code> by <code>scripts/build_report.py</code>.
+</footer>
+
+</div>
+</body>
+</html>
