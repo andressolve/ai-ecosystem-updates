@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Ecosystem Premarket Brief — November 26, 2026</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --panel: #131822;
+    --panel-2: #1a2030;
+    --border: #2a3142;
+    --text: #e6e9ef;
+    --muted: #9aa3b2;
+    --blue: #60a5fa;
+    --green: #34d399;
+    --yellow: #fbbf24;
+    --red: #f87171;
+    --purple: #c084fc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    font-size: 15px;
+  }
+  .container { max-width: 1120px; margin: 0 auto; padding: 32px 24px; }
+  header { padding-bottom: 18px; }
+  h1 { margin: 0 0 8px; font-size: 27px; font-weight: 650; letter-spacing: -0.2px; }
+  .subtitle { color: var(--muted); font-size: 14px; }
+  /* sticky section nav */
+  .toc {
+    position: sticky; top: 0; z-index: 20;
+    margin: 0 0 22px; padding: 11px 0;
+    background: rgba(11,14,20,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px;
+  }
+  .toc a { color: var(--muted); white-space: nowrap; }
+  .toc a:hover { color: var(--blue); text-decoration: none; }
+  h2 { margin: 34px 0 14px; padding-bottom: 7px; border-bottom: 1px solid var(--border); font-size: 20px; scroll-margin-top: 56px; }
+  h3 { margin: 22px 0 8px; color: var(--blue); font-size: 16px; }
+  p { margin: 8px 0; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul, ol { margin: 8px 0; padding-left: 22px; }
+  li { margin: 5px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 14px; }
+  th, td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--panel-2); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  code { background: var(--panel-2); padding: 1px 5px; border-radius: 4px; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.9em; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 26px 0; }
+  .banner {
+    background: #231b12;
+    border: 1px solid rgba(251,191,36,0.45);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 24px;
+  }
+  .banner-label { color: var(--yellow); text-transform: uppercase; font-size: 12px; letter-spacing: 0.8px; font-weight: 700; margin-bottom: 6px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: 8px;
+    padding: 17px 20px;
+    margin: 14px 0;
+  }
+  .card h3 { margin-top: 0; }
+  .card-bull { border-left-color: var(--green); }
+  .card-bear { border-left-color: var(--red); }
+  .card-watch { border-left-color: var(--yellow); }
+  .card-neutral { border-left-color: var(--blue); }
+  .tag { display: inline-block; border-radius: 12px; padding: 2px 9px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-right: 6px; }
+  .tag-bear { color: var(--red); background: rgba(248,113,113,0.13); border: 1px solid rgba(248,113,113,0.3); }
+  .tag-bull { color: var(--green); background: rgba(52,211,153,0.13); border: 1px solid rgba(52,211,153,0.3); }
+  .tag-watch { color: var(--yellow); background: rgba(251,191,36,0.13); border: 1px solid rgba(251,191,36,0.3); }
+  .tag-neutral { color: var(--blue); background: rgba(96,165,250,0.13); border: 1px solid rgba(96,165,250,0.3); }
+  /* probability-delta pills, e.g. 90% -> 95% */
+  .delta { display: inline-block; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.88em; font-weight: 650; padding: 0 6px; border-radius: 5px; white-space: nowrap; }
+  .delta-up { color: var(--green); background: rgba(52,211,153,0.12); }
+  .delta-down { color: var(--red); background: rgba(248,113,113,0.12); }
+  .delta-flat { color: var(--muted); background: rgba(154,163,178,0.12); }
+  .metric { font-family: "SF Mono", "Fira Code", monospace; white-space: nowrap; }
+  .muted { color: var(--muted); }
+  .green { color: var(--green); font-weight: 650; }
+  .red { color: var(--red); font-weight: 650; }
+  .yellow { color: var(--yellow); font-weight: 650; }
+  footer { border-top: 1px solid var(--border); margin-top: 40px; padding-top: 18px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 760px) {
+    .container { padding: 22px 14px; }
+    table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>AI Ecosystem Premarket Brief — November 26, 2026</h1>
+  <div class="subtitle">Type: Premarket · As of: 2026-11-26, ~06:30 MST / 08:30 ET · Coverage: Public/primary baseline completed; IBKR wire enrichment unavailable (no TWS/venv in this environment, consistent with every recent session). US cash equities are closed today for the Thanksgiving holiday.</div>
+</header>
+<nav class="toc"><a href="#bottom-line">Bottom Line</a><a href="#overnight-developments">Overnight Developments</a><a href="#todays-setup">Today&#x27;s Setup</a><a href="#current-market-state">Current Market State</a><a href="#thesis-prediction-deltas">Thesis / Prediction Deltas</a><a href="#next-seven-days">Next Seven Days</a><a href="#data-quality">Data Quality</a></nav>
+<div class="banner"><div class="banner-label">Headline</div><div>NVIDIA&#x27;s governance crisis reopened just three days after the board&#x27;s unanimous reinstatement of Jensen Huang: the New York Times reported a second disclosed personal relationship (with VP of Healthcare Kimberly Powell, who reports to him), multiple outlets report the board is said to be weighing another reversal, and S&amp;P Global placed NVDA&#x27;s AA credit rating on CreditWatch Negative over governance risk — none of it yet confirmed by NVIDIA itself.</div></div>
+<h2 id="bottom-line">Bottom Line</h2>
+<ul>
+<li>NVIDIA&#x27;s board reinstated Huang unanimously on November 23, citing national-security input from &quot;senior levels of the United States government.&quot; Three days later, the New York Times reported a second affair — with Kimberly Powell, NVIDIA&#x27;s VP of Healthcare — on top of the already-known Alice Huang/Megaspeed matter, and WSJ, Reuters, ABC News, Fox Business and the Washington Post report the board is said to be preparing to reconvene on his status. None of this is confirmed by an NVIDIA 8-K or press release as of this writing; treat it as reported, not company-confirmed.</li>
+<li>Separately, and on firmer footing: S&amp;P Global placed NVIDIA&#x27;s AA long-term issuer rating on CreditWatch Negative, citing governance, key-man and board-independence risk — a distinct and more severe action than Moody&#x27;s November 18 move to a stable Aa1 outlook. Two new predictions are logged below (P056, P057).</li>
+<li>US cash equity markets are closed today for Thanksgiving; the next session is Friday&#x27;s shortened post-holiday trading day. In completed/live overnight sessions, SK Hynix closed +2.23% and Samsung +0.35% in Seoul, TSMC closed -0.23% in Taipei, and ASML traded +3.36% live in Amsterdam — none of that move is attributable to the NVIDIA story, which broke after the Asian close.</li>
+<li>Trump is reportedly planning to attend a TSMC Arizona groundbreaking &quot;next week&quot; (exact date not yet reported), and separate, single-sourced coverage says TSMC is considering a $22.6B wafer facility in Texas — both read-throughs for the US-onshoring thread, not yet corroborated beyond initial reports.</li>
+</ul>
+<h2 id="overnight-developments">Overnight Developments</h2>
+<div class="card card-bear">
+<h3><span class="tag tag-bear">bear</span> NVIDIA governance crisis reopens: a second Huang affair, a possible second board reversal, and a CreditWatch Negative placement</h3>
+<p>The New York Times reported the evening of November 25 that Jensen Huang had a second personal relationship — with Kimberly Powell, NVIDIA&#x27;s VP of Healthcare, who reports to him — separate from the Alice Huang/Megaspeed relationship already reflected in this log&#x27;s P042 history. Reporting indicates the board&#x27;s own investigation, during the process that led to the November 23 reinstatement, concluded Huang had violated NVIDIA&#x27;s code of conduct by failing to disclose the relationships, but the board reinstated him anyway after judging him &quot;contrite.&quot; WSJ, Reuters, ABC News, Fox Business and the Washington Post report the board is said to be preparing to reconvene to revisit his status, just two to three days after its unanimous reinstatement vote. CNN reports Vice President Vance said federal officials told him Huang is not under investigation, and that Attorney General Blanche responded &quot;For what?&quot; when asked about one; Trump is reportedly not ruling out a pardon. None of the board-reconvening reporting is yet confirmed by an NVIDIA 8-K or press release — this is reported by multiple outlets, not company-confirmed. Separately and on firmer footing, S&amp;P Global placed NVIDIA&#x27;s AA issuer rating on CreditWatch Negative (confirmed via CNBC, Benzinga and Yahoo Finance coverage of the rating action itself, though the underlying S&amp;P report text was not directly reviewed here), citing governance, key-man and board-independence risk, with a possible one-notch cut to AA- within roughly 90 days. This is distinct from, and more severe than, Moody&#x27;s November 18 move to a stable Aa1 outlook. Two other claims circulating in today&#x27;s coverage — a Pentagon &quot;wartime law&quot; option to keep Huang in place, and a discrete NVIDIA-directed halt of server shipments to four Southeast Asian countries — could not be independently verified against primary reporting and are not treated as sourced facts here. NVDA&#x27;s last confirmed regular-session close was $149.30 on November 25 (-3.91% vs. the November 24 close of $155.38); secondary reports describe a further after-hours decline once the NYT story broke, but that is not a regular-session print and is not used as today&#x27;s market-state figure. Two new predictions are logged: P056 (S&amp;P downgrades NVDA within the CreditWatch window, 55% subjective guess, resolving by 2027-02-24) and P057 (a second Huang removal or formal sanction by 2026-12-31, 15% subjective guess). <a href="https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director">NVIDIA&#x27;s November 23 reinstatement release</a>.</p>
+</div>
+<div class="card card-neutral">
+<h3><span class="tag tag-neutral">neutral</span> TSMC&#x27;s US build-out continues: Trump&#x27;s Arizona visit and a reported Texas facility</h3>
+<p>Multiple outlets (ABC News, Benzinga, AZ Family, FOX 10 Phoenix, TradingView, all dated November 25–26) report that Trump plans to attend a TSMC groundbreaking in Arizona &quot;next week,&quot; without giving an exact date. Separately, the Austin American-Statesman and Manufacturing Dive report TSMC is considering or proposing a $22.6B advanced-wafer facility in Texas, near a site associated with Elon Musk&#x27;s &quot;Terafab.&quot; The $22.6B figure is single-sourced in this sweep and was not independently corroborated elsewhere; treat it as a lead, not a confirmed capital-spending commitment, pending a TSMC or Texas state filing.</p>
+</div>
+<h2 id="todays-setup">Today&#x27;s Setup</h2>
+<table>
+<thead><tr><th>Time</th><th>Catalyst</th><th>What would matter</th><th>Thesis / company</th></tr></thead>
+<tbody>
+<tr><td>Nov 26 (today)</td><td>US markets closed (Thanksgiving)</td><td>No new US session; watch for any NVIDIA statement responding to the affair/board-reconvening reports</td><td>NVDA governance</td></tr>
+<tr><td>Nov 27</td><td>Shortened post-Thanksgiving US session</td><td>Low-volume, light-data session; first chance for the market to price the governance escalation in a regular US session</td><td>NVDA, broader AI complex</td></tr>
+<tr><td>Week of ~Dec 1</td><td>Trump&#x27;s reported TSMC Arizona groundbreaking visit (exact date TBD)</td><td>Confirms/clarifies scope of further US fab investment</td><td>TSM</td></tr>
+<tr><td>Dec 1</td><td>Democratic lawmakers&#x27; self-set accountability deadline for Commerce Secretary Lutnick</td><td>Whether Commerce responds on the Megaspeed entity-list delay</td><td>NVDA governance, export controls</td></tr>
+<tr><td>Dec 3</td><td>Senate Banking Committee: Jensen Huang testimony</td><td>Now a materially higher-stakes hearing given the fresh code-of-conduct and board-reconvening reports</td><td>NVDA</td></tr>
+<tr><td>Dec 8</td><td>P036 (Navier-Stokes verification) resolution date</td><td>Prediction log</td><td>—</td></tr>
+<tr><td>Dec 10</td><td>Senate Banking Committee: Howard Lutnick testimony</td><td>Commerce Department export-enforcement accountability</td><td>NVDA, export controls</td></tr>
+<tr><td>~Dec 10</td><td>TSMC November monthly revenue</td><td>Watch for continuation of the record run (October was NT$586.89B)</td><td>TSM</td></tr>
+</tbody>
+</table>
+<h2 id="current-market-state">Current Market State</h2>
+<table>
+<thead><tr><th>Company</th><th>Listing / session</th><th>Current</th><th>Session move</th><th>New information</th></tr></thead>
+<tbody>
+<tr><td>NVIDIA</td><td>NVDA, Nasdaq, closed (Thanksgiving)</td><td class="metric">$149.30</td><td class="red">-3.91% (Nov 25 close vs. Nov 24)</td><td>See governance item above; after-hours moves not shown</td></tr>
+<tr><td>SK Hynix</td><td>000660.KS, Seoul, closed</td><td class="metric">₩1,053,000</td><td class="green">+2.23%</td><td></td></tr>
+<tr><td>Samsung Electronics</td><td>005930.KS, Seoul, closed</td><td class="metric">₩171,300</td><td class="green">+0.35%</td><td></td></tr>
+<tr><td>TSMC</td><td>2330.TW, Taipei, closed</td><td class="metric">NT$2,145</td><td class="red">-0.23%</td><td>See TSMC item above</td></tr>
+<tr><td>ASML</td><td>ASML.AS, Amsterdam, open</td><td class="metric">€1,170</td><td class="green">+3.36%</td><td></td></tr>
+</tbody>
+</table>
+<p>US cash equities are closed today for Thanksgiving; the rest of Tier 1 (AVGO, MSFT, GOOG, META, AMZN, MU, ANET, PLTR, CRWV, NBIS) has no new session since Wednesday&#x27;s close — see the <a href="2026-11-25-update.md">November 25 report</a> for that session&#x27;s premarket figures. Next data point is Friday&#x27;s shortened session.</p>
+<h2 id="thesis-prediction-deltas">Thesis / Prediction Deltas</h2>
+<ul>
+<li><strong>New predictions:</strong> P056 (S&amp;P Global downgrades NVDA below AA within the CreditWatch Negative window, 55% subjective guess, resolving by 2027-02-24) and P057 (NVIDIA&#x27;s board removes or further sanctions Huang a second time by 2026-12-31, 15% subjective guess). Both logged in <code>predictions/prediction-log.md</code>.</li>
+<li><strong>P042</strong> (NVIDIA names a permanent CEO by 2027-06-30) already resolved YES on 11/23 and is unaffected by today&#x27;s reporting — that specific claim was satisfied regardless of what happens next. The new development is a fresh governance-credibility and credit-risk question, tracked separately via P056/P057.</li>
+<li>No <code>theses/computational-abundance.md</code> probability changes. This is an NVDA-specific governance and key-man-risk story, not new demand-side evidence, consistent with how the original November 11 resignation was logged.</li>
+<li>Routine Polymarket compute-curve check: H100 December 2026 PIRP $3.04/GPU-hour (vs. $3.01 on the November 25 indexed-snapshot baseline) — not a repricing. Full observation in <a href="2026-11-26-polymarket-compute-curve.md">today&#x27;s Polymarket note</a>.</li>
+</ul>
+<h2 id="next-seven-days">Next Seven Days</h2>
+<table>
+<thead><tr><th>Date / time</th><th>Catalyst</th><th>Decision point</th></tr></thead>
+<tbody>
+<tr><td>Nov 26</td><td>Thanksgiving (US markets closed)</td><td>—</td></tr>
+<tr><td>Nov 27</td><td>Shortened US session</td><td>First regular-session read on the governance escalation</td></tr>
+<tr><td>Week of ~Dec 1</td><td>Trump&#x27;s reported TSMC Arizona visit</td><td>Confirmation and scope of further US fab investment</td></tr>
+<tr><td>Dec 1</td><td>Lutnick accountability deadline (Democratic lawmakers)</td><td>Commerce Department response</td></tr>
+<tr><td>Dec 3</td><td>Senate Banking Committee hearing — Jensen Huang</td><td>Testimony on export-control enforcement, governance and the new personal-conduct reporting</td></tr>
+<tr><td>Dec 8</td><td>P036 (Navier-Stokes verification) resolution date</td><td>Prediction log</td></tr>
+<tr><td>Dec 10</td><td>Senate Banking Committee hearing — Howard Lutnick</td><td>Testimony on Commerce enforcement</td></tr>
+<tr><td>~Dec 10</td><td>TSMC November monthly revenue</td><td>Record-run continuation check</td></tr>
+</tbody>
+</table>
+<h2 id="data-quality">Data Quality</h2>
+<p>IBKR wire enrichment unavailable; no TWS/venv in this environment, consistent with every recent session. S&amp;P&#x27;s own CreditWatch Negative report text was not directly reviewed — the action is sourced via CNBC, Benzinga and Yahoo Finance coverage and should be checked against S&amp;P&#x27;s primary text before further reliance. The reported Pentagon &quot;wartime law&quot; option and the specific claim of an NVIDIA-directed halt of server shipments to four Southeast Asian countries could not be verified against primary reporting and are flagged as unconfirmed leads, not sourced facts. Polymarket&#x27;s H100 December 2026 point was confirmed via a live page fetch; the ~1-year and longest-dated H100 maturities, and any B200/B300 contracts, were not accessible on this run.</p>
+
+<footer>
+Generated from <code>2026-11-26-update.md</code> by <code>scripts/build_report.py</code>.
+</footer>
+
+</div>
+</body>
+</html>
