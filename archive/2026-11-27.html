@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Ecosystem Premarket Brief — November 27, 2026</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --panel: #131822;
+    --panel-2: #1a2030;
+    --border: #2a3142;
+    --text: #e6e9ef;
+    --muted: #9aa3b2;
+    --blue: #60a5fa;
+    --green: #34d399;
+    --yellow: #fbbf24;
+    --red: #f87171;
+    --purple: #c084fc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    font-size: 15px;
+  }
+  .container { max-width: 1120px; margin: 0 auto; padding: 32px 24px; }
+  header { padding-bottom: 18px; }
+  h1 { margin: 0 0 8px; font-size: 27px; font-weight: 650; letter-spacing: -0.2px; }
+  .subtitle { color: var(--muted); font-size: 14px; }
+  /* sticky section nav */
+  .toc {
+    position: sticky; top: 0; z-index: 20;
+    margin: 0 0 22px; padding: 11px 0;
+    background: rgba(11,14,20,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px;
+  }
+  .toc a { color: var(--muted); white-space: nowrap; }
+  .toc a:hover { color: var(--blue); text-decoration: none; }
+  h2 { margin: 34px 0 14px; padding-bottom: 7px; border-bottom: 1px solid var(--border); font-size: 20px; scroll-margin-top: 56px; }
+  h3 { margin: 22px 0 8px; color: var(--blue); font-size: 16px; }
+  p { margin: 8px 0; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul, ol { margin: 8px 0; padding-left: 22px; }
+  li { margin: 5px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 14px; }
+  th, td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--panel-2); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  code { background: var(--panel-2); padding: 1px 5px; border-radius: 4px; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.9em; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 26px 0; }
+  .banner {
+    background: #231b12;
+    border: 1px solid rgba(251,191,36,0.45);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 24px;
+  }
+  .banner-label { color: var(--yellow); text-transform: uppercase; font-size: 12px; letter-spacing: 0.8px; font-weight: 700; margin-bottom: 6px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: 8px;
+    padding: 17px 20px;
+    margin: 14px 0;
+  }
+  .card h3 { margin-top: 0; }
+  .card-bull { border-left-color: var(--green); }
+  .card-bear { border-left-color: var(--red); }
+  .card-watch { border-left-color: var(--yellow); }
+  .card-neutral { border-left-color: var(--blue); }
+  .tag { display: inline-block; border-radius: 12px; padding: 2px 9px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-right: 6px; }
+  .tag-bear { color: var(--red); background: rgba(248,113,113,0.13); border: 1px solid rgba(248,113,113,0.3); }
+  .tag-bull { color: var(--green); background: rgba(52,211,153,0.13); border: 1px solid rgba(52,211,153,0.3); }
+  .tag-watch { color: var(--yellow); background: rgba(251,191,36,0.13); border: 1px solid rgba(251,191,36,0.3); }
+  .tag-neutral { color: var(--blue); background: rgba(96,165,250,0.13); border: 1px solid rgba(96,165,250,0.3); }
+  /* probability-delta pills, e.g. 90% -> 95% */
+  .delta { display: inline-block; font-family: "SF Mono", "Fira Code", monospace; font-size: 0.88em; font-weight: 650; padding: 0 6px; border-radius: 5px; white-space: nowrap; }
+  .delta-up { color: var(--green); background: rgba(52,211,153,0.12); }
+  .delta-down { color: var(--red); background: rgba(248,113,113,0.12); }
+  .delta-flat { color: var(--muted); background: rgba(154,163,178,0.12); }
+  .metric { font-family: "SF Mono", "Fira Code", monospace; white-space: nowrap; }
+  .muted { color: var(--muted); }
+  .green { color: var(--green); font-weight: 650; }
+  .red { color: var(--red); font-weight: 650; }
+  .yellow { color: var(--yellow); font-weight: 650; }
+  footer { border-top: 1px solid var(--border); margin-top: 40px; padding-top: 18px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 760px) {
+    .container { padding: 22px 14px; }
+    table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>AI Ecosystem Premarket Brief — November 27, 2026</h1>
+  <div class="subtitle">Type: Premarket · As of: 2026-11-27, ~06:10 MST / 08:10 ET · Coverage: Public/primary baseline completed, supplemented with live Yahoo Finance quote checks after the standing quote script returned &quot;no current-session trade&quot; for every US name (a script-side gap, not an actual absence of premarket trading — see Data Quality). IBKR wire enrichment unavailable (no TWS/venv in this environment). Today is the shortened post-Thanksgiving session (Black Friday); US cash equities close at 1:00pm ET.</div>
+</header>
+<nav class="toc"><a href="#bottom-line">Bottom Line</a><a href="#overnight-developments">Overnight Developments</a><a href="#todays-setup">Today&#x27;s Setup</a><a href="#current-market-state">Current Market State</a><a href="#thesis-prediction-deltas">Thesis / Prediction Deltas</a><a href="#next-seven-days">Next Seven Days</a><a href="#data-quality">Data Quality</a></nav>
+<div class="banner"><div class="banner-label">Headline</div><div>A broad, synchronized AI-stack rally is running across every session that has traded today — Seoul, Taipei, Amsterdam, and now US premarket — with gains of +2% to +7% across chips, memory, and neoclouds. No single new catalyst explains it; the NVIDIA governance story itself has gone quiet since yesterday.</div></div>
+<h2 id="bottom-line">Bottom Line</h2>
+<ul>
+<li><strong>No escalation in the NVIDIA governance story since the 11/26 report.</strong> No new board action, 8-K, or company statement was found. The Dec 3 Senate Banking Committee hearing on Jensen Huang (&quot;Protecting America&#x27;s AI Advantage: Oversight of U.S. Export Controls&quot;) remains on the calendar, independently confirmed by multiple outlets.</li>
+<li><strong>Treasury Secretary Bessent&#x27;s export-control deadline for NVIDIA&#x27;s board has lapsed with no public response found.</strong> Bessent gave NVIDIA roughly ten days (from ~Nov 15, i.e. resolving ~Nov 25) to answer whether the company used shell companies or similar structures to evade China export controls. No source — NVIDIA, Treasury, or otherwise — has addressed the outcome. Treat this as a live, overdue catalyst, not a resolved one.</li>
+<li><strong>A broad AI-stack rally is running across every market that has traded today, with no clean single catalyst.</strong> Seoul (SK Hynix +5.4%, Samsung +4.6%, KOSPI +4.4%), Taipei (TSMC +1.6%), and Amsterdam (ASML +4.3%, live) all closed or are trading sharply higher. US premarket (confirmed via direct Yahoo Finance quote checks, ~8:07am ET) shows NVDA +2.9%, AVGO +3.6%, TSM ADR +3.3%, MU +6.0%, ANET +4.6%, CRWV +5.4%, NBIS +7.3%, plus smaller gains in MSFT/GOOG/META/AMZN/PLTR. This is unusually broad and large for a holiday-week session; no single fundamental trigger was identified despite a dedicated search. See &quot;Today&#x27;s Setup&quot; for caveats on reading too much into a thin Black Friday tape.</li>
+<li><strong>NVIDIA has materially tightened Southeast Asia export compliance.</strong> It cut its authorized AI-chip customer list across Singapore, Malaysia, and Japan by more than half, and is requiring cloud partners on new contracts to keep at least 51% of business non-Chinese — the sharpest enforcement step yet under the Nov 16-17 BIS rule. Separately, Reuters reports smuggled B300 servers reselling in China at roughly 2x US list price, suggesting enforcement is raising the gray-market premium rather than eliminating Chinese demand.</li>
+</ul>
+<h2 id="overnight-developments">Overnight Developments</h2>
+<div class="card card-watch">
+<h3><span class="tag tag-watch">watch</span> Bessent&#x27;s export-control deadline lapses with no public NVIDIA response</h3>
+<p>Treasury Secretary Bessent set roughly a ten-day deadline (from ~Nov 15, resolving ~Nov 25) for NVIDIA&#x27;s board and outside counsel to answer whether the company used shell companies or other structures to evade China export controls, per CBS <em>Face the Nation</em> and Fox News reporting from mid-November. As of this writing, no primary source confirms NVIDIA, its board, or Treasury has addressed the outcome publicly. This sits alongside the SEC&#x27;s ongoing civil probe into NVIDIA&#x27;s export-control disclosures (the company stopped reporting Singapore revenue — 22% of the total — the month it blacklisted Megaspeed) and the Dec 3 Senate Banking hearing. Nothing here is new information about underlying facts, but the deadline&#x27;s silent lapse is itself a status change worth tracking — it leaves an unresolved overhang heading into the Dec 1 closed-door House interview and the Dec 3 public hearing.</p>
+</div>
+<div class="card card-bear">
+<h3><span class="tag tag-bear">bear</span> NVIDIA sharply tightens Southeast Asia export compliance; B300s reselling in China near 2x list price</h3>
+<p>NVIDIA has cut the number of authorized AI-chip customers across Southeast Asia by more than half — concentrated in Singapore, Malaysia, and Japan — and is now requiring cloud partners on new contracts to keep at least 51% of their business non-Chinese, tied to the Nov 16-17 BIS interim final rule that extended licensing requirements to the region (<a href="https://www.techrepublic.com/article/news-nvidia-ai-chip-tracking-apac-singapore-china/">TechRepublic</a>; <a href="https://www.datacenterdynamics.com/en/news/nvidia-tells-data-center-partners-to-cut-china-exposure-limits-rtx-chip-sales-to-mainland">DataCenterDynamics</a>). Separately, Reuters reports smuggled B300 servers are reselling inside China around ¥7M (~$1M/unit — roughly 2x the ~$550K US list price), with an active short-term rental market also reported. A HuggingNews item describing &quot;restricted Blackwell chips found at a Shanghai data center linked to Megaspeed&quot; misstates the chip generation: the underlying reporting (Bloomberg, mid-November) concerns H100/H200 servers, not Blackwell. NVIDIA says its own Megaspeed facility inspections (including separate Blackwell warehouses) found no diversion; Megaspeed denies the allegations; US and Singapore authorities are investigating. <strong>Read-through:</strong> near-term addressable Southeast Asian channel revenue shrinks at the margin as enforcement tightens, while the scale of the China resale premium is itself evidence of unmet compute demand there — a two-sided data point, not a clean signal for the computational-abundance thesis in either direction.</p>
+</div>
+<div class="card card-neutral">
+<h3><span class="tag tag-neutral">neutral</span> Netherlands formally objects to MATCH Act curbs on ASML</h3>
+<p>Dutch Trade Minister Sjoerdsma has lobbied Commerce Secretary Lutnick and Congress against the proposed MATCH Act, which would extend US export curbs to ASML&#x27;s DUV immersion tools (beyond the existing EUV restriction) and give Commerce 150 days to negotiate matching allied controls or impose restrictions on the allies themselves (<a href="https://ioplus.nl/en/posts/dutch-reject-us-match-act-over-asml-export-controls">Ioplus</a>; <a href="https://thenextweb.com/news/dutch-government-pushes-back-on-us-match-act-over-asml-chip-tool-curbs">TheNextWeb</a>). The bill&#x27;s legislative stage (committee vs. floor) was not confirmed in this pass. This is early-stage policy friction, not yet law — a risk to monitor for ASML&#x27;s China-exposed DUV business, not a thesis-moving event today.</p>
+</div>
+<div class="card">
+<h3>OpenRouter inference-volume tracking: Nebius still running hot, off its post-Nov-18 peak</h3>
+<p>Nebius&#x27;s OpenRouter channel volume: latest complete day (Nov 26) 730.8B tokens; seven-day average 742.4B/day (+161.4% vs. the prior seven-day window — still reflecting the Nov 17–18 step-change already logged in the Nov 26 baseline, not a fresh acceleration); 28-day average 288.9B/day (+875.5%). That&#x27;s down from the Nov 19–25 peak-day prints (888B on Nov 25) in the baseline — consistent with the &quot;promotion could reverse&quot; bear case already flagged there, though still far above pre-Nov-18 levels (~70–140B/day). Model concentration: DeepSeek V4.1 Flash 1017 is 69.4% of Nebius&#x27;s seven-day volume (down slightly from 71.5%), Kimi K3.1 Pro 12.3% (up from 10.6%). Separately, a widely circulated claim that &quot;OpenRouter paid tokens are up 44x in 2026 with spend up only 7.6x&quot; does not match OpenRouter&#x27;s own October 2026 recap, which reports token volume up ~25x since January (+37% month-over-month) with blended price per token down 57–70% from January — use the recap&#x27;s own figures, not the 44x/7.6x headline, if this resurfaces. <a href="https://openrouter.ai/provider/nebius">Nebius provider page</a>; <a href="https://openrouter.ai/data/october-2026">October 2026 recap</a>. This is OpenRouter-channel activity, not total Nebius cloud demand, GPU-hours, or revenue — no thesis probability change.</p>
+</div>
+<h2 id="todays-setup">Today&#x27;s Setup</h2>
+<table>
+<thead><tr><th>Time</th><th>Catalyst</th><th>What would matter</th><th>Thesis / company</th></tr></thead>
+<tbody>
+<tr><td>Today, 1:00pm ET</td><td>US cash equities early close (Black Friday, thin liquidity)</td><td>Holiday-week volume is structurally low; today&#x27;s broad rally should be weighted accordingly, not read as a conviction move</td><td>Market-wide</td></tr>
+<tr><td>Dec 1 (closed-door)</td><td>Jensen Huang&#x27;s House Financial Services Committee interview</td><td>Private; no public readout expected same-day, but could leak</td><td>NVDA governance / P057</td></tr>
+<tr><td>Dec 3</td><td>Jensen Huang Senate Banking Committee hearing (&quot;Protecting America&#x27;s AI Advantage: Oversight of U.S. Export Controls&quot;)</td><td>Public testimony on export-control compliance; headline and legal risk</td><td>NVDA / P056, P057</td></tr>
+</tbody>
+</table>
+<h2 id="current-market-state">Current Market State</h2>
+<table>
+<thead><tr><th>Company</th><th>Listing / session</th><th>Current</th><th>Session move</th><th>New information</th></tr></thead>
+<tbody>
+<tr><td>NVIDIA</td><td>NVDA · Nasdaq premarket (8:07am ET)</td><td class="metric">$153.56</td><td class="green">+2.85%</td><td>Part of broad, unexplained AI-stack rally (see Bottom Line)</td></tr>
+<tr><td>Broadcom</td><td>AVGO · Nasdaq premarket (8:07am ET)</td><td class="metric">$311.56</td><td class="green">+3.56%</td><td>Same</td></tr>
+<tr><td>TSMC ADR</td><td>TSM · NYSE premarket (8:08am ET)</td><td class="metric">$353.50</td><td class="green">+3.26%</td><td>Same</td></tr>
+<tr><td>Microsoft</td><td>MSFT · Nasdaq premarket (8:05am ET)</td><td class="metric">$499.29</td><td class="green">+1.91%</td><td></td></tr>
+<tr><td>Alphabet</td><td>GOOG · Nasdaq premarket (8:08am ET)</td><td class="metric">$278.83</td><td class="green">+2.90%</td><td></td></tr>
+<tr><td>Meta</td><td>META · Nasdaq premarket (8:07am ET)</td><td class="metric">$629.10</td><td class="green">+3.15%</td><td></td></tr>
+<tr><td>Amazon</td><td>AMZN · Nasdaq premarket (8:07am ET)</td><td class="metric">$250.24</td><td class="green">+2.38%</td><td></td></tr>
+<tr><td>Micron</td><td>MU · Nasdaq premarket (8:08am ET)</td><td class="metric">$637.13</td><td class="green">+5.97%</td><td>Same broad rally</td></tr>
+<tr><td>Arista Networks</td><td>ANET · NYSE premarket (8:06am ET)</td><td class="metric">$171.60</td><td class="green">+4.64%</td><td>Same</td></tr>
+<tr><td>Palantir</td><td>PLTR · Nasdaq premarket (8:08am ET)</td><td class="metric">$168.03</td><td class="green">+2.71%</td><td></td></tr>
+<tr><td>CoreWeave</td><td>CRWV · Nasdaq premarket (8:08am ET)</td><td class="metric">$44.88</td><td class="green">+5.42%</td><td>Same broad rally</td></tr>
+<tr><td>Nebius</td><td>NBIS · Nasdaq premarket (8:08am ET)</td><td class="metric">$91.18</td><td class="green">+7.28%</td><td>Same broad rally</td></tr>
+<tr><td>SK Hynix</td><td>000660.KS · Seoul, closed 2026-11-27 15:30 KST</td><td class="metric">₩1,110,000</td><td class="green">+5.41%</td><td>Broad KOSPI AI-stack rally (index +4.4%)</td></tr>
+<tr><td>Samsung Electronics</td><td>005930.KS · Seoul, closed 2026-11-27 15:30 KST</td><td class="metric">₩179,100</td><td class="green">+4.55%</td><td>Same</td></tr>
+<tr><td>TSMC</td><td>2330.TW · Taipei, closed 2026-11-27 13:30 CST</td><td class="metric">NT$2,180</td><td class="green">+1.63%</td><td>Same; &quot;late buying&quot; per Focus Taiwan</td></tr>
+<tr><td>ASML</td><td>ASML.AS · Amsterdam, live 2026-11-27 13:46 CET</td><td class="metric">€1,218</td><td class="green">+4.30%</td><td>Same</td></tr>
+</tbody>
+</table>
+<p>All US premarket figures above vs. the last completed regular session (November 25 close; markets were closed November 26 for Thanksgiving). No fundamental catalyst ties the move to any single name — it is broad and proportionally similar across chips, memory, networking, and neoclouds.</p>
+<h2 id="thesis-prediction-deltas">Thesis / Prediction Deltas</h2>
+<p>No thesis or prediction changes. P056 (S&amp;P downgrade watch, 55% subjective guess, resolving by 2027-02-24) and P057 (second Huang removal or sanction, 15% subjective guess, resolving 2026-12-31) remain pending; neither trigger was tested by today&#x27;s evidence. The Bessent deadline lapsing is a status note on P057&#x27;s context, not a probability-moving event on its own.</p>
+<h2 id="next-seven-days">Next Seven Days</h2>
+<table>
+<thead><tr><th>Date / time</th><th>Catalyst</th><th>Decision point</th></tr></thead>
+<tbody>
+<tr><td>2026-11-27, 1:00pm ET</td><td>US cash equities early close (Black Friday)</td><td>Thin-liquidity session; weight today&#x27;s price action accordingly</td></tr>
+<tr><td>2026-12-01 (closed-door)</td><td>Jensen Huang House Financial Services Committee interview</td><td>Private; watch for leaks or a public statement afterward</td></tr>
+<tr><td>2026-12-02 (closed-door)</td><td>NVIDIA GC Tim Teter House interview</td><td>Private</td></tr>
+<tr><td>2026-12-03</td><td>Jensen Huang Senate Banking Committee hearing</td><td>Public export-control testimony; direct read on P056/P057</td></tr>
+<tr><td>2026-12-08</td><td>P036 (Navier-Stokes verification) resolution date</td><td>Check prediction log</td></tr>
+<tr><td>2026-12-10</td><td>Commerce Secretary Lutnick Senate Banking hearing (date previously reported, not reconfirmed this pass)</td><td>Public testimony on export enforcement</td></tr>
+<tr><td>~2026-12-10</td><td>TSMC November monthly revenue</td><td>Comparison to October&#x27;s record NT$586.89B; near-real-time AI-capex demand signal</td></tr>
+</tbody>
+</table>
+<h2 id="data-quality">Data Quality</h2>
+<ul>
+<li><code>scripts/fetch-public-quotes.py</code> returned &quot;no current-session trade&quot; for every US Tier 1/2 name this morning; direct Yahoo Finance quote-page checks confirmed real premarket prints existed at the time (see Current Market State). Treat the standing script&#x27;s premarket coverage as unreliable in the pre-open window today; the figures in this report came from the manual follow-up check, not the script&#x27;s output file.</li>
+<li>Polymarket H100/B200/B300 compute curve: live page access failed on this pass; carrying forward the November 25 baseline unchanged rather than publishing stale or internally inconsistent cached snapshots. A circulating claim that Polymarket launched a new &quot;perpetual&quot; H100 contract could not be confirmed and appears to be a mischaracterization of its existing bracket-style, CFTC-filed contracts — no change to tracking methodology.</li>
+<li>IBKR wire enrichment unavailable (no TWS/venv in this environment); public/primary baseline completed.</li>
+</ul>
+
+<footer>
+Generated from <code>2026-11-27-update.md</code> by <code>scripts/build_report.py</code>.
+</footer>
+
+</div>
+</body>
+</html>
